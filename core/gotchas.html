@@ -1,0 +1,1263 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Common gotchas with OCP &#8212; FAIR Chemistry Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/gotchas';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Using pre-trained models in ASE" href="quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    fairchem repository for atomistic AI/ML models in chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn More</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="papers_using_models.html">Studies that have leveraged OCP models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocpapi.html">ocpapi</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_checkpoints.html">Pretrained model checkpoints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lmdb_dataset_creation.html">Making LMDB Datasets (original format, deprecated for ASE LMDBs)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Training and evaluating custom models on OCP datasets</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="inference.html">Fast batched inference</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="model_faq.html">Model FAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/intro.html">Intro and background on OCP and DFT</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/advanced/embeddings.html">Working with embeddings</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../legacy_tutorials/legacy_tutorials.html">Legacy [deprecated] Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/OCP_Tutorial.html">Open Catalyst Project Tutorial Notebook</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_preprocessing.html">OCP Data Preprocessing Tutorial</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">fairchem documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/common/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.relaxation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/data_parallel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.data_parallel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/distutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.distutils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/flags/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.flags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.gp_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.hpo_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.tutorial_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/typing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.typing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.embeddings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets._utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.ase_datasets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.oc22_lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/target_metadata_guesser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.target_metadata_guesser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/models/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/equiformer_v2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.equiformer_v2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/escn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.escn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_gp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_gp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_oc/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_oc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/painn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.painn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/scn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.scn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.model_registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.schnet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scaling</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.exponential_moving_average</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalizer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scheduler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.transforms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/preprocessing/atoms_to_graphs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing.atoms_to_graphs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.hpo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.download_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.gif_maker_parallelized</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_challenge_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_lmdb_sizes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_ef/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_ef</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_relaxed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_relaxed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/uncompress/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.uncompress</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tasks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tasks/task/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.preprocessing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/conftest/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.conftest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/trainers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/base_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.base_trainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/ocp_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.ocp_trainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core._cli</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/applications/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/AdsorbML/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.AdsorbML</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/CatTSunami/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.CatTSunami</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/demo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/demo/ocpapi/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.tests</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/workflows/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.workflows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook execution times</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../execution_time.html">Notebook execution times</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Fcore/gotchas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/core/gotchas.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Common gotchas with OCP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Common gotchas with OCP</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outofmemoryerror">OutOfMemoryError</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-the-energy-of-a-gas-phase-atom">I want the energy of a gas phase atom</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-get-wildly-different-energies-from-the-different-models">I get wildly different energies from the different models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-warnings">Miscellaneous warnings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unrecognized-arguments">Unrecognized arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unable-to-identify-ocp-trainer">Unable to identify OCP trainer</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#request-entity-too-large-can-t-save-your-notebook">Request entity too large - can’t save your Notebook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-at-least-four-atoms-for-molecules-with-some-models">You need at least four atoms for molecules with some models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-tag-or-not">To tag or not?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-simulation-results">Stochastic simulation results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-forces-don-t-sum-to-zero">The forces don’t sum to zero</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="common-gotchas-with-ocp">
+<h1>Common gotchas with OCP<a class="headerlink" href="#common-gotchas-with-ocp" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="outofmemoryerror">
+<h1>OutOfMemoryError<a class="headerlink" href="#outofmemoryerror" title="Link to this heading">#</a></h1>
+<p>If you see errors like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">OutOfMemoryError</span><span class="p">:</span> <span class="n">CUDA</span> <span class="n">out</span> <span class="n">of</span> <span class="n">memory</span><span class="o">.</span> <span class="n">Tried</span> <span class="n">to</span> <span class="n">allocate</span> <span class="mf">390.00</span> <span class="n">MiB</span> <span class="p">(</span><span class="n">GPU</span> <span class="mi">0</span><span class="p">;</span> <span class="mf">10.76</span> <span class="n">GiB</span> <span class="n">total</span> <span class="n">capacity</span><span class="p">;</span> <span class="mf">9.59</span> <span class="n">GiB</span> <span class="n">already</span> <span class="n">allocated</span><span class="p">;</span> <span class="mf">170.06</span> <span class="n">MiB</span> <span class="n">free</span><span class="p">;</span> <span class="mf">9.81</span> <span class="n">GiB</span> <span class="n">reserved</span> <span class="ow">in</span> <span class="n">total</span> <span class="n">by</span> <span class="n">PyTorch</span><span class="p">)</span> <span class="n">If</span> <span class="n">reserved</span> <span class="n">memory</span> <span class="ow">is</span> <span class="o">&gt;&gt;</span> <span class="n">allocated</span> <span class="n">memory</span> <span class="k">try</span> <span class="n">setting</span> <span class="n">max_split_size_mb</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">fragmentation</span><span class="o">.</span>  <span class="n">See</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">Memory</span> <span class="n">Management</span> <span class="ow">and</span> <span class="n">PYTORCH_CUDA_ALLOC_CONF</span>
+</pre></div>
+</div>
+<p>It means your GPU is out of memory. Some reasons could be that you have multiple notebooks open that are using the GPU, e.g. they have loaded a calculator or something. Try closing all the other notebooks.</p>
+<p>It could also mean the batch size is too large to fit in memory. You can try making it smaller in the yml config file (optim.batch_size).</p>
+<p>It is recommended you use automatic mixed precision, –amp, in the options to main.py, or in the config.yml.</p>
+<p>If it is an option, you can try a GPU with more memory, or you may be able to split the job over multiple GPUs.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-want-the-energy-of-a-gas-phase-atom">
+<h1>I want the energy of a gas phase atom<a class="headerlink" href="#i-want-the-energy-of-a-gas-phase-atom" title="Link to this heading">#</a></h1>
+<p>But I get an error like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">reshape</span> <span class="n">tensor</span> <span class="n">of</span> <span class="mi">0</span> <span class="n">elements</span> <span class="n">into</span> <span class="n">shape</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="n">because</span> <span class="n">the</span> <span class="n">unspecified</span> <span class="n">dimension</span> <span class="n">size</span> <span class="o">-</span><span class="mi">1</span> <span class="n">can</span> <span class="n">be</span> <span class="nb">any</span> <span class="n">value</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">ambiguous</span>
+</pre></div>
+</div>
+<p>The problem here is that no neighbors are found for the single atom which causes an error. This may be model dependent. There is currently no way to get atomic energies for some models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">atoms</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/atoms.py:731,</span> in <span class="ni">Atoms.get_potential_energy</span><span class="nt">(self, force_consistent, apply_constraint)</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">729</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="n">force_consistent</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">730</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">731</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="k">if</span> <span class="n">apply_constraint</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">733</span>     <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:709,</span> in <span class="ni">Calculator.get_potential_energy</span><span class="nt">(self, atoms, force_consistent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="k">def</span> <span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">709</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="k">if</span> <span class="n">force_consistent</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span>         <span class="k">if</span> <span class="s1">&#39;free_energy&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:737,</span> in <span class="ni">Calculator.get_property</span><span class="nt">(self, name, atoms, allow_calculation)</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_calculation</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">737</span>     <span class="bp">self</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">system_changes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="c1"># For some reason the calculator was not able to do what we want,</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span>     <span class="c1"># and that is OK.</span>
+<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:233,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">233</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
+<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/utils.py:156,</span> in <span class="ni">conditional_grad.&lt;locals&gt;.decorator.&lt;locals&gt;.cls_method</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regress_forces</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;direct_forces&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">dec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">156</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1229,</span> in <span class="ni">GemNetOC.forward</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1208</span>     <span class="n">main_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1209</span>     <span class="n">a2a_graph</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1216</span>     <span class="n">quad_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graphs_and_indices</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx_t</span> <span class="o">=</span> <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;edge_index&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1220</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">basis_rad_raw</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">basis_atom_update</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">basis_output</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">bases_qint</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">bases_e2e</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1226</span>     <span class="n">bases_a2e</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="n">bases_e2a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="n">basis_a2a_rad</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1229</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bases</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1230</span>     <span class="n">main_graph</span><span class="o">=</span><span class="n">main_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1231</span>     <span class="n">a2a_graph</span><span class="o">=</span><span class="n">a2a_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1232</span>     <span class="n">a2ee2a_graph</span><span class="o">=</span><span class="n">a2ee2a_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1233</span>     <span class="n">qint_graph</span><span class="o">=</span><span class="n">qint_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span>     <span class="n">trip_idx_e2e</span><span class="o">=</span><span class="n">trip_idx_e2e</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="n">trip_idx_a2e</span><span class="o">=</span><span class="n">trip_idx_a2e</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1236</span>     <span class="n">trip_idx_e2a</span><span class="o">=</span><span class="n">trip_idx_e2a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="n">quad_idx</span><span class="o">=</span><span class="n">quad_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="n">num_atoms</span><span class="o">=</span><span class="n">num_atoms</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1239</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1241</span> <span class="c1"># Embedding block</span>
+<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_emb</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">)</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1102,</span> in <span class="ni">GemNetOC.get_bases</span><span class="nt">(self, main_graph, a2a_graph, a2ee2a_graph, qint_graph, trip_idx_e2e, trip_idx_a2e, trip_idx_e2a, quad_idx, num_atoms)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="n">cosφ_cab_q</span><span class="p">,</span> <span class="n">cosφ_abd</span><span class="p">,</span> <span class="n">angle_cabd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_quad_angles</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1095</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1096</span>         <span class="n">quad_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">basis_rad_cir_qint_raw</span><span class="p">,</span> <span class="n">basis_cir_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbf_basis_qint</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span> <span class="n">cosφ_abd</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">basis_rad_sph_qint_raw</span><span class="p">,</span> <span class="n">basis_sph_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sbf_basis_qint</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">cosφ_cab_q</span><span class="p">[</span><span class="n">quad_idx</span><span class="p">[</span><span class="s2">&quot;trip_out_to_quad&quot;</span><span class="p">]],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">angle_cabd</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_edge_interaction</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">basis_rad_a2ee2a_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis_aeaint</span><span class="p">(</span><span class="n">a2ee2a_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
+<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:132,</span> in <span class="ni">SphericalBasisLayer.forward</span><span class="nt">(self, D_ca, cosφ_cab, θ_cabd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_ca</span><span class="p">,</span> <span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">rad_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis</span><span class="p">(</span><span class="n">D_ca</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">sph_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span><span class="p">(</span><span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># (num_quadruplets, num_spherical**2)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_basis</span><span class="p">:</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:116,</span> in <span class="ni">SphericalBasisLayer.__init__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(cosφ, θ)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;legendre_outer&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">circular_basis</span> <span class="o">=</span> <span class="n">get_sph_harm_basis</span><span class="p">(</span><span class="n">num_spherical</span><span class="p">,</span> <span class="n">zero_m_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cosφ</span><span class="p">,</span> <span class="n">ϑ</span><span class="p">:</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="n">circular_basis</span><span class="p">(</span><span class="n">cosφ</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="o">*</span> <span class="n">circular_basis</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ϑ</span><span class="p">))[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+<span class="ne">--&gt; </span><span class="mi">116</span>     <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cosφ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;gaussian_outer&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="bp">self</span><span class="o">.</span><span class="n">circular_basis</span> <span class="o">=</span> <span class="n">GaussianBasis</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="n">start</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_gaussians</span><span class="o">=</span><span class="n">num_spherical</span><span class="p">,</span> <span class="o">**</span><span class="n">sbf_hparams</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: cannot reshape tensor of 0 elements into shape [0, -1] because the unspecified dimension size -1 can be any value and is ambiguous
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-get-wildly-different-energies-from-the-different-models">
+<h1>I get wildly different energies from the different models<a class="headerlink" href="#i-get-wildly-different-energies-from-the-different-models" title="Link to this heading">#</a></h1>
+<p>Some models are trained on adsorption energies, and some are trained on total energies. You have to know which one you are using.</p>
+<p>Sometimes you can tell by the magnitude of energies, but you should use care with this. If energies are “small” and near zero they are likely adsorption energies. If energies are “large” in magnitude they are probably total energies. This can be misleading though, as it depends on the total number of atoms in the systems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are to suppress the output from making the calculators.</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
+<span class="n">slab</span> <span class="o">=</span> <span class="n">fcc111</span><span class="p">(</span><span class="s1">&#39;Pt&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+
+<span class="c1"># OC20 model - trained on adsorption energies</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC All&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+
+<span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Not a valid model name &#39;GemNet-OC All&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># OC20 model - trained on adsorption energies</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC All&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/model_registry.py:45,</span> in <span class="ni">model_name_to_local_file</span><span class="nt">(model_name, local_cache)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MODEL_REGISTRY</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;. Model name must be one of </span><span class="si">{</span><span class="n">available_pretrained_models</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_cache</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">local_cache</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Not a valid model name &#39;GemNet-OC All&#39;. Model name must be one of (&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An OC22 checkpoint - trained on total energy</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+
+<span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This eSCN model is trained on adsorption energies</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;eSCN-L4-M2-Lay12 2M&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="miscellaneous-warnings">
+<h1>Miscellaneous warnings<a class="headerlink" href="#miscellaneous-warnings" title="Link to this heading">#</a></h1>
+<p>In general, warnings are not errors.</p>
+<section id="unrecognized-arguments">
+<h2>Unrecognized arguments<a class="headerlink" href="#unrecognized-arguments" title="Link to this heading">#</a></h2>
+<p>With Gemnet models you might see warnings like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="n">Unrecognized</span> <span class="n">arguments</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;symmetric_edge_symmetrization&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can ignore this warning, it is not important for predictions.</p>
+</section>
+<section id="unable-to-identify-ocp-trainer">
+<h2>Unable to identify OCP trainer<a class="headerlink" href="#unable-to-identify-ocp-trainer" title="Link to this heading">#</a></h2>
+<p>The trainer is not specified in some checkpoints, and defaults to <code class="docutils literal notranslate"><span class="pre">forces</span></code> which means energy and forces are calculated. This is the default for the ASE OCP calculator, and this warning just alerts you it is setting that.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unable to identify OCP trainer, defaulting to `forces`. Specify the `trainer` argument into OCPCalculator if otherwise.
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="request-entity-too-large-can-t-save-your-notebook">
+<h1>Request entity too large - can’t save your Notebook<a class="headerlink" href="#request-entity-too-large-can-t-save-your-notebook" title="Link to this heading">#</a></h1>
+<p>If you run commands that generate a lot of output in a notebook, sometimes the Jupyter notebook will become too large to save. It is kind of sad, the only thing I know to do is delete the output of the cell. Then maybe you can save it.</p>
+<p>A solution after you know it happens is redirect output to a file.</p>
+<p>This has happened when running training in a notebook where there are too many lines of output, or if you have a lot (20+) of inline images.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="you-need-at-least-four-atoms-for-molecules-with-some-models">
+<h1>You need at least four atoms for molecules with some models<a class="headerlink" href="#you-need-at-least-four-atoms-for-molecules-with-some-models" title="Link to this heading">#</a></h1>
+<p>Gemnet in particular seems to require at least 4 atoms. This has to do with interactions between atoms and their neighbors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="to-tag-or-not">
+<h1>To tag or not?<a class="headerlink" href="#to-tag-or-not" title="Link to this heading">#</a></h1>
+<p>Some models use tags to determine which atoms to calculate energies for. For example, Gemnet uses a tag=1 to indicate the atom should be calculated. You will get an error with this model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>  <span class="c1"># error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>  <span class="c1"># &lt;- critical line for Gemnet</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not all models require tags though. This EquiformerV2 model does not use them. This is another detail that is important to keep in mind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
+
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="stochastic-simulation-results">
+<h1>Stochastic simulation results<a class="headerlink" href="#stochastic-simulation-results" title="Link to this heading">#</a></h1>
+<p>Some models are not deterministic (SCN/eSCN/EqV2), i.e. you can get slightly different answers each time you run it.
+An example is shown below. See <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/issues/563">Issue 563</a> for more discussion.
+This happens because a random selection of is made to sample edges, and a different selection is made each time you run it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
+<span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
+<span class="n">slab</span> <span class="o">=</span> <span class="n">fcc111</span><span class="p">(</span><span class="s1">&#39;Pt&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
+<span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">calc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">],</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">+=</span> <span class="p">[</span><span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()]</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-forces-don-t-sum-to-zero">
+<h1>The forces don’t sum to zero<a class="headerlink" href="#the-forces-don-t-sum-to-zero" title="Link to this heading">#</a></h1>
+<p>In DFT, the forces on all the atoms should sum to zero; otherwise, there is a net translational or rotational force present. This is not enforced in OCP models. Instead, individual forces are predicted, with no constraint that they sum to zero. If the force predictions are very accurate, then they sum close to zero. You can further improve this if you subtract the mean force from each atom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
+<span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
+<span class="n">slab</span> <span class="o">=</span> <span class="n">fcc111</span><span class="p">(</span><span class="s1">&#39;Pt&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
+<span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">slab</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This makes them sum closer to zero by removing net translational force</span>
+<span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./core"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="quickstart.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using pre-trained models in ASE</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="license.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">License</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Common gotchas with OCP</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outofmemoryerror">OutOfMemoryError</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-the-energy-of-a-gas-phase-atom">I want the energy of a gas phase atom</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-get-wildly-different-energies-from-the-different-models">I get wildly different energies from the different models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-warnings">Miscellaneous warnings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unrecognized-arguments">Unrecognized arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unable-to-identify-ocp-trainer">Unable to identify OCP trainer</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#request-entity-too-large-can-t-save-your-notebook">Request entity too large - can’t save your Notebook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-at-least-four-atoms-for-molecules-with-some-models">You need at least four atoms for molecules with some models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-tag-or-not">To tag or not?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-simulation-results">Stochastic simulation results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-forces-don-t-sum-to-zero">The forces don’t sum to zero</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By FAIR Chemistry & Collaborators
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Intro and background on OCP and DFT &#8212; FAIR Chemistry Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/intro';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simple simulations using the OCP ASE calculator" href="OCP-introduction.html" />
+    <link rel="prev" title="AdsorbML tutorial" href="adsorbml_walkthrough.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    fairchem repository for atomistic AI/ML models in chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn More</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/ocpapi.html">ocpapi</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format, deprecated for ASE LMDBs)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/inference.html">Fast batched inference</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../core/model_faq.html">Model FAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro and background on OCP and DFT</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="advanced/embeddings.html">Working with embeddings</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../legacy_tutorials/legacy_tutorials.html">Legacy [deprecated] Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/OCP_Tutorial.html">Open Catalyst Project Tutorial Notebook</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_preprocessing.html">OCP Data Preprocessing Tutorial</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">fairchem documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/common/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.relaxation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/data_parallel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.data_parallel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/distutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.distutils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/flags/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.flags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.gp_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.hpo_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.tutorial_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/typing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.typing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.embeddings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets._utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.ase_datasets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.oc22_lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/target_metadata_guesser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.target_metadata_guesser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/models/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/equiformer_v2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.equiformer_v2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/escn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.escn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_gp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_gp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_oc/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_oc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/painn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.painn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/scn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.scn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.model_registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.schnet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scaling</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.exponential_moving_average</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalizer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scheduler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.transforms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/preprocessing/atoms_to_graphs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing.atoms_to_graphs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.hpo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.download_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.gif_maker_parallelized</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_challenge_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_lmdb_sizes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_ef/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_ef</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_relaxed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_relaxed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/uncompress/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.uncompress</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tasks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tasks/task/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.preprocessing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/conftest/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.conftest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/trainers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/base_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.base_trainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/ocp_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.ocp_trainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core._cli</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/applications/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/AdsorbML/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.AdsorbML</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/CatTSunami/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.CatTSunami</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/demo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/demo/ocpapi/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.tests</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/workflows/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.workflows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook execution times</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../execution_time.html">Notebook execution times</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Ftutorials/intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Intro and background on OCP and DFT</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro and background on OCP and DFT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-tasks">Datasets / Tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoints">Checkpoints</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-tutorial">Goals for this tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-compute-environment">About the compute environment</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="intro-and-background-on-ocp-and-dft">
+<h1>Intro and background on OCP and DFT<a class="headerlink" href="#intro-and-background-on-ocp-and-dft" title="Link to this heading">#</a></h1>
+</section>
+<section id="abstract">
+<h1>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h1>
+<p>The most recent, state of the art machine learned potentials in atomistic simulations are based on graph models that are trained on large (1M+) datasets. These models can be downloaded and used in a wide array of applications ranging from catalysis to materials properties. These pre-trained models can be used on their own, to accelerate DFT calculation, and they can also be used as a starting point to fine-tune new models for specific tasks. In this workshop we will focus on large, graph-based, pre-trained  machine learned models from the Open Catalyst Project (OCP) to showcase how they can be used for these purposes. OCP provides several pre-trained models for a variety of tasks related to atomistic simulations. We will explain what these models are, how they differ, and details of the datasets they are trained from.  We will introduce an Atomic Simulation Environment (ase) calculator that leverages an OCP pre-trained model for typical simulation tasks including adsorbate geometry relaxation, adsorption energy calculations, and reaction energies. We will show how pre-trained models can be fine-tuned on new data sets for new tasks. We will also discuss current limitations of the models and opportunities for future research. Participants will need a laptop with internet capability.</p>
+</section>
+<section id="walkthrough-video">
+<h1>Walkthrough video<a class="headerlink" href="#walkthrough-video" title="Link to this heading">#</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0wb0FTa7SV0?si=6gPgj0Pv9jfNT8Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></section>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Density functional theory (DFT) has been a mainstay in molecular simulation, but its high computational cost limits the number and size of simulations that are practical. Over the past two decades machine learning has increasingly been used to build surrogate models to supplement DFT. We call these models machine learned potentials (MLP) In the early days, neural networks were trained using the cartesian coordinates of atomistic systems as features with some success. These features lack important physical properties, notably they lack invariance to rotations, translations and permutations, and they are extensive features, which limit them to the specific system being investigated. About 15 years ago, a new set of features called symmetry functions were developed that were intensive, and which had these invariances. These functions enabled substantial progress in MLP, but they had a few important limitations. First, the size of the feature vector scaled quadratically with the number of elements, practically limiting the MLP to 4-5 elements. Second, composition was usually implicit in the functions, which limited the transferrability of the MLP to new systems. Finally, these functions were “hand-crafted”, with limited or no adaptability to the systems being explored, thus one needed to use judgement and experience to select them. While progess has been made in mitigating these limitations, a new approach has overtaken these methods.</p>
+<p>Today, the state of the art in machine learned potentials uses graph convolutions to generate the feature vectors. In this approach, atomistic systems are represented as graphs where each node is an atom, and the edges connect the nodes (atoms) and roughly represent interactions or bonds between atoms. Then, there are machine learnable convolution functions that operate on the graph to generate feature vectors. These operators can work on pairs, triplets and quadruplets of nodes to compute “messages” that are passed to the central node (atom) and accumulated into the feature vector. This feature generate method can be constructed with all the desired invariances, the functions are machine learnable, and adapt to the systems being studied, and it scales well to high numbers of elements (the current models handle 50+ elements). These kind of MLPs began appearing regularly in the literature around 2016.</p>
+<p>Today an MLP consists of three things:</p>
+<ol class="arabic simple">
+<li><p>A model that takes an atomistic system, generates features and relates those features to some output.</p></li>
+<li><p>A dataset that provides the atomistic systems and the desired output labels. This label could be energy, forces, or other atomistic properties.</p></li>
+<li><p>A checkpoint that stores the trained model for use in predictions.</p></li>
+</ol>
+<p>The <a class="reference external" href="https://github.com/Open-Catalyst-Project">Open Catalyst Project (OCP)</a> is an umbrella for these machine learned potential models, data sets, and checkpoints from training.</p>
+<section id="models">
+<h2>Models<a class="headerlink" href="#models" title="Link to this heading">#</a></h2>
+<p>OCP provides several <a class="reference internal" href="#../core/models"><span class="xref myst">models</span></a>. Each model represents a different approach to featurization, and a different machine learning architecture. The models can be used for different tasks, and you will find different checkpoints associated with different datasets and tasks.</p>
+</section>
+<section id="datasets-tasks">
+<h2>Datasets / Tasks<a class="headerlink" href="#datasets-tasks" title="Link to this heading">#</a></h2>
+<p>OCP provides several different datasets like <a class="reference internal" href="../core/datasets/oc20.html"><span class="doc std std-doc">OC20</span></a> that correspond to different tasks that range from predicting energy and forces from structures to Bader charges, relaxation energies, and others.</p>
+</section>
+<section id="checkpoints">
+<h2>Checkpoints<a class="headerlink" href="#checkpoints" title="Link to this heading">#</a></h2>
+<p>To use a pre-trained model you need to have <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp">ocp</a> installed. Then you need to choose a checkpoint and config file which will be loaded to configure OCP for the predictions you want to make. There are two approaches to running OCP, via scripts in a shell, or using an ASE compatible calculator.</p>
+<p>We will focus on the ASE compatible calculator here. To facilitate using the checkpoints, there is a set of <a class="reference internal" href="#./ocp-tutorial"><span class="xref myst">utilities</span></a> for this tutorial. You can list the checkpoints that are readily available here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can get a checkpoint file with one of the keys listed above like this. The resulting string is the name of the file downloaded, and you use that when creating an OCP calculator later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="goals-for-this-tutorial">
+<h1>Goals for this tutorial<a class="headerlink" href="#goals-for-this-tutorial" title="Link to this heading">#</a></h1>
+<p>This tutorial will start by using OCP in a Jupyter notebook to setup some simple calculations that use OCP to compute energy and forces, for structure optimization, and then an example of fine-tuning a model with new data.</p>
+</section>
+<section id="about-the-compute-environment">
+<h1>About the compute environment<a class="headerlink" href="#about-the-compute-environment" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_ocp</span></code> to output information that might be helpful in debugging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_ocp</span>
+<span class="n">describe_ocp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, Apr  2 2024, 15:19:53) [GCC 11.4.0]
+ocp is installed at /home/runner/work/fairchem/fairchem/src/fairchem
+ocp repo is at git commit: 32a49c0
+numba: 0.59.1
+numpy: 1.26.4
+ase: 3.22.1
+e3nn: 0.5.1
+pymatgen: 2024.5.1
+torch: 2.2.0+cu121
+torch.version.cuda: 12.1
+torch.cuda: is_available: False
+torch geometric: 2.3.0
+
+Platform: Linux-6.5.0-1018-azure-x86_64-with-glibc2.35
+  Processor: x86_64
+  Virtual memory: svmem(total=16757346304, available=14329167872, percent=14.5, used=1988988928, free=7470080000, active=2220298240, inactive=6320041984, buffers=228306944, cached=7069970432, shared=25645056, slab=550354944)
+  Swap memory: sswap(total=4294963200, used=536576, free=4294426624, percent=0.0, sin=0, sout=106496)
+  Disk usage: sdiskusage(total=77851254784, used=66359717888, free=11474759680, percent=85.3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get started! Click here to open the <a class="reference internal" href="OCP-introduction.html"><span class="doc std std-doc">next notebook</span></a>.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="adsorbml_walkthrough.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AdsorbML tutorial</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="OCP-introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Simple simulations using the OCP ASE calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro and background on OCP and DFT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-tasks">Datasets / Tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoints">Checkpoints</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-tutorial">Goals for this tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-compute-environment">About the compute environment</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By FAIR Chemistry & Collaborators
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

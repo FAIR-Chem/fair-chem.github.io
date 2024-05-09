@@ -1,0 +1,1770 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AdsorbML tutorial &#8212; FAIR Chemistry Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/adsorbml_walkthrough';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro and background on OCP and DFT" href="intro.html" />
+    <link rel="prev" title="CatTSunami tutorial" href="cattsunami_walkthrough.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    fairchem repository for atomistic AI/ML models in chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn More</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/ocpapi.html">ocpapi</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format, deprecated for ASE LMDBs)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/inference.html">Fast batched inference</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../core/model_faq.html">Model FAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro and background on OCP and DFT</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="advanced/embeddings.html">Working with embeddings</a></li>
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../legacy_tutorials/legacy_tutorials.html">Legacy [deprecated] Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/OCP_Tutorial.html">Open Catalyst Project Tutorial Notebook</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_preprocessing.html">OCP Data Preprocessing Tutorial</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">fairchem documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/common/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.relaxation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/data_parallel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.data_parallel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/distutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.distutils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/flags/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.flags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.gp_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.hpo_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.tutorial_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/typing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.typing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.embeddings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets._utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.ase_datasets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.oc22_lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/target_metadata_guesser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.target_metadata_guesser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/models/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/equiformer_v2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.equiformer_v2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/escn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.escn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_gp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_gp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_oc/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_oc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/painn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.painn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/scn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.scn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.model_registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.schnet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scaling</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.exponential_moving_average</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalizer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scheduler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.transforms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/preprocessing/atoms_to_graphs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing.atoms_to_graphs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.hpo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.download_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.gif_maker_parallelized</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_challenge_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_lmdb_sizes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_submission_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_ef/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_ef</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_relaxed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_relaxed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/uncompress/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.uncompress</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tasks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tasks/task/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.preprocessing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/conftest/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.conftest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/trainers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/base_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.base_trainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/ocp_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.ocp_trainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core._cli</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/applications/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/AdsorbML/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.AdsorbML</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/applications/CatTSunami/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">applications.CatTSunami</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/demo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/demo/ocpapi/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.tests</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/workflows/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.workflows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/demo/ocpapi/version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">demo.ocpapi.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook execution times</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../execution_time.html">Notebook execution times</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Ftutorials/adsorbml_walkthrough.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/adsorbml_walkthrough.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AdsorbML tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">Enumerate the adsorbate-slab configurations to run relaxations on</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ml-relaxations">Run ML relaxations:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parse-the-trajectories-and-post-process">Parse the trajectories and post-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-deduplicate-structures">(Optional) Deduplicate structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-vasp-input-files">Write VASP input files</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="adsorbml-tutorial">
+<h1>AdsorbML tutorial<a class="headerlink" href="#adsorbml-tutorial" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">import</span> <span class="nn">ase.io</span>
+<span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
+
+<span class="kn">from</span> <span class="nn">fairchem.data.oc.core</span> <span class="kn">import</span> <span class="n">Adsorbate</span><span class="p">,</span> <span class="n">AdsorbateSlabConfig</span><span class="p">,</span> <span class="n">Bulk</span><span class="p">,</span> <span class="n">Slab</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">fairchem.data.oc.utils</span> <span class="kn">import</span> <span class="n">DetectTrajAnomaly</span>
+<span class="kn">from</span> <span class="nn">fairchem.data.oc.utils.vasp</span> <span class="kn">import</span> <span class="n">write_vasp_input_files</span>
+
+<span class="c1"># Optional - see below</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dscribe.descriptors</span> <span class="kn">import</span> <span class="n">SOAP</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
+<span class="kn">from</span> <span class="nn">x3dase.visualize</span> <span class="kn">import</span> <span class="n">view_x3d_n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">
+<h2>Enumerate the adsorbate-slab configurations to run relaxations on<a class="headerlink" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on" title="Link to this heading">#</a></h2>
+<p>AdsorbML incorporates random placement, which is especially useful for more complicated adsorbates which may have many degrees of freedom. I have opted sample a few random placements and a few heuristic. Here I am using *CO on copper (1,1,1) as an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
+<span class="n">adsorbate_smiles</span> <span class="o">=</span> <span class="s2">&quot;*CO&quot;</span>
+
+<span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">)</span>
+<span class="n">adsorbate</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_smiles_from_db</span><span class="o">=</span><span class="n">adsorbate_smiles</span><span class="p">)</span>
+<span class="n">slabs</span> <span class="o">=</span> <span class="n">Slab</span><span class="o">.</span><span class="n">from_bulk_get_specific_millers</span><span class="p">(</span><span class="n">bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">,</span> <span class="n">specific_millers</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># There may be multiple slabs with this miller index.</span>
+<span class="c1"># For demonstrative purposes we will take the first entry.</span>
+<span class="n">slab</span> <span class="o">=</span> <span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform heuristic placements</span>
+<span class="n">heuristic_adslabs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;heuristic&quot;</span><span class="p">)</span>
+
+<span class="c1"># Perform random placements</span>
+<span class="c1"># (for AdsorbML we use `num_sites = 100` but we will use 4 for brevity here)</span>
+<span class="n">random_adslabs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;random_site_heuristic_placement&quot;</span><span class="p">,</span> <span class="n">num_sites</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="run-ml-relaxations">
+<h2>Run ML relaxations:<a class="headerlink" href="#run-ml-relaxations" title="Link to this heading">#</a></h2>
+<p>There are 2 options for how to do this.</p>
+<ol class="arabic simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">OCPCalculator</span></code> as the calculator within the ASE framework</p></li>
+<li><p>By writing objects to lmdb and relaxing them using <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the ocp repo</p></li>
+</ol>
+<p>(1) is really only adequate for small stuff and it is what I will show here, but if you plan to run many relaxations, you should definitely use (2). More details about writing lmdbs has been provided <a class="reference internal" href="../core/lmdb_dataset_creation.html"><span class="std std-doc">here</span></a> - follow the IS2RS/IS2RE instructions. And more information about running relaxations once the lmdb has been written is <a class="reference internal" href="../core/model_training.html"><span class="std std-doc">here</span></a>.</p>
+<p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference internal" href="../core/model_checkpoints.html"><span class="doc std std-doc">here</span></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Define the calculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span> <span class="c1"># if you have a gpu, add `cpu=False` to speed up calculations</span>
+
+<span class="n">adslabs</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">heuristic_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">,</span> <span class="o">*</span><span class="n">random_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">]</span>
+<span class="c1"># Set up the calculator</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">adslab</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adslabs</span><span class="p">):</span>
+    <span class="n">adslab</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+    <span class="n">opt</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">adslab</span><span class="p">,</span> <span class="n">trajectory</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">.traj&quot;</span><span class="p">)</span>
+    <span class="n">opt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># For the AdsorbML results we used fmax = 0.02 and steps = 300, but we will use less strict values for brevity.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:40:57       -0.221770        1.0672
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:41:00       -0.253374        1.4911
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:41:03       -0.348336        1.7917
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:41:05       -0.430721        1.5111
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:41:08       -0.466769        0.7186
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:41:10       -0.485968        0.3371
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:41:13       -0.493545        0.2275
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:41:16       -0.495455        0.2150
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:41:18       -0.512043        0.3767
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:41:21       -0.514707        0.2026
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:41:23       -0.517162        0.1114
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:41:26       -0.518458        0.1976
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:41:28       -0.521001        0.2886
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:41:31       -0.523725        0.3241
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:41:34       -0.526227        0.2651
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:41:36       -0.526884        0.1955
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:41:39       -0.527208        0.0644
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:41:42       -0.528233        0.1112
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:41:44       -0.529400        0.1332
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 03:41:47       -0.531342        0.0937
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 03:41:49       -0.533383        0.0197
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:41:52       -0.314885        1.3328
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:41:55       -0.327010        1.6375
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:41:57       -0.362027        1.1180
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:42:00       -0.492019        0.3642
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:42:02       -0.492400        0.2021
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:42:05       -0.494316        0.1854
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:42:07       -0.502388        0.4086
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:42:10       -0.506569        0.3300
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:42:12       -0.510431        0.1258
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:42:15       -0.512106        0.1357
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:42:18       -0.513860        0.1882
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:42:20       -0.514855        0.1833
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:42:23       -0.515778        0.1894
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:42:25       -0.517417        0.0946
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:42:28       -0.519747        0.0649
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:42:30       -0.519942        0.1304
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:42:33       -0.520973        0.1293
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:42:35       -0.521972        0.1249
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:42:38       -0.522576        0.0381
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:42:40       -0.433240        1.8783
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:42:43       -0.432103        2.2951
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:42:46       -0.464055        0.7378
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:42:48       -0.484196        0.6919
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:42:51       -0.524131        1.1790
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:42:53       -0.550904        0.5464
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:42:56       -0.554014        0.1844
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:42:58       -0.554191        0.1840
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:43:01       -0.554283        0.2769
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:43:04       -0.557269        0.2752
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:43:06       -0.560563        0.1741
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:43:09       -0.561679        0.0707
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:43:11       -0.562391        0.1091
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:43:14       -0.563673        0.1988
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:43:17       -0.564586        0.2140
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:43:19       -0.565384        0.1266
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:43:22       -0.566196        0.0928
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:43:25       -0.567378        0.0341
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:43:27       -0.400545        1.8771
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:43:30       -0.398329        2.2891
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:43:32       -0.431957        0.7949
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:43:35       -0.456495        0.7785
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:43:37       -0.506255        1.2535
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:43:40       -0.541932        0.4052
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:43:43       -0.543424        0.1857
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:43:45       -0.544323        0.3174
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:43:48       -0.545973        0.3799
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:43:50       -0.552694        0.3456
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:43:53       -0.557652        0.1857
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:43:55       -0.559454        0.0942
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:43:58       -0.560142        0.1747
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:44:01       -0.561242        0.2217
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:44:03       -0.562859        0.2097
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:44:06       -0.563115        0.1844
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:44:08       -0.564192        0.0597
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:44:11       -0.564130        0.0533
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:44:13       -0.564591        0.0886
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 03:44:16       -0.565101        0.1108
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 03:44:19       -0.566679        0.0829
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 03:44:21       -0.566393        0.0397
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:44:24       -0.152976        0.7292
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:44:26       -0.178175        0.8844
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:44:29       -0.370776        2.1216
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:44:32       -0.373606        0.9908
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:44:34       -0.408895        0.5274
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:44:37       -0.424340        0.8517
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:44:39       -0.439962        0.7153
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:44:42       -0.475721        1.8684
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:44:44       -0.496046        0.5185
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:44:47       -0.500179        0.2343
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:44:49       -0.502022        0.3735
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:44:52       -0.503623        0.2255
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:44:55       -0.506246        0.0667
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:44:57       -0.506799        0.1269
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:45:00       -0.508227        0.1515
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:45:02       -0.509105        0.1068
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:45:05       -0.510104        0.0548
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:45:07       -0.510915        0.0461
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:45:10       -0.209037        1.0184
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:45:12       -0.238383        1.2255
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:45:15       -0.394917        1.9960
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:45:17       -0.267475        3.0517
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:45:20       -0.452565        0.8256
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:45:23       -0.467878        0.4382
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:45:25       -0.479273        0.2990
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:45:28       -0.480848        0.2460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:45:30       -0.491746        0.1446
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:45:33       -0.495986        0.1660
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:45:36       -0.497925        0.1910
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:45:38       -0.498690        0.0961
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:45:41       -0.501559        0.2011
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:45:43       -0.503817        0.2721
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:45:46       -0.507237        0.2758
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:45:49       -0.509488        0.2567
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:45:51       -0.510832        0.1404
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:45:54       -0.511122        0.1418
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:45:56       -0.511842        0.1931
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 03:45:59       -0.514807        0.1834
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 03:46:02       -0.517925        0.0827
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 03:46:04       -0.518952        0.0324
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:46:07       -0.257487        1.1295
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:46:09       -0.273027        1.4050
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:46:12       -0.323290        1.4627
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:46:14       -0.374827        1.9174
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:46:17       -0.433588        0.4936
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:46:20       -0.448091        0.2799
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:46:22       -0.454215        0.3348
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:46:25       -0.457716        0.3680
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:46:27       -0.483783        0.5156
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:46:30       -0.493595        0.5402
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:46:32       -0.504649        0.3110
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:46:35       -0.514422        0.3694
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:46:38       -0.528137        0.3590
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:46:40       -0.535912        0.3392
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:46:43       -0.539266        0.2005
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:46:45       -0.539455        0.1603
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:46:48       -0.540254        0.1954
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:46:50       -0.541010        0.2477
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:46:53       -0.544517        0.2142
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 03:46:56       -0.546296        0.1401
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 03:46:58       -0.547785        0.0923
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 03:47:01       -0.548563        0.1241
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 03:47:03       -0.548961        0.1607
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 03:47:06       -0.551110        0.1645
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 03:47:08       -0.552707        0.1037
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 03:47:11       -0.553174        0.0920
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   26 03:47:14       -0.555195        0.0743
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   27 03:47:16       -0.555932        0.0738
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   28 03:47:19       -0.558106        0.0816
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   29 03:47:21       -0.559303        0.0634
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   30 03:47:24       -0.561320        0.0582
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   31 03:47:27       -0.562566        0.0703
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   32 03:47:29       -0.562717        0.0557
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   33 03:47:32       -0.562925        0.0508
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   34 03:47:34       -0.563852        0.0589
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   35 03:47:37       -0.564517        0.0660
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   36 03:47:40       -0.567074        0.0490
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:47:42       -0.192001        0.8550
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:47:45       -0.216155        0.8274
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:47:47       -0.407287        1.2816
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:47:50       -0.406529        1.6271
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:47:52       -0.425398        0.4834
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:47:55       -0.438534        0.5313
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:47:57       -0.440980        0.3127
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:48:00       -0.445777        0.2502
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:48:03       -0.460461        0.4331
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:48:05       -0.469086        0.4009
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:48:08       -0.476437        0.1823
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:48:10       -0.479292        0.1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:48:13       -0.481118        0.1239
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:48:15       -0.483858        0.1554
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:48:18       -0.485587        0.1246
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:48:21       -0.487316        0.1105
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:48:23       -0.486827        0.0658
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 03:48:26       -0.486897        0.0818
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 03:48:28       -0.486812        0.1406
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 03:48:31       -0.487764        0.1257
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 03:48:33       -0.488709        0.0867
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 03:48:36       -0.489977        0.0591
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 03:48:39       -0.490682        0.0690
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 03:48:41       -0.491337        0.1046
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 03:48:44       -0.490923        0.1379
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 03:48:46       -0.492038        0.1582
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   26 03:48:49       -0.493278        0.0976
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   27 03:48:51       -0.493320        0.0809
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   28 03:48:54       -0.493587        0.0887
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   29 03:48:57       -0.493786        0.0980
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   30 03:48:59       -0.496763        0.1101
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   31 03:49:02       -0.500671        0.0923
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   32 03:49:04       -0.503046        0.0715
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   33 03:49:07       -0.505862        0.1185
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   34 03:49:09       -0.507406        0.0942
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   35 03:49:12       -0.512154        0.1167
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   36 03:49:15       -0.514757        0.2015
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   37 03:49:17       -0.516111        0.1380
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   38 03:49:20       -0.521745        0.1155
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   39 03:49:22       -0.518374        0.3597
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   40 03:49:25       -0.524886        0.1218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   41 03:49:27       -0.527512        0.0987
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   42 03:49:30       -0.532724        0.0736
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   43 03:49:33       -0.534174        0.0291
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parse-the-trajectories-and-post-process">
+<h2>Parse the trajectories and post-process<a class="headerlink" href="#parse-the-trajectories-and-post-process" title="Link to this heading">#</a></h2>
+<p>As a post-processing step we check to see if:</p>
+<ol class="arabic simple">
+<li><p>the adsorbate desorbed</p></li>
+<li><p>the adsorbate disassociated</p></li>
+<li><p>the adsorbate intercalated</p></li>
+<li><p>the surface has changed</p></li>
+</ol>
+<p>We check these because they effect our referencing scheme and may result in erroneous energies. For (4), the relaxed surface should really be supplied as well. It will be necessary when correcting the SP / RX energies later. Since we don’t have it here, we will ommit supplying it, and the detector will instead compare the initial and final slab from the adsorbate-slab relaxation trajectory. If a relaxed slab is provided, the detector will compare it and the slab after the adsorbate-slab relaxation. The latter is more correct! Note: for the results in the AdsorbML paper, we did not check if the adsorbate was intercalated (<code class="docutils literal notranslate"><span class="pre">is_adsorbate_intercalated()</span></code>) because it is a new addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over trajs to extract results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">/*.traj&quot;</span><span class="p">):</span>
+    <span class="n">rx_id</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">traj</span> <span class="o">=</span> <span class="n">ase</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Check to see if the trajectory is anomolous</span>
+    <span class="n">initial_atoms</span> <span class="o">=</span> <span class="n">traj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">final_atoms</span> <span class="o">=</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">atom_tags</span> <span class="o">=</span> <span class="n">initial_atoms</span><span class="o">.</span><span class="n">get_tags</span><span class="p">()</span>
+    <span class="n">detector</span> <span class="o">=</span> <span class="n">DetectTrajAnomaly</span><span class="p">(</span><span class="n">initial_atoms</span><span class="p">,</span> <span class="n">final_atoms</span><span class="p">,</span> <span class="n">atom_tags</span><span class="p">)</span>
+    <span class="n">anom</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">detector</span><span class="o">.</span><span class="n">is_adsorbate_dissociated</span><span class="p">()</span>
+        <span class="ow">or</span> <span class="n">detector</span><span class="o">.</span><span class="n">is_adsorbate_desorbed</span><span class="p">()</span>
+        <span class="ow">or</span> <span class="n">detector</span><span class="o">.</span><span class="n">has_surface_changed</span><span class="p">()</span>
+        <span class="ow">or</span> <span class="n">detector</span><span class="o">.</span><span class="n">is_adsorbate_intercalated</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">rx_energy</span> <span class="o">=</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;relaxation_idx&quot;</span><span class="p">:</span> <span class="n">rx_id</span><span class="p">,</span> <span class="s2">&quot;relaxed_atoms&quot;</span><span class="p">:</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">:</span> <span class="n">rx_energy</span><span class="p">,</span> <span class="s2">&quot;anomolous&quot;</span><span class="p">:</span> <span class="n">anom</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>relaxation_idx</th>
+      <th>relaxed_atoms</th>
+      <th>relaxed_energy_ml</th>
+      <th>anomolous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567074</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.566393</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.522576</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.510915</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567378</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.534174</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.533383</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.518952</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#scrap anomalies</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">anomolous</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-deduplicate-structures">
+<h2>(Optional) Deduplicate structures<a class="headerlink" href="#optional-deduplicate-structures" title="Link to this heading">#</a></h2>
+<p>We may have enumerated very similar structures or structures may have relaxed to the same configuration. For this reason, it is advantageous to cull systems if they are very similar. This results in marginal improvements in the recall metrics we calculated for AdsorbML, so it wasnt implemented there. It is, however, a good way to prevent wasteful VASP calculations. You can also imagine that if we would have enumerated 1000 configs per slab adsorbate combo rather than 100 for AdsorbML, it is more likely that having redundant systems would reduce performance, so its a good thing to keep in mind. This may be done by eye for a small number of systems, but with many systems it is easier to use an automated approach. Here is an example of one such approach, which uses a SOAP descriptor to find similar systems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the configs and their energies</span>
+<span class="k">def</span> <span class="nf">deduplicate</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+                <span class="n">adsorbate_binding_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                <span class="n">cosine_similarity</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">,</span>
+               <span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that may be used to deduplicate similar structures.</span>
+<span class="sd">    Among duplicate entries, the one with the lowest energy will be kept.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        configs_for_deduplication: a list of ML relaxed adsorbate-</span>
+<span class="sd">            surface configurations.</span>
+<span class="sd">        cosine_similarity: The cosine simularity value above which,</span>
+<span class="sd">            configurations are considered duplicate.</span>
+<span class="sd">            </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        (list): the indices of configs which should be kept as non-duplicate</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">energies_for_deduplication</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span> <span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">configs_for_deduplication</span><span class="p">])</span>
+    <span class="c1"># Instantiate the soap descriptor</span>
+    <span class="n">soap</span> <span class="o">=</span> <span class="n">SOAP</span><span class="p">(</span>
+        <span class="n">species</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()),</span>
+        <span class="n">r_cut</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="n">n_max</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+        <span class="n">l_max</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">periodic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1">#Figure out which index cooresponds to </span>
+    <span class="n">ads_len</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_tags</span><span class="p">())</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">position_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">ads_len</span><span class="o">-</span><span class="n">adsorbate_binding_index</span><span class="p">)</span>
+    <span class="c1"># Iterate over the systems to get the SOAP vectors</span>
+    <span class="n">soap_desc</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">configs_for_deduplication</span><span class="p">:</span>
+        <span class="n">soap_ex</span> <span class="o">=</span> <span class="n">soap</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="p">[</span><span class="n">position_idx</span><span class="p">])</span>
+        <span class="n">soap_desc</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">soap_ex</span><span class="p">)</span>
+
+    <span class="n">soap_descs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">soap_desc</span><span class="p">)</span>
+
+    <span class="c1">#Use euclidean distance to assess similarity</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">pdist</span><span class="p">(</span><span class="n">soap_descs</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cosine&quot;</span><span class="p">))</span>
+
+    <span class="n">bool_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distance</span> <span class="o">&lt;=</span> <span class="n">cosine_similarity</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># For configs that are found to be similar, just keep the lowest energy one</span>
+    <span class="n">idxs_to_keep</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pass_idxs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bool_matrix</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">pass_idxs</span><span class="p">:</span>
+            <span class="k">continue</span>
+            
+        <span class="k">elif</span> <span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">idxs_to_keep</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">same_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">row_idx</span> <span class="k">for</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">pass_idxs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">same_idxs</span><span class="p">)</span>
+            <span class="c1"># Pick the one with the lowest energy by ML</span>
+            <span class="n">min_e</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">energies_for_deduplication</span><span class="p">[</span><span class="n">same_idxs</span><span class="p">])</span>
+            <span class="n">idxs_to_keep</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">energies_for_deduplication</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">min_e</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">idxs_to_keep</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">configs_for_deduplication</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">relaxed_atoms</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">idxs_to_keep</span> <span class="o">=</span> <span class="n">deduplicate</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">,</span> <span class="n">adsorbate</span><span class="o">.</span><span class="n">binding_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flip through your configurations to check them out (and make sure deduplication looks good)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idxs_to_keep</span><span class="p">)</span>
+<span class="n">view_x3d_n</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idxs_to_keep</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">low_e_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxed_energy_ml</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The lowest 5 energies are: </span><span class="si">{</span><span class="n">low_e_values</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The lowest 5 energies are: [-0.567 -0.534 -0.523]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>relaxation_idx</th>
+      <th>relaxed_atoms</th>
+      <th>relaxed_energy_ml</th>
+      <th>anomolous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567378</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.522576</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>7</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.534174</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="write-vasp-input-files">
+<h2>Write VASP input files<a class="headerlink" href="#write-vasp-input-files" title="Link to this heading">#</a></h2>
+<p>This assumes you have access to VASP pseudopotentials and the right environment variables configured for ASE. The default VASP flags (which are equivalent to those used to make OC20) are located in <code class="docutils literal notranslate"><span class="pre">ocdata.utils.vasp</span></code>. Alternatively, you may pass your own vasp flags to the <code class="docutils literal notranslate"><span class="pre">write_vasp_input_files</span></code> function as <code class="docutils literal notranslate"><span class="pre">vasp_flags</span></code>.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab the 5 systems with the lowest energy</span>
+<span class="n">configs_for_dft</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxed_atoms</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">config_idxs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxation_idx</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Write the inputs</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">config</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">configs_for_dft</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">config_idxs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">write_vasp_input_files</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">outdir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">config_idxs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cattsunami_walkthrough.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CatTSunami tutorial</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intro and background on OCP and DFT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">Enumerate the adsorbate-slab configurations to run relaxations on</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ml-relaxations">Run ML relaxations:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parse-the-trajectories-and-post-process">Parse the trajectories and post-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-deduplicate-structures">(Optional) Deduplicate structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-vasp-input-files">Write VASP input files</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By FAIR Chemistry & Collaborators
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
