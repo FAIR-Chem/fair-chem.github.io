@@ -12,6 +12,7 @@ Subpackages
 
    core/index.rst
    databases/index.rst
+   tests/index.rst
    utils/index.rst
 
 

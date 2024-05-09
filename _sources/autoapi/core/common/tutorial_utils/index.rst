@@ -13,25 +13,25 @@ Functions
 
 .. autoapisummary::
 
-   core.common.tutorial_utils.ocp_root
-   core.common.tutorial_utils.ocp_main
-   core.common.tutorial_utils.describe_ocp
+   core.common.tutorial_utils.fairchem_root
+   core.common.tutorial_utils.fairchem_main
+   core.common.tutorial_utils.describe_fairchem
    core.common.tutorial_utils.train_test_val_split
    core.common.tutorial_utils.generate_yml_config
 
 
 
-.. py:function:: ocp_root()
+.. py:function:: fairchem_root()
 
-   Return the root directory of the installed ocp package.
-
-
-.. py:function:: ocp_main()
-
-   Return the path to ocp main.py
+   Return the root directory of the installed fairchem-core package.
 
 
-.. py:function:: describe_ocp()
+.. py:function:: fairchem_main()
+
+   Return the path to fairchem main.py
+
+
+.. py:function:: describe_fairchem()
 
    Print some system information that could be useful in debugging.
 

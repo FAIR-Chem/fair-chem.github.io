@@ -7,6 +7,7 @@ This page contains auto-generated API reference documentation [#f1]_.
    :titlesonly:
 
    /autoapi/core/index
+   /autoapi/data/index
    /autoapi/applications/index
    /autoapi/demo/index
 
