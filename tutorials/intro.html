@@ -698,22 +698,33 @@ document.write(`
 </section>
 <section id="about-the-compute-environment">
 <h1>About the compute environment<a class="headerlink" href="#about-the-compute-environment" title="Link to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_ocp</span></code> to output information that might be helpful in debugging.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_fairchem</span></code> to output information that might be helpful in debugging.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_ocp</span>
-<span class="n">describe_ocp</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_fairchem</span>
+<span class="n">describe_fairchem</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_ocp</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">describe_ocp</span><span class="p">()</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, Apr  2 2024, 15:19:53) [GCC 11.4.0]
+fairchem is installed at /home/runner/work/fairchem/fairchem/src/fairchem
+fairchem repo is at git commit: 550d112
+numba: 0.59.1
+numpy: 1.26.4
+ase: 3.22.1
+e3nn: 0.5.1
+pymatgen: 2024.5.1
+torch: 2.2.0+cu121
+torch.version.cuda: 12.1
+torch.cuda: is_available: False
+torch geometric: 2.3.0
 
-<span class="ne">ImportError</span>: cannot import name &#39;describe_ocp&#39; from &#39;fairchem.core.common.tutorial_utils&#39; (/home/runner/work/fairchem/fairchem/src/fairchem/core/common/tutorial_utils.py)
+Platform: Linux-6.5.0-1018-azure-x86_64-with-glibc2.35
+  Processor: x86_64
+  Virtual memory: svmem(total=16757346304, available=14291746816, percent=14.7, used=2047361024, free=7205068800, active=2299146240, inactive=6474498048, buffers=225804288, cached=7279112192, shared=25665536, slab=576274432)
+  Swap memory: sswap(total=4294963200, used=274432, free=4294688768, percent=0.0, sin=0, sout=135168)
+  Disk usage: sdiskusage(total=77851254784, used=66635595776, free=11198881792, percent=85.6)
 </pre></div>
 </div>
 </div>
