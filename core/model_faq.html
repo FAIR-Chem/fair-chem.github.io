@@ -648,7 +648,7 @@ determined [<a class="reference external" href="https://pytorch.org/docs/stable/
 Moreover, results may be different between GPU and CPU
 executions [<a class="reference external" href="https://pytorch.org/docs/stable/notes/randomness.html">3</a>].</p>
 <p>To get deterministic results on GPU, use <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.use_deterministic_algorithms.html#torch.use_deterministic_algorithms"><code class="docutils literal notranslate"><span class="pre">torch.use_deterministic_algorithms</span></code></a>
-where available (for example, see <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/ocpmodels/common/utils.py#L1112"><code class="docutils literal notranslate"><span class="pre">scatter_det</span></code></a>). Note that deterministic operations are often slower
+where available (for example, see <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/common/utils.py#L1112"><code class="docutils literal notranslate"><span class="pre">scatter_det</span></code></a>). Note that deterministic operations are often slower
 than non-deterministic operations, so while this may be worth using for testing
 and debugging, this is not recommended for large-scale training and inference.</p>
 </section>
@@ -680,7 +680,7 @@ YAML config:</p>
 </pre></div>
 </div>
 <p>The OC20 reference pickle file containing the energy necessary to convert
-adsorption energy values to total energy is <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/DATASET.md#oc20-reference-information">available for download
+adsorption energy values to total energy is <a class="reference external" href="https://fair-chem.github.io/core/datasets/oc20.html">available for download
 here</a>.</p>
 <p>To test if your setup is correct, try the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.datasets</span> <span class="kn">import</span> <span class="n">OC22LmdbDataset</span>

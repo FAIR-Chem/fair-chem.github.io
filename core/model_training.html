@@ -728,7 +728,7 @@ in the relaxed state. To train a model for the IS2RE task, you can use the follo
 <span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Path to test data</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>You can find examples configuration files in <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/is2re"><code class="docutils literal notranslate"><span class="pre">configs/is2re</span></code></a>.</p>
+<p>You can find examples configuration files in <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/is2re"><code class="docutils literal notranslate"><span class="pre">configs/is2re</span></code></a>.</p>
 <p>To train a SchNet model for the IS2RE task on the 10k split, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span>configs/is2re/10k/schnet/schnet.yml
 </pre></div>
@@ -814,7 +814,7 @@ and <code class="docutils literal notranslate"><span class="pre">TrajectoryLmdb<
 <span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Path to test data</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>You can find examples configuration files in <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/s2ef"><code class="docutils literal notranslate"><span class="pre">configs/s2ef</span></code></a>.</p>
+<p>You can find examples configuration files in <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/s2ef"><code class="docutils literal notranslate"><span class="pre">configs/s2ef</span></code></a>.</p>
 <p>To train a SchNet model for the S2EF task on the 2M split using 2 GPUs, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>torchrun<span class="w"> </span>--standalone<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">2</span><span class="w"> </span>main.py<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span>configs/s2ef/2M/schnet/schnet.yml<span class="w"> </span>--num-gpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--distributed
