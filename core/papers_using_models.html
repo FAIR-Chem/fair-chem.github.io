@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Studies that have leveraged OCP models &#8212; FAIR Chemistry Documentation</title>
+    <title>Studies that have leveraged fairchem models &#8212; FAIR Chemistry Documentation</title>
   
   
   
@@ -197,7 +197,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Studies that have leveraged <code class="docutils literal notranslate"><span class="pre">fairchem</span></code> models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -590,7 +590,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -601,11 +603,30 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Studies that have leveraged OCP models</h1>
+    <h1>Studies that have leveraged fairchem models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-development">Methods Development</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-training-and-fine-tuning">Multi-task training and fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-estimation-and-neighbor-search">Uncertainty Estimation and Neighbor Search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#active-learning">Active learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-models-far-from-training-data">Fine-tuning models far from training data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-beyond-energy-force">Properties beyond energy/force</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalysis-methods">Catalysis Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalysis-applications">Catalysis Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fairchem-model-development-papers"><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> model development papers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fairchem-dataset-papers"><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> dataset papers</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -615,10 +636,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="studies-that-have-leveraged-ocp-models">
-<h1>Studies that have leveraged OCP models<a class="headerlink" href="#studies-that-have-leveraged-ocp-models" title="Link to this heading">#</a></h1>
-<p>Many papers have now used the latest OCP models to accelerate screening and discovery efforts and enable new computational chemistry simulations!
-We highlight some here just to give an idea of the breadth of possibilities and how they have been used. Feel free to reach out (or submit PRs with links to your papers if you want them included)!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="studies-that-have-leveraged-fairchem-models">
+<h1>Studies that have leveraged <code class="docutils literal notranslate"><span class="pre">fairchem</span></code> models<a class="headerlink" href="#studies-that-have-leveraged-fairchem-models" title="Link to this heading">#</a></h1>
+<p>Many papers have now used the latest <code class="docutils literal notranslate"><span class="pre">fairchem</span></code> models to accelerate screening and discovery efforts and enable new computational chemistry simulations!</p>
+<p>We highlight some here just to give an idea of the breadth of possibilities and how they have been used. Feel free to reach out (or submit PRs with links to your papers if you want them included)!</p>
+<section id="methods-development">
+<h2>Methods Development<a class="headerlink" href="#methods-development" title="Link to this heading">#</a></h2>
+<section id="multi-task-training-and-fine-tuning">
+<h3>Multi-task training and fine-tuning<a class="headerlink" href="#multi-task-training-and-fine-tuning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>TMQM</p></li>
+<li><p>TAAG</p></li>
+<li><p>JMP</p></li>
+</ul>
+</section>
+<section id="uncertainty-estimation-and-neighbor-search">
+<h3>Uncertainty Estimation and Neighbor Search<a class="headerlink" href="#uncertainty-estimation-and-neighbor-search" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ock paper</p></li>
+<li><p>uncertainty AJ</p></li>
+<li><p>uncertainty Joe</p></li>
+<li><p>John neighbor search</p></li>
+</ul>
+</section>
+<section id="active-learning">
+<h3>Active learning<a class="headerlink" href="#active-learning" title="Link to this heading">#</a></h3>
+</section>
+<section id="fine-tuning-models-far-from-training-data">
+<h3>Fine-tuning models far from training data<a class="headerlink" href="#fine-tuning-models-far-from-training-data" title="Link to this heading">#</a></h3>
+</section>
+<section id="properties-beyond-energy-force">
+<h3>Properties beyond energy/force<a class="headerlink" href="#properties-beyond-energy-force" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>electron density</p></li>
+</ul>
+</section>
+</section>
+<section id="catalysis-methods">
+<h2>Catalysis Methods<a class="headerlink" href="#catalysis-methods" title="Link to this heading">#</a></h2>
+<p>AdsorbML
+Catsunami
+Catlas</p>
+</section>
+<section id="catalysis-applications">
+<h2>Catalysis Applications<a class="headerlink" href="#catalysis-applications" title="Link to this heading">#</a></h2>
+<p>nitrate reduction papers
+HEAs</p>
+</section>
+<section id="fairchem-model-development-papers">
+<h2><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> model development papers<a class="headerlink" href="#fairchem-model-development-papers" title="Link to this heading">#</a></h2>
+</section>
+<section id="fairchem-dataset-papers">
+<h2><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> dataset papers<a class="headerlink" href="#fairchem-dataset-papers" title="Link to this heading">#</a></h2>
+<p>OC20
+OC22
+ODAC</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -676,7 +749,31 @@ We highlight some here just to give an idea of the breadth of possibilities and 
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-development">Methods Development</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-training-and-fine-tuning">Multi-task training and fine-tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-estimation-and-neighbor-search">Uncertainty Estimation and Neighbor Search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#active-learning">Active learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-models-far-from-training-data">Fine-tuning models far from training data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-beyond-energy-force">Properties beyond energy/force</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalysis-methods">Catalysis Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalysis-applications">Catalysis Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fairchem-model-development-papers"><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> model development papers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fairchem-dataset-papers"><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> dataset papers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
