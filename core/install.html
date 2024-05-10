@@ -592,6 +592,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a></li>
 </ul>
             </nav>
@@ -609,28 +610,28 @@ document.write(`
 <section id="conda-or-better-yet-mamba-easy">
 <h2>conda or better yet <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a> - easy<a class="headerlink" href="#conda-or-better-yet-mamba-easy" title="Link to this heading">#</a></h2>
 <p>We do not have official conda recipes (yet!), so to install with conda or mamba you will need to clone the
-<a class="reference external" href="https://github.com/FAIR-Chem/fairchem">fairchem repo</a> and run the following from inside the repo directory to create an environment with all the
+<a class="reference external" href="https://github.com/FAIR-Chem/fairchem">fairchem</a> and run the following from inside the repo directory to create an environment with all the
 necessary dependencies.</p>
 <ol class="arabic">
-<li><p>Create an <em>fairchem</em> environment</p>
+<li><p>Create a <em>fairchem</em> environment</p>
 <ol class="arabic">
 <li><p><strong>GPU</strong></p>
 <p>The default environment uses cuda 11.8, if you need a different version you will have to edit <em>pytorch-cuda</em> version
 accordingly.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.gpu.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>packages/env.gpu.yml
 </pre></div>
 </div>
 </li>
 <li><p><strong>CPU</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.cpu.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>packages/env.cpu.yml
 </pre></div>
 </div>
 </li>
 </ol>
 </li>
-<li><p>Activate the environment and install <code class="docutils literal notranslate"><span class="pre">fair-chem</span></code></p>
+<li><p>Activate the environment and install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>fair-chem
-pip<span class="w"> </span>install<span class="w"> </span>.
+pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-core
 </pre></div>
 </div>
 </li>
@@ -647,12 +648,12 @@ similarly by selecting the appropriate versions in the official
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code></p>
 <ol class="arabic">
 <li><p>From test-PyPi (until we have our official release on PyPi soon!)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>fairchem-core
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/fairchem-core
 </pre></div>
 </div>
 </li>
 <li><p>Or by cloning the repo and then using pip</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-core
 </pre></div>
 </div>
 </li>
@@ -660,11 +661,19 @@ similarly by selecting the appropriate versions in the official
 </li>
 </ol>
 </section>
+<section id="additional-packages">
+<h2>Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> is a namespace package, meaning all packages are installed seperately. If you need
+to install other packages you can do so by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-<span class="o">{</span>package-to-install<span class="o">}</span>
+</pre></div>
+</div>
+</section>
 <section id="dev-install">
 <h2>Dev install<a class="headerlink" href="#dev-install" title="Link to this heading">#</a></h2>
 <p>If you plan to make contributions you will need to clone the repo and install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> in editable mode with dev
 dependencies,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-core/<span class="o">[</span>dev<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
 </pre></div>
 </div>
 </section>
@@ -736,6 +745,7 @@ dependencies,</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a></li>
 </ul>
   </nav></div>
