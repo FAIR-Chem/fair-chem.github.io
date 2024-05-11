@@ -1,17 +1,17 @@
-2024-05-10 23:14:35 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-05-11 00:30:30 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-05-10 23:14:37 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-05-10 23:14:37 (INFO): amp: true
+2024-05-11 00:30:32 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-05-11 00:30:32 (INFO): amp: true
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-05-10-23-15-12-ft-oxides
-  commit: ef5cbbe
+  checkpoint_dir: fine-tuning/checkpoints/2024-05-11-00-29-52-ft-oxides
+  commit: e109d4c
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/tensorboard/2024-05-10-23-15-12-ft-oxides
+  logs_dir: fine-tuning/logs/tensorboard/2024-05-11-00-29-52-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-05-10-23-15-12-ft-oxides
+  results_dir: fine-tuning/results/2024-05-11-00-29-52-ft-oxides
   seed: 0
-  timestamp_id: 2024-05-10-23-15-12-ft-oxides
+  timestamp_id: 2024-05-11-00-29-52-ft-oxides
 dataset:
   a2g_args:
     r_energy: true
@@ -142,34 +142,34 @@ val_dataset:
     r_forces: true
   src: val.db
 
-2024-05-10 23:14:37 (INFO): Loading dataset: ase_db
-2024-05-10 23:14:37 (INFO): rank: 0: Sampler created...
-2024-05-10 23:14:37 (INFO): Batch balancing is disabled for single GPU training.
-2024-05-10 23:14:37 (INFO): rank: 0: Sampler created...
-2024-05-10 23:14:37 (INFO): Batch balancing is disabled for single GPU training.
-2024-05-10 23:14:37 (INFO): rank: 0: Sampler created...
-2024-05-10 23:14:37 (INFO): Batch balancing is disabled for single GPU training.
-2024-05-10 23:14:37 (INFO): Loading model: gemnet_oc
-2024-05-10 23:14:37 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
-2024-05-10 23:14:40 (INFO): Loaded GemNetOC with 38864438 parameters.
-2024-05-10 23:14:40 (WARNING): Model gradient logging to tensorboard not yet supported.
-2024-05-10 23:14:40 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-05-10 23:14:40 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
-2024-05-10 23:14:40 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-05-11 00:30:32 (INFO): Loading dataset: ase_db
+2024-05-11 00:30:32 (INFO): rank: 0: Sampler created...
+2024-05-11 00:30:32 (INFO): Batch balancing is disabled for single GPU training.
+2024-05-11 00:30:32 (INFO): rank: 0: Sampler created...
+2024-05-11 00:30:32 (INFO): Batch balancing is disabled for single GPU training.
+2024-05-11 00:30:32 (INFO): rank: 0: Sampler created...
+2024-05-11 00:30:32 (INFO): Batch balancing is disabled for single GPU training.
+2024-05-11 00:30:32 (INFO): Loading model: gemnet_oc
+2024-05-11 00:30:32 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
+2024-05-11 00:30:34 (INFO): Loaded GemNetOC with 38864438 parameters.
+2024-05-11 00:30:34 (WARNING): Model gradient logging to tensorboard not yet supported.
+2024-05-11 00:30:34 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-05-11 00:30:35 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+2024-05-11 00:30:35 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
   warnings.warn(
-2024-05-10 23:15:03 (INFO): energy_forces_within_threshold: 0.00e+00, energy_mae: 6.77e+00, forcesx_mae: 4.11e-02, forcesy_mae: 3.63e-02, forcesz_mae: 5.26e-02, forces_mae: 4.33e-02, forces_cosine_similarity: 8.24e-02, forces_magnitude_error: 7.42e-02, loss: 6.86e+00, lr: 5.00e-04, epoch: 1.69e-01, step: 1.00e+01
-2024-05-10 23:15:04 (INFO): Evaluating on val.
+2024-05-11 00:30:58 (INFO): energy_forces_within_threshold: 0.00e+00, energy_mae: 6.77e+00, forcesx_mae: 4.11e-02, forcesy_mae: 3.63e-02, forcesz_mae: 5.26e-02, forces_mae: 4.33e-02, forces_cosine_similarity: 8.24e-02, forces_magnitude_error: 7.42e-02, loss: 6.86e+00, lr: 5.00e-04, epoch: 1.69e-01, step: 1.00e+01
+2024-05-11 00:30:58 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.79s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.65s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.88s/it]
-2024-05-10 23:15:11 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 8.7333, forcesx_mae: 0.0231, forcesy_mae: 0.0188, forcesz_mae: 0.0198, forces_mae: 0.0206, forces_cosine_similarity: -0.0317, forces_magnitude_error: 0.0290, loss: 8.6590, epoch: 0.1695
+device 0:  50%|█████     | 1/2 [00:04<00:04,  4.73s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.61s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.83s/it]
+2024-05-11 00:31:06 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 8.7333, forcesx_mae: 0.0231, forcesy_mae: 0.0188, forcesz_mae: 0.0198, forces_mae: 0.0206, forces_cosine_similarity: -0.0317, forces_magnitude_error: 0.0290, loss: 8.6590, epoch: 0.1695
 Traceback (most recent call last):
   File "/home/runner/work/fairchem/fairchem/src/fairchem/../../main.py", line 8, in <module>
     main()
