@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pretrained model checkpoints &#8212; FAIR Chemistry Documentation</title>
+    <title>Pretrained FAIRChem models &#8212; FAIR Chemistry Documentation</title>
   
   
   
@@ -212,7 +212,9 @@
 
 <li class="toctree-l1"><a class="reference internal" href="datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pretrained model checkpoints</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pretrained FAIRChem models</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -605,7 +607,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pretrained model checkpoints</h1>
+    <h1>Pretrained FAIRChem models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -615,23 +617,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2020-oc20">Open Catalyst 2020 (OC20)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-efwt">S2EF models: optimized for EFwT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-force-only">S2EF models: optimized for force only</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-models">IS2RE models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pretrained FAIRChem models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2020-oc20">Open Catalyst 2020 (OC20)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-efwt">S2EF models: optimized for EFwT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-force-only">S2EF models: optimized for force only</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-models">IS2RE models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2022-oc22">Open Catalyst 2022 (OC22)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-total-models">S2EF-Total models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2022-oc22">Open Catalyst 2022 (OC22)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-total-models">S2EF-Total models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-direct-air-capture-2023-odac23">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-direct-air-capture-2023-odac23">Open Direct Air Capture 2023 (ODAC23)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
 </ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -642,22 +644,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pretrained-model-checkpoints">
-<h1>Pretrained model checkpoints<a class="headerlink" href="#pretrained-model-checkpoints" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pretrained-fairchem-models">
+<h1>Pretrained FAIRChem models<a class="headerlink" href="#pretrained-fairchem-models" title="Link to this heading">#</a></h1>
 <p>This page summarizes all the pretrained models released as part of the <a class="reference external" href="https://opencatalystproject.org/">Open Catalyst Project</a>. All models were trained using this codebase.</p>
-<hr class="docutils" />
-<section id="open-catalyst-2020-oc20">
-<h2>Open Catalyst 2020 (OC20)<a class="headerlink" href="#open-catalyst-2020-oc20" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>All configurations for these models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs"><code class="docutils literal notranslate"><span class="pre">configs/</span></code></a> directory.</p></li>
+<li><p><a class="reference internal" href="#open-catalyst-2020-oc20"><span class="xref myst">Open Catalyst 2020 (OC20)</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#s2ef-models-optimized-for-efwt"><span class="xref myst">S2EF models optimized for EFwT</span></a></p></li>
+<li><p><a class="reference internal" href="#s2ef-models-optimized-for-force-only"><span class="xref myst">S2EF models optimized for force</span></a></p></li>
+<li><p><a class="reference internal" href="#is2re-models"><span class="xref myst">IS2RE models</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#open-catalyst-2022-oc22"><span class="xref myst">Open Catalyst 2022 (OC22)</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#s2ef-total-models"><span class="xref myst">S2EF total models</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#open-direct-air-capture-2023-odac23"><span class="xref myst">Open Direct Air Capture 2023 (ODAC23)</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#s2ef-models"><span class="xref myst">S2EF models</span></a></p></li>
+<li><p><a class="reference internal" href="#is2re-direct-models"><span class="xref myst">IS2RE Direct models</span></a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="open-catalyst-2020-oc20">
+<h1>Open Catalyst 2020 (OC20)<a class="headerlink" href="#open-catalyst-2020-oc20" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>All configurations for these models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs"><code class="docutils literal notranslate"><span class="pre">configs/</span></code></a> directory.</p></li>
 <li><p>All of these models are trained on various splits of the OC20 S2EF / IS2RE datasets. For details, see <a class="reference external" href="https://arxiv.org/abs/2010.09990">https://arxiv.org/abs/2010.09990</a> and https://github.com/FAIR-Chem/fairchem/blob/main/DATASET.md.</p></li>
-<li><p>All OC20 models are trained on adsorption energies, i.e. the DFT total energies minus the clean surface and gas phase adsorbate energies. For details on how to train models on OC20 total energies, please read the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/DATASET.md#oc20-reference-information">referencing section here</a>.</p></li>
+<li><p>All OC20 models are trained on adsorption energies, i.e. the DFT total energies minus the clean surface and gas phase adsorbate energies. For details on how to train models on OC20 total energies, please read the <a class="reference external" href="https://fair-chem.github.io/core/datasets/oc20.html">referencing section here</a>.</p></li>
 </ul>
 <section id="s2ef-models-optimized-for-efwt">
-<h3>S2EF models: optimized for EFwT<a class="headerlink" href="#s2ef-models-optimized-for-efwt" title="Link to this heading">#</a></h3>
+<h2>S2EF models: optimized for EFwT<a class="headerlink" href="#s2ef-models-optimized-for-efwt" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Split</p></th>
 <th class="head"><p>Download</p></th>
 <th class="head"><p>val ID force MAE (eV / Å)</p></th>
@@ -665,201 +689,234 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CGCNN</p></td>
+<tr class="row-even"><td><p>CGCNN-S2EF-OC20-200k</p></td>
+<td><p>CGCNN</p></td>
 <td><p>200k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/200k/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/200k/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.08</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-odd"><td><p>CGCNN</p></td>
+<tr class="row-odd"><td><p>CGCNN-S2EF-OC20-2M</p></td>
+<td><p>CGCNN</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.0673</p></td>
 <td><p>0.01%</p></td>
 </tr>
-<tr class="row-even"><td><p>CGCNN</p></td>
+<tr class="row-even"><td><p>CGCNN-S2EF-OC20-20M</p></td>
+<td><p>CGCNN</p></td>
 <td><p>20M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/20M/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/20M/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.065</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-odd"><td><p>CGCNN</p></td>
+<tr class="row-odd"><td><p>CGCNN-S2EF-OC20-All</p></td>
+<td><p>CGCNN</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/cgcnn_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.0684</p></td>
 <td><p>0.01%</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet</p></td>
+<tr class="row-even"><td><p>DimeNet-S2EF-OC20-200k</p></td>
+<td><p>DimeNet</p></td>
 <td><p>200k</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/dimenet_200k.pt">checkpoint</a></p></td>
 <td><p>0.0693</p></td>
 <td><p>0.01%</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet</p></td>
+<tr class="row-odd"><td><p>DimeNet-S2EF-OC20-2M</p></td>
+<td><p>DimeNet</p></td>
 <td><p>2M</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/dimenet_2M.pt">checkpoint</a></p></td>
 <td><p>0.0576</p></td>
 <td><p>0.02%</p></td>
 </tr>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-S2EF-OC20-200k</p></td>
+<td><p>SchNet</p></td>
 <td><p>200k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/200k/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/200k/schnet/schnet.yml">config</a></p></td>
 <td><p>0.0743</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-odd"><td><p>SchNet</p></td>
+<tr class="row-odd"><td><p>SchNet-S2EF-OC20-2M</p></td>
+<td><p>SchNet</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/schnet/schnet.yml">config</a></p></td>
 <td><p>0.0737</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-S2EF-OC20-20M</p></td>
+<td><p>SchNet</p></td>
 <td><p>20M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/20M/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/20M/schnet/schnet.yml">config</a></p></td>
 <td><p>0.0568</p></td>
 <td><p>0.03%</p></td>
 </tr>
-<tr class="row-odd"><td><p>SchNet</p></td>
+<tr class="row-odd"><td><p>SchNet-S2EF-OC20-All</p></td>
+<td><p>SchNet</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_all_large.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_all_large.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/schnet/schnet.yml">config</a></p></td>
 <td><p>0.0494</p></td>
 <td><p>0.12%</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet++</p></td>
+<tr class="row-even"><td><p>DimeNet++-S2EF-OC20-200k</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>200k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/200k/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_200k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/200k/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.0741</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-S2EF-OC20-2M</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.0595</p></td>
 <td><p>0.01%</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet++</p></td>
+<tr class="row-even"><td><p>DimeNet++-S2EF-OC20-20M</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>20M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/20M/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_20M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/20M/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.0511</p></td>
 <td><p>0.06%</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-S2EF-OC20-All</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.0444</p></td>
 <td><p>0.12%</p></td>
 </tr>
-<tr class="row-even"><td><p>SpinConv</p></td>
+<tr class="row-even"><td><p>SpinConv-S2EF-OC20-2M</p></td>
+<td><p>SpinConv</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_12/s2ef/spinconv_force_centric_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/spinconv/spinconv_force.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_12/s2ef/spinconv_force_centric_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/spinconv/spinconv_force.yml">config</a></p></td>
 <td><p>0.0329</p></td>
 <td><p>0.18%</p></td>
 </tr>
-<tr class="row-odd"><td><p>SpinConv</p></td>
+<tr class="row-odd"><td><p>SpinConv-S2EF-OC20-All</p></td>
+<td><p>SpinConv</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_08/s2ef/spinconv_force_centric_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/spinconv/spinconv_force.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_08/s2ef/spinconv_force_centric_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/spinconv/spinconv_force.yml">config</a></p></td>
 <td><p>0.0267</p></td>
 <td><p>1.02%</p></td>
 </tr>
-<tr class="row-even"><td><p>GemNet-dT</p></td>
+<tr class="row-even"><td><p>GemNet-dT-S2EF-OC20-2M</p></td>
+<td><p>GemNet-dT</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_12/s2ef/gemnet_t_direct_h512_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/gemnet/gemnet-dT.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_12/s2ef/gemnet_t_direct_h512_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/gemnet/gemnet-dT.yml">config</a></p></td>
 <td><p>0.0257</p></td>
 <td><p>1.10%</p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-dT</p></td>
+<tr class="row-odd"><td><p>GemNet-dT-S2EF-OC20-All</p></td>
+<td><p>GemNet-dT</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_08/s2ef/gemnet_t_direct_h512_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/gemnet/gemnet-dT.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_08/s2ef/gemnet_t_direct_h512_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/gemnet/gemnet-dT.yml">config</a></p></td>
 <td><p>0.0211</p></td>
 <td><p>2.21%</p></td>
 </tr>
-<tr class="row-even"><td><p>PaiNN</p></td>
+<tr class="row-even"><td><p>PaiNN-S2EF-OC20-All</p></td>
+<td><p>PaiNN</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_05/s2ef/painn_h512_s2ef_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/painn/painn_h512.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/painn/painn_nb6_scaling_factors.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_05/s2ef/painn_h512_s2ef_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/painn/painn_h512.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/painn/painn_nb6_scaling_factors.pt">scale file</a></p></td>
 <td><p>0.0294</p></td>
 <td><p>0.91%</p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-OC</p></td>
+<tr class="row-odd"><td><p>GemNet-OC-S2EF-OC20-2M</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_base_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_base_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
 <td><p>0.0225</p></td>
 <td><p>2.12%</p></td>
 </tr>
-<tr class="row-even"><td><p>GemNet-OC</p></td>
+<tr class="row-even"><td><p>GemNet-OC-S2EF-OC20-All</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_base_s2ef_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_base_s2ef_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
 <td><p>0.0179</p></td>
 <td><p>4.56%</p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-OC</p></td>
+<tr class="row-odd"><td><p>GemNet-OC-S2EF-OC20-All+MD</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/gemnet_oc_base_s2ef_all_md.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/gemnet_oc_base_s2ef_all_md.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/gemnet/gemnet-oc.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc.pt">scale file</a></p></td>
 <td><p>0.0173</p></td>
 <td><p>4.72%</p></td>
 </tr>
-<tr class="row-even"><td><p>GemNet-OC-Large</p></td>
+<tr class="row-even"><td><p>GemNet-OC-Large-S2EF-OC20-All+MD</p></td>
+<td><p>GemNet-OC-Large</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_large_s2ef_all_md.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/gemnet/gemnet-oc-large.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc-large.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_07/s2ef/gemnet_oc_large_s2ef_all_md.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/gemnet/gemnet-oc-large.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/481f3a5a92dc787384ddae9fe3f50f5d932712fd/configs/s2ef/all/gemnet/scaling_factors/gemnet-oc-large.pt">scale file</a></p></td>
 <td><p>0.0164</p></td>
 <td><p>5.34%</p></td>
 </tr>
-<tr class="row-odd"><td><p>SCN</p></td>
+<tr class="row-odd"><td><p>SCN-S2EF-OC20-2M</p></td>
+<td><p>SCN</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_t1_b1_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/scn/scn-t1-b1.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_t1_b1_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/scn/scn-t1-b1.yml">config</a></p></td>
 <td><p>0.0216</p></td>
 <td><p>1.68%</p></td>
 </tr>
-<tr class="row-even"><td><p>SCN-t4-b2</p></td>
+<tr class="row-even"><td><p>SCN-t4-b2-S2EF-OC20-2M</p></td>
+<td><p>SCN-t4-b2</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_t4_b2_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/scn/scn-t4-b2.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_t4_b2_s2ef_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/scn/scn-t4-b2.yml">config</a></p></td>
 <td><p>0.0193</p></td>
 <td><p>2.68%</p></td>
 </tr>
-<tr class="row-odd"><td><p>SCN</p></td>
+<tr class="row-odd"><td><p>SCN-S2EF-OC20-All+MD</p></td>
+<td><p>SCN</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/scn/scn-all-md.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/scn_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/scn/scn-all-md.yml">config</a></p></td>
 <td><p>0.0160</p></td>
 <td><p>5.08%</p></td>
 </tr>
-<tr class="row-even"><td><p>eSCN-L4-M2-Lay12</p></td>
+<tr class="row-even"><td><p>eSCN-L4-M2-Lay12-S2EF-OC20-2M</p></td>
+<td><p>eSCN-L4-M2-Lay12</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l4_m2_lay12_2M_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/escn/eSCN-L4-M2-Lay12.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l4_m2_lay12_2M_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/escn/eSCN-L4-M2-Lay12.yml">config</a></p></td>
 <td><p>0.0191</p></td>
 <td><p>2.55%</p></td>
 </tr>
-<tr class="row-odd"><td><p>eSCN-L6-M2-Lay12</p></td>
+<tr class="row-odd"><td><p>eSCN-L6-M2-Lay12-S2EF-OC20-2M</p></td>
+<td><p>eSCN-L6-M2-Lay12</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m2_lay12_2M_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/escn/eSCN-L6-M2-Lay12.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m2_lay12_2M_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/escn/eSCN-L6-M2-Lay12.yml">config</a></p></td>
 <td><p>0.0186</p></td>
 <td><p>2.66%</p></td>
 </tr>
-<tr class="row-even"><td><p>eSCN-L6-M2-Lay12</p></td>
+<tr class="row-even"><td><p>eSCN-L6-M2-Lay12-S2EF-OC20-All+MD</p></td>
+<td><p>eSCN-L6-M2-Lay12</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m2_lay12_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/escn/eSCN-L6-M2-Lay12-All-MD.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m2_lay12_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/escn/eSCN-L6-M2-Lay12-All-MD.yml">config</a></p></td>
 <td><p>0.0161</p></td>
 <td><p>4.28%</p></td>
 </tr>
-<tr class="row-odd"><td><p>eSCN-L6-M3-Lay20</p></td>
+<tr class="row-odd"><td><p>eSCN-L6-M3-Lay20-S2EF-OC20-All+MD</p></td>
+<td><p>eSCN-L6-M3-Lay20</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m3_lay20_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/escn/eSCN-L6-M3-Lay20-All-MD.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_03/s2ef/escn_l6_m3_lay20_all_md_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/escn/eSCN-L6-M3-Lay20-All-MD.yml">config</a></p></td>
 <td><p>0.0139</p></td>
 <td><p>6.64%</p></td>
 </tr>
-<tr class="row-even"><td><p>EquiformerV2 (83M)</p></td>
+<tr class="row-even"><td><p>EquiformerV2-83M-S2EF-OC20-2M</p></td>
+<td><p>EquiformerV2 (83M)</p></td>
 <td><p>2M</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_83M_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/2M/equiformer_v2/equiformer_v2_N&#64;12_L&#64;6_M&#64;2.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_83M_2M.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/2M/equiformer_v2/equiformer_v2_N&#64;12_L&#64;6_M&#64;2.yml">config</a></p></td>
 <td><p>0.0167</p></td>
 <td><p>4.26%</p></td>
 </tr>
-<tr class="row-odd"><td><p>EquiformerV2 (31M)</p></td>
+<tr class="row-odd"><td><p>EquiformerV2-31M-S2EF-OC20-All+MD</p></td>
+<td><p>EquiformerV2 (31M)</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_31M_ec4_allmd.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/equiformer_v2/equiformer_v2_N&#64;8_L&#64;4_M&#64;2_31M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_31M_ec4_allmd.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/equiformer_v2/equiformer_v2_N&#64;8_L&#64;4_M&#64;2_31M.yml">config</a></p></td>
 <td><p>0.0142</p></td>
 <td><p>6.20%</p></td>
 </tr>
-<tr class="row-even"><td><p>EquiformerV2 (153M)</p></td>
+<tr class="row-even"><td><p>EquiformerV2-153M-S2EF-OC20-All+MD</p></td>
+<td><p>EquiformerV2 (153M)</p></td>
 <td><p>All+MD</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_153M_ec4_allmd.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/equiformer_v2/equiformer_v2_N&#64;20_L&#64;6_M&#64;3_153M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_06/oc20/s2ef/eq2_153M_ec4_allmd.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/equiformer_v2/equiformer_v2_N&#64;20_L&#64;6_M&#64;3_153M.yml">config</a></p></td>
 <td><p>0.0126</p></td>
 <td><p>8.90%</p></td>
 </tr>
@@ -867,37 +924,43 @@ document.write(`
 </table>
 </section>
 <section id="s2ef-models-optimized-for-force-only">
-<h3>S2EF models: optimized for force only<a class="headerlink" href="#s2ef-models-optimized-for-force-only" title="Link to this heading">#</a></h3>
+<h2>S2EF models: optimized for force only<a class="headerlink" href="#s2ef-models-optimized-for-force-only" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Split</p></th>
 <th class="head"><p>Download</p></th>
 <th class="head"><p>val ID force MAE</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-S2EF-force-only-OC20-All</p></td>
+<td><p>SchNet</p></td>
 <td><p>All</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/schnet_all_forceonly.pt">checkpoint</a></p></td>
 <td><p>0.0443</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-force-only-OC20-All</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/dimenetpp_all_forceonly.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/dimenet_plus_plus/dpp_forceonly.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/s2ef/dimenetpp_all_forceonly.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/dimenet_plus_plus/dpp_forceonly.yml">config</a></p></td>
 <td><p>0.0334</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet++-Large</p></td>
+<tr class="row-even"><td><p>DimeNet++-Large-S2EF-force-only-OC20-All</p></td>
+<td><p>DimeNet++-Large</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_large_all_forceonly.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/dimenet_plus_plus/dpp10.7M_forceonly.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_large_all_forceonly.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/dimenet_plus_plus/dpp10.7M_forceonly.yml">config</a></p></td>
 <td><p>0.02825</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-S2EF-force-only-OC20-20M+Rattled</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>20M+Rattled</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_20M_rattled_forceonly.pt">checkpoint</a></p></td>
 <td><p>0.0614</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet++</p></td>
+<tr class="row-even"><td><p>DimeNet++-S2EF-force-only-OC20-20M+MD</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>20M+MD</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/s2ef/dimenetpp_20M_md_forceonly.pt">checkpoint</a></p></td>
 <td><p>0.0594</p></td>
@@ -906,79 +969,93 @@ document.write(`
 </table>
 </section>
 <section id="is2re-models">
-<h3>IS2RE models<a class="headerlink" href="#is2re-models" title="Link to this heading">#</a></h3>
+<h2>IS2RE models<a class="headerlink" href="#is2re-models" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Split</p></th>
 <th class="head"><p>Download</p></th>
 <th class="head"><p>val ID energy MAE</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CGCNN</p></td>
+<tr class="row-even"><td><p>CGCNN-IS2RE-OC20-10k</p></td>
+<td><p>CGCNN</p></td>
 <td><p>10k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/10k/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/10k/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.9881</p></td>
 </tr>
-<tr class="row-odd"><td><p>CGCNN</p></td>
+<tr class="row-odd"><td><p>CGCNN-IS2RE-OC20-100k</p></td>
+<td><p>CGCNN</p></td>
 <td><p>100k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/100k/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/100k/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.682</p></td>
 </tr>
-<tr class="row-even"><td><p>CGCNN</p></td>
+<tr class="row-even"><td><p>CGCNN-IS2RE-OC20-All</p></td>
+<td><p>CGCNN</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/all/cgcnn/cgcnn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/cgcnn_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/all/cgcnn/cgcnn.yml">config</a></p></td>
 <td><p>0.6199</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet</p></td>
+<tr class="row-odd"><td><p>DimeNet-IS2RE-OC20-10k</p></td>
+<td><p>DimeNet</p></td>
 <td><p>10k</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/is2re/dimenet_10k.pt">checkpoint</a></p></td>
 <td><p>1.0117</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet</p></td>
+<tr class="row-even"><td><p>DimeNet-IS2RE-OC20-100k</p></td>
+<td><p>DimeNet</p></td>
 <td><p>100k</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/is2re/dimenet_100k.pt">checkpoint</a></p></td>
 <td><p>0.6658</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet</p></td>
+<tr class="row-odd"><td><p>DimeNet-IS2RE-OC20-all</p></td>
+<td><p>DimeNet</p></td>
 <td><p>All</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2020_11/is2re/dimenet_all.pt">checkpoint</a></p></td>
 <td><p>0.5999</p></td>
 </tr>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-IS2RE-OC20-10k</p></td>
+<td><p>SchNet</p></td>
 <td><p>10k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/10k/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/10k/schnet/schnet.yml">config</a></p></td>
 <td><p>1.059</p></td>
 </tr>
-<tr class="row-odd"><td><p>SchNet</p></td>
+<tr class="row-odd"><td><p>SchNet-IS2RE-OC20-100k</p></td>
+<td><p>SchNet</p></td>
 <td><p>100k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/100k/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/100k/schnet/schnet.yml">config</a></p></td>
 <td><p>0.7137</p></td>
 </tr>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-IS2RE-OC20-All</p></td>
+<td><p>SchNet</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/all/schnet/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/schnet_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/all/schnet/schnet.yml">config</a></p></td>
 <td><p>0.6458</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-IS2RE-OC20-10k</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>10k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/10k/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_10k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/10k/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.8837</p></td>
 </tr>
-<tr class="row-even"><td><p>DimeNet++</p></td>
+<tr class="row-even"><td><p>DimeNet++-IS2RE-OC20-100k</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>100k</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/100k/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_100k.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/100k/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.6388</p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-IS2RE-OC20-All</p></td>
+<td><p>DimeNet++</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/all/dimenet_plus_plus/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2021_02/is2re/dimenetpp_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/all/dimenet_plus_plus/dpp.yml">config</a></p></td>
 <td><p>0.5639</p></td>
 </tr>
-<tr class="row-even"><td><p>PaiNN</p></td>
+<tr class="row-even"><td><p>PaiNN-IS2RE-OC20-All</p></td>
+<td><p>PaiNN</p></td>
 <td><p>All</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_05/is2re/painn_h1024_bs4x8_is2re_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/is2re/all/painn/painn_h1024_bs8x4.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/s2ef/all/painn/painn_nb6_scaling_factors.pt">scale file</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_05/is2re/painn_h1024_bs4x8_is2re_all.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/is2re/all/painn/painn_h1024_bs8x4.yml">config</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/s2ef/all/painn/painn_nb6_scaling_factors.pt">scale file</a></p></td>
 <td><p>0.5728</p></td>
 </tr>
 </tbody>
@@ -997,18 +1074,19 @@ OC20 dataset or pretrained models, as well as the original paper for each model:
 </div>
 </section>
 </section>
-<section id="open-catalyst-2022-oc22">
-<h2>Open Catalyst 2022 (OC22)<a class="headerlink" href="#open-catalyst-2022-oc22" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="open-catalyst-2022-oc22">
+<h1>Open Catalyst 2022 (OC22)<a class="headerlink" href="#open-catalyst-2022-oc22" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>All configurations for these models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/oc22"><code class="docutils literal notranslate"><span class="pre">configs/oc22</span></code></a> directory.</p></li>
+<li><p>All configurations for these models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/oc22"><code class="docutils literal notranslate"><span class="pre">configs/oc22</span></code></a> directory.</p></li>
 <li><p>All of these models are trained on various splits of the OC22 S2EF / IS2RE datasets. For details, see <a class="reference external" href="https://arxiv.org/abs/2206.08917">https://arxiv.org/abs/2206.08917</a> and https://github.com/FAIR-Chem/fairchem/blob/main/DATASET.md.</p></li>
 <li><p>All OC22 models released here are trained on DFT total energies, in contrast to the OC20 models listed above, which are trained on adsorption energies.</p></li>
 </ul>
 <section id="s2ef-total-models">
-<h3>S2EF-Total models<a class="headerlink" href="#s2ef-total-models" title="Link to this heading">#</a></h3>
+<h2>S2EF-Total models<a class="headerlink" href="#s2ef-total-models" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Training</p></th>
 <th class="head"><p>Download</p></th>
 <th class="head"><p>val ID force MAE</p></th>
@@ -1016,39 +1094,45 @@ OC20 dataset or pretrained models, as well as the original paper for each model:
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>GemNet-dT</p></td>
+<tr class="row-even"><td><p>GemNet-dT-S2EFS-OC22</p></td>
+<td><p>GemNet-dT</p></td>
 <td><p>OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gndt_oc22_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/gemnet-dt/gemnet-dT.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gndt_oc22_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/gemnet-dt/gemnet-dT.yml">config</a></p></td>
 <td><p>0.032</p></td>
 <td><p>1.127</p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-OC</p></td>
+<tr class="row-odd"><td><p>GemNet-OC-S2EFS-OC22</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_oc22_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/gemnet-oc/gemnet_oc.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_oc22_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/gemnet-oc/gemnet_oc.yml">config</a></p></td>
 <td><p>0.030</p></td>
 <td><p>0.563</p></td>
 </tr>
-<tr class="row-even"><td><p>GemNet-OC</p></td>
+<tr class="row-even"><td><p>GemNet-OC-S2EFS-OC20+OC22</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>OC20+OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_oc22_oc20_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/gemnet-oc/gemnet_oc_oc20_oc22.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_oc22_oc20_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/gemnet-oc/gemnet_oc_oc20_oc22.yml">config</a></p></td>
 <td><p>0.027</p></td>
 <td><p>0.483</p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-OC <br><sub><sup>(trained with <code class="docutils literal notranslate"><span class="pre">enforce_max_neighbors_strictly=False</span></code>, <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/pull/467">#467</a>)</sup></sub></p></td>
+<tr class="row-odd"><td><p>GemNet-OC-S2EFS-nsn-OC20+OC22</p></td>
+<td><p>GemNet-OC <br><sub><sup>(trained with <code class="docutils literal notranslate"><span class="pre">enforce_max_neighbors_strictly=False</span></code>, <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/pull/467">#467</a>)</sup></sub></p></td>
 <td><p>OC20+OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_05/oc22/s2ef/gnoc_oc22_oc20_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/gemnet-oc/gemnet_oc_oc20_oc22_degen_edges.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_05/oc22/s2ef/gnoc_oc22_oc20_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/gemnet-oc/gemnet_oc_oc20_oc22_degen_edges.yml">config</a></p></td>
 <td><p>0.027</p></td>
 <td><p>0.458</p></td>
 </tr>
-<tr class="row-even"><td><p>GemNet-OC</p></td>
+<tr class="row-even"><td><p>GemNet-OC-S2EFS-OC20-&gt;OC22</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p>OC20-&gt;OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_finetune_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/gemnet-oc/gemnet_oc_finetune.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2022_09/oc22/s2ef/gnoc_finetune_all_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/gemnet-oc/gemnet_oc_finetune.yml">config</a></p></td>
 <td><p>0.030</p></td>
 <td><p>0.417</p></td>
 </tr>
-<tr class="row-odd"><td><p>EquiformerV2 (<span class="math notranslate nohighlight">\(\lambda_E\)</span>=4, <span class="math notranslate nohighlight">\(\lambda_F\)</span>=100)</p></td>
+<tr class="row-odd"><td><p>EquiformerV2-lE4-lF100-S2EFS-OC22</p></td>
+<td><p>EquiformerV2 (<span class="math notranslate nohighlight">\(\lambda_E\)</span>=4, <span class="math notranslate nohighlight">\(\lambda_F\)</span>=100)</p></td>
 <td><p>OC22</p></td>
-<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_10/oc22/s2ef/eq2_121M_e4_f100_oc22_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/core/configs/oc22/s2ef/equiformer_v2/equiformer_v2_N&#64;18_L&#64;6_M&#64;2_e4_f100_121M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/opencatalystproject/models/2023_10/oc22/s2ef/eq2_121M_e4_f100_oc22_s2ef.pt">checkpoint</a> | <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/blob/main/configs/oc22/s2ef/equiformer_v2/equiformer_v2_N&#64;18_L&#64;6_M&#64;2_e4_f100_121M.yml">config</a></p></td>
 <td><p>0.023</p></td>
 <td><p>0.447</p></td>
 </tr>
@@ -1066,81 +1150,93 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
 </pre></div>
 </div>
 </section>
-</section>
 <section id="open-direct-air-capture-2023-odac23">
 <h2>Open Direct Air Capture 2023 (ODAC23)<a class="headerlink" href="#open-direct-air-capture-2023-odac23" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>All config files for the ODAC23 models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac"><code class="docutils literal notranslate"><span class="pre">configs/odac</span></code></a> directory.</p></li>
+<li><p>All config files for the ODAC23 models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac"><code class="docutils literal notranslate"><span class="pre">configs/odac</span></code></a> directory.</p></li>
 </ul>
+</section>
 <section id="s2ef-models">
-<h3>S2EF models<a class="headerlink" href="#s2ef-models" title="Link to this heading">#</a></h3>
+<h2>S2EF models<a class="headerlink" href="#s2ef-models" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Checkpoint</p></th>
 <th class="head"><p>Config</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>SchNet</p></td>
+<tr class="row-even"><td><p>SchNet-S2EF-ODAC</p></td>
+<td><p>SchNet</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/Schnet.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/schnet.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/schnet.yml">config</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>DimeNet++</p></td>
+<tr class="row-odd"><td><p>DimeNet++-S2EF-ODAC</p></td>
+<td><p>DimeNet++</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/DimenetPP.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/dpp.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/dpp.yml">config</a></p></td>
 </tr>
-<tr class="row-even"><td><p>PaiNN</p></td>
+<tr class="row-even"><td><p>PaiNN-S2EF-ODAC</p></td>
+<td><p>PaiNN</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/PaiNN.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/painn.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/painn.yml">config</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>GemNet-OC</p></td>
+<tr class="row-odd"><td><p>GemNet-OC-S2EF-ODAC</p></td>
+<td><p>GemNet-OC</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/Gemnet-OC.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/gemnet-oc.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/gemnet-oc.yml">config</a></p></td>
 </tr>
-<tr class="row-even"><td><p>eSCN</p></td>
+<tr class="row-even"><td><p>eSCN-S2EF-ODAC</p></td>
+<td><p>eSCN</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/eSCN.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/eSCN.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/eSCN.yml">config</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>EquiformerV2</p></td>
+<tr class="row-odd"><td><p>EquiformerV2-S2EF-ODAC</p></td>
+<td><p>EquiformerV2</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231116/eqv2_31M.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/eqv2_31M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/eqv2_31M.yml">config</a></p></td>
 </tr>
-<tr class="row-even"><td><p>EquiformerV2 (Large)</p></td>
+<tr class="row-even"><td><p>EquiformerV2-Large-S2EF-ODAC</p></td>
+<td><p>EquiformerV2 (Large)</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/Equiformer_V2_Large.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/s2ef/eqv2_153M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/s2ef/eqv2_153M.yml">config</a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="is2re-direct-models">
-<h3>IS2RE Direct models<a class="headerlink" href="#is2re-direct-models" title="Link to this heading">#</a></h3>
+<h2>IS2RE Direct models<a class="headerlink" href="#is2re-direct-models" title="Link to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Model</p></th>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Model</p></th>
 <th class="head"><p>Checkpoint</p></th>
 <th class="head"><p>Config</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Gemnet-OC (Direct)</p></td>
+<tr class="row-even"><td><p>Gemnet-OC-IS2RE-ODAC</p></td>
+<td><p>Gemnet-OC</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/Gemnet-OC_Direct.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/is2re/gemnet-oc.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/is2re/gemnet-oc.yml">config</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>eSCN (Direct)</p></td>
+<tr class="row-odd"><td><p>eSCN-IS2RE-ODAC</p></td>
+<td><p>eSCN</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/eSCN_Direct.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/is2re/eSCN.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/is2re/eSCN.yml">config</a></p></td>
 </tr>
-<tr class="row-even"><td><p>EquiformerV2 (Direct)</p></td>
+<tr class="row-even"><td><p>EquiformerV2-IS2RE-ODAC</p></td>
+<td><p>EquiformerV2</p></td>
 <td><p><a class="reference external" href="https://dl.fbaipublicfiles.com/dac/checkpoints_20231018/Equiformer_V2_Direct.pt">checkpoint</a></p></td>
-<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/src/fairchem/core/configs/odac/is2re/eqv2_31M.yml">config</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/odac/is2re/eqv2_31M.yml">config</a></p></td>
 </tr>
 </tbody>
 </table>
 <p>The models in the table above were trained to predict relaxed energy directly. Relaxed energies can also be predicted by running structural relaxations using the S2EF models from the previous section.</p>
 </section>
 <section id="is2rs">
-<h3>IS2RS<a class="headerlink" href="#is2rs" title="Link to this heading">#</a></h3>
+<h2>IS2RS<a class="headerlink" href="#is2rs" title="Link to this heading">#</a></h2>
 <p>The IS2RS is solved by running structural relaxations using the S2EF models from the prior section.</p>
 <p>The Open DAC 2023 (ODAC23) dataset is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 License</a>.</p>
 <p>Please consider citing the following paper in any research manuscript using the ODAC23 dataset:</p>
@@ -1152,7 +1248,6 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 
@@ -1220,23 +1315,23 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2020-oc20">Open Catalyst 2020 (OC20)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-efwt">S2EF models: optimized for EFwT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-force-only">S2EF models: optimized for force only</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-models">IS2RE models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pretrained FAIRChem models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2020-oc20">Open Catalyst 2020 (OC20)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-efwt">S2EF models: optimized for EFwT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models-optimized-for-force-only">S2EF models: optimized for force only</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-models">IS2RE models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2022-oc22">Open Catalyst 2022 (OC22)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-total-models">S2EF-Total models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-catalyst-2022-oc22">Open Catalyst 2022 (OC22)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-total-models">S2EF-Total models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-direct-air-capture-2023-odac23">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-direct-air-capture-2023-odac23">Open Direct Air Capture 2023 (ODAC23)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
 </ul>
-</li>
-</ul>
+
   </nav></div>
 
 </div></div>

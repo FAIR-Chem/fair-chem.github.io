@@ -210,7 +210,9 @@
 
 <li class="toctree-l1"><a class="reference internal" href="datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_checkpoints.html">Pretrained model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_checkpoints.html">Pretrained FAIRChem models</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -728,12 +730,12 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
 <span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:233,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">233</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -997,7 +999,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.666569471359253
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6773011684417725
 </pre></div>
 </div>
 </div>
@@ -1104,12 +1106,12 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
 <span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:233,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">233</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1314,12 +1316,12 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
 <span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:233,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">233</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1510,7 +1512,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297371208667755
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.42973729968070984
 </pre></div>
 </div>
 </div>
@@ -1565,17 +1567,17 @@ This happens because a random selection of is made to sample edges, and a differ
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139872074127198 1.9953227951915433e-06
-1.213986873626709
-1.2139873504638672
-1.2139885425567627
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139853239059448 1.4394244049190123e-06
+1.2139880657196045
+1.213984727859497
+1.2139830589294434
+1.2139842510223389
+1.2139856815338135
+1.2139849662780762
+1.2139875888824463
 1.2139854431152344
-1.213982343673706
-1.2139885425567627
-1.2139878273010254
-1.2139883041381836
-1.213986873626709
-1.2139899730682373
+1.2139842510223389
+1.2139852046966553
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1623,7 @@ This happens because a random selection of is made to sample edges, and a differ
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.0084811 ,  0.01409429, -0.05882692], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00848344,  0.01409717, -0.05882859], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1634,7 +1636,7 @@ This happens because a random selection of is made to sample edges, and a differ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.0471558e-07,  1.6402919e-07,  3.5762787e-07], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.0652002e-08,  1.8277206e-08, -4.7683716e-07], dtype=float32)
 </pre></div>
 </div>
 </div>

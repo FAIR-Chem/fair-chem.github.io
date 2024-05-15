@@ -210,7 +210,9 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model_checkpoints.html">Pretrained model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model_checkpoints.html">Pretrained FAIRChem models</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -828,7 +830,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.5 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.2 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
@@ -1193,7 +1195,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 215.5 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 206.2 seconds
 </pre></div>
 </div>
 </div>
@@ -1209,7 +1211,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-15-00-14-56-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-15-19-07-44-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1276,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../_images/4c45493ca5b3a934183b8caf1d138895e4a7892661449561a0e8de4289bb300d.png" src="../../_images/4c45493ca5b3a934183b8caf1d138895e4a7892661449561a0e8de4289bb300d.png" />
+<img alt="../../_images/836c29b351ef45b4ae23596ae2eb5a63d7cf9d5378dccc35e8386e7f71743c6b.png" src="../../_images/836c29b351ef45b4ae23596ae2eb5a63d7cf9d5378dccc35e8386e7f71743c6b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1285,7 +1287,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.253 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 1.144 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1304,7 +1306,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b9984a0cc87c2b728ed0e0251409858a81d168fc94d52fae8fd468bfe27b2dd2.png" src="../../_images/b9984a0cc87c2b728ed0e0251409858a81d168fc94d52fae8fd468bfe27b2dd2.png" />
+<img alt="../../_images/57b21c9bc0a5b9b3810e4bbc1b81106077dbb8c65914a3f8ad945b3d0e776a07.png" src="../../_images/57b21c9bc0a5b9b3810e4bbc1b81106077dbb8c65914a3f8ad945b3d0e776a07.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
