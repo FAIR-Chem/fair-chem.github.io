@@ -210,6 +210,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -233,8 +235,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
 
 
@@ -246,6 +246,8 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="NRR_toc.html">Screening catalysts with OCP</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -767,7 +769,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cdd346b5ad1a083a442db2a659b20079346702eccccecdad9bef3632fa981bc1.png" src="../../_images/cdd346b5ad1a083a442db2a659b20079346702eccccecdad9bef3632fa981bc1.png" />
+<img alt="../../_images/e034aa0bf50e94c9b8c21dfd38685144358e18df151b860989429ad3c691fad5.png" src="../../_images/e034aa0bf50e94c9b8c21dfd38685144358e18df151b860989429ad3c691fad5.png" />
 </div>
 </div>
 <section id="run-an-ml-relaxation">
@@ -786,10 +788,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
@@ -815,54 +813,41 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 22:26:01        0.195044        0.7166
+BFGS:    0 01:33:10        0.620906        0.3817
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 22:26:03        0.175054        0.6730
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 01:33:12        0.607311        0.3629
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 22:26:04        0.059278        0.3728
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 01:33:13        0.532336        0.2369
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 22:26:05        0.056324        0.2266
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 01:33:14        0.529413        0.2020
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 22:26:07        0.052357        0.1624
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 01:33:16        0.517109        0.1047
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 22:26:08        0.044131        0.1442
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 01:33:17        0.515422        0.1019
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 22:26:09        0.041685        0.1279
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 01:33:18        0.514483        0.0995
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 22:26:11        0.041343        0.0832
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 01:33:20        0.515206        0.0999
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 22:26:12        0.040578        0.0718
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 01:33:21        0.513421        0.0980
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 22:26:14        0.032569        0.0816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 01:33:23        0.511800        0.0819
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 22:26:15        0.031598        0.0757
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 01:33:24        0.507526        0.0410
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 22:26:16        0.030103        0.0683
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 22:26:17        0.028287        0.0590
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 22:26:19        0.023509        0.0292
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 18.9 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 15.2 seconds
 </pre></div>
 </div>
 </div>
@@ -992,42 +977,42 @@ BFGS:    0 22:26:01        0.195044        0.7166
 Running data/oqmd-349719_H/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 16.1 seconds for data/oqmd-349719_H/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 40.9 seconds for data/oqmd-349719_H/0
 Running data/oqmd-349719_H/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 55.4 seconds for data/oqmd-349719_H/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.2 seconds for data/oqmd-349719_H/1
 Running data/oqmd-349719_H/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 13.2 seconds for data/oqmd-349719_H/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 55.6 seconds for data/oqmd-349719_H/2
 Running data/oqmd-349719_H/3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 18.4 seconds for data/oqmd-349719_H/3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 18.1 seconds for data/oqmd-349719_H/3
 Running data/oqmd-349719_NNH/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 113.0 seconds for data/oqmd-349719_NNH/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.0 seconds for data/oqmd-349719_NNH/0
 Running data/oqmd-349719_NNH/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.5 seconds for data/oqmd-349719_NNH/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 135.7 seconds for data/oqmd-349719_NNH/1
 Running data/oqmd-349719_NNH/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 137.0 seconds for data/oqmd-349719_NNH/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 92.6 seconds for data/oqmd-349719_NNH/2
 Running data/oqmd-349719_NNH/3
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [10:20&lt;00:00, 620.18s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:14&lt;00:00, 674.08s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [10:20&lt;00:00, 620.18s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:14&lt;00:00, 674.08s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 129.2 seconds for data/oqmd-349719_NNH/3
-Elapsed time: 620.2 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 137.5 seconds for data/oqmd-349719_NNH/3
+Elapsed time: 674.1 seconds
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1218,7 +1203,7 @@ Elapsed time: 620.2 seconds
   slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
 </pre></div>
 </div>
-<img alt="../../_images/1a87ab72394df5335018399dc17656ad6864aca27cdaaf97e6abfccce58247d6.png" src="../../_images/1a87ab72394df5335018399dc17656ad6864aca27cdaaf97e6abfccce58247d6.png" />
+<img alt="../../_images/a4998c9bbb09558a8c456f9a58fa462978ec708c732a2cb63aee9a745ac2ea92.png" src="../../_images/a4998c9bbb09558a8c456f9a58fa462978ec708c732a2cb63aee9a745ac2ea92.png" />
 </div>
 </div>
 </section>
@@ -1272,7 +1257,7 @@ Elapsed time: 620.2 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e698424119c0abd3303073fa4f8a3082d5ed4775e8cb6f265911a22487db6a08.png" src="../../_images/e698424119c0abd3303073fa4f8a3082d5ed4775e8cb6f265911a22487db6a08.png" />
+<img alt="../../_images/637965f277c35e91d7ccfb67509bac530fef6914e6f0ac9778e1d15ea4c06e87.png" src="../../_images/637965f277c35e91d7ccfb67509bac530fef6914e6f0ac9778e1d15ea4c06e87.png" />
 </div>
 </div>
 </section>

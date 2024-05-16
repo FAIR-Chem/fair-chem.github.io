@@ -210,6 +210,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -233,8 +235,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
 
 
@@ -246,6 +246,8 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -719,11 +721,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../_images/8842bf65e339013ac7f54f0200a1e20f60472ed1fbcf8520c41ee4e842a0fb07.png" src="../../_images/8842bf65e339013ac7f54f0200a1e20f60472ed1fbcf8520c41ee4e842a0fb07.png" />
+<img alt="../../_images/6a5800b612d2be5c9576cda60c4f84e52cbeee8ab9c16e8abc25a1c42d77bf2e.png" src="../../_images/6a5800b612d2be5c9576cda60c4f84e52cbeee8ab9c16e8abc25a1c42d77bf2e.png" />
 </div>
 </div>
 <p>Something is a little off in this equation of state, there is an unphysical bump in it. We now rerun this and get the embeddings. You simply call the <code class="docutils literal notranslate"><span class="pre">calc.embed</span></code> method. We need a reference configuration to compare too. We choose a lattice constant of 3.63 angstroms and compute three different embeddings.</p>
@@ -796,7 +794,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba7c5f946d30982463f593371433aa9a969d3fcfd9d5e00eb523ba2ea9c48a32.png" src="../../_images/ba7c5f946d30982463f593371433aa9a969d3fcfd9d5e00eb523ba2ea9c48a32.png" />
+<img alt="../../_images/bc678ad5f054a187ada9488eac6034ec451475c82b447ad813ae1b9b24601637.png" src="../../_images/bc678ad5f054a187ada9488eac6034ec451475c82b447ad813ae1b9b24601637.png" />
 </div>
 </div>
 <p>We can see that near the minimum the different embeddings are all quite similar. But, near the unphysical peak, the x_E embedding shows a significant deviation. The atomic energy is linear in this embedding, which is why we see the peak. This means the embedding is not sufficiently trained in this region, and fine-tuning should be considered with data in that region.</p>
@@ -881,7 +879,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/140d4a5aab829080d320b5d6fdd6181d9b7dc0330f894982e3e7d5fc1e1c14e2.png" src="../../_images/140d4a5aab829080d320b5d6fdd6181d9b7dc0330f894982e3e7d5fc1e1c14e2.png" />
+<img alt="../../_images/170bc9949a589c01b9dd86594314ef1566bd2800215484dd031eacea9d34b8ed.png" src="../../_images/170bc9949a589c01b9dd86594314ef1566bd2800215484dd031eacea9d34b8ed.png" />
 </div>
 </div>
 <section id="clustering-individual-atoms">
@@ -925,15 +923,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/umap/umap_.py:1945: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
   warn(f&quot;n_jobs value {self.n_jobs} overridden to 1 by setting random_state. Use no seed for parallelism.&quot;)
 </pre></div>
 </div>
-<img alt="../../_images/1b7fb09ce1e5ac100f517699cdb471c5b3bdd07e6e86f649611890e40bb8eb54.png" src="../../_images/1b7fb09ce1e5ac100f517699cdb471c5b3bdd07e6e86f649611890e40bb8eb54.png" />
+<img alt="../../_images/8f0c9791161c339543bda4170c3f954270bca8b6e60d88b947cc42c8e7018929.png" src="../../_images/8f0c9791161c339543bda4170c3f954270bca8b6e60d88b947cc42c8e7018929.png" />
 </div>
 </div>
 <p>You can see from this there are roughly three kinds of atoms. One is bulk like, with the lowest energy (the dark red points), the second is also lower in energy (the reddish-orange points), and the others are surface atoms, with higher energies (the bluish points).</p>
@@ -966,12 +960,6 @@ document.write(`
     
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">methane</span><span class="p">):</span>
     <span class="n">data</span><span class="p">[</span><span class="n">methane_emb</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">methane</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1047,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/e4720a012318fa20cc620fafb196909771b53c44a5d2aff0c98237d9fa037636.png" src="../../_images/e4720a012318fa20cc620fafb196909771b53c44a5d2aff0c98237d9fa037636.png" />
+<img alt="../../_images/91047de027f6044074d02e1daa405a2fef563d024b57288137bc0adf4344b0b9.png" src="../../_images/91047de027f6044074d02e1daa405a2fef563d024b57288137bc0adf4344b0b9.png" />
 </div>
 </div>
 </section>

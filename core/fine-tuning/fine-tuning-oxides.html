@@ -210,6 +210,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -233,8 +235,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/intro.html">Intro and background on OCP and DFT</a></li>
 
 
@@ -246,6 +246,8 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -775,9 +777,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
@@ -826,14 +826,10 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.7 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.2 seconds.
-</pre></div>
-</div>
-<img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
+<img alt="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" src="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -864,7 +860,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a48e3424d76817240816a0b914502025691c6a130c88e07728e1797c128651fb.png" src="../../_images/a48e3424d76817240816a0b914502025691c6a130c88e07728e1797c128651fb.png" />
+<img alt="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" src="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" />
 </div>
 </div>
 <p>We can improve this by fine-tuning the model.</p>
@@ -1007,9 +1003,7 @@ Rows: 295 (showing first 20)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
@@ -1195,7 +1189,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 206.2 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 205.3 seconds
 </pre></div>
 </div>
 </div>
@@ -1211,7 +1205,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-15-22-04-48-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-16-01-10-24-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1226,9 +1220,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
@@ -1272,11 +1264,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../_images/b1cfc90cc419d069dd99989294a40d5a6e89d4dd4b502a65dc42cb4ecb22a526.png" src="../../_images/b1cfc90cc419d069dd99989294a40d5a6e89d4dd4b502a65dc42cb4ecb22a526.png" />
+<img alt="../../_images/86e50dd50fffa230849cbbdbf675714ecf18b7c5dff2366634cbed1af1e6552d.png" src="../../_images/86e50dd50fffa230849cbbdbf675714ecf18b7c5dff2366634cbed1af1e6552d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1287,7 +1275,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.108 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.197 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1306,7 +1294,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/25cca8b44a24377d5260d439b8fdc0b58249f8070795f85271860184cf5da245.png" src="../../_images/25cca8b44a24377d5260d439b8fdc0b58249f8070795f85271860184cf5da245.png" />
+<img alt="../../_images/6903f584d9ae5d999aa5c9e320b8a21966af012bc13951da7d1ef126c2190c2a.png" src="../../_images/6903f584d9ae5d999aa5c9e320b8a21966af012bc13951da7d1ef126c2190c2a.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

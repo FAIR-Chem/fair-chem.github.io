@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Simple simulations using the OCP ASE calculator" href="OCP-introduction.html" />
-    <link rel="prev" title="AdsorbML tutorial" href="adsorbml_walkthrough.html" />
+    <link rel="prev" title="Model FAQ" href="../core/model_faq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,6 +210,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -233,8 +235,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro and background on OCP and DFT</a></li>
 
 
@@ -246,6 +246,8 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -719,7 +721,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, May  9 2024, 14:13:20) [GCC 11.4.0]
 fairchem is installed at /home/runner/work/fairchem/fairchem/src/fairchem
-fairchem repo is at git commit: d0f61fa
+fairchem repo is at git commit: 58f2726
 numba: 0.59.1
 numpy: 1.26.4
 ase: 3.22.1
@@ -732,9 +734,9 @@ torch geometric: 2.3.0
 
 Platform: Linux-6.5.0-1021-azure-x86_64-with-glibc2.35
   Processor: x86_64
-  Virtual memory: svmem(total=16757354496, available=14375645184, percent=14.2, used=1992912896, free=9762832384, active=1949495296, inactive=4415479808, buffers=241147904, cached=4760461312, shared=25600000, slab=427552768)
-  Swap memory: sswap(total=4294963200, used=1060864, free=4293902336, percent=0.0, sin=0, sout=270336)
-  Disk usage: sdiskusage(total=77851254784, used=68608397312, free=9226080256, percent=88.1)
+  Virtual memory: svmem(total=16757346304, available=14375120896, percent=14.2, used=1988960256, free=11863777280, active=2024902656, inactive=2345361408, buffers=40247296, cached=2864361472, shared=25608192, slab=317743104)
+  Swap memory: sswap(total=4294963200, used=15826944, free=4279136256, percent=0.4, sin=0, sout=15171584)
+  Disk usage: sdiskusage(total=77851254784, used=68593168384, free=9241309184, percent=88.1)
 </pre></div>
 </div>
 </div>
@@ -773,12 +775,12 @@ Platform: Linux-6.5.0-1021-azure-x86_64-with-glibc2.35
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="adsorbml_walkthrough.html"
+       href="../core/model_faq.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AdsorbML tutorial</p>
+        <p class="prev-next-title">Model FAQ</p>
       </div>
     </a>
     <a class="right-next"
