@@ -633,7 +633,7 @@ document.write(`
 <h1>CatTSunami tutorial<a class="headerlink" href="#cattsunami-tutorial" title="Link to this heading">#</a></h1>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core</span> <span class="kn">import</span> <span class="n">Reaction</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core</span> <span class="kn">import</span> <span class="n">Reaction</span>
 <span class="kn">from</span> <span class="nn">fairchem.data.oc.core</span> <span class="kn">import</span> <span class="n">Slab</span><span class="p">,</span> <span class="n">Adsorbate</span><span class="p">,</span> <span class="n">Bulk</span><span class="p">,</span> <span class="n">AdsorbateSlabConfig</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
@@ -660,7 +660,7 @@ document.write(`
 <p>To start, we generate placements for the reactant and product species on the surface. We utilize the random placement approach which was developed for AdsorbML, and use an OCP model to relax our placements on the surface. These placements and their ML-determined energies are used as input to the CatTSunami automatic NEB frame generation approach.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the reaction class for the reaction of interest</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the reaction class for the reaction of interest</span>
 <span class="n">reaction</span> <span class="o">=</span> <span class="n">Reaction</span><span class="p">(</span><span class="n">reaction_str_from_db</span><span class="o">=</span><span class="s2">&quot;*CH -&gt; *C + *H&quot;</span><span class="p">,</span>
                     <span class="n">reaction_db_path</span><span class="o">=</span><span class="n">DISSOCIATION_REACTION_DB_PATH</span><span class="p">,</span>
                     <span class="n">adsorbate_db_path</span> <span class="o">=</span> <span class="n">ADSORBATE_PKL_PATH</span><span class="p">)</span>
@@ -691,7 +691,7 @@ document.write(`
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the calculator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the calculator</span>
 <span class="c1"># NOTE: If you have a GPU, use cpu = False</span>
 <span class="c1"># NOTE: Change the checkpoint path to locally downloaded files as needed</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
@@ -712,7 +712,7 @@ document.write(`
 <p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference internal" href="../core/model_checkpoints.html"><span class="doc std std-doc">here</span></a></p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Relax the reactant systems</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Relax the reactant systems</span>
 <span class="n">reactant_energies</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">reactant_configs</span><span class="p">:</span>
     <span class="n">config</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
@@ -746,7 +746,7 @@ document.write(`
 <img alt="dissociation_scheme" src="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/applications/cattsunami/tutorial/dissociation_scheme.png" /></p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">af</span> <span class="o">=</span> <span class="n">AutoFrameDissociation</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af</span> <span class="o">=</span> <span class="n">AutoFrameDissociation</span><span class="p">(</span>
             <span class="n">reaction</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">,</span>
             <span class="n">reactant_system</span> <span class="o">=</span> <span class="n">reactant_configs</span><span class="p">[</span><span class="n">reactant_energies</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">reactant_energies</span><span class="p">))],</span>
             <span class="n">product1_systems</span> <span class="o">=</span> <span class="n">product1_configs</span><span class="p">,</span>
@@ -774,7 +774,7 @@ document.write(`
 <p>Here we use the custom child class we created to run NEB relaxations using ML. The class we created allows the frame relaxations to be batched, improving efficiency.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## This will run all NEBs enumerated - to just run one, run the code cell below.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## This will run all NEBs enumerated - to just run one, run the code cell below.</span>
 <span class="c1"># On GPU, each NEB takes an average of ~1 minute so this could take around a half hour on GPU</span>
 <span class="c1"># But much longer on CPU</span>
 <span class="c1"># Remember that not all NEBs will converge -- the k, nframes would be adjusted to achieve convergence</span>
@@ -809,7 +809,7 @@ document.write(`
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you run the above cell -- dont run this one</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you run the above cell -- dont run this one</span>
 <span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># [eV / ang**2]</span>
 <span class="n">delta_fmax_climb</span> <span class="o">=</span> <span class="mf">0.4</span>
 <span class="n">neb</span> <span class="o">=</span> <span class="n">OCPNEB</span><span class="p">(</span>
@@ -836,7 +836,7 @@ document.write(`
 <h2>(Optional) Visualize the results<a class="headerlink" href="#optional-visualize-the-results" title="Link to this heading">#</a></h2>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idx_of_interest</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_of_interest</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">optimized_neb</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n2_dissoc_on_Ru_</span><span class="si">{</span><span class="n">idx_of_interest</span><span class="si">}</span><span class="s2">.traj&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">nframes</span><span class="p">:]</span>
 </pre></div>
 </div>
@@ -844,7 +844,7 @@ document.write(`
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">es</span>  <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">es</span>  <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">optimized_neb</span><span class="p">:</span>
     <span class="n">frame</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
     <span class="n">es</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
@@ -863,7 +863,7 @@ document.write(`
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make an interative html file of the optimized neb trajectory</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make an interative html file of the optimized neb trajectory</span>
 <span class="n">x3d</span> <span class="o">=</span> <span class="n">X3D</span><span class="p">(</span><span class="n">optimized_neb</span><span class="p">)</span>
 <span class="n">x3d</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;optimized_neb_ch_disoc_on_Ru0001.html&quot;</span><span class="p">)</span>
 </pre></div>
