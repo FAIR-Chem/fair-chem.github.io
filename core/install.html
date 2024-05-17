@@ -641,7 +641,7 @@ document.write(`
 <h2>conda or better yet <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a> - easy<a class="headerlink" href="#conda-or-better-yet-mamba-easy" title="Link to this heading">#</a></h2>
 <p>We do not have official conda recipes (yet!); in the meantime you can use the
 following environment yaml files for CPU <a class="reference external" href="https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.cpu.yml">env.cpu.yml</a>
-and GPU <a class="reference external" href="https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.gpu.yml">env.gpu.yml</a> to easily set up a
+or GPU <a class="reference external" href="https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.gpu.yml">env.gpu.yml</a> to easily set up a
 working environment and install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code>.</p>
 <ol class="arabic">
 <li><p>Create an environment to install <em>fairchem</em></p>
@@ -678,7 +678,7 @@ pip<span class="w"> </span>install<span class="w"> </span>fairchem-core
 similarly by selecting the appropriate versions in the official
 <a class="reference external" href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">PyG docs</a></p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> from PyPi</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>fairchem-core
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>fairchem-core
 </pre></div>
 </div>
 </li>
@@ -697,11 +697,11 @@ to install other packages you can do so by:</p>
 <p>If you plan to make contributions you will need to clone (for windows user please see next section) the repo and install
 <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> in editable mode with dev
 dependencies,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
 </pre></div>
 </div>
 <p>And similarly for any other namespace package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>packages/fairchem-<span class="o">{</span>package-to-install<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-<span class="o">{</span>package-to-install<span class="o">}</span>
 </pre></div>
 </div>
 <section id="cloning-and-installing-the-git-repository-on-windows">
