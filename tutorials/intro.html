@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Intro and background on OCP and DFT &#8212; FAIR Chemistry Documentation</title>
+    <title>Intro and background on OCP and DFT</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -675,13 +669,8 @@ document.write(`
 <p>We will focus on the ASE compatible calculator here. To facilitate using the checkpoints, there is a set of <a class="reference internal" href="#./ocp-tutorial"><span class="xref myst">utilities</span></a> for this tutorial. You can list the checkpoints that are readily available here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
 </pre></div>
 </div>
 </div>
@@ -689,15 +678,10 @@ document.write(`
 <p>You can get a checkpoint file with one of the keys listed above like this. The resulting string is the name of the file downloaded, and you use that when creating an OCP calculator later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -713,30 +697,8 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_fairchem</span></code> to output information that might be helpful in debugging.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_fairchem</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_fairchem</span>
 <span class="n">describe_fairchem</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, May  9 2024, 14:13:20) [GCC 11.4.0]
-fairchem is installed at /home/runner/work/fairchem/fairchem/src/fairchem
-fairchem repo is at git commit: 59cf718
-numba: 0.59.1
-numpy: 1.26.4
-ase: 3.22.1
-e3nn: 0.5.1
-pymatgen: 2024.5.1
-torch: 2.2.0+cu121
-torch.version.cuda: 12.1
-torch.cuda: is_available: False
-torch geometric: 2.3.0
-
-Platform: Linux-6.5.0-1021-azure-x86_64-with-glibc2.35
-  Processor: x86_64
-  Virtual memory: svmem(total=16757354496, available=14348079104, percent=14.4, used=2020446208, free=10308177920, active=2250444800, inactive=3593605120, buffers=186216448, cached=4242513920, shared=25632768, slab=385630208)
-  Swap memory: sswap(total=4294963200, used=7389184, free=4287574016, percent=0.2, sin=16384, sout=6770688)
-  Disk usage: sdiskusage(total=77851254784, used=68595597312, free=9238880256, percent=88.1)
 </pre></div>
 </div>
 </div>

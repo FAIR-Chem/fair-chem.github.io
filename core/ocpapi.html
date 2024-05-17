@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ocpapi &#8212; FAIR Chemistry Documentation</title>
+    <title>ocpapi</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -654,7 +648,7 @@ document.write(`
 <p>Ensure you have Python 3.9.1 or newer, and install <code class="docutils literal notranslate"><span class="pre">ocpapi</span></code> using:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%%sh
 pip install -q ocpapi
 </pre></div>
 </div>
@@ -669,7 +663,7 @@ pip install -q ocpapi
 <p>This package relies heavily on <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a>. The examples throughout this document can be copied to a python repl launched with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%%sh
 $ python -m asyncio
 </pre></div>
 </div>
@@ -678,10 +672,10 @@ $ python -m asyncio
 <p>Alternatively, an async function can be run in a script by wrapping it with <a class="reference external" href="https://docs.python.org/3/library/asyncio-runner.html#asyncio.run">asyncio.run()</a>:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import asyncio
+from fairchem.demo.ocpapi import find_adsorbate_binding_sites
 
-<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">find_adsorbate_binding_sites</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+asyncio.run(find_adsorbate_binding_sites(...))
 </pre></div>
 </div>
 </div>
@@ -692,12 +686,12 @@ $ python -m asyncio
 <h3>Search over all surfaces<a class="headerlink" href="#search-over-all-surfaces" title="Link to this heading">#</a></h3>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import find_adsorbate_binding_sites
 
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
-    <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
-    <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+results = await find_adsorbate_binding_sites(
+    adsorbate=&quot;*OH&quot;,
+    bulk=&quot;mp-126&quot;,
+)
 </pre></div>
 </div>
 </div>
@@ -737,15 +731,15 @@ $ python -m asyncio
 </ol>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">Client</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import Client
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+client = Client()
 
-<span class="n">bulks</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_bulks</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">({</span><span class="n">b</span><span class="o">.</span><span class="n">src_id</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">formula</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bulks</span><span class="o">.</span><span class="n">bulks_supported</span><span class="p">})</span>
+bulks = await client.get_bulks()
+print({b.src_id: b.formula for b in bulks.bulks_supported})
 
-<span class="n">adsorbates</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_adsorbates</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">adsorbates</span><span class="o">.</span><span class="n">adsorbates_supported</span><span class="p">)</span>
+adsorbates = await client.get_adsorbates()
+print(adsorbates.adsorbates_supported)
 </pre></div>
 </div>
 </div>
@@ -757,13 +751,13 @@ $ python -m asyncio
 <p>Run relaxations for all slabs that are generated:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">,</span> <span class="n">keep_all_slabs</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import find_adsorbate_binding_sites, keep_all_slabs
 
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
-    <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
-    <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
-    <span class="n">adslab_filter</span><span class="o">=</span><span class="n">keep_all_slabs</span><span class="p">(),</span>
-<span class="p">)</span>
+results = await find_adsorbate_binding_sites(
+    adsorbate=&quot;*OH&quot;,
+    bulk=&quot;mp-126&quot;,
+    adslab_filter=keep_all_slabs(),
+)
 </pre></div>
 </div>
 </div>
@@ -771,14 +765,14 @@ $ python -m asyncio
 <p>Run relaxations only for slabs with Miller Indices in the input set:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">,</span> <span class="n">keep_slabs_with_miller_indices</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import find_adsorbate_binding_sites, keep_slabs_with_miller_indices
 
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
-    <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
-    <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
-    <span class="n">adslab_filter</span><span class="o">=</span><span class="n">keep_slabs_with_miller_indices</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+results = await find_adsorbate_binding_sites(
+    adsorbate=&quot;*OH&quot;,
+    bulk=&quot;mp-126&quot;,
+    adslab_filter=keep_slabs_with_miller_indices([(1, 0, 0), (1, 1, 1)]),
+)
+print(results)
 </pre></div>
 </div>
 </div>
@@ -790,8 +784,8 @@ $ python -m asyncio
 <p>Assuming <code class="docutils literal notranslate"><span class="pre">results</span></code> was generated with the <code class="docutils literal notranslate"><span class="pre">find_adsorbate_binding_sites</span></code> method used above, it is an <code class="docutils literal notranslate"><span class="pre">AdsorbateBindingSites</span></code> object. This can be saved to file with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;results.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with open(&quot;results.json&quot;, &quot;w&quot;) as f:
+    f.write(results.to_json())
 </pre></div>
 </div>
 </div>
@@ -799,10 +793,10 @@ $ python -m asyncio
 <p>Similarly, results can be read back from file to an <code class="docutils literal notranslate"><span class="pre">AdsorbateBindingSites</span></code> object with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">AdsorbateBindingSites</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import AdsorbateBindingSites
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;results.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="n">AdsorbateBindingSites</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+with open(&quot;results.json&quot;, &quot;r&quot;) as f:
+    results = AdsorbateBindingSites.from_json(f.read())
 </pre></div>
 </div>
 </div>
@@ -814,10 +808,10 @@ $ python -m asyncio
 <p>Extending the examples above, the URLs to visualize the results of relaxations on each Pt surface can be obtained with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span>
-    <span class="n">slab</span><span class="o">.</span><span class="n">ui_url</span>
-    <span class="k">for</span> <span class="n">slab</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">slabs</span>
-<span class="p">])</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print([
+    slab.ui_url
+    for slab in results.slabs
+])
 </pre></div>
 </div>
 </div>
@@ -836,19 +830,19 @@ $ python -m asyncio
 <p>A specific model type can be requested with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import find_adsorbate_binding_sites
 
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
-    <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
-    <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gemnet_oc_base_s2ef_all_md&quot;</span><span class="p">,</span>
-    <span class="n">adslab_filter</span><span class="o">=</span><span class="n">keep_slabs_with_miller_indices</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
+results = await find_adsorbate_binding_sites(
+    adsorbate=&quot;*OH&quot;,
+    bulk=&quot;mp-126&quot;,
+    model=&quot;gemnet_oc_base_s2ef_all_md&quot;,
+    adslab_filter=keep_slabs_with_miller_indices([(1, 1, 1)]),
 
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">([</span>
-    <span class="n">slab</span><span class="o">.</span><span class="n">ui_url</span>
-    <span class="k">for</span> <span class="n">slab</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">slabs</span>
-<span class="p">])</span>
+)
+print([
+    slab.ui_url
+    for slab in results.slabs
+])
 </pre></div>
 </div>
 </div>
@@ -865,16 +859,16 @@ $ python -m asyncio
 <p>For example, the following would generate an <code class="docutils literal notranslate"><span class="pre">ase.Atoms</span></code> object for the first relaxed adsorbate configuration on the first slab generated for *OH binding on Pt:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.demo.ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from fairchem.demo.ocpapi import find_adsorbate_binding_sites
 
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
-    <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
-    <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
-    <span class="n">adslab_filter</span><span class="o">=</span><span class="n">keep_slabs_with_miller_indices</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]),</span>
-<span class="p">)</span>
+results = await find_adsorbate_binding_sites(
+    adsorbate=&quot;*OH&quot;,
+    bulk=&quot;mp-126&quot;,
+    adslab_filter=keep_slabs_with_miller_indices([(1, 1, 1)]),
+)
 
-<span class="n">ase_atoms</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_ase_atoms</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ase_atoms</span><span class="p">)</span>
+ase_atoms = results.slabs[0].configs[0].to_ase_atoms()
+print(ase_atoms)
 </pre></div>
 </div>
 </div>
@@ -885,9 +879,9 @@ $ python -m asyncio
 <p>From an <code class="docutils literal notranslate"><span class="pre">ase.Atoms</span></code> object (see previous section), is is possible to <a class="reference external" href="https://wiki.fysik.dtu.dk/ase/ase/io/io.html#ase.io.write">write to other structure formats</a>. Extending the example above, the <code class="docutils literal notranslate"><span class="pre">ase_atoms</span></code> object could be written to a <a class="reference external" href="https://www.vasp.at/wiki/index.php/POSCAR">VASP POSCAR file</a> with:</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">write</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from ase.io import write
 
-<span class="n">write</span><span class="p">(</span><span class="s2">&quot;POSCAR&quot;</span><span class="p">,</span> <span class="n">ase_atoms</span><span class="p">,</span> <span class="s2">&quot;vasp&quot;</span><span class="p">)</span>
+write(&quot;POSCAR&quot;, ase_atoms, &quot;vasp&quot;)
 </pre></div>
 </div>
 </div>

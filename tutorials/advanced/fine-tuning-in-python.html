@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fine-tuning with Python &#8212; FAIR Chemistry Documentation</title>
+    <title>Fine-tuning with Python</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -641,7 +635,7 @@ document.write(`
 <p>The recommended way to do training is with the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> script in ocp. One of the reasons for that is training often takes a long time and is better suited for queue systems like slurm. However, you can submit Python scripts too, and it is possible to run notebooks in Slurm too. Here we work out a proof of concept in training from Python and a Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.utils</span> <span class="kn">import</span> <span class="n">SeverityLevelBetween</span>
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
@@ -672,40 +666,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ase<span class="w"> </span>db<span class="w"> </span>../../core/fine-tuning/oxides.db
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator| energy|natoms| fmax|pbc| volume|charge|   mass
- 1|47m|runner|Sn2O4  |unknown   |-41.359|     6|0.045|TTT| 64.258| 0.000|301.416
- 2|47m|runner|Sn2O4  |unknown   |-41.853|     6|0.025|TTT| 66.526| 0.000|301.416
- 3|47m|runner|Sn2O4  |unknown   |-42.199|     6|0.010|TTT| 68.794| 0.000|301.416
- 4|47m|runner|Sn2O4  |unknown   |-42.419|     6|0.006|TTT| 71.062| 0.000|301.416
- 5|47m|runner|Sn2O4  |unknown   |-42.534|     6|0.011|TTT| 73.330| 0.000|301.416
- 6|47m|runner|Sn2O4  |unknown   |-42.562|     6|0.029|TTT| 75.598| 0.000|301.416
- 7|47m|runner|Sn2O4  |unknown   |-42.518|     6|0.033|TTT| 77.866| 0.000|301.416
- 8|47m|runner|Sn2O4  |unknown   |-42.415|     6|0.010|TTT| 80.134| 0.000|301.416
- 9|47m|runner|Sn2O4  |unknown   |-42.266|     6|0.006|TTT| 82.402| 0.000|301.416
-10|47m|runner|Sn2O4  |unknown   |-42.083|     6|0.017|TTT| 84.670| 0.000|301.416
-11|47m|runner|Sn4O8  |unknown   |-81.424|    12|0.012|TTT|117.473| 0.000|602.832
-12|47m|runner|Sn4O8  |unknown   |-82.437|    12|0.005|TTT|121.620| 0.000|602.832
-13|47m|runner|Sn4O8  |unknown   |-83.147|    12|0.015|TTT|125.766| 0.000|602.832
-14|47m|runner|Sn4O8  |unknown   |-83.599|    12|0.047|TTT|129.912| 0.000|602.832
-15|47m|runner|Sn4O8  |unknown   |-83.831|    12|0.081|TTT|134.058| 0.000|602.832
-16|47m|runner|Sn4O8  |unknown   |-83.898|    12|0.001|TTT|138.204| 0.000|602.832
-17|47m|runner|Sn4O8  |unknown   |-83.805|    12|0.001|TTT|142.350| 0.000|602.832
-18|47m|runner|Sn4O8  |unknown   |-83.586|    12|0.002|TTT|146.496| 0.000|602.832
-19|47m|runner|Sn4O8  |unknown   |-83.262|    12|0.002|TTT|150.642| 0.000|602.832
-20|47m|runner|Sn4O8  |unknown   |-82.851|    12|0.013|TTT|154.788| 0.000|602.832
-Rows: 295 (showing first 20)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">ase</span> <span class="n">db</span> <span class="o">../../</span><span class="n">core</span><span class="o">/</span><span class="n">fine</span><span class="o">-</span><span class="n">tuning</span><span class="o">/</span><span class="n">oxides</span><span class="o">.</span><span class="n">db</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
@@ -719,19 +687,12 @@ Rows: 295 (showing first 20)
 <h1>Split the data into train, test, val sets<a class="headerlink" href="#split-the-data-into-train-test-val-sets" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-fr<span class="w"> </span>train.db<span class="w"> </span>test.db<span class="w"> </span>val.db
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">train</span><span class="o">.</span><span class="n">db</span> <span class="n">test</span><span class="o">.</span><span class="n">db</span> <span class="n">val</span><span class="o">.</span><span class="n">db</span>
 
 <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">train_test_val_split</span>
 
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;../../core/fine-tuning/oxides.db&#39;</span><span class="p">)</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/tutorials/advanced/train.db&#39;),
- PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/tutorials/advanced/test.db&#39;),
- PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/tutorials/advanced/val.db&#39;))
 </pre></div>
 </div>
 </div>
@@ -742,7 +703,7 @@ Rows: 295 (showing first 20)
 <p>We start by making the config.yml. We build this from the calculator checkpoint.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
 
 <span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
@@ -772,11 +733,6 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/tutorials/advanced/config.yml&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <section id="setup-the-training-task">
 <h2>Setup the training task<a class="headerlink" href="#setup-the-training-task" title="Link to this heading">#</a></h2>
@@ -785,7 +741,7 @@ Rows: 295 (showing first 20)
 <p>We have to mimic the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> setup to get the arguments and config setup. Here is a minimal way to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.flags</span> <span class="kn">import</span> <span class="n">flags</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.flags</span> <span class="kn">import</span> <span class="n">flags</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">flags</span><span class="o">.</span><span class="n">get_parser</span><span class="p">()</span>
 <span class="n">args</span><span class="p">,</span> <span class="n">args_override</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">([</span><span class="s2">&quot;--mode=train&quot;</span><span class="p">,</span>
                                                <span class="s2">&quot;--config-yml=config.yml&quot;</span><span class="p">,</span>
@@ -795,132 +751,14 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Namespace(mode=&#39;train&#39;, config_yml=PosixPath(&#39;config.yml&#39;), identifier=&#39;&#39;, debug=False, run_dir=&#39;./&#39;, print_every=10, seed=0, amp=True, checkpoint=&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;, timestamp_id=None, sweep_yml=None, submit=False, summit=False, logdir=PosixPath(&#39;logs&#39;), slurm_partition=&#39;ocp&#39;, slurm_mem=80, slurm_timeout=72, num_gpus=1, distributed=False, cpu=False, num_nodes=1, distributed_port=13356, distributed_backend=&#39;nccl&#39;, local_rank=0, no_ddp=False, gp_gpus=None),
- [])
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, we build the first stage in our config. This starts with the file config.yml, then updates it with the args</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.utils</span> <span class="kn">import</span> <span class="n">build_config</span><span class="p">,</span> <span class="n">new_trainer_context</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.utils</span> <span class="kn">import</span> <span class="n">build_config</span><span class="p">,</span> <span class="n">new_trainer_context</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">build_config</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">args_override</span><span class="o">=</span><span class="p">{})</span>
 <span class="n">config</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;amp&#39;: True,
- &#39;checkpoint&#39;: &#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;,
- &#39;dataset&#39;: {&#39;test&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: False, &#39;r_forces&#39;: False},
-   &#39;src&#39;: &#39;test.db&#39;},
-  &#39;train&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: True, &#39;r_forces&#39;: True},
-   &#39;src&#39;: &#39;train.db&#39;},
-  &#39;val&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: True, &#39;r_forces&#39;: True}, &#39;src&#39;: &#39;val.db&#39;}},
- &#39;evaluation_metrics&#39;: {&#39;metrics&#39;: {&#39;energy&#39;: [&#39;mae&#39;],
-   &#39;forces&#39;: [&#39;forcesx_mae&#39;,
-    &#39;forcesy_mae&#39;,
-    &#39;forcesz_mae&#39;,
-    &#39;mae&#39;,
-    &#39;cosine_similarity&#39;,
-    &#39;magnitude_error&#39;],
-   &#39;misc&#39;: [&#39;energy_forces_within_threshold&#39;]},
-  &#39;primary_metric&#39;: &#39;forces_mae&#39;},
- &#39;gpus&#39;: 1,
- &#39;logger&#39;: &#39;tensorboard&#39;,
- &#39;loss_fns&#39;: [{&#39;energy&#39;: {&#39;coefficient&#39;: 1, &#39;fn&#39;: &#39;mae&#39;}},
-  {&#39;forces&#39;: {&#39;coefficient&#39;: 1, &#39;fn&#39;: &#39;l2mae&#39;}}],
- &#39;model&#39;: {&#39;activation&#39;: &#39;silu&#39;,
-  &#39;atom_edge_interaction&#39;: True,
-  &#39;atom_interaction&#39;: True,
-  &#39;cbf&#39;: {&#39;name&#39;: &#39;spherical_harmonics&#39;},
-  &#39;cutoff&#39;: 12.0,
-  &#39;cutoff_aeaint&#39;: 12.0,
-  &#39;cutoff_aint&#39;: 12.0,
-  &#39;cutoff_qint&#39;: 12.0,
-  &#39;direct_forces&#39;: True,
-  &#39;edge_atom_interaction&#39;: True,
-  &#39;emb_size_aint_in&#39;: 64,
-  &#39;emb_size_aint_out&#39;: 64,
-  &#39;emb_size_atom&#39;: 256,
-  &#39;emb_size_cbf&#39;: 16,
-  &#39;emb_size_edge&#39;: 512,
-  &#39;emb_size_quad_in&#39;: 32,
-  &#39;emb_size_quad_out&#39;: 32,
-  &#39;emb_size_rbf&#39;: 16,
-  &#39;emb_size_sbf&#39;: 32,
-  &#39;emb_size_trip_in&#39;: 64,
-  &#39;emb_size_trip_out&#39;: 64,
-  &#39;envelope&#39;: {&#39;exponent&#39;: 5, &#39;name&#39;: &#39;polynomial&#39;},
-  &#39;extensive&#39;: True,
-  &#39;forces_coupled&#39;: False,
-  &#39;max_neighbors&#39;: 30,
-  &#39;max_neighbors_aeaint&#39;: 20,
-  &#39;max_neighbors_aint&#39;: 1000,
-  &#39;max_neighbors_qint&#39;: 8,
-  &#39;name&#39;: &#39;gemnet_oc&#39;,
-  &#39;num_after_skip&#39;: 2,
-  &#39;num_atom&#39;: 3,
-  &#39;num_atom_emb_layers&#39;: 2,
-  &#39;num_before_skip&#39;: 2,
-  &#39;num_blocks&#39;: 4,
-  &#39;num_concat&#39;: 1,
-  &#39;num_global_out_layers&#39;: 2,
-  &#39;num_output_afteratom&#39;: 3,
-  &#39;num_radial&#39;: 128,
-  &#39;num_spherical&#39;: 7,
-  &#39;otf_graph&#39;: True,
-  &#39;output_init&#39;: &#39;HeOrthogonal&#39;,
-  &#39;qint_tags&#39;: [1, 2],
-  &#39;quad_interaction&#39;: True,
-  &#39;rbf&#39;: {&#39;name&#39;: &#39;gaussian&#39;},
-  &#39;regress_forces&#39;: True,
-  &#39;sbf&#39;: {&#39;name&#39;: &#39;legendre_outer&#39;},
-  &#39;symmetric_edge_symmetrization&#39;: False},
- &#39;noddp&#39;: False,
- &#39;optim&#39;: {&#39;batch_size&#39;: 4,
-  &#39;clip_grad_norm&#39;: 10,
-  &#39;ema_decay&#39;: 0.999,
-  &#39;energy_coefficient&#39;: 1,
-  &#39;eval_batch_size&#39;: 16,
-  &#39;eval_every&#39;: 10,
-  &#39;factor&#39;: 0.8,
-  &#39;force_coefficient&#39;: 1,
-  &#39;load_balancing&#39;: &#39;atoms&#39;,
-  &#39;loss_energy&#39;: &#39;mae&#39;,
-  &#39;lr_initial&#39;: 0.0005,
-  &#39;max_epochs&#39;: 1,
-  &#39;mode&#39;: &#39;min&#39;,
-  &#39;num_workers&#39;: 2,
-  &#39;optimizer&#39;: &#39;AdamW&#39;,
-  &#39;optimizer_params&#39;: {&#39;amsgrad&#39;: True},
-  &#39;patience&#39;: 3,
-  &#39;scheduler&#39;: &#39;ReduceLROnPlateau&#39;,
-  &#39;weight_decay&#39;: 0},
- &#39;outputs&#39;: {&#39;energy&#39;: {&#39;level&#39;: &#39;system&#39;},
-  &#39;forces&#39;: {&#39;eval_on_free_atoms&#39;: True,
-   &#39;level&#39;: &#39;atom&#39;,
-   &#39;train_on_free_atoms&#39;: True}},
- &#39;task&#39;: {&#39;dataset&#39;: &#39;ase_db&#39;},
- &#39;trainer&#39;: &#39;ocp&#39;,
- &#39;mode&#39;: &#39;train&#39;,
- &#39;identifier&#39;: &#39;&#39;,
- &#39;timestamp_id&#39;: None,
- &#39;seed&#39;: 0,
- &#39;is_debug&#39;: False,
- &#39;run_dir&#39;: &#39;./&#39;,
- &#39;print_every&#39;: 10,
- &#39;cpu&#39;: False,
- &#39;submit&#39;: False,
- &#39;summit&#39;: False,
- &#39;local_rank&#39;: 0,
- &#39;distributed_port&#39;: 13356,
- &#39;world_size&#39;: 1,
- &#39;distributed_backend&#39;: &#39;nccl&#39;,
- &#39;gp_gpus&#39;: None}
 </pre></div>
 </div>
 </div>
@@ -934,17 +772,15 @@ Rows: 295 (showing first 20)
 <p>Alternatively, you can open a Terminal and use <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">out.txt</span></code> to see the progress.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">FileLink</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">FileLink</span>
 <span class="n">display</span><span class="p">(</span><span class="n">FileLink</span><span class="p">(</span><span class="s1">&#39;out.txt&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><a href='out.txt' target='_blank'>out.txt</a><br></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">new_trainer_context</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">new_trainer_context</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">config</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">task</span>
     <span class="n">trainer</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">trainer</span>
@@ -953,231 +789,11 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.24s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.34s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.52s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:02&lt;00:02,  2.93s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.81s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.90s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.36s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.44s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.67s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:02&lt;00:02,  2.88s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.75s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.85s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.27s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.41s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.63s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.54s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.47s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.75s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.05s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.91s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.05s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.44s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.52s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.75s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span>out.txt
-<span class="o">!</span><span class="w"> </span>tail<span class="w"> </span>out.txt
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-05-17 17:28:38 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-05-17 17:28:38 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-2024-05-17 17:28:40 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-05-17 17:28:41 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-2024-05-17 17:28:42 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-05-17 17:28:42 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-2024-05-17 17:28:44 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-05-17 17:28:44 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-2024-05-17 17:28:44 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-05-17 17:28:44 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-05-17 17:30:32 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 4.3873, forcesx_mae: 0.0261, forcesy_mae: 0.0283, forcesz_mae: 0.0320, forces_mae: 0.0288, forces_cosine_similarity: -0.0228, forces_magnitude_error: 0.0401, loss: 4.4739, epoch: 0.5085
-2024-05-17 17:30:56 (INFO): energy_forces_within_threshold: 0.00e+00, energy_mae: 4.82e+00, forcesx_mae: 2.75e-02, forcesy_mae: 2.06e-02, forcesz_mae: 2.88e-02, forces_mae: 2.56e-02, forces_cosine_similarity: -1.03e-01, forces_magnitude_error: 3.24e-02, loss: 4.87e+00, lr: 5.00e-04, epoch: 6.78e-01, step: 4.00e+01
-2024-05-17 17:30:59 (INFO): Evaluating on val.
-2024-05-17 17:31:06 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 2.3352, forcesx_mae: 0.0156, forcesy_mae: 0.0154, forcesz_mae: 0.0111, forces_mae: 0.0140, forces_cosine_similarity: 0.1291, forces_magnitude_error: 0.0160, loss: 2.3348, epoch: 0.6780
-2024-05-17 17:31:07 (INFO): Predicting on test.
-2024-05-17 17:31:13 (INFO): Writing results to ./results/2024-05-17-17-29-36/ocp_predictions.npz
-2024-05-17 17:31:33 (INFO): energy_forces_within_threshold: 0.00e+00, energy_mae: 6.26e+00, forcesx_mae: 2.43e-02, forcesy_mae: 2.75e-02, forcesz_mae: 1.94e-02, forces_mae: 2.37e-02, forces_cosine_similarity: 9.20e-02, forces_magnitude_error: 3.54e-02, loss: 6.31e+00, lr: 5.00e-04, epoch: 8.47e-01, step: 5.00e+01
-2024-05-17 17:31:35 (INFO): Evaluating on val.
-2024-05-17 17:31:43 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 2.3955, forcesx_mae: 0.0477, forcesy_mae: 0.0363, forcesz_mae: 0.0313, forces_mae: 0.0384, forces_cosine_similarity: 0.0246, forces_magnitude_error: 0.0737, loss: 2.4845, epoch: 0.8475
-2024-05-17 17:32:01 (INFO): Total time taken: 195.09839487075806
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">head</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
+<span class="err">!</span> <span class="n">tail</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </div>
