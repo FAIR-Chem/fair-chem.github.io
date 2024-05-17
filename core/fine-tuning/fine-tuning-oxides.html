@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fine tuning a model</title>
+    <title>Fine tuning a model &#8212; FAIR Chemistry Documentation</title>
   
   
   
@@ -146,8 +146,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
-    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -167,7 +173,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    FAIR-Chem overview
+                    Datasets in fairchem:
                 </a>
             </li>
         </ul>
@@ -640,7 +646,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>We get this checkpoint here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 </pre></div>
@@ -654,7 +660,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>The first key is a composition, the second is a string for the polymorph structure, the third indicates which XC functional was used (we focus on PBE here), the fourth key is for the Equation of State calculations, and the last key is a list of results for the EOS.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
@@ -669,11 +675,66 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&#39;SnO2&#39;, &#39;IrO2&#39;, &#39;RuO2&#39;, &#39;TiO2&#39;, &#39;VO2&#39;],
+ [&#39;rutile&#39;, &#39;pyrite&#39;, &#39;columbite&#39;, &#39;brookite&#39;, &#39;fluorite&#39;, &#39;anatase&#39;])
+</pre></div>
+</div>
+</div>
 </div>
 <p>A specific calculation has a lot of details in it. You can use this to recreate the calculations. Shortly we will use these to compare the DFT results to OCP.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;incar&#39;: {&#39;doc&#39;: &#39;INCAR parameters&#39;,
+  &#39;prec&#39;: &#39;Normal&#39;,
+  &#39;isif&#39;: 4,
+  &#39;nbands&#39;: 20,
+  &#39;ibrion&#39;: 2,
+  &#39;gga&#39;: &#39;PE&#39;,
+  &#39;encut&#39;: 520.0,
+  &#39;ismear&#39;: 0,
+  &#39;sigma&#39;: 0.001,
+  &#39;nsw&#39;: 50},
+ &#39;doc&#39;: &#39;JSON representation of a VASP calculation.\n\nenergy is in eV\nforces are in eV/\\AA\nstress is in GPa (sxx, syy, szz,  syz, sxz, sxy)\nmagnetic moments are in Bohr-magneton\nThe density of states is reported with E_f at 0 eV.\nVolume is reported in \\AA^3\nCoordinates and cell parameters are reported in \\AA\n\nIf atom-projected dos are included they are in the form:\n{ados:{energy:data, {atom index: {orbital : dos}}}\n&#39;,
+ &#39;potcar&#39;: [[&#39;O&#39;,
+   &#39;potpaw/O/POTCAR&#39;,
+   &#39;0cf2ce56049ca395c567026b700ed66c94a85161&#39;],
+  [&#39;Ti&#39;, &#39;potpaw/Ti/POTCAR&#39;, &#39;51f7f05982d6b4052becc160375a8b8b670177a7&#39;]],
+ &#39;input&#39;: {&#39;kpts&#39;: [6, 6, 6],
+  &#39;reciprocal&#39;: False,
+  &#39;xc&#39;: &#39;LDA&#39;,
+  &#39;kpts_nintersections&#39;: None,
+  &#39;setups&#39;: None,
+  &#39;txt&#39;: &#39;-&#39;,
+  &#39;gamma&#39;: False},
+ &#39;atoms&#39;: {&#39;cell&#39;: [[4.3789762519649225, 0.0, 0.0],
+   [0.0, 4.3789762519649225, 0.0],
+   [0.0, 0.0, 2.864091775985314]],
+  &#39;symbols&#39;: [&#39;Ti&#39;, &#39;Ti&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;],
+  &#39;tags&#39;: [0, 0, 0, 0, 0, 0],
+  &#39;pbc&#39;: [True, True, True],
+  &#39;positions&#39;: [[0.0, 0.0, 0.0],
+   [2.1894881259824612, 2.1894881259824612, 1.432045887992657],
+   [1.3181554154438013, 1.3181554154438013, 0.0],
+   [3.0608208365211214, 3.0608208365211214, 0.0],
+   [3.5076435414262623, 0.87133271053866, 1.432045887992657],
+   [0.87133271053866, 3.5076435414262623, 1.432045887992657]]},
+ &#39;data&#39;: {&#39;stress&#39;: [496.18519999, 496.18519999, 502.82679392, 0.0, 0.0, 0.0],
+  &#39;doc&#39;: &#39;Data from the output of the calculation&#39;,
+  &#39;volume&#39;: 54.92019999999996,
+  &#39;total_energy&#39;: -56.230672,
+  &#39;forces&#39;: [[0.0, 0.0, 0.0],
+   [0.0, 0.0, 0.0],
+   [-0.001264, -0.001264, 0.0],
+   [0.001264, 0.001264, 0.0],
+   [-0.001264, 0.001264, 0.0],
+   [0.001264, -0.001264, 0.0]],
+  &#39;fermi_level&#39;: 3.153}}
 </pre></div>
 </div>
 </div>
@@ -681,7 +742,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>For each result we can retrieve the atomic geometry, energy and forces from the json file. We use these to recreate an Atoms object. Here is an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
               <span class="n">positions</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;positions&#39;</span><span class="p">],</span>
               <span class="n">cell</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;cell&#39;</span><span class="p">],</span>
@@ -691,12 +752,38 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Atoms(symbols=&#39;Ti2O4&#39;, pbc=True, cell=[4.3789762519649225, 4.3789762519649225, 2.864091775985314], tags=...),
+ -56.230672,
+ [[0.0, 0.0, 0.0],
+  [0.0, 0.0, 0.0],
+  [-0.001264, -0.001264, 0.0],
+  [0.001264, 0.001264, 0.0],
+  [-0.001264, 0.001264, 0.0],
+  [0.001264, -0.001264, 0.0]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Next, we will create an OCP calculator that we can use to get predictions from.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">trainer</span><span class="o">=</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -704,7 +791,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>Now, we loop through each structure and accumulate the OCP predictions. Then, we plot the parity results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="n">eos_data</span> <span class="o">=</span> <span class="p">{}</span>
@@ -738,11 +825,22 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.2 seconds.
+</pre></div>
+</div>
+<img alt="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" src="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAE = 1.669 eV/atom
 </pre></div>
 </div>
 </div>
@@ -751,7 +849,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>Some notable issues are with fluorite structures. We show one here for VO2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
 <span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span>
         
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dft&#39;</span><span class="p">)</span>
@@ -760,6 +858,9 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" src="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" />
 </div>
 </div>
 <p>We can improve this by fine-tuning the model.</p>
@@ -776,10 +877,10 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>First we create the training databases. OCP supports ase databases, so we use those here. The first step is to make a database containing the data. We need to write an atoms object with an attached SinglePointCalculator for each structure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.db</span> <span class="kn">import</span> <span class="n">connect</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.db</span> <span class="kn">import</span> <span class="n">connect</span>
 <span class="kn">from</span> <span class="nn">ase.calculators.singlepoint</span> <span class="kn">import</span> <span class="n">SinglePointCalculator</span>
 
-<span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">oxides</span><span class="o">.</span><span class="n">db</span>  <span class="c1"># start clean when you run this cell</span>
+<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-fr<span class="w"> </span>oxides.db<span class="w">  </span>#<span class="w"> </span>start<span class="w"> </span>clean<span class="w"> </span>when<span class="w"> </span>you<span class="w"> </span>run<span class="w"> </span>this<span class="w"> </span>cell
 <span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="s1">&#39;oxides.db&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -787,7 +888,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">polymorph</span> <span class="ow">in</span> <span class="n">polymorphs</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">]:</span>
             <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
@@ -807,7 +908,33 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>Let’s see what we made.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">ase</span> <span class="n">db</span> <span class="n">oxides</span><span class="o">.</span><span class="n">db</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ase<span class="w"> </span>db<span class="w"> </span>oxides.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator| energy|natoms| fmax|pbc| volume|charge|   mass
+ 1| 1s|runner|Sn2O4  |unknown   |-41.359|     6|0.045|TTT| 64.258| 0.000|301.416
+ 2| 1s|runner|Sn2O4  |unknown   |-41.853|     6|0.025|TTT| 66.526| 0.000|301.416
+ 3| 1s|runner|Sn2O4  |unknown   |-42.199|     6|0.010|TTT| 68.794| 0.000|301.416
+ 4| 1s|runner|Sn2O4  |unknown   |-42.419|     6|0.006|TTT| 71.062| 0.000|301.416
+ 5| 1s|runner|Sn2O4  |unknown   |-42.534|     6|0.011|TTT| 73.330| 0.000|301.416
+ 6| 1s|runner|Sn2O4  |unknown   |-42.562|     6|0.029|TTT| 75.598| 0.000|301.416
+ 7| 1s|runner|Sn2O4  |unknown   |-42.518|     6|0.033|TTT| 77.866| 0.000|301.416
+ 8| 1s|runner|Sn2O4  |unknown   |-42.415|     6|0.010|TTT| 80.134| 0.000|301.416
+ 9| 1s|runner|Sn2O4  |unknown   |-42.266|     6|0.006|TTT| 82.402| 0.000|301.416
+10| 1s|runner|Sn2O4  |unknown   |-42.083|     6|0.017|TTT| 84.670| 0.000|301.416
+11| 1s|runner|Sn4O8  |unknown   |-81.424|    12|0.012|TTT|117.473| 0.000|602.832
+12| 1s|runner|Sn4O8  |unknown   |-82.437|    12|0.005|TTT|121.620| 0.000|602.832
+13| 1s|runner|Sn4O8  |unknown   |-83.147|    12|0.015|TTT|125.766| 0.000|602.832
+14| 1s|runner|Sn4O8  |unknown   |-83.599|    12|0.047|TTT|129.912| 0.000|602.832
+15| 1s|runner|Sn4O8  |unknown   |-83.831|    12|0.081|TTT|134.058| 0.000|602.832
+16| 1s|runner|Sn4O8  |unknown   |-83.898|    12|0.001|TTT|138.204| 0.000|602.832
+17| 1s|runner|Sn4O8  |unknown   |-83.805|    12|0.001|TTT|142.350| 0.000|602.832
+18| 1s|runner|Sn4O8  |unknown   |-83.586|    12|0.002|TTT|146.496| 0.000|602.832
+19| 1s|runner|Sn4O8  |unknown   |-83.262|    12|0.002|TTT|150.642| 0.000|602.832
+20| 1s|runner|Sn4O8  |unknown   |-82.851|    12|0.013|TTT|154.788| 0.000|602.832
+Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
@@ -820,11 +947,18 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>We provide some helper functions in <code class="docutils literal notranslate"><span class="pre">fairchem.core.common.tutorial_utils</span></code> to streamline this process.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">train_test_val_split</span>
-<span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">train</span><span class="o">.</span><span class="n">db</span> <span class="n">test</span><span class="o">.</span><span class="n">db</span> <span class="n">val</span><span class="o">.</span><span class="n">db</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">train_test_val_split</span>
+<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-fr<span class="w"> </span>train.db<span class="w"> </span>test.db<span class="w"> </span>val.db
 
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;oxides.db&#39;</span><span class="p">)</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/core/fine-tuning/train.db&#39;),
+ PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/core/fine-tuning/test.db&#39;),
+ PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/core/fine-tuning/val.db&#39;))
 </pre></div>
 </div>
 </div>
@@ -835,7 +969,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>We have to create a yaml configuration file for the model we are using. The pre-trained checkpoints contain their config data, so we use this to get the base configuration, and then remove pieces we don’t need, and update pieces we do need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span> 
 
 <span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
@@ -865,10 +999,159 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/core/fine-tuning/config.yml&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">cat</span> <span class="n">config</span><span class="o">.</span><span class="n">yml</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>config.yml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>amp: true
+checkpoint: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+dataset:
+  test:
+    a2g_args:
+      r_energy: false
+      r_forces: false
+    src: test.db
+  train:
+    a2g_args:
+      r_energy: true
+      r_forces: true
+    src: train.db
+  val:
+    a2g_args:
+      r_energy: true
+      r_forces: true
+    src: val.db
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gpus: 1
+logger: tensorboard
+loss_fns:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  name: gemnet_oc
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+noddp: false
+optim:
+  batch_size: 4
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 10
+  factor: 0.8
+  force_coefficient: 1
+  load_balancing: atoms
+  loss_energy: mae
+  lr_initial: 0.0005
+  max_epochs: 1
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+task:
+  dataset: ase_db
+trainer: ocp
 </pre></div>
 </div>
 </div>
@@ -887,26 +1170,42 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tail -f train.txt
 </pre></div>
 </div>
-<p>You can also visit it in a browser at <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
+<p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
 <p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">fairchem_main</span>
 
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="err">!</span> <span class="n">python</span> <span class="p">{</span><span class="n">fairchem_main</span><span class="p">()}</span> <span class="o">--</span><span class="n">mode</span> <span class="n">train</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">yml</span> <span class="p">{</span><span class="n">yml</span><span class="p">}</span> <span class="o">--</span><span class="n">checkpoint</span> <span class="p">{</span><span class="n">checkpoint_path</span><span class="p">}</span> <span class="o">--</span><span class="n">run</span><span class="o">-</span><span class="nb">dir</span> <span class="n">fine</span><span class="o">-</span><span class="n">tuning</span> <span class="o">--</span><span class="n">identifier</span> <span class="n">ft</span><span class="o">-</span><span class="n">oxides</span> <span class="o">--</span><span class="n">amp</span> <span class="o">&gt;</span> <span class="n">train</span><span class="o">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> 
+<span class="o">!</span><span class="w"> </span>python<span class="w"> </span><span class="o">{</span>fairchem_main<span class="o">()}</span><span class="w"> </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span><span class="o">{</span>yml<span class="o">}</span><span class="w"> </span>--checkpoint<span class="w"> </span><span class="o">{</span>checkpoint_path<span class="o">}</span><span class="w"> </span>--run-dir<span class="w"> </span>fine-tuning<span class="w"> </span>--identifier<span class="w"> </span>ft-oxides<span class="w"> </span>--amp<span class="w"> </span>&gt;<span class="w"> </span>train.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 204.9 seconds
+</pre></div>
 </div>
-<p>Now since we have a file, we can find the training results in it. See <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
+</div>
+</details>
+</div>
+<p>Now since we have a file, we can find the training results in it. See <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="err">!</span><span class="n">grep</span> <span class="s2">&quot;checkpoint_dir:&quot;</span> <span class="n">train</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span><span class="s2">&quot;checkpoint_dir:&quot;</span><span class="w"> </span>train.txt
 <span class="n">cpdir</span> <span class="o">=</span> <span class="n">cpline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="n">cpdir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-17-16-40-32-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -915,15 +1214,26 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>The <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code> is the one that performs best on the validation dataset. The <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> is the most recently saved one. Probably it has the lowest loss in training, but this could be an indication of overfitting. You have to use some judgement in determining which one to use, and if it is sufficiently accurate for your needs. It may need additional training to further improve it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
 <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eos_data</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eos_data</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
     <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">polymorph</span> <span class="ow">in</span> <span class="n">polymorphs</span><span class="p">:</span>
@@ -953,11 +1263,19 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/699a8e28c0e5af6b7d542d532d2dd7a99ceda6c37e0d2fdd9d6c4cbc5eae57ef.png" src="../../_images/699a8e28c0e5af6b7d542d532d2dd7a99ceda6c37e0d2fdd9d6c4cbc5eae57ef.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.549 eV/atom
 </pre></div>
 </div>
 </div>
@@ -965,7 +1283,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <p>This is a substantial improvement! We can see what it means in terms of the Equations of State. There is still not perfect agreement, but the curves are closer together. Additional fine tuning, or a better model could probably still improve this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
 <span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span>
         
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dft&#39;</span><span class="p">)</span>
@@ -974,6 +1292,9 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/456ff01f27836e8b343bf8d3891273a557faf080bf9dfd1d82452e352dc0ceea.png" src="../../_images/456ff01f27836e8b343bf8d3891273a557faf080bf9dfd1d82452e352dc0ceea.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
