@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Common gotchas with fairchem &#8212; FAIR Chemistry Documentation</title>
+    <title>Common gotchas with fairchem</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -666,204 +660,21 @@ document.write(`
 <p>The problem here is that no neighbors are found for the single atom which causes an error. This may be model dependent. There is currently no way to get atomic energies for some models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
 <span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
 <span class="n">atoms</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">atoms</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/atoms.py:731,</span> in <span class="ni">Atoms.get_potential_energy</span><span class="nt">(self, force_consistent, apply_constraint)</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="n">force_consistent</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">730</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">731</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="k">if</span> <span class="n">apply_constraint</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>     <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:709,</span> in <span class="ni">Calculator.get_potential_energy</span><span class="nt">(self, atoms, force_consistent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="k">def</span> <span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">709</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="k">if</span> <span class="n">force_consistent</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span>         <span class="k">if</span> <span class="s1">&#39;free_energy&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:737,</span> in <span class="ni">Calculator.get_property</span><span class="nt">(self, name, atoms, allow_calculation)</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_calculation</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="k">return</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">737</span>     <span class="bp">self</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">system_changes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="c1"># For some reason the calculator was not able to do what we want,</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span>     <span class="c1"># and that is OK.</span>
-<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/utils.py:156,</span> in <span class="ni">conditional_grad.&lt;locals&gt;.decorator.&lt;locals&gt;.cls_method</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regress_forces</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;direct_forces&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">dec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">156</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1229,</span> in <span class="ni">GemNetOC.forward</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1208</span>     <span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1209</span>     <span class="n">a2a_graph</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span>     <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1217</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graphs_and_indices</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx_t</span> <span class="o">=</span> <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;edge_index&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1220</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">basis_rad_raw</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">basis_atom_update</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">basis_output</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">bases_qint</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">bases_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1226</span>     <span class="n">bases_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="n">bases_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="n">basis_a2a_rad</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1229</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bases</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1230</span>     <span class="n">main_graph</span><span class="o">=</span><span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1231</span>     <span class="n">a2a_graph</span><span class="o">=</span><span class="n">a2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1232</span>     <span class="n">a2ee2a_graph</span><span class="o">=</span><span class="n">a2ee2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1233</span>     <span class="n">qint_graph</span><span class="o">=</span><span class="n">qint_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1234</span>     <span class="n">trip_idx_e2e</span><span class="o">=</span><span class="n">trip_idx_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="n">trip_idx_a2e</span><span class="o">=</span><span class="n">trip_idx_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1236</span>     <span class="n">trip_idx_e2a</span><span class="o">=</span><span class="n">trip_idx_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="n">quad_idx</span><span class="o">=</span><span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="n">num_atoms</span><span class="o">=</span><span class="n">num_atoms</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span> <span class="c1"># Embedding block</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_emb</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1102,</span> in <span class="ni">GemNetOC.get_bases</span><span class="nt">(self, main_graph, a2a_graph, a2ee2a_graph, qint_graph, trip_idx_e2e, trip_idx_a2e, trip_idx_e2a, quad_idx, num_atoms)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="n">cosφ_cab_q</span><span class="p">,</span> <span class="n">cosφ_abd</span><span class="p">,</span> <span class="n">angle_cabd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_quad_angles</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span>         <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">basis_rad_cir_qint_raw</span><span class="p">,</span> <span class="n">basis_cir_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span> <span class="n">cosφ_abd</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">basis_rad_sph_qint_raw</span><span class="p">,</span> <span class="n">basis_sph_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1103</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">cosφ_cab_q</span><span class="p">[</span><span class="n">quad_idx</span><span class="p">[</span><span class="s2">&quot;trip_out_to_quad&quot;</span><span class="p">]],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">angle_cabd</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_edge_interaction</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">basis_rad_a2ee2a_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis_aeaint</span><span class="p">(</span><span class="n">a2ee2a_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:132,</span> in <span class="ni">SphericalBasisLayer.forward</span><span class="nt">(self, D_ca, cosφ_cab, θ_cabd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_ca</span><span class="p">,</span> <span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">rad_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis</span><span class="p">(</span><span class="n">D_ca</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">sph_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span><span class="p">(</span><span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># (num_quadruplets, num_spherical**2)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_basis</span><span class="p">:</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:116,</span> in <span class="ni">SphericalBasisLayer.__init__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(cosφ, θ)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;legendre_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">circular_basis</span> <span class="o">=</span> <span class="n">get_sph_harm_basis</span><span class="p">(</span><span class="n">num_spherical</span><span class="p">,</span> <span class="n">zero_m_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cosφ</span><span class="p">,</span> <span class="n">ϑ</span><span class="p">:</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="n">circular_basis</span><span class="p">(</span><span class="n">cosφ</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="o">*</span> <span class="n">circular_basis</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ϑ</span><span class="p">))[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
-<span class="ne">--&gt; </span><span class="mi">116</span>     <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cosφ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;gaussian_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="bp">self</span><span class="o">.</span><span class="n">circular_basis</span> <span class="o">=</span> <span class="n">GaussianBasis</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="n">start</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_gaussians</span><span class="o">=</span><span class="n">num_spherical</span><span class="p">,</span> <span class="o">**</span><span class="n">sbf_hparams</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: cannot reshape tensor of 0 elements into shape [0, -1] because the unspecified dimension size -1 can be any value and is ambiguous
 </pre></div>
 </div>
 </div>
@@ -875,7 +686,7 @@ document.write(`
 <p>Sometimes you can tell by the magnitude of energies, but you should use care with this. If energies are “small” and near zero they are likely adsorption energies. If energies are “large” in magnitude they are probably total energies. This can be misleading though, as it depends on the total number of atoms in the systems.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are to suppress the output from making the calculators.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are to suppress the output from making the calculators.</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">import</span> <span class="nn">contextlib</span>
 </pre></div>
@@ -884,7 +695,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
 <span class="n">slab</span> <span class="o">=</span> <span class="n">fcc111</span><span class="p">(</span><span class="s1">&#39;Pt&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
 <span class="n">add_adsorbate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
 </pre></div>
@@ -893,7 +704,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="c1"># OC20 model - trained on adsorption energies</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EF-OC20-All&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
@@ -908,27 +719,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2779738903045654
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An OC22 checkpoint - trained on total energy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># An OC22 checkpoint - trained on total energy</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
@@ -941,27 +735,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-110.3986587524414
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This eSCN model is trained on adsorption energies</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This eSCN model is trained on adsorption energies</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
@@ -969,17 +746,6 @@ document.write(`
 
 <span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
 <span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6753945350646973
 </pre></div>
 </div>
 </div>
@@ -1015,7 +781,7 @@ document.write(`
 <p>Gemnet in particular seems to require at least 4 atoms. This has to do with interactions between atoms and their neighbors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1026,24 +792,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
 <span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -1054,175 +806,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/atoms.py:731,</span> in <span class="ni">Atoms.get_potential_energy</span><span class="nt">(self, force_consistent, apply_constraint)</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="n">force_consistent</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">730</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">731</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="k">if</span> <span class="n">apply_constraint</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>     <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:709,</span> in <span class="ni">Calculator.get_potential_energy</span><span class="nt">(self, atoms, force_consistent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="k">def</span> <span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">709</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="k">if</span> <span class="n">force_consistent</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span>         <span class="k">if</span> <span class="s1">&#39;free_energy&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:737,</span> in <span class="ni">Calculator.get_property</span><span class="nt">(self, name, atoms, allow_calculation)</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_calculation</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="k">return</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">737</span>     <span class="bp">self</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">system_changes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="c1"># For some reason the calculator was not able to do what we want,</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span>     <span class="c1"># and that is OK.</span>
-<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/utils.py:156,</span> in <span class="ni">conditional_grad.&lt;locals&gt;.decorator.&lt;locals&gt;.cls_method</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regress_forces</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;direct_forces&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">dec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">156</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1229,</span> in <span class="ni">GemNetOC.forward</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1208</span>     <span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1209</span>     <span class="n">a2a_graph</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span>     <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1217</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graphs_and_indices</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx_t</span> <span class="o">=</span> <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;edge_index&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1220</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">basis_rad_raw</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">basis_atom_update</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">basis_output</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">bases_qint</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">bases_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1226</span>     <span class="n">bases_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="n">bases_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="n">basis_a2a_rad</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1229</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bases</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1230</span>     <span class="n">main_graph</span><span class="o">=</span><span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1231</span>     <span class="n">a2a_graph</span><span class="o">=</span><span class="n">a2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1232</span>     <span class="n">a2ee2a_graph</span><span class="o">=</span><span class="n">a2ee2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1233</span>     <span class="n">qint_graph</span><span class="o">=</span><span class="n">qint_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1234</span>     <span class="n">trip_idx_e2e</span><span class="o">=</span><span class="n">trip_idx_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="n">trip_idx_a2e</span><span class="o">=</span><span class="n">trip_idx_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1236</span>     <span class="n">trip_idx_e2a</span><span class="o">=</span><span class="n">trip_idx_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="n">quad_idx</span><span class="o">=</span><span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="n">num_atoms</span><span class="o">=</span><span class="n">num_atoms</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span> <span class="c1"># Embedding block</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_emb</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1102,</span> in <span class="ni">GemNetOC.get_bases</span><span class="nt">(self, main_graph, a2a_graph, a2ee2a_graph, qint_graph, trip_idx_e2e, trip_idx_a2e, trip_idx_e2a, quad_idx, num_atoms)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="n">cosφ_cab_q</span><span class="p">,</span> <span class="n">cosφ_abd</span><span class="p">,</span> <span class="n">angle_cabd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_quad_angles</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span>         <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">basis_rad_cir_qint_raw</span><span class="p">,</span> <span class="n">basis_cir_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span> <span class="n">cosφ_abd</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">basis_rad_sph_qint_raw</span><span class="p">,</span> <span class="n">basis_sph_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1103</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">cosφ_cab_q</span><span class="p">[</span><span class="n">quad_idx</span><span class="p">[</span><span class="s2">&quot;trip_out_to_quad&quot;</span><span class="p">]],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">angle_cabd</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_edge_interaction</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">basis_rad_a2ee2a_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis_aeaint</span><span class="p">(</span><span class="n">a2ee2a_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:132,</span> in <span class="ni">SphericalBasisLayer.forward</span><span class="nt">(self, D_ca, cosφ_cab, θ_cabd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_ca</span><span class="p">,</span> <span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">rad_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis</span><span class="p">(</span><span class="n">D_ca</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">sph_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span><span class="p">(</span><span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># (num_quadruplets, num_spherical**2)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_basis</span><span class="p">:</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:116,</span> in <span class="ni">SphericalBasisLayer.__init__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(cosφ, θ)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;legendre_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">circular_basis</span> <span class="o">=</span> <span class="n">get_sph_harm_basis</span><span class="p">(</span><span class="n">num_spherical</span><span class="p">,</span> <span class="n">zero_m_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cosφ</span><span class="p">,</span> <span class="n">ϑ</span><span class="p">:</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="n">circular_basis</span><span class="p">(</span><span class="n">cosφ</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="o">*</span> <span class="n">circular_basis</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ϑ</span><span class="p">))[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
-<span class="ne">--&gt; </span><span class="mi">116</span>     <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cosφ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;gaussian_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="bp">self</span><span class="o">.</span><span class="n">circular_basis</span> <span class="o">=</span> <span class="n">GaussianBasis</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="n">start</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_gaussians</span><span class="o">=</span><span class="n">num_spherical</span><span class="p">,</span> <span class="o">**</span><span class="n">sbf_hparams</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: cannot reshape tensor of 0 elements into shape [0, -1] because the unspecified dimension size -1 can be any value and is ambiguous
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="to-tag-or-not">
@@ -1230,7 +813,7 @@ document.write(`
 <p>Some models use tags to determine which atoms to calculate energies for. For example, Gemnet uses a tag=1 to indicate the atom should be calculated. You will get an error with this model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1240,211 +823,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
 <span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>  <span class="c1"># error</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>  <span class="c1"># error</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/atoms.py:731,</span> in <span class="ni">Atoms.get_potential_energy</span><span class="nt">(self, force_consistent, apply_constraint)</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="n">force_consistent</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">730</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">731</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="k">if</span> <span class="n">apply_constraint</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>     <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:709,</span> in <span class="ni">Calculator.get_potential_energy</span><span class="nt">(self, atoms, force_consistent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span> <span class="k">def</span> <span class="nf">get_potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_consistent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">709</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span> <span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="k">if</span> <span class="n">force_consistent</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span>         <span class="k">if</span> <span class="s1">&#39;free_energy&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ase/calculators/calculator.py:737,</span> in <span class="ni">Calculator.get_property</span><span class="nt">(self, name, atoms, allow_calculation)</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_calculation</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="k">return</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">737</span>     <span class="bp">self</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">system_changes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="c1"># For some reason the calculator was not able to do what we want,</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span>     <span class="c1"># and that is OK.</span>
-<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="k">raise</span> <span class="n">PropertyNotImplementedError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> not present in this &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>                                       <span class="s1">&#39;calculation&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:243,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">243</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/utils.py:156,</span> in <span class="ni">conditional_grad.&lt;locals&gt;.decorator.&lt;locals&gt;.cls_method</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regress_forces</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;direct_forces&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">dec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">156</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1229,</span> in <span class="ni">GemNetOC.forward</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1208</span>     <span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1209</span>     <span class="n">a2a_graph</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span>     <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1217</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graphs_and_indices</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx_t</span> <span class="o">=</span> <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;edge_index&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1220</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">basis_rad_raw</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">basis_atom_update</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">basis_output</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">bases_qint</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">bases_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1226</span>     <span class="n">bases_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="n">bases_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="n">basis_a2a_rad</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1229</span> <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bases</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1230</span>     <span class="n">main_graph</span><span class="o">=</span><span class="n">main_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1231</span>     <span class="n">a2a_graph</span><span class="o">=</span><span class="n">a2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1232</span>     <span class="n">a2ee2a_graph</span><span class="o">=</span><span class="n">a2ee2a_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1233</span>     <span class="n">qint_graph</span><span class="o">=</span><span class="n">qint_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1234</span>     <span class="n">trip_idx_e2e</span><span class="o">=</span><span class="n">trip_idx_e2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span>     <span class="n">trip_idx_a2e</span><span class="o">=</span><span class="n">trip_idx_a2e</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1236</span>     <span class="n">trip_idx_e2a</span><span class="o">=</span><span class="n">trip_idx_e2a</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1237</span>     <span class="n">quad_idx</span><span class="o">=</span><span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span>     <span class="n">num_atoms</span><span class="o">=</span><span class="n">num_atoms</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span> <span class="c1"># Embedding block</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span> <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_emb</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">)</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/gemnet_oc.py:1102,</span> in <span class="ni">GemNetOC.get_bases</span><span class="nt">(self, main_graph, a2a_graph, a2ee2a_graph, qint_graph, trip_idx_e2e, trip_idx_a2e, trip_idx_e2a, quad_idx, num_atoms)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="n">cosφ_cab_q</span><span class="p">,</span> <span class="n">cosφ_abd</span><span class="p">,</span> <span class="n">angle_cabd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_quad_angles</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;vector&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span>         <span class="n">quad_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="n">basis_rad_cir_qint_raw</span><span class="p">,</span> <span class="n">basis_cir_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">qint_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span> <span class="n">cosφ_abd</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">basis_rad_sph_qint_raw</span><span class="p">,</span> <span class="n">basis_sph_qint_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sbf_basis_qint</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1103</span>         <span class="n">main_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">cosφ_cab_q</span><span class="p">[</span><span class="n">quad_idx</span><span class="p">[</span><span class="s2">&quot;trip_out_to_quad&quot;</span><span class="p">]],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">angle_cabd</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1106</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_edge_interaction</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>     <span class="n">basis_rad_a2ee2a_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis_aeaint</span><span class="p">(</span><span class="n">a2ee2a_graph</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:132,</span> in <span class="ni">SphericalBasisLayer.forward</span><span class="nt">(self, D_ca, cosφ_cab, θ_cabd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D_ca</span><span class="p">,</span> <span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">rad_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radial_basis</span><span class="p">(</span><span class="n">D_ca</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">sph_basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span><span class="p">(</span><span class="n">cosφ_cab</span><span class="p">,</span> <span class="n">θ_cabd</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># (num_quadruplets, num_spherical**2)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_basis</span><span class="p">:</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/gemnet_oc/layers/spherical_basis.py:116,</span> in <span class="ni">SphericalBasisLayer.__init__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(cosφ, θ)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;legendre_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">circular_basis</span> <span class="o">=</span> <span class="n">get_sph_harm_basis</span><span class="p">(</span><span class="n">num_spherical</span><span class="p">,</span> <span class="n">zero_m_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="bp">self</span><span class="o">.</span><span class="n">spherical_basis</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cosφ</span><span class="p">,</span> <span class="n">ϑ</span><span class="p">:</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="n">circular_basis</span><span class="p">(</span><span class="n">cosφ</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="o">*</span> <span class="n">circular_basis</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ϑ</span><span class="p">))[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
-<span class="ne">--&gt; </span><span class="mi">116</span>     <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cosφ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">elif</span> <span class="n">sbf_name</span> <span class="o">==</span> <span class="s2">&quot;gaussian_outer&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="bp">self</span><span class="o">.</span><span class="n">circular_basis</span> <span class="o">=</span> <span class="n">GaussianBasis</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="n">start</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_gaussians</span><span class="o">=</span><span class="n">num_spherical</span><span class="p">,</span> <span class="o">**</span><span class="n">sbf_hparams</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: cannot reshape tensor of 0 elements into shape [0, -1] because the unspecified dimension size -1 can be any value and is ambiguous
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>  <span class="c1"># &lt;- critical line for Gemnet</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-23.71796226501465
 </pre></div>
 </div>
 </div>
@@ -1452,7 +847,7 @@ document.write(`
 <p>Not all models require tags though. This EquiformerV2 model does not use them. This is another detail that is important to keep in mind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -1462,29 +857,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">atoms</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH4&#39;</span><span class="p">)</span>
 
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.42973756790161133
 </pre></div>
 </div>
 </div>
@@ -1497,7 +876,7 @@ An example is shown below. See <a class="reference external" href="https://githu
 This happens because a random selection of is made to sample edges, and a different selection is made each time you run it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
@@ -1521,30 +900,6 @@ This happens because a random selection of is made to sample edges, and a differ
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139867305755616 1.1039578345098711e-06
-1.2139878273010254
-1.2139852046966553
-1.2139878273010254
-1.2139878273010254
-1.2139852046966553
-1.2139873504638672
-1.2139861583709717
-1.2139880657196045
-1.2139861583709717
-1.2139856815338135
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-forces-don-t-sum-to-zero">
@@ -1552,7 +907,7 @@ This happens because a random selection of is made to sample edges, and a differ
 <p>In DFT, the forces on all the atoms should sum to zero; otherwise, there is a net translational or rotational force present. This is not enforced in fairchem models. Instead, individual forces are predicted, with no constraint that they sum to zero. If the force predictions are very accurate, then they sum close to zero. You can further improve this if you subtract the mean force from each atom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
@@ -1569,30 +924,11 @@ This happens because a random selection of is made to sample edges, and a differ
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.0084798 ,  0.01409972, -0.05882883], dtype=float32)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This makes them sum closer to zero by removing net translational force</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This makes them sum closer to zero by removing net translational force</span>
 <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9.1735274e-08, 6.3213520e-08, 1.1920929e-07], dtype=float32)
 </pre></div>
 </div>
 </div>

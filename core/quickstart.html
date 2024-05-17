@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using pre-trained models in ASE &#8212; FAIR Chemistry Documentation</title>
+    <title>Using pre-trained models in ASE</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -627,13 +621,8 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
 </pre></div>
 </div>
 </div>
@@ -643,14 +632,9 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -660,7 +644,7 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
 <span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -686,73 +670,6 @@ document.write(`
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 04:27:41     -110.398659        1.6307
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 04:27:41     -110.545036        0.9250
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 04:27:42     -110.622719        0.5629
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 04:27:42     -110.613007        0.5830
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 04:27:43     -110.641937        0.4612
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 04:27:43     -110.691620        0.3621
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 04:27:43     -110.723862        0.5928
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 04:27:44     -110.764206        0.7120
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 04:27:44     -110.869545        0.5228
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 04:27:45     -110.938713        0.1706
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 04:27:45     -110.977699        0.0839
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 04:27:45     -110.992668        0.0717
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 04:27:46     -110.999657        0.0612
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 04:27:46     -110.995178        0.0595
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 04:27:46     -111.005981        0.0603
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 04:27:47     -111.007721        0.0621
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 04:27:47     -111.010895        0.0351
-</pre></div>
-</div>
-<img alt="../_images/643db0cf71f60bbef7025b3f50dfab282da4371e89979a0744574aaa167e16fc.png" src="../_images/643db0cf71f60bbef7025b3f50dfab282da4371e89979a0744574aaa167e16fc.png" />
 </div>
 </div>
 <p>To learn more about what this simulation means and how it fits into catalysis, see the <a class="reference internal" href="../tutorials/intro.html"><span class="doc std std-doc">catalysis tutorial</span></a>!</p>

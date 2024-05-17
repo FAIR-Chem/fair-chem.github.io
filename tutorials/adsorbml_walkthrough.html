@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AdsorbML tutorial &#8212; FAIR Chemistry Documentation</title>
+    <title>AdsorbML tutorial</title>
   
   
   
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -637,7 +631,7 @@ document.write(`
 <h1>AdsorbML tutorial<a class="headerlink" href="#adsorbml-tutorial" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">import</span> <span class="nn">ase.io</span>
 <span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
 
@@ -662,7 +656,7 @@ document.write(`
 <p>AdsorbML incorporates random placement, which is especially useful for more complicated adsorbates which may have many degrees of freedom. I have opted sample a few random placements and a few heuristic. Here I am using *CO on copper (1,1,1) as an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
 <span class="n">adsorbate_smiles</span> <span class="o">=</span> <span class="s2">&quot;*CO&quot;</span>
 
 <span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">)</span>
@@ -678,7 +672,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform heuristic placements</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform heuristic placements</span>
 <span class="n">heuristic_adslabs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;heuristic&quot;</span><span class="p">)</span>
 
 <span class="c1"># Perform random placements</span>
@@ -700,7 +694,7 @@ document.write(`
 <p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference internal" href="../core/model_checkpoints.html"><span class="doc std std-doc">here</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -720,475 +714,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 04:59:35       -0.233724        1.1097
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 04:59:38       -0.266057        1.4877
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 04:59:41       -0.364080        1.8244
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 04:59:43       -0.438401        1.4692
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 04:59:46       -0.476299        0.6337
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 04:59:49       -0.493985        0.2911
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 04:59:51       -0.500023        0.1667
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 04:59:54       -0.500937        0.1538
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 04:59:56       -0.515057        0.2001
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 04:59:59       -0.519229        0.1888
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:00:02       -0.520967        0.0816
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:00:04       -0.523086        0.2072
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:00:07       -0.525862        0.3091
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:00:09       -0.527734        0.2641
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:00:12       -0.527924        0.1826
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:00:15       -0.526679        0.0791
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:00:17       -0.527298        0.0713
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:00:20       -0.530799        0.1593
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 05:00:23       -0.532205        0.1189
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 05:00:25       -0.534987        0.0135
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:00:28       -0.417192        1.8643
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:00:30       -0.413483        2.2787
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:00:33       -0.447215        0.7655
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:00:36       -0.468946        0.7393
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:00:38       -0.514878        1.2381
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:00:41       -0.546769        0.5083
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:00:44       -0.549353        0.1889
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:00:46       -0.549850        0.2316
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:00:49       -0.550231        0.3203
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:00:51       -0.554088        0.3190
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:00:54       -0.558922        0.2068
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:00:56       -0.561161        0.0875
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:00:59       -0.563009        0.1361
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:01:02       -0.563465        0.2112
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:01:04       -0.563749        0.1907
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:01:07       -0.563736        0.1659
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:01:10       -0.564624        0.1083
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:01:12       -0.565160        0.0423
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:01:15       -0.347627        1.3362
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:01:18       -0.357176        1.6386
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:01:20       -0.390296        1.0926
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:01:23       -0.505457        0.3676
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:01:25       -0.507326        0.1932
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:01:28       -0.506986        0.2286
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:01:31       -0.509704        0.4250
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:01:33       -0.513354        0.3576
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:01:36       -0.516795        0.1625
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:01:39       -0.518124        0.0841
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:01:41       -0.519128        0.2129
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:01:44       -0.519748        0.2825
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:01:46       -0.521003        0.2295
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:01:49       -0.522533        0.1320
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:01:52       -0.523275        0.0400
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:01:54       -0.420236        1.8833
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:01:57       -0.419584        2.2978
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:01:59       -0.452363        0.7609
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:02:02       -0.475674        0.7236
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:02:05       -0.518585        1.1980
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:02:07       -0.547901        0.4858
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:02:10       -0.550825        0.1819
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:02:13       -0.551461        0.2354
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:02:15       -0.552287        0.3192
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:02:18       -0.555913        0.3012
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:02:21       -0.559443        0.1785
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:02:23       -0.560439        0.0804
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:02:26       -0.561162        0.1441
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:02:29       -0.562122        0.2142
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:02:31       -0.564328        0.1945
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:02:34       -0.563908        0.1570
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:02:37       -0.564640        0.1036
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:02:39       -0.565969        0.0356
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:02:42       -0.214101        1.0197
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:02:45       -0.244264        0.9918
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:02:47       -0.460151        1.3028
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:02:50       -0.463642        0.4230
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:02:53       -0.466062        0.3959
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:02:55       -0.468098        0.4017
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:02:58       -0.482765        0.3989
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:03:01       -0.486510        0.2064
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:03:03       -0.488558        0.0886
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:03:06       -0.489663        0.1434
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:03:09       -0.492897        0.1962
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:03:12       -0.494465        0.2038
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:03:14       -0.495904        0.1804
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:03:17       -0.497476        0.1085
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:03:20       -0.498337        0.1170
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:03:22       -0.499946        0.2068
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:03:25       -0.502922        0.2407
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:03:28       -0.506686        0.1464
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 05:03:30       -0.508921        0.0486
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:03:33       -0.210581        0.9918
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:03:35       -0.240674        0.9508
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:03:38       -0.455528        0.8897
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:03:41       -0.452411        0.5337
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:03:43       -0.460225        0.2522
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:03:46       -0.465277        0.2798
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:03:49       -0.475385        0.4246
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:03:51       -0.483632        0.3981
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:03:54       -0.490056        0.1758
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:03:57       -0.490936        0.0929
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:03:59       -0.491393        0.1774
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:04:02       -0.493143        0.2590
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:04:05       -0.494903        0.2252
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:04:07       -0.497034        0.1475
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:04:10       -0.498538        0.0742
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:04:12       -0.499900        0.1094
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:04:15       -0.501451        0.1885
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:04:18       -0.503058        0.2470
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 05:04:20       -0.505946        0.1547
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 05:04:23       -0.507459        0.0506
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 05:04:26       -0.508254        0.0686
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 05:04:28       -0.509452        0.0968
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 05:04:31       -0.511189        0.0951
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 05:04:33       -0.511647        0.0642
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 05:04:36       -0.511326        0.0411
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:04:39       -0.143864        0.7378
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:04:41       -0.167839        0.9941
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:04:44       -0.403544        0.8602
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:04:46       -0.404246        0.8110
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:04:49       -0.423444        0.5249
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:04:52       -0.443801        1.2238
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:04:54       -0.462168        1.3272
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:04:57       -0.495045        0.9544
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:05:00       -0.501958        0.2895
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:05:02       -0.507045        0.1654
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:05:05       -0.509157        0.0984
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:05:08       -0.509561        0.0855
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:05:10       -0.511316        0.1069
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:05:13       -0.514128        0.0831
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:05:15       -0.515370        0.0563
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:05:18       -0.516611        0.0395
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 05:05:21       -0.313384        1.2049
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 05:05:23       -0.325542        1.5085
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 05:05:26       -0.362659        1.2361
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 05:05:29       -0.423043        1.2381
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 05:05:31       -0.480795        0.4209
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 05:05:34       -0.491539        0.2025
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 05:05:37       -0.494560        0.2701
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 05:05:39       -0.497923        0.2646
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 05:05:42       -0.505336        0.1618
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 05:05:44       -0.509396        0.1611
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 05:05:47       -0.511502        0.1316
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 05:05:50       -0.513167        0.1362
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 05:05:52       -0.515870        0.1619
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 05:05:55       -0.519690        0.1575
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 05:05:57       -0.520176        0.0919
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 05:06:00       -0.519529        0.0711
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 05:06:03       -0.519410        0.0656
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 05:06:05       -0.520343        0.0556
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 05:06:08       -0.520736        0.0458
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="parse-the-trajectories-and-post-process">
@@ -1203,7 +728,7 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 <p>We check these because they effect our referencing scheme and may result in erroneous energies. For (4), the relaxed surface should really be supplied as well. It will be necessary when correcting the SP / RX energies later. Since we don’t have it here, we will ommit supplying it, and the detector will instead compare the initial and final slab from the adsorbate-slab relaxation trajectory. If a relaxed slab is provided, the detector will compare it and the slab after the adsorbate-slab relaxation. The latter is more correct! Note: for the results in the AdsorbML paper, we did not check if the adsorbate was intercalated (<code class="docutils literal notranslate"><span class="pre">is_adsorbate_intercalated()</span></code>) because it is a new addition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over trajs to extract results</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over trajs to extract results</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">/*.traj&quot;</span><span class="p">):</span>
     <span class="n">rx_id</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -1229,100 +754,15 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>relaxation_idx</th>
-      <th>relaxed_atoms</th>
-      <th>relaxed_energy_ml</th>
-      <th>anomolous</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.565969</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.508921</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.565160</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>7</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.520736</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.523275</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.516611</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.534987</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.511326</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#scrap anomalies</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#scrap anomalies</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">anomolous</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1334,7 +774,7 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 <p>We may have enumerated very similar structures or structures may have relaxed to the same configuration. For this reason, it is advantageous to cull systems if they are very similar. This results in marginal improvements in the recall metrics we calculated for AdsorbML, so it wasnt implemented there. It is, however, a good way to prevent wasteful VASP calculations. You can also imagine that if we would have enumerated 1000 configs per slab adsorbate combo rather than 100 for AdsorbML, it is more likely that having redundant systems would reduce performance, so its a good thing to keep in mind. This may be done by eye for a small number of systems, but with many systems it is easier to use an automated approach. Here is an example of one such approach, which uses a SOAP descriptor to find similar systems.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the configs and their energies</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the configs and their energies</span>
 <span class="k">def</span> <span class="nf">deduplicate</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
                 <span class="n">adsorbate_binding_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                 <span class="n">cosine_similarity</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">,</span>
@@ -1399,7 +839,7 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">configs_for_deduplication</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">relaxed_atoms</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configs_for_deduplication</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">relaxed_atoms</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">idxs_to_keep</span> <span class="o">=</span> <span class="n">deduplicate</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">,</span> <span class="n">adsorbate</span><span class="o">.</span><span class="n">binding_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1407,7 +847,7 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flip through your configurations to check them out (and make sure deduplication looks good)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flip through your configurations to check them out (and make sure deduplication looks good)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">idxs_to_keep</span><span class="p">)</span>
 <span class="n">view_x3d_n</span><span class="p">(</span><span class="n">configs_for_deduplication</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
 </pre></div>
@@ -1416,84 +856,19 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idxs_to_keep</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idxs_to_keep</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">low_e_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxed_energy_ml</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">low_e_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxed_energy_ml</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The lowest 5 energies are: </span><span class="si">{</span><span class="n">low_e_values</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The lowest 5 energies are: [-0.566 -0.535 -0.523 -0.517]
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>relaxation_idx</th>
-      <th>relaxed_atoms</th>
-      <th>relaxed_energy_ml</th>
-      <th>anomolous</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>3</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.565969</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>6</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.516611</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.523275</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>0</td>
-      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
-      <td>-0.534987</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="write-vasp-input-files">
@@ -1501,7 +876,7 @@ BFGS:    0 05:05:21       -0.313384        1.2049
 <p>This assumes you have access to VASP pseudopotentials and the right environment variables configured for ASE. The default VASP flags (which are equivalent to those used to make OC20) are located in <code class="docutils literal notranslate"><span class="pre">ocdata.utils.vasp</span></code>. Alternatively, you may pass your own vasp flags to the <code class="docutils literal notranslate"><span class="pre">write_vasp_input_files</span></code> function as <code class="docutils literal notranslate"><span class="pre">vasp_flags</span></code>.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab the 5 systems with the lowest energy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab the 5 systems with the lowest energy</span>
 <span class="n">configs_for_dft</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxed_atoms</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">config_idxs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;relaxed_energy_ml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relaxation_idx</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 

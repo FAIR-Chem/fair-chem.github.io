@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation &#8212; FAIR Chemistry Documentation</title>
+    <title>Installation</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using pre-trained models in ASE" href="quickstart.html" />
-    <link rel="prev" title="Datasets in fairchem:" href="../index.html" />
+    <link rel="prev" title="FAIR-Chem overview" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,14 +146,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="FAIR Chemistry Documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="FAIR Chemistry Documentation - Home"/>`);</script>
   
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +167,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Datasets in fairchem:
+                    FAIR-Chem overview
                 </a>
             </li>
         </ul>
@@ -617,10 +611,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda">Conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi">PyPi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-fairchem-core">Install fairchem-core</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-install">Development install</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-and-installing-the-git-repository-on-windows">Cloning and installing the git repository on windows</a></li>
 </ul>
 </li>
@@ -637,52 +635,55 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<section id="conda-or-better-yet-mamba-easy">
-<h2>conda or better yet <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a> - easy<a class="headerlink" href="#conda-or-better-yet-mamba-easy" title="Link to this heading">#</a></h2>
+<p>To install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> you will need to setup the <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> environment (using <a class="reference internal" href="#Conda"><span class="xref myst">conda</span></a> or <a class="reference internal" href="#PyPi"><span class="xref myst">pip</span></a>)
+and then either install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> package <a class="reference internal" href="#Install-fairchem-core"><span class="xref myst">directly</span></a> or install a <a class="reference internal" href="#Development-install"><span class="xref myst">development version</span></a> from our git repository.</p>
+<section id="environment">
+<h2>Environment<a class="headerlink" href="#environment" title="Link to this heading">#</a></h2>
+<p>You can install the environment using either conda or pip</p>
+<section id="conda">
+<h3>Conda<a class="headerlink" href="#conda" title="Link to this heading">#</a></h3>
 <p>We do not have official conda recipes (yet!); in the meantime you can use the
-following environment yaml files for CPU <a class="reference external" href="https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.cpu.yml">env.cpu.yml</a>
-or GPU <a class="reference external" href="https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.gpu.yml">env.gpu.yml</a> to easily set up a
-working environment and install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code>.</p>
+following environment yaml files to setup on CPU or GPU. If conda is too slow for you, please consider using <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a></p>
 <ol class="arabic">
 <li><p>Create an environment to install <em>fairchem</em></p>
-<ol class="arabic">
-<li><p><strong>GPU</strong></p>
+<p>a. <strong>GPU</strong></p>
 <p>The default environment uses cuda 11.8, if you need a different version you will have to edit <em>pytorch-cuda</em> version
 accordingly.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.gpu.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.gpu.yml
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.gpu.yml
+</pre></div>
+</div>
+<p>b. <strong>CPU</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/FAIR-Chem/fairchem/main/packages/env.cpu.yml
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.cpu.yml
 </pre></div>
 </div>
 </li>
-<li><p><strong>CPU</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.cpu.yml
-</pre></div>
-</div>
-</li>
-</ol>
-</li>
-<li><p>Activate the environment and install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> from PyPi</p>
+<li><p>Activate the environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>fair-chem
-pip<span class="w"> </span>install<span class="w"> </span>fairchem-core
 </pre></div>
 </div>
 </li>
 </ol>
 </section>
-<section id="pypi-flexible">
-<h2>PyPi - flexible<a class="headerlink" href="#pypi-flexible" title="Link to this heading">#</a></h2>
+<section id="pypi">
+<h3>PyPi<a class="headerlink" href="#pypi" title="Link to this heading">#</a></h3>
 <p>You can also install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> and <code class="docutils literal notranslate"><span class="pre">torch_geometric</span></code> dependencies from PyPI to select specific CPU or CUDA versions.</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> by selecting your installer, OS and CPU or CUDA version following the official
 <a class="reference external" href="https://pytorch.org/get-started/locally/">Pytorch docs</a></p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">torch_geometric</span></code> and the <code class="docutils literal notranslate"><span class="pre">torch_scatter</span></code>, <code class="docutils literal notranslate"><span class="pre">torch_sparse</span></code>, and <code class="docutils literal notranslate"><span class="pre">torch_cluster</span></code> optional dependencies
 similarly by selecting the appropriate versions in the official
 <a class="reference external" href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">PyG docs</a></p></li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> from PyPi</p>
+</ol>
+</section>
+</section>
+<section id="install-fairchem-core">
+<h2>Install fairchem-core<a class="headerlink" href="#install-fairchem-core" title="Link to this heading">#</a></h2>
+<p>Install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> from PyPi</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>fairchem-core
 </pre></div>
 </div>
-</li>
-</ol>
 </section>
 <section id="additional-packages">
 <h2>Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h2>
@@ -692,12 +693,13 @@ to install other packages you can do so by:</p>
 </pre></div>
 </div>
 </section>
-<section id="dev-install">
-<h2>Dev install<a class="headerlink" href="#dev-install" title="Link to this heading">#</a></h2>
-<p>If you plan to make contributions you will need to clone (for windows user please see next section) the repo and install
-<code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> in editable mode with dev
-dependencies,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
+<section id="development-install">
+<h2>Development install<a class="headerlink" href="#development-install" title="Link to this heading">#</a></h2>
+<p>If you plan to make contributions you will need to fork and clone (for windows user please see next section) the repo,
+set up the environment, and install fairchem-core from source in editable mode with dev dependencies,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/FAIR-Chem/fairchem.git
+<span class="nb">cd</span><span class="w"> </span>fairchem
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
 </pre></div>
 </div>
 <p>And similarly for any other namespace package:</p>
@@ -708,10 +710,7 @@ dependencies,</p>
 <h3>Cloning and installing the git repository on windows<a class="headerlink" href="#cloning-and-installing-the-git-repository-on-windows" title="Link to this heading">#</a></h3>
 <p>Our build system requires the use of symlinks which are not available by default on windows. To properly build fairchem packages you must enable symlinks and clone the repository with them enabled.</p>
 <ol class="arabic simple">
-<li><p>When installing git on your machine make sure “enable symbolic links” is checked  (<a class="reference external" href="https://git-scm.com/download/win">download git installer</a>)</p></li>
-</ol>
-<p><img alt="Enable symlinks on git install" src="https://i.stack.imgur.com/kZmPI.png" /></p>
-<ol class="arabic simple" start="2">
+<li><p>When installing git on your machine make sure “enable symbolic links” is checked  (<a class="reference external" href="https://git-scm.com/download/win">download git installer</a>) (<a class="reference external" href="https://stackoverflow.com/a/65563980">see here</a> for detailed instructions )</p></li>
 <li><p>Enable developer mode (<a class="reference external" href="https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development">instructions</a>) or run the following commands as administrator</p></li>
 <li><p>Run the git clone command with symlinks enabled</p></li>
 </ol>
@@ -758,7 +757,7 @@ dependencies,</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Datasets in <code class="docutils literal notranslate"><span class="pre">fairchem</span></code>:</p>
+        <p class="prev-next-title">FAIR-Chem overview</p>
       </div>
     </a>
     <a class="right-next"
@@ -786,10 +785,14 @@ dependencies,</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda">Conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi">PyPi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-fairchem-core">Install fairchem-core</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-install">Development install</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-and-installing-the-git-repository-on-windows">Cloning and installing the git repository on windows</a></li>
 </ul>
 </li>
