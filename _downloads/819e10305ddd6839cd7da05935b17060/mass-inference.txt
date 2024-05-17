@@ -1,15 +1,15 @@
-2024-05-17 17:57:43 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
-2024-05-17 17:57:44 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-05-17 17:57:44 (INFO): amp: true
+2024-05-17 19:43:00 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-05-17 19:43:01 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-05-17 19:43:01 (INFO): amp: true
 cmd:
-  checkpoint_dir: ./checkpoints/2024-05-17-17-57-20
+  checkpoint_dir: ./checkpoints/2024-05-17-19-44-00
   commit: 00de11a
   identifier: ''
-  logs_dir: ./logs/tensorboard/2024-05-17-17-57-20
+  logs_dir: ./logs/tensorboard/2024-05-17-19-44-00
   print_every: 10
-  results_dir: ./results/2024-05-17-17-57-20
+  results_dir: ./results/2024-05-17-19-44-00
   seed: 0
-  timestamp_id: 2024-05-17-17-57-20
+  timestamp_id: 2024-05-17-19-44-00
   version: 0.1.dev1+g00de11a
 dataset:
   a2g_args:
@@ -121,23 +121,23 @@ test_dataset:
 trainer: ocp
 val_dataset: null
 
-2024-05-17 17:57:44 (INFO): Loading dataset: ase_db
-2024-05-17 17:57:44 (INFO): rank: 0: Sampler created...
-2024-05-17 17:57:44 (INFO): Batch balancing is disabled for single GPU training.
-2024-05-17 17:57:44 (INFO): rank: 0: Sampler created...
-2024-05-17 17:57:44 (INFO): Batch balancing is disabled for single GPU training.
-2024-05-17 17:57:44 (INFO): Loading model: gemnet_t
-2024-05-17 17:57:46 (INFO): Loaded GemNetT with 31671825 parameters.
-2024-05-17 17:57:46 (WARNING): Model gradient logging to tensorboard not yet supported.
-2024-05-17 17:57:46 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt
-2024-05-17 17:57:46 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
-2024-05-17 17:57:46 (WARNING): Scale factor comment not found in model
-2024-05-17 17:57:46 (INFO): Predicting on test.
+2024-05-17 19:43:01 (INFO): Loading dataset: ase_db
+2024-05-17 19:43:01 (INFO): rank: 0: Sampler created...
+2024-05-17 19:43:01 (INFO): Batch balancing is disabled for single GPU training.
+2024-05-17 19:43:01 (INFO): rank: 0: Sampler created...
+2024-05-17 19:43:01 (INFO): Batch balancing is disabled for single GPU training.
+2024-05-17 19:43:01 (INFO): Loading model: gemnet_t
+2024-05-17 19:43:03 (INFO): Loaded GemNetT with 31671825 parameters.
+2024-05-17 19:43:03 (WARNING): Model gradient logging to tensorboard not yet supported.
+2024-05-17 19:43:04 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt
+2024-05-17 19:43:04 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-05-17 19:43:04 (WARNING): Scale factor comment not found in model
+2024-05-17 19:43:04 (INFO): Predicting on test.
 device 0:   0%|                                           | 0/3 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  33%|███████████▋                       | 1/3 [00:03<00:07,  3.71s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:05<00:02,  2.82s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:08<00:00,  2.77s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:08<00:00,  2.88s/it]
-2024-05-17 17:57:55 (INFO): Writing results to ./results/2024-05-17-17-57-20/ocp_predictions.npz
-2024-05-17 17:57:55 (INFO): Total time taken: 8.80666995048523
-Elapsed time = 15.0 seconds
+device 0:  33%|███████████▋                       | 1/3 [00:02<00:05,  2.85s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:05<00:02,  2.69s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  1.98s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.19s/it]
+2024-05-17 19:43:10 (INFO): Writing results to ./results/2024-05-17-19-44-00/ocp_predictions.npz
+2024-05-17 19:43:10 (INFO): Total time taken: 6.720050811767578
+Elapsed time = 13.1 seconds
