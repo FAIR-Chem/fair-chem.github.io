@@ -303,6 +303,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/typing/index.html">core.common.typing</a></li>
@@ -730,12 +731,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -743,23 +744,23 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
 <span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:436,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">436</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:237,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">237</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
@@ -921,7 +922,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/1677958285.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/1677958285.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
@@ -958,7 +959,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/2284884232.py:9: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/2284884232.py:9: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
@@ -987,11 +988,11 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/898007276.py:7: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/898007276.py:7: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.682196855545044
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6709036827087402
 </pre></div>
 </div>
 </div>
@@ -1098,12 +1099,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1111,23 +1112,23 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
 <span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:436,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">436</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:237,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">237</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
@@ -1308,12 +1309,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1321,23 +1322,23 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
 <span class="ne">--&gt; </span><span class="mi">115</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:434,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:436,</span> in <span class="ni">OCPTrainer.predict</span><span class="nt">(self, data_loader, per_image, results_file, disable_tqdm)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>     <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">),</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="n">disable</span><span class="o">=</span><span class="n">disable_tqdm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">436</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="k">for</span> <span class="n">target_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>         <span class="n">pred</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">target_key</span><span class="p">]</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:235,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:237,</span> in <span class="ni">OCPTrainer._forward</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">237</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1">### TODO: Move into BaseModel in OCP 2.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">outputs</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
@@ -1456,7 +1457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/3906293788.py:3: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/3906293788.py:3: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -1500,11 +1501,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/4094489779.py:3: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/4094489779.py:3: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297376871109009
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297373294830322
 </pre></div>
 </div>
 </div>
@@ -1551,21 +1552,21 @@ This happens because a random selection of is made to sample edges, and a differ
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/3095522216.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/3095522216.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139875650405885 2.109566605398526e-06
-1.2139904499053955
-1.2139866352081299
-1.2139892578125
-1.2139885425567627
-1.213989019393921
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139860391616821 1.6319050749442676e-06
+1.2139861583709717
+1.2139849662780762
 1.2139837741851807
-1.2139885425567627
+1.213989019393921
 1.213986873626709
-1.2139885425567627
-1.2139840126037598
+1.2139880657196045
+1.2139837741851807
+1.2139861583709717
+1.2139866352081299
+1.2139849662780762
 </pre></div>
 </div>
 </div>
@@ -1603,11 +1604,11 @@ This happens because a random selection of is made to sample edges, and a differ
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2367/2981184886.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/2981184886.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00848129,  0.01409292, -0.0588274 ], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00848194,  0.01409447, -0.05882657], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1620,7 +1621,7 @@ This happens because a random selection of is made to sample edges, and a differ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-6.2165782e-08, -1.2887176e-07,  0.0000000e+00], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.3416866e-07,  7.9278834e-08, -1.1920929e-07], dtype=float32)
 </pre></div>
 </div>
 </div>

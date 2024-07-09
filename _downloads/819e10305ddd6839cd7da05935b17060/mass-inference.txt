@@ -1,0 +1,131 @@
+2024-07-09 14:17:18 (INFO): Running in non-distributed local mode
+2024-07-09 14:17:19 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-07-09 14:17:20 (INFO): amp: true
+cmd:
+  checkpoint_dir: ./checkpoints/2024-07-09-14-17-36
+  commit: bf2b26e
+  identifier: ''
+  logs_dir: ./logs/tensorboard/2024-07-09-14-17-36
+  print_every: 10
+  results_dir: ./results/2024-07-09-14-17-36
+  seed: 0
+  timestamp_id: 2024-07-09-14-17-36
+  version: 0.1.dev1+gbf2b26e
+dataset: null
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gp_gpus: null
+gpus: 0
+logger: tensorboard
+loss_functions:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model: gemnet_t
+model_attributes:
+  activation: silu
+  cbf:
+    name: spherical_harmonics
+  cutoff: 6.0
+  direct_forces: true
+  emb_size_atom: 512
+  emb_size_bil_trip: 64
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_rbf: 16
+  emb_size_trip: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  max_neighbors: 50
+  num_after_skip: 2
+  num_atom: 3
+  num_before_skip: 1
+  num_blocks: 3
+  num_concat: 1
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  rbf:
+    name: gaussian
+  regress_forces: true
+noddp: false
+optim:
+  batch_size: 16
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 5000
+  force_coefficient: 1
+  loss_energy: mae
+  loss_force: atomwisel2
+  lr_gamma: 0.8
+  lr_initial: 0.0005
+  lr_milestones:
+  - 64000
+  - 96000
+  - 128000
+  - 160000
+  - 192000
+  max_epochs: 80
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  warmup_steps: -1
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+slurm: {}
+task:
+  prediction_dtype: float32
+test_dataset:
+  a2g_args:
+    r_energy: false
+    r_forces: false
+  format: ase_db
+  select_args:
+    selection: natoms>5,xc=PBE
+  src: data.db
+trainer: ocp
+val_dataset: null
+
+2024-07-09 14:17:20 (INFO): rank: 0: Sampler created...
+2024-07-09 14:17:20 (INFO): Batch balancing is disabled for single GPU training.
+2024-07-09 14:17:20 (INFO): Loading model: gemnet_t
+2024-07-09 14:17:22 (INFO): Loaded GemNetT with 31671825 parameters.
+2024-07-09 14:17:22 (WARNING): log_summary for Tensorboard not supported
+2024-07-09 14:17:22 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt
+2024-07-09 14:17:22 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-07-09 14:17:22 (WARNING): Scale factor comment not found in model
+2024-07-09 14:17:22 (INFO): Predicting on test.
+device 0:   0%|                                           | 0/3 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+device 0:  33%|███████████▋                       | 1/3 [00:02<00:04,  2.03s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:04<00:02,  2.51s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.11s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.18s/it]
+2024-07-09 14:17:28 (INFO): Writing results to ./results/2024-07-09-14-17-36/ocp_predictions.npz
+2024-07-09 14:17:28 (INFO): Total time taken: 6.688116550445557
+Elapsed time = 13.0 seconds

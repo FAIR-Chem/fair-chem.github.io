@@ -303,6 +303,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/typing/index.html">core.common.typing</a></li>
@@ -826,10 +827,10 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 66.6 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.7 seconds.
 </pre></div>
 </div>
-<img alt="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" src="../../_images/779c250f6bf7aaa03eef896ef1541e648ebf742911fe25095bde7b712d7234d4.png" />
+<img alt="../../_images/e09235df67f6a4f604e2dc396140b3979de3a415db6696093790df3189ca2edf.png" src="../../_images/e09235df67f6a4f604e2dc396140b3979de3a415db6696093790df3189ca2edf.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +861,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" src="../../_images/01e81f6c3f48ab7afff5b938d0c6a052f8635f048b5b7f495a17409cb544df72.png" />
+<img alt="../../_images/ac62bef9bb42a8dd7dd1f92200161f8670209306f784fd9ebc25a09415ef715b.png" src="../../_images/ac62bef9bb42a8dd7dd1f92200161f8670209306f784fd9ebc25a09415ef715b.png" />
 </div>
 </div>
 <p>We can improve this by fine-tuning the model.</p>
@@ -905,7 +906,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2296/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2423/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -982,21 +983,23 @@ Rows: 295 (showing first 20)
                            <span class="s1">&#39;optim.loss_force&#39;</span><span class="p">,</span> <span class="c1"># the checkpoint setting causes an error</span>
                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
                    <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                           <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                            <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;optim.batch_size&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
                             <span class="s1">&#39;logger&#39;</span><span class="p">:</span><span class="s1">&#39;tensorboard&#39;</span><span class="p">,</span> <span class="c1"># don&#39;t use wandb!</span>
                            <span class="c1"># Train data</span>
                            <span class="s1">&#39;dataset.train.src&#39;</span><span class="p">:</span> <span class="s1">&#39;train.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.train.format&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.train.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.train.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                             <span class="c1"># Test data - prediction only so no regression</span>
                            <span class="s1">&#39;dataset.test.src&#39;</span><span class="p">:</span> <span class="s1">&#39;test.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.test.format&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.test.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.test.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                            <span class="c1"># val data</span>
                            <span class="s1">&#39;dataset.val.src&#39;</span><span class="p">:</span> <span class="s1">&#39;val.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.val.format&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.val.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.val.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                           <span class="p">})</span>
@@ -1018,43 +1021,7 @@ Rows: 295 (showing first 20)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                            <span class="s1">&#39;optim.loss_force&#39;</span><span class="p">,</span> <span class="c1"># the checkpoint setting causes an error</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                    <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                            <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                            <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                            <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                            <span class="s1">&#39;optim.batch_size&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>                             <span class="s1">&#39;logger&#39;</span><span class="p">:</span><span class="s1">&#39;tensorboard&#39;</span><span class="p">,</span> <span class="c1"># don&#39;t use wandb!</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>                            <span class="c1"># Train data</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>                            <span class="s1">&#39;dataset.train.src&#39;</span><span class="p">:</span> <span class="s1">&#39;train.db&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>                            <span class="s1">&#39;dataset.train.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>                            <span class="s1">&#39;dataset.train.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>                             <span class="c1"># Test data - prediction only so no regression</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>                            <span class="s1">&#39;dataset.test.src&#39;</span><span class="p">:</span> <span class="s1">&#39;test.db&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>                            <span class="s1">&#39;dataset.test.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>                            <span class="s1">&#39;dataset.test.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>                            <span class="c1"># val data</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>                            <span class="s1">&#39;dataset.val.src&#39;</span><span class="p">:</span> <span class="s1">&#39;val.db&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                            <span class="s1">&#39;dataset.val.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>                            <span class="s1">&#39;dataset.val.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>                           <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">yml</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/tutorial_utils.py:178,</span> in <span class="ni">generate_yml_config</span><span class="nt">(checkpoint_path, yml, delete, update)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">nested_set</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">update</span><span class="p">[</span><span class="n">_key</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="c1"># TODO : Do not rename keys in utils.py when reading a config</span>
-<span class="ne">--&gt; </span><span class="mi">178</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;evaluation_metrics&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;eval_metrics&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="n">config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;eval_metrics&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="n">out</span> <span class="o">=</span> <span class="n">dump</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;eval_metrics&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/fairchem/fairchem/docs/core/fine-tuning/config.yml&#39;)
 </pre></div>
 </div>
 </div>
@@ -1062,6 +1029,139 @@ Rows: 295 (showing first 20)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>config.yml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>amp: true
+checkpoint: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+dataset:
+  test:
+    a2g_args:
+      r_energy: false
+      r_forces: false
+    format: ase_db
+    src: test.db
+  train:
+    a2g_args:
+      r_energy: true
+      r_forces: true
+    format: ase_db
+    src: train.db
+  val:
+    a2g_args:
+      r_energy: true
+      r_forces: true
+    format: ase_db
+    src: val.db
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gpus: 1
+logger: tensorboard
+loss_functions:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  name: gemnet_oc
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+noddp: false
+optim:
+  batch_size: 4
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 10
+  factor: 0.8
+  force_coefficient: 1
+  load_balancing: atoms
+  loss_energy: mae
+  lr_initial: 0.0005
+  max_epochs: 1
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+trainer: ocp
 </pre></div>
 </div>
 </div>
@@ -1080,10 +1180,10 @@ Rows: 295 (showing first 20)
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tail -f train.txt
 </pre></div>
 </div>
-<p>You can also visit it in a browser at <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
+<p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
 <p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">fairchem_main</span>
 
@@ -1093,13 +1193,29 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 206.6 seconds
+</pre></div>
 </div>
-<p>Now since we have a file, we can find the training results in it. See <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
+</div>
+</details>
+</div>
+<p>Now since we have a file, we can find the training results in it. See <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span><span class="s2">&quot;checkpoint_dir:&quot;</span><span class="w"> </span>train.txt
 <span class="n">cpdir</span> <span class="o">=</span> <span class="n">cpline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="n">cpdir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-07-09-14-11-12-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1110,6 +1226,17 @@ Rows: 295 (showing first 20)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
 <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -1146,11 +1273,19 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ec3d78c828a48f27837aed2db2ea620c401fa3cc7fec032fead69ca09d84fb29.png" src="../../_images/ec3d78c828a48f27837aed2db2ea620c401fa3cc7fec032fead69ca09d84fb29.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.324 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1167,6 +1302,9 @@ Rows: 295 (showing first 20)
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1bd3f6f137572394f45b2bea46d8a5d05c74e922aca09434f2a962c660c36a98.png" src="../../_images/1bd3f6f137572394f45b2bea46d8a5d05c74e922aca09434f2a962c660c36a98.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

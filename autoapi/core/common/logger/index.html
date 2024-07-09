@@ -303,6 +303,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorial_utils/index.html">core.common.tutorial_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../typing/index.html">core.common.typing</a></li>
@@ -688,7 +689,7 @@ LICENSE file in the root directory of this source tree.</p>
 tensorboard, etc.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.logger.Logger.watch">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.logger.Logger.watch" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.logger.Logger.watch" title="Link to this definition">#</a></dt>
 <dd><p>Monitor parameters and gradients.</p>
 </dd></dl>
 
@@ -723,7 +724,7 @@ tensorboard, etc.</p>
 tensorboard, etc.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.logger.WandBLogger.watch">
-<span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.logger.WandBLogger.watch" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.logger.WandBLogger.watch" title="Link to this definition">#</a></dt>
 <dd><p>Monitor parameters and gradients.</p>
 </dd></dl>
 
@@ -758,7 +759,7 @@ tensorboard, etc.</p>
 tensorboard, etc.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.logger.TensorboardLogger.watch">
-<span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#core.common.logger.TensorboardLogger.watch" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">watch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#core.common.logger.TensorboardLogger.watch" title="Link to this definition">#</a></dt>
 <dd><p>Monitor parameters and gradients.</p>
 </dd></dl>
 
