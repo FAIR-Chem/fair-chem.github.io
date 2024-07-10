@@ -731,12 +731,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -922,7 +922,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/1677958285.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/1677958285.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
@@ -959,7 +959,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/2284884232.py:9: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/2284884232.py:9: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
@@ -988,11 +988,11 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/898007276.py:7: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/898007276.py:7: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6709036827087402
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6888058185577393
 </pre></div>
 </div>
 </div>
@@ -1099,12 +1099,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1309,12 +1309,12 @@ document.write(`
 <span class="nn">    544         &#39;{} not present</span> in <span class="ni">this &#39; &#39;calculation&#39;.format</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="p">)</span>
 
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:237,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/common/relaxation/ase_utils.py:235,</span> in <span class="ni">OCPCalculator.calculate</span><span class="nt">(self, atoms, properties, system_changes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">data_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2g</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">data_list_collater</span><span class="p">([</span><span class="n">data_object</span><span class="p">],</span> <span class="n">otf_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">235</span> <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">per_image</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disable_tqdm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py:115,</span> in <span class="ni">context_decorator.&lt;locals&gt;.decorate_context</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -1457,7 +1457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/3906293788.py:3: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/3906293788.py:3: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -1501,11 +1501,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/4094489779.py:3: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/4094489779.py:3: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297373294830322
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297369122505188
 </pre></div>
 </div>
 </div>
@@ -1552,21 +1552,21 @@ This happens because a random selection of is made to sample edges, and a differ
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/3095522216.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/3095522216.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139860391616821 1.6319050749442676e-06
-1.2139861583709717
-1.2139849662780762
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139862775802612 1.9376552365568983e-06
+1.2139883041381836
+1.2139859199523926
+1.2139892578125
 1.2139837741851807
-1.213989019393921
-1.213986873626709
-1.2139880657196045
-1.2139837741851807
+1.2139856815338135
+1.2139835357666016
+1.2139892578125
+1.2139854431152344
 1.2139861583709717
-1.2139866352081299
-1.2139849662780762
+1.2139854431152344
 </pre></div>
 </div>
 </div>
@@ -1604,11 +1604,11 @@ This happens because a random selection of is made to sample edges, and a differ
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/2981184886.py:11: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2561/2981184886.py:11: DeprecationWarning: Please use atoms.calc = calc
   slab.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00848194,  0.01409447, -0.05882657], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00848049,  0.0140971 , -0.05883038], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1621,7 @@ This happens because a random selection of is made to sample edges, and a differ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.3416866e-07,  7.9278834e-08, -1.1920929e-07], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.5000114e-07,  7.9977326e-08,  0.0000000e+00], dtype=float32)
 </pre></div>
 </div>
 </div>
