@@ -302,6 +302,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/gp_utils/index.html">core.common.gp_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -799,7 +800,7 @@ Rows: 295 (showing first 20)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Namespace(mode=&#39;train&#39;, config_yml=PosixPath(&#39;config.yml&#39;), identifier=&#39;&#39;, debug=False, run_dir=&#39;./&#39;, print_every=10, seed=0, amp=True, checkpoint=&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;, timestamp_id=None, sweep_yml=None, submit=False, summit=False, logdir=PosixPath(&#39;logs&#39;), slurm_partition=&#39;ocp&#39;, slurm_mem=80, slurm_timeout=72, num_gpus=1, distributed=False, cpu=False, num_nodes=1, distributed_port=13356, distributed_backend=&#39;nccl&#39;, local_rank=0, no_ddp=False, gp_gpus=None),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Namespace(mode=&#39;train&#39;, config_yml=PosixPath(&#39;config.yml&#39;), identifier=&#39;&#39;, debug=False, run_dir=&#39;./&#39;, print_every=10, seed=0, amp=True, checkpoint=&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;, timestamp_id=None, sweep_yml=None, submit=False, summit=False, logdir=PosixPath(&#39;logs&#39;), slurm_partition=None, slurm_account=None, slurm_qos=None, slurm_mem=80, slurm_timeout=72, num_gpus=1, distributed=False, cpu=False, num_nodes=1, distributed_port=13356, distributed_backend=&#39;nccl&#39;, local_rank=0, no_ddp=False, gp_gpus=None),
  [])
 </pre></div>
 </div>
@@ -979,36 +980,13 @@ Rows: 295 (showing first 20)
   storage = elem.storage()._new_shared(numel)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.21s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.35s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.36s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.42s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.54s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:02&lt;00:02,  2.92s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.77s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.87s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.61s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1025,36 +1003,13 @@ Rows: 295 (showing first 20)
   storage = elem.storage()._new_shared(numel)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.54s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.12s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.58s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.81s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.82s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.13s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.84s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.99s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.95s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1071,36 +1026,13 @@ Rows: 295 (showing first 20)
   storage = elem.storage()._new_shared(numel)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.56s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.31s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.58s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.48s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.82s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  storage = elem.storage()._new_shared(numel)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.79s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.64s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.92s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.69s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1117,13 +1049,36 @@ Rows: 295 (showing first 20)
   storage = elem.storage()._new_shared(numel)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.24s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.10s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.01s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.89s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.15s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.02s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.47s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.47s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.71s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1143,10 +1098,56 @@ Rows: 295 (showing first 20)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.63s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.61s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.51s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.86s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.77s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:03&lt;00:03,  3.13s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:05&lt;00:00,  2.97s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:06&lt;00:00,  3.09s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:   0%|          | 0/2 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0:  50%|█████     | 1/2 [00:04&lt;00:04,  4.56s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.51s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device 0: 100%|██████████| 2/2 [00:07&lt;00:00,  3.78s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1162,28 +1163,28 @@ Rows: 295 (showing first 20)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-07-10 17:15:37 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-07-10 17:15:37 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-2024-07-10 17:15:39 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-07-10 17:15:40 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-2024-07-10 17:15:41 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-07-10 17:15:41 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-2024-07-10 17:15:43 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-07-10 17:15:43 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-2024-07-10 17:15:43 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-2024-07-10 17:15:45 (WARNING): log_summary for Tensorboard not supported
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-07-13 05:12:54 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-07-13 05:12:54 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+2024-07-13 05:12:56 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-07-13 05:12:56 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+2024-07-13 05:12:58 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-07-13 05:12:58 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+2024-07-13 05:13:00 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-07-13 05:13:00 (WARNING): No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+2024-07-13 05:13:00 (WARNING): Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+2024-07-13 05:13:02 (WARNING): log_summary for Tensorboard not supported
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-07-10 17:17:33 (INFO): energy_mae: 4.4390, forcesx_mae: 0.0265, forcesy_mae: 0.0287, forcesz_mae: 0.0326, forces_mae: 0.0293, forces_cosine_similarity: -0.0255, forces_magnitude_error: 0.0412, energy_forces_within_threshold: 0.0000, loss: 4.5278, epoch: 0.5085
-2024-07-10 17:17:58 (INFO): energy_mae: 4.13e+00, forcesx_mae: 2.77e-02, forcesy_mae: 2.17e-02, forcesz_mae: 2.79e-02, forces_mae: 2.58e-02, forces_cosine_similarity: -1.25e-02, forces_magnitude_error: 3.38e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.18e+00, lr: 5.00e-04, epoch: 6.78e-01, step: 4.00e+01
-2024-07-10 17:17:59 (INFO): Evaluating on val.
-2024-07-10 17:18:07 (INFO): energy_mae: 3.9977, forcesx_mae: 0.0090, forcesy_mae: 0.0131, forcesz_mae: 0.0090, forces_mae: 0.0104, forces_cosine_similarity: 0.0339, forces_magnitude_error: 0.0146, energy_forces_within_threshold: 0.0000, loss: 3.9749, epoch: 0.6780
-2024-07-10 17:18:08 (INFO): Predicting on test.
-2024-07-10 17:18:14 (INFO): Writing results to ./results/2024-07-10-17-14-40/ocp_predictions.npz
-2024-07-10 17:18:35 (INFO): energy_mae: 4.26e+00, forcesx_mae: 1.42e-02, forcesy_mae: 1.39e-02, forcesz_mae: 1.13e-02, forces_mae: 1.31e-02, forces_cosine_similarity: 4.83e-02, forces_magnitude_error: 1.46e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.29e+00, lr: 5.00e-04, epoch: 8.47e-01, step: 5.00e+01
-2024-07-10 17:18:37 (INFO): Evaluating on val.
-2024-07-10 17:18:45 (INFO): energy_mae: 3.3149, forcesx_mae: 0.0231, forcesy_mae: 0.0234, forcesz_mae: 0.0183, forces_mae: 0.0216, forces_cosine_similarity: 0.0934, forces_magnitude_error: 0.0293, energy_forces_within_threshold: 0.0000, loss: 3.3103, epoch: 0.8475
-2024-07-10 17:19:04 (INFO): Total time taken: 198.395441532135
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-07-13 05:14:49 (INFO): energy_mae: 4.2993, forcesx_mae: 0.0267, forcesy_mae: 0.0287, forcesz_mae: 0.0325, forces_mae: 0.0293, forces_cosine_similarity: -0.0221, forces_magnitude_error: 0.0411, energy_forces_within_threshold: 0.0000, loss: 4.3852, epoch: 0.5085
+2024-07-13 05:15:14 (INFO): energy_mae: 4.14e+00, forcesx_mae: 2.85e-02, forcesy_mae: 2.16e-02, forcesz_mae: 3.03e-02, forces_mae: 2.68e-02, forces_cosine_similarity: -7.56e-02, forces_magnitude_error: 3.51e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.19e+00, lr: 5.00e-04, epoch: 6.78e-01, step: 4.00e+01
+2024-07-13 05:15:16 (INFO): Evaluating on val.
+2024-07-13 05:15:23 (INFO): energy_mae: 3.6660, forcesx_mae: 0.0154, forcesy_mae: 0.0157, forcesz_mae: 0.0140, forces_mae: 0.0150, forces_cosine_similarity: 0.1020, forces_magnitude_error: 0.0183, energy_forces_within_threshold: 0.0000, loss: 3.6519, epoch: 0.6780
+2024-07-13 05:15:24 (INFO): Predicting on test.
+2024-07-13 05:15:30 (INFO): Writing results to ./results/2024-07-13-05-13-36/ocp_predictions.npz
+2024-07-13 05:15:51 (INFO): energy_mae: 5.43e+00, forcesx_mae: 2.00e-02, forcesy_mae: 2.01e-02, forcesz_mae: 1.59e-02, forces_mae: 1.87e-02, forces_cosine_similarity: 8.50e-03, forces_magnitude_error: 2.26e-02, energy_forces_within_threshold: 0.00e+00, loss: 5.46e+00, lr: 5.00e-04, epoch: 8.47e-01, step: 5.00e+01
+2024-07-13 05:15:53 (INFO): Evaluating on val.
+2024-07-13 05:16:00 (INFO): energy_mae: 20.2015, forcesx_mae: 0.0265, forcesy_mae: 0.0278, forcesz_mae: 0.0366, forces_mae: 0.0303, forces_cosine_similarity: -0.0315, forces_magnitude_error: 0.0487, energy_forces_within_threshold: 0.0000, loss: 19.9783, epoch: 0.8475
+2024-07-13 05:16:19 (INFO): Total time taken: 196.810702085495
 </pre></div>
 </div>
 </div>

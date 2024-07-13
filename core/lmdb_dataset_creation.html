@@ -302,6 +302,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/gp_utils/index.html">core.common.gp_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html">core.common.logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html">core.common.registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -687,7 +688,7 @@ about these steps as they’ve been automated as part of this
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2689/901556023.py:8: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2734/901556023.py:8: DeprecationWarning: Please use atoms.calc = calc
   adslab.set_calculator(EMT())
 </pre></div>
 </div>
@@ -902,49 +903,52 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1001 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 59/1001 [00:00&lt;00:01, 582.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 56/1001 [00:00&lt;00:01, 552.37it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 131/1001 [00:00&lt;00:01, 657.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█▏        | 122/1001 [00:00&lt;00:01, 610.93it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 202/1001 [00:00&lt;00:01, 678.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 184/1001 [00:00&lt;00:01, 612.86it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██▋       | 271/1001 [00:00&lt;00:01, 678.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██▍       | 246/1001 [00:00&lt;00:01, 611.95it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███▍      | 342/1001 [00:00&lt;00:00, 687.75it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███       | 311/1001 [00:00&lt;00:01, 625.43it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████▏     | 415/1001 [00:00&lt;00:00, 701.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 377/1001 [00:00&lt;00:00, 634.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▉     | 491/1001 [00:00&lt;00:00, 717.42it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████▍     | 442/1001 [00:00&lt;00:00, 636.29it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | 563/1001 [00:00&lt;00:00, 713.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████     | 507/1001 [00:00&lt;00:00, 638.15it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 635/1001 [00:00&lt;00:00, 711.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | 571/1001 [00:00&lt;00:00, 625.78it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████   | 707/1001 [00:01&lt;00:00, 704.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▎   | 637/1001 [00:01&lt;00:00, 635.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | 779/1001 [00:01&lt;00:00, 708.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████   | 702/1001 [00:01&lt;00:00, 639.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▌ | 851/1001 [00:01&lt;00:00, 711.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 766/1001 [00:01&lt;00:00, 635.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 923/1001 [00:01&lt;00:00, 707.86it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 830/1001 [00:01&lt;00:00, 634.02it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████▉| 996/1001 [00:01&lt;00:00, 713.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████▉ | 894/1001 [00:01&lt;00:00, 617.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 700.98it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| 956/1001 [00:01&lt;00:00, 610.84it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 622.61it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>

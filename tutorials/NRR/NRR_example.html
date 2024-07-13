@@ -302,6 +302,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/gp_utils/index.html">core.common.gp_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/hpo_utils/index.html">core.common.hpo_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -724,6 +725,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;number&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;international&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;wyckoffs&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;equivalent_atoms&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Slab: (Ag36Pd12, (1, 1, 1), 0.16666666666666669, True)]
 </pre></div>
 </div>
@@ -770,7 +781,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c2d46ce94f5bd95474bf0f35cece29b3531bc7d573c9c716bd1a2006c183352d.png" src="../../_images/c2d46ce94f5bd95474bf0f35cece29b3531bc7d573c9c716bd1a2006c183352d.png" />
+<img alt="../../_images/c70eade745c976d6f04cb1da739ec4a4a3a7540a2424f6f978891e89863b2b0c.png" src="../../_images/c70eade745c976d6f04cb1da739ec4a4a3a7540a2424f6f978891e89863b2b0c.png" />
 </div>
 </div>
 <section id="run-an-ml-relaxation">
@@ -815,25 +826,34 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy          fmax
-BFGS:    0 16:50:18        0.448873        0.407166
+BFGS:    0 04:47:28        0.121665        0.595818
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 16:50:20        0.441975        0.386778
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 04:47:30        0.108775        0.558622
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 16:50:21        0.360472        0.144668
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 04:47:31        0.007164        0.182441
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 16:50:22        0.357210        0.107372
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 04:47:32        0.004571        0.164238
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 16:50:24        0.355165        0.066706
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 04:47:34       -0.013285        0.092712
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 16:50:25        0.351798        0.029186
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 04:47:35       -0.014364        0.083464
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 8.4 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 04:47:36       -0.013587        0.069402
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 04:47:38       -0.014190        0.066391
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 04:47:39       -0.022687        0.025393
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 12.2 seconds
 </pre></div>
 </div>
 </div>
@@ -958,47 +978,57 @@ BFGS:    0 16:50:18        0.448873        0.407166
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;number&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;international&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;wyckoffs&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/spglib/spglib.py:115: DeprecationWarning: dict interface (SpglibDataset[&#39;equivalent_atoms&#39;]) is deprecated.Use attribute interface ({self.__class__.__name__}.{key}) instead
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 H slabs to compute for oqmd-349719
 9 NNH slabs to compute for oqmd-349719
 Running data/oqmd-349719_H/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 13.6 seconds for data/oqmd-349719_H/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.1 seconds for data/oqmd-349719_H/0
 Running data/oqmd-349719_H/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.4 seconds for data/oqmd-349719_H/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 26.2 seconds for data/oqmd-349719_H/1
 Running data/oqmd-349719_H/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 29.7 seconds for data/oqmd-349719_H/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 18.2 seconds for data/oqmd-349719_H/2
 Running data/oqmd-349719_H/3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 40.4 seconds for data/oqmd-349719_H/3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 39.3 seconds for data/oqmd-349719_H/3
 Running data/oqmd-349719_NNH/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 137.6 seconds for data/oqmd-349719_NNH/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.0 seconds for data/oqmd-349719_NNH/0
 Running data/oqmd-349719_NNH/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 117.6 seconds for data/oqmd-349719_NNH/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.3 seconds for data/oqmd-349719_NNH/1
 Running data/oqmd-349719_NNH/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 134.6 seconds for data/oqmd-349719_NNH/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.2 seconds for data/oqmd-349719_NNH/2
 Running data/oqmd-349719_NNH/3
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:06&lt;00:00, 666.64s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:25&lt;00:00, 685.94s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:06&lt;00:00, 666.64s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:25&lt;00:00, 685.94s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 135.0 seconds for data/oqmd-349719_NNH/3
-Elapsed time: 666.6 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.0 seconds for data/oqmd-349719_NNH/3
+Elapsed time: 685.9 seconds
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1189,7 +1219,7 @@ Elapsed time: 666.6 seconds
   slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
 </pre></div>
 </div>
-<img alt="../../_images/aa0f94393b055271b577afa74863460b56e85787ad0daaaab7aaed93b90e85a5.png" src="../../_images/aa0f94393b055271b577afa74863460b56e85787ad0daaaab7aaed93b90e85a5.png" />
+<img alt="../../_images/0105272816f79d2a1e05cf660dd09e0b1882b9dc4865cd7341defbae71f3c31c.png" src="../../_images/0105272816f79d2a1e05cf660dd09e0b1882b9dc4865cd7341defbae71f3c31c.png" />
 </div>
 </div>
 </section>
@@ -1243,7 +1273,7 @@ Elapsed time: 666.6 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f9b0bc9c18d7454baec238a7cfbd8239d5be193923cbfba2bd94d16060c45393.png" src="../../_images/f9b0bc9c18d7454baec238a7cfbd8239d5be193923cbfba2bd94d16060c45393.png" />
+<img alt="../../_images/1569bf8d8ae2aa79554a0ab077bf7baf6b4372d2c37854c32cdc989fe2a654fa.png" src="../../_images/1569bf8d8ae2aa79554a0ab077bf7baf6b4372d2c37854c32cdc989fe2a654fa.png" />
 </div>
 </div>
 </section>
