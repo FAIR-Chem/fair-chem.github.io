@@ -1,16 +1,16 @@
-2024-07-13 04:31:12 (INFO): Running in non-distributed local mode
-2024-07-13 04:31:12 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
-2024-07-13 04:31:13 (INFO): amp: true
+2024-07-14 21:59:31 (INFO): Running in non-distributed local mode
+2024-07-14 21:59:31 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-07-14 21:59:32 (INFO): amp: true
 cmd:
-  checkpoint_dir: ./checkpoints/2024-07-13-04-30-56
-  commit: aacb883
+  checkpoint_dir: ./checkpoints/2024-07-14-22-00-32
+  commit: c2f8928
   identifier: ''
-  logs_dir: ./logs/tensorboard/2024-07-13-04-30-56
+  logs_dir: ./logs/tensorboard/2024-07-14-22-00-32
   print_every: 10
-  results_dir: ./results/2024-07-13-04-30-56
+  results_dir: ./results/2024-07-14-22-00-32
   seed: 0
-  timestamp_id: 2024-07-13-04-30-56
-  version: 0.1.dev1+gaacb883
+  timestamp_id: 2024-07-14-22-00-32
+  version: 0.1.dev1+gc2f8928
 dataset: {}
 evaluation_metrics:
   metrics:
@@ -113,20 +113,20 @@ test_dataset:
 trainer: ocp
 val_dataset: {}
 
-2024-07-13 04:31:13 (INFO): rank: 0: Sampler created...
-2024-07-13 04:31:13 (INFO): Batch balancing is disabled for single GPU training.
-2024-07-13 04:31:13 (INFO): Loading model: gemnet_t
-2024-07-13 04:31:15 (INFO): Loaded GemNetT with 31671825 parameters.
-2024-07-13 04:31:15 (WARNING): log_summary for Tensorboard not supported
-2024-07-13 04:31:16 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt
-2024-07-13 04:31:16 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
-2024-07-13 04:31:16 (WARNING): Scale factor comment not found in model
-2024-07-13 04:31:16 (INFO): Predicting on test.
+2024-07-14 21:59:32 (INFO): rank: 0: Sampler created...
+2024-07-14 21:59:32 (INFO): Batch balancing is disabled for single GPU training.
+2024-07-14 21:59:32 (INFO): Loading model: gemnet_t
+2024-07-14 21:59:34 (INFO): Loaded GemNetT with 31671825 parameters.
+2024-07-14 21:59:34 (WARNING): log_summary for Tensorboard not supported
+2024-07-14 21:59:34 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt
+2024-07-14 21:59:34 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-07-14 21:59:34 (WARNING): Scale factor comment not found in model
+2024-07-14 21:59:34 (INFO): Predicting on test.
 device 0:   0%|                                           | 0/3 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  33%|███████████▋                       | 1/3 [00:05<00:11,  5.70s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:08<00:03,  3.96s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:11<00:00,  3.49s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:11<00:00,  3.80s/it]
-2024-07-13 04:31:27 (INFO): Writing results to ./results/2024-07-13-04-30-56/ocp_predictions.npz
-2024-07-13 04:31:27 (INFO): Total time taken: 11.534403562545776
-Elapsed time = 17.8 seconds
+device 0:  33%|███████████▋                       | 1/3 [00:03<00:06,  3.13s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:06<00:03,  3.02s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:08<00:00,  2.97s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:09<00:00,  3.01s/it]
+2024-07-14 21:59:43 (INFO): Writing results to ./results/2024-07-14-22-00-32/ocp_predictions.npz
+2024-07-14 21:59:43 (INFO): Total time taken: 9.158892154693604
+Elapsed time = 15.3 seconds
