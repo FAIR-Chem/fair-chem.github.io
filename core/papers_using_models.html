@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Studies that have leveraged OCP models</title>
+    <title>Studies leveraging pre-trained or fine-tuned FAIR-Chem models</title>
   
   
   
@@ -194,7 +194,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Studies leveraging pre-trained or fine-tuned FAIR-Chem models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +244,8 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cattsunami_tutorial.html">CatTSunami Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/fairchem_models_for_nebs.html">Tutorial for using Fair Chemistry models to relax NEBs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -596,7 +597,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -607,11 +610,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Studies that have leveraged OCP models</h1>
+    <h1>Studies leveraging pre-trained or fine-tuned FAIR-Chem models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accelerating-computational-catalysis">Accelerating computational catalysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-fine-tuning-strategies-for-fair-chem-pre-trained-checkpoints">Transfer/fine-tuning strategies for FAIR-Chem pre-trained checkpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-fine-tuning-applications-for-fair-chem-pre-trained-checkpoints">Transfer/fine-tuning applications for FAIR-Chem pre-trained checkpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalyst-discovery-or-optimization">Catalyst discovery or optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-quantification">Uncertainty quantification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-beyond-energies-and-forces">Properties beyond energies and forces</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -621,10 +637,155 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="studies-that-have-leveraged-ocp-models">
-<h1>Studies that have leveraged OCP models<a class="headerlink" href="#studies-that-have-leveraged-ocp-models" title="Link to this heading">#</a></h1>
-<p>Many papers have now used the latest OCP models to accelerate screening and discovery efforts and enable new computational chemistry simulations!
-We highlight some here just to give an idea of the breadth of possibilities and how they have been used. Feel free to reach out (or submit PRs with links to your papers if you want them included)!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="studies-leveraging-pre-trained-or-fine-tuned-fair-chem-models">
+<h1>Studies leveraging pre-trained or fine-tuned FAIR-Chem models<a class="headerlink" href="#studies-leveraging-pre-trained-or-fine-tuned-fair-chem-models" title="Link to this heading">#</a></h1>
+<p>Many papers have now used FAIR-Chem models to accelerate screening and discovery efforts and enable new computational chemistry simulations. We highlight some here just to give an idea of the breadth of possibilities and how they have been used. Feel free to reach out (or submit PRs) if you want them included!</p>
+<section id="accelerating-computational-catalysis">
+<h2>Accelerating computational catalysis<a class="headerlink" href="#accelerating-computational-catalysis" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Christopher Blais, Chao Xu, and Richard West. Uncertainty quantification of linear scaling, machine learning, and dft derived thermodynamics for the catalytic partial oxidation of methane on rhodium. <em>Chemrxiv</em>, 2024.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Adeesh Kolluru and John R Kitchin. Adsorbdiff: adsorbate placement via conditional denoising diffusion. <em>arXiv preprint arXiv:2405.03962</em>, 2024.</p>
+</div>
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Janice Lan, Aini Palizhati, Muhammed Shuaibi, Brandon M Wood, Brook Wander, Abhishek Das, Matt Uyttendaele, C Lawrence Zitnick, and Zachary W Ulissi. Adsorbml: a leap in efficiency for adsorption energy calculations using generalizable machine learning potentials. <em>npj Computational Materials</em>, 9(1):172, 2023.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Brook Wander, Muhammed Shuaibi, John R Kitchin, Zachary W Ulissi, and C Lawrence Zitnick. Cattsunami: accelerating transition state energy calculations with pre-trained graph neural networks. <em>arXiv preprint arXiv:2405.02078</em>, 2024.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="transfer-fine-tuning-strategies-for-fair-chem-pre-trained-checkpoints">
+<h2>Transfer/fine-tuning strategies for FAIR-Chem pre-trained checkpoints<a class="headerlink" href="#transfer-fine-tuning-strategies-for-fair-chem-pre-trained-checkpoints" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id30">
+<div role="list" class="citation-list">
+<div class="citation" id="id46" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>John Falk, Luigi Bonati, Pietro Novelli, Michele Parrinello, and Massimiliano Pontil. Transfer learning for atomistic simulations using gnns and kernel mean embeddings. <em>Advances in Neural Information Processing Systems</em>, 2024.</p>
+</div>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Adeesh Kolluru, Nima Shoghi, Muhammed Shuaibi, Siddharth Goyal, Abhishek Das, C Lawrence Zitnick, and Zachary Ulissi. Transfer learning using attentions across atomic systems with graph neural networks (taag). <em>The Journal of Chemical Physics</em>, 2022.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Joseph Musielewicz, Xiaoxiao Wang, Tian Tian, and Zachary Ulissi. Finetuna: fine-tuning accelerated molecular simulations. <em>Machine Learning: Science and Technology</em>, 3(3):03LT01, 2022.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Kento Nishio, Kiyou Shibata, and Teruyasu Mizoguchi. Lightweight and high-precision materials property prediction using pre-trained graph neural networks and its application to a small dataset. <em>Applied Physics Express</em>, 17(3):037002, 2024.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Nima Shoghi, Adeesh Kolluru, John R Kitchin, Zachary W Ulissi, C Lawrence Zitnick, and Brandon M Wood. From molecules to materials: pre-training large generalizable models for atomic property prediction. <em>arXiv preprint arXiv:2310.16802</em>, 2023.</p>
+</div>
+<div class="citation" id="id45" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>Bowen Wang, Chen Liang, Jiaze Wang, Furui Liu, Shaogang Hao, Dong Li, Jianye Hao, Guangyong Chen, Xiaolong Zou, and Pheng-Ann Heng. Dr-label: improving gnn models for catalysis systems by label deconstruction and reconstruction. <em>arXiv preprint arXiv:2303.02875</em>, 2023.</p>
+</div>
+<div class="citation" id="id40" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>Xiaoxiao Wang, Joseph Musielewicz, Richard Tran, Sudheesh Kumar Ethirajan, Xiaoyan Fu, Hilda Mera, John R Kitchin, Rachel C Kurchin, and Zachary W Ulissi. Generalization of graph-based active learning relaxation strategies across materials. <em>Machine Learning: Science and Technology</em>, 5(2):025018, 2024.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="transfer-fine-tuning-applications-for-fair-chem-pre-trained-checkpoints">
+<h2>Transfer/fine-tuning applications for FAIR-Chem pre-trained checkpoints<a class="headerlink" href="#transfer-fine-tuning-applications-for-fair-chem-pre-trained-checkpoints" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id59">
+<div role="list" class="citation-list">
+<div class="citation" id="id66" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Christian M Clausen, Jan Rossmeisl, and Zachary W Ulissi. Adapting oc20-trained equiformerv2 models for high-entropy materials. <em>The Journal of Physical Chemistry C</em>, 2024.</p>
+</div>
+<div class="citation" id="id76" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Roman A Eremin, Innokentiy S Humonen, Pavel N Zolotarev, Inna V Medrish, Leonid E Zhukov, and Semen A Budennyy. Hybrid dft/data-driven approach for searching for new quasicrystal approximants in sc-x (x= rh, pd, ir, pt) systems. <em>Crystal Growth &amp; Design</em>, 22(7):4570–4581, 2022.</p>
+</div>
+<div class="citation" id="id67" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Aaron G Garrison, Javier Heras-Domingo, John R Kitchin, Gabriel dos Passos Gomes, Zachary W Ulissi, and Samuel M Blau. Applying large graph neural networks to predict transition metal complex energies using the tmqm_wb97mv data set. <em>Journal of Chemical Information and Modeling</em>, 63(24):7642–7654, 2023.</p>
+</div>
+<div class="citation" id="id72" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Kuzma Khrabrov, Anton Ber, Artem Tsypin, Konstantin Ushenin, Egor Rumiantsev, Alexander Telepov, Dmitry Protasov, Ilya Shenbin, Anton Alekseev, Mikhail Shirokikh, and others. $$\backslash $nablaˆ 2$ dft: a universal quantum chemistry dataset of drug-like molecules and a benchmark for neural network potentials. <em>arXiv preprint arXiv:2406.14347</em>, 2024.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="catalyst-discovery-or-optimization">
+<h2>Catalyst discovery or optimization<a class="headerlink" href="#catalyst-discovery-or-optimization" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id88">
+<div role="list" class="citation-list">
+<div class="citation" id="id106" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Abhishek Agarwal, Sriram Goverapet Srinivasan, and Beena Rai. Heusler alloys as catalysts for hydrogen production by ammonia decomposition: data-driven screening via graph neural networks. <em>Chemrxiv</em>, 2024.</p>
+</div>
+<div class="citation" id="id110" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Kirby Broderick, Robert A Burnley, Andrew J Gellman, and John R Kitchin. Surface segregation studies in ternary noble metal alloys: comparing dft and machine learning with experimental data. <em>ChemPhysChem</em>, pages e202400073, 2024.</p>
+</div>
+<div class="citation" id="id108" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Richard Tran, Liqiang Huang, Yuan Zi, Shengguang Wang, Benjamin M Comer, Xuqing Wu, Stefan J Raaijman, Nishant K Sinha, Sajanikumari Sadasivan, Shibin Thundiyil, and others. Rational design of oxide catalysts for oer with oc22. <em>arXiv preprint arXiv:2311.00784</em>, 2023.</p>
+</div>
+<div class="citation" id="id109" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Richard Tran, Duo Wang, Ryan Kingsbury, Aini Palizhati, Kristin Aslaug Persson, Anubhav Jain, and Zachary W Ulissi. Screening of bimetallic electrocatalysts for water purification with machine learning. <em>The Journal of chemical physics</em>, 2022.</p>
+</div>
+<div class="citation" id="id107" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Brook Wander, Kirby Broderick, and Zachary W Ulissi. Catlas: an automated framework for catalyst discovery demonstrated for direct syngas conversion. <em>Catalysis Science &amp; Technology</em>, 12(20):6256–6267, 2022.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="uncertainty-quantification">
+<h2>Uncertainty quantification<a class="headerlink" href="#uncertainty-quantification" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id117">
+<div role="list" class="citation-list">
+<div class="citation" id="id142" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Joseph Musielewicz, Janice Lan, Matt Uyttendaele, and John R. Kitchin. Rotationally invariant latent distances for uncertainty estimation of relaxed energy predictions by graph neural network potentials. 2024. URL: <a class="reference external" href="https://arxiv.org/abs/2407.10844">https://arxiv.org/abs/2407.10844</a>, <a class="reference external" href="https://arxiv.org/abs/2407.10844">arXiv:2407.10844</a>.</p>
+</div>
+<div class="citation" id="id140" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Janghoon Ock, Tian Tian, John Kitchin, and Zachary Ulissi. Beyond independent error assumptions in large gnn atomistic models. <em>The Journal of Chemical Physics</em>, 2023.</p>
+</div>
+<div class="citation" id="id141" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Muhammed Shuaibi, Saurabh Sivakumar, Rui Qi Chen, and Zachary W Ulissi. Enabling robust offline active learning for machine learning potentials using simple physics-based priors. <em>Machine Learning: Science and Technology</em>, 2(2):025007, 2020.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="properties-beyond-energies-and-forces">
+<h2>Properties beyond energies and forces<a class="headerlink" href="#properties-beyond-energies-and-forces" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id146">
+<div role="list" class="citation-list">
+<div class="citation" id="id174" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Xiang Fu, Andrew Rosen, Kyle Bystrom, Rui Wang, Albert Musaelian, Boris Kozinsky, Tess Smidt, and Tommi Jaakkola. A recipe for charge density prediction. <em>arXiv preprint arXiv:2405.19276</em>, 2024.</p>
+</div>
+<div class="citation" id="id173" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Rohan Yuri Sanspeur and John R Kitchin. Circumventing data imbalance in magnetic ground state data for magnetic moment predictions. <em>Machine Learning: Science and Technology</em>, 5(1):015023, 2024.</p>
+</div>
+<div class="citation" id="id172" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Ethan M Sunshine, Muhammed Shuaibi, Zachary W Ulissi, and John R Kitchin. Chemical properties from graph neural network-predicted electron densities. <em>The Journal of Physical Chemistry C</em>, 127(48):23459–23466, 2023.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -681,6 +842,26 @@ We highlight some here just to give an idea of the breadth of possibilities and 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accelerating-computational-catalysis">Accelerating computational catalysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-fine-tuning-strategies-for-fair-chem-pre-trained-checkpoints">Transfer/fine-tuning strategies for FAIR-Chem pre-trained checkpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-fine-tuning-applications-for-fair-chem-pre-trained-checkpoints">Transfer/fine-tuning applications for FAIR-Chem pre-trained checkpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalyst-discovery-or-optimization">Catalyst discovery or optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-quantification">Uncertainty quantification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-beyond-energies-and-forces">Properties beyond energies and forces</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

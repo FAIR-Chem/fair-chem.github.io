@@ -194,7 +194,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies leveraging pre-trained or fine-tuned FAIR-Chem models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +244,8 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cattsunami_tutorial.html">CatTSunami Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fairchem_models_for_nebs.html">Tutorial for using Fair Chemistry models to relax NEBs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -693,13 +694,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/fairchem_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -723,12 +724,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, Jun 25 2024, 18:25:01) [GCC 11.4.0]
 fairchem is installed at /home/runner/work/fairchem/fairchem/src/fairchem
-fairchem repo is at git commit: c2f8928
+fairchem repo is at git commit: f9ecf73
 numba: 0.60.0
 numpy: 1.26.4
 ase: 3.23.0
 e3nn: 0.5.1
-pymatgen: 2024.6.10
+pymatgen: 2024.7.18
 torch: 2.2.0+cu121
 torch.version.cuda: 12.1
 torch.cuda: is_available: False
@@ -736,9 +737,9 @@ torch geometric: 2.3.0
 
 Platform: Linux-6.5.0-1023-azure-x86_64-with-glibc2.35
   Processor: x86_64
-  Virtual memory: svmem(total=16757342208, available=14816309248, percent=11.6, used=1522618368, free=12876513280, active=1487577088, inactive=1883545600, buffers=34799616, cached=2323410944, shared=17469440, slab=301309952)
-  Swap memory: sswap(total=4294963200, used=474591232, free=3820371968, percent=11.0, sin=221413376, sout=1204551680)
-  Disk usage: sdiskusage(total=77851254784, used=69069717504, free=8764760064, percent=88.7)
+  Virtual memory: svmem(total=16757342208, available=14353408000, percent=14.3, used=2015272960, free=9802711040, active=1889804288, inactive=4449865728, buffers=226074624, cached=4713283584, shared=25464832, slab=405729280)
+  Swap memory: sswap(total=4294963200, used=3432448, free=4291530752, percent=0.1, sin=28672, sout=2592768)
+  Disk usage: sdiskusage(total=77851254784, used=69071192064, free=8763285504, percent=88.7)
 </pre></div>
 </div>
 </div>

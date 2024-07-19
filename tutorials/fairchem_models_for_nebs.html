@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CatTSunami tutorial</title>
+    <title>Tutorial for using Fair Chemistry models to relax NEBs</title>
   
   
   
@@ -58,11 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/cattsunami_walkthrough';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fairchem_models_for_nebs';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Screening catalysts with OCP" href="NRR/NRR_toc.html" />
-    <link rel="prev" title="AdsorbML tutorial" href="adsorbml_walkthrough.html" />
+    <link rel="prev" title="CatTSunami Tutorial" href="cattsunami_tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -194,7 +194,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies leveraging pre-trained or fine-tuned FAIR-Chem models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +244,8 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cattsunami_tutorial.html">CatTSunami Tutorial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial for using Fair Chemistry models to relax NEBs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -495,7 +496,7 @@
       
       
       
-      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Ftutorials/cattsunami_walkthrough.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Ftutorials/fairchem_models_for_nebs.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -525,7 +526,7 @@
       
       
       
-      <li><a href="../_sources/tutorials/cattsunami_walkthrough.md" target="_blank"
+      <li><a href="../_sources/tutorials/fairchem_models_for_nebs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -609,7 +610,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CatTSunami tutorial</h1>
+    <h1>Tutorial for using Fair Chemistry models to relax NEBs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -619,13 +620,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-enumerations-in-an-adsorbml-style-for-ch-dissociation-on-ru-001">Do enumerations in an AdsorbML style for CH dissociation on Ru (001)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ml-local-relaxations">Run ML local relaxations:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-nebs">Enumerate NEBs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-nebs">Run NEBs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-visualize-the-results">(Optional) Visualize the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-inputs">Set up inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-have-your-own-set-of-neb-frames">If you have your own set of NEB frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-have-a-proposed-initial-and-final-frame">If you have a proposed initial and final frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-results">Visualize the results</a></li>
 </ul>
             </nav>
         </div>
@@ -637,203 +635,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cattsunami-tutorial">
-<h1>CatTSunami tutorial<a class="headerlink" href="#cattsunami-tutorial" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-for-using-fair-chemistry-models-to-relax-nebs">
+<h1>Tutorial for using Fair Chemistry models to relax NEBs<a class="headerlink" href="#tutorial-for-using-fair-chemistry-models-to-relax-nebs" title="Link to this heading">#</a></h1>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core</span> <span class="kn">import</span> <span class="n">Reaction</span>
-<span class="kn">from</span> <span class="nn">fairchem.data.oc.core</span> <span class="kn">import</span> <span class="n">Slab</span><span class="p">,</span> <span class="n">Adsorbate</span><span class="p">,</span> <span class="n">Bulk</span><span class="p">,</span> <span class="n">AdsorbateSlabConfig</span>
-<span class="kn">from</span> <span class="nn">fairchem.core.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
-<span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
-<span class="kn">from</span> <span class="nn">x3dase.visualize</span> <span class="kn">import</span> <span class="n">view_x3d_n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
 <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
-<span class="kn">from</span> <span class="nn">x3dase.x3d</span> <span class="kn">import</span> <span class="n">X3D</span>
-<span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.databases</span> <span class="kn">import</span> <span class="n">DISSOCIATION_REACTION_DB_PATH</span>
-<span class="kn">from</span> <span class="nn">fairchem.data.oc.databases.pkls</span> <span class="kn">import</span> <span class="n">ADSORBATE_PKL_PATH</span><span class="p">,</span> <span class="n">BULK_PKL_PATH</span>
-<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core.autoframe</span> <span class="kn">import</span> <span class="n">AutoFrameDissociation</span>
+
+<span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core.autoframe</span> <span class="kn">import</span> <span class="n">interpolate</span>
 <span class="kn">from</span> <span class="nn">fairchem.applications.cattsunami.core</span> <span class="kn">import</span> <span class="n">OCPNEB</span>
-<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
-<span class="c1"># Optional</span>
-<span class="c1"># from x3dase.x3d import X3D</span>
-
-<span class="c1"># Set random seed</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="c1">#Optional</span>
+<span class="kn">from</span> <span class="nn">x3dase.x3d</span> <span class="kn">import</span> <span class="n">X3D</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="do-enumerations-in-an-adsorbml-style-for-ch-dissociation-on-ru-001">
-<h2>Do enumerations in an AdsorbML style for CH dissociation on Ru (001)<a class="headerlink" href="#do-enumerations-in-an-adsorbml-style-for-ch-dissociation-on-ru-001" title="Link to this heading">#</a></h2>
-<p>To start, we generate placements for the reactant and product species on the surface. We utilize the random placement approach which was developed for AdsorbML, and use an OCP model to relax our placements on the surface. These placements and their ML-determined energies are used as input to the CatTSunami automatic NEB frame generation approach.</p>
+<section id="set-up-inputs">
+<h2>Set up inputs<a class="headerlink" href="#set-up-inputs" title="Link to this heading">#</a></h2>
+<p>Shown here are the values used consistently throughout the paper.</p>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the reaction class for the reaction of interest</span>
-<span class="n">reaction</span> <span class="o">=</span> <span class="n">Reaction</span><span class="p">(</span><span class="n">reaction_str_from_db</span><span class="o">=</span><span class="s2">&quot;*CH -&gt; *C + *H&quot;</span><span class="p">,</span>
-                    <span class="n">reaction_db_path</span><span class="o">=</span><span class="n">DISSOCIATION_REACTION_DB_PATH</span><span class="p">,</span>
-                    <span class="n">adsorbate_db_path</span> <span class="o">=</span> <span class="n">ADSORBATE_PKL_PATH</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># [eV / ang]</span>
+<span class="n">delta_fmax_climb</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1"># this means that when the fmax is below 0.45 eV/Ang climbing image will be turned on</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># you may adjust this value as you see fit</span>
+<span class="n">cpu</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># set to False if you have a GPU</span>
 
-<span class="c1"># Instantiate our adsorbate class for the reactant and product</span>
-<span class="n">reactant</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_id_from_db</span><span class="o">=</span><span class="n">reaction</span><span class="o">.</span><span class="n">reactant1_idx</span><span class="p">,</span> <span class="n">adsorbate_db_path</span><span class="o">=</span><span class="n">ADSORBATE_PKL_PATH</span><span class="p">)</span>
-<span class="n">product1</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_id_from_db</span><span class="o">=</span><span class="n">reaction</span><span class="o">.</span><span class="n">product1_idx</span><span class="p">,</span> <span class="n">adsorbate_db_path</span><span class="o">=</span><span class="n">ADSORBATE_PKL_PATH</span><span class="p">)</span>
-<span class="n">product2</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_id_from_db</span><span class="o">=</span><span class="n">reaction</span><span class="o">.</span><span class="n">product2_idx</span><span class="p">,</span> <span class="n">adsorbate_db_path</span><span class="o">=</span><span class="n">ADSORBATE_PKL_PATH</span><span class="p">)</span>
 
-<span class="c1"># Grab the bulk and cut the slab we are interested in</span>
-<span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span><span class="o">=</span><span class="s2">&quot;mp-33&quot;</span><span class="p">,</span> <span class="n">bulk_db_path</span><span class="o">=</span><span class="n">BULK_PKL_PATH</span><span class="p">)</span>
-<span class="n">slab</span> <span class="o">=</span> <span class="n">Slab</span><span class="o">.</span><span class="n">from_bulk_get_specific_millers</span><span class="p">(</span><span class="n">bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">,</span> <span class="n">specific_millers</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="c1"># Perform site enumeration</span>
-<span class="c1"># For AdsorbML num_sites = 100, but we use 5 here for brevity. This should be increased for practical use.</span>
-<span class="n">reactant_configs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slab</span> <span class="o">=</span> <span class="n">slab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span> <span class="o">=</span> <span class="n">reactant</span><span class="p">,</span>
-                                       <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;random_site_heuristic_placement&quot;</span><span class="p">,</span>
-                                       <span class="n">num_sites</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">atoms_list</span>
-<span class="n">product1_configs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slab</span> <span class="o">=</span> <span class="n">slab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span> <span class="o">=</span> <span class="n">product1</span><span class="p">,</span>
-                                      <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;random_site_heuristic_placement&quot;</span><span class="p">,</span>
-                                      <span class="n">num_sites</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">atoms_list</span>
-<span class="n">product2_configs</span> <span class="o">=</span> <span class="n">AdsorbateSlabConfig</span><span class="p">(</span><span class="n">slab</span> <span class="o">=</span> <span class="n">slab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adsorbate</span> <span class="o">=</span> <span class="n">product2</span><span class="p">,</span>
-                                      <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;random_site_heuristic_placement&quot;</span><span class="p">,</span>
-                                      <span class="n">num_sites</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">atoms_list</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_skip-execution docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the calculator</span>
-<span class="c1"># NOTE: If you have a GPU, use cpu = False</span>
 <span class="c1"># NOTE: Change the checkpoint path to locally downloaded files as needed</span>
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
-<span class="n">cpu</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="run-ml-local-relaxations">
-<h3>Run ML local relaxations:<a class="headerlink" href="#run-ml-local-relaxations" title="Link to this heading">#</a></h3>
-<p>There are 2 options for how to do this.</p>
-<ol class="arabic simple">
-<li><p>Using <code class="docutils literal notranslate"><span class="pre">OCPCalculator</span></code> as the calculator within the ASE framework</p></li>
-<li><p>By writing objects to lmdb and relaxing them using <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the ocp repo</p></li>
-</ol>
-<p>(1) is really only adequate for small stuff and it is what I will show here, but if you plan to run many relaxations, you should definitely use (2). More details about writing lmdbs has been provided <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/tutorials/lmdb_dataset_creation.ipynb">here</a> - follow the IS2RS/IS2RE instructions. And more information about running relaxations once the lmdb has been written is <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/TRAIN.md#initial-structure-to-relaxed-structure-is2rs">here</a>.</p>
-<p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference internal" href="../core/model_checkpoints.html"><span class="doc std std-doc">here</span></a></p>
-<div class="cell tag_skip-execution docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Relax the reactant systems</span>
-<span class="n">reactant_energies</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">reactant_configs</span><span class="p">:</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
-    <span class="n">opt</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-    <span class="n">opt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">reactant_energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
-
-<span class="c1"># Relax the product systems</span>
-<span class="n">product1_energies</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">product1_configs</span><span class="p">:</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
-    <span class="n">opt</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-    <span class="n">opt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">product1_energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
-
-<span class="n">product2_energies</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">config</span> <span class="ow">in</span> <span class="n">product2_configs</span><span class="p">:</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
-    <span class="n">opt</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-    <span class="n">opt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">product2_energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/fairchem_checkpoints/&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="enumerate-nebs">
-<h2>Enumerate NEBs<a class="headerlink" href="#enumerate-nebs" title="Link to this heading">#</a></h2>
-<p>Here we use the class we created to handle automatic generation of NEB frames to create frames using the structures we just relaxed as input.
-<img alt="dissociation_scheme" src="https://github.com/FAIR-Chem/fairchem/blob/main/src/fairchem/applications/cattsunami/tutorial/dissociation_scheme.png" /></p>
+<section id="if-you-have-your-own-set-of-neb-frames">
+<h2>If you have your own set of NEB frames<a class="headerlink" href="#if-you-have-your-own-set-of-neb-frames" title="Link to this heading">#</a></h2>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af</span> <span class="o">=</span> <span class="n">AutoFrameDissociation</span><span class="p">(</span>
-            <span class="n">reaction</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">,</span>
-            <span class="n">reactant_system</span> <span class="o">=</span> <span class="n">reactant_configs</span><span class="p">[</span><span class="n">reactant_energies</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">reactant_energies</span><span class="p">))],</span>
-            <span class="n">product1_systems</span> <span class="o">=</span> <span class="n">product1_configs</span><span class="p">,</span>
-            <span class="n">product1_energies</span> <span class="o">=</span> <span class="n">product1_energies</span><span class="p">,</span>
-            <span class="n">product2_systems</span> <span class="o">=</span> <span class="n">product2_configs</span><span class="p">,</span>
-            <span class="n">product2_energies</span> <span class="o">=</span> <span class="n">product2_energies</span><span class="p">,</span>
-            <span class="n">r_product1_max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="c1">#r1 in the above fig</span>
-            <span class="n">r_product2_max</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1">#r3 in the above fig</span>
-            <span class="n">r_product2_min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c1">#r2 in the above fig</span>
-<span class="p">)</span>
-
-<span class="n">nframes</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">frame_sets</span><span class="p">,</span> <span class="n">mapping_idxs</span> <span class="o">=</span> <span class="n">af</span><span class="o">.</span><span class="n">get_neb_frames</span><span class="p">(</span><span class="n">calc</span><span class="p">,</span>
-                               <span class="n">n_frames</span> <span class="o">=</span> <span class="n">nframes</span><span class="p">,</span>
-                               <span class="n">n_pdt1_sites</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="c1"># = 5 in the above fig (step 1)</span>
-                               <span class="n">n_pdt2_sites</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="c1"># = 5 in the above fig (step 2)</span>
-                              <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="run-nebs">
-<h2>Run NEBs<a class="headerlink" href="#run-nebs" title="Link to this heading">#</a></h2>
-<p>Here we use the custom child class we created to run NEB relaxations using ML. The class we created allows the frame relaxations to be batched, improving efficiency.</p>
-<div class="cell tag_skip-execution docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## This will run all NEBs enumerated - to just run one, run the code cell below.</span>
-<span class="c1"># On GPU, each NEB takes an average of ~1 minute so this could take around a half hour on GPU</span>
-<span class="c1"># But much longer on CPU</span>
-<span class="c1"># Remember that not all NEBs will converge -- the k, nframes would be adjusted to achieve convergence</span>
-
-<span class="c1"># fmax = 0.05 # [eV / ang**2]</span>
-<span class="c1"># delta_fmax_climb = 0.4</span>
-<span class="c1"># converged_idxs = []</span>
-
-<span class="c1"># for idx, frame_set in enumerate(frame_sets):</span>
-<span class="c1">#     neb = OCPNEB(</span>
-<span class="c1">#         frame_set,</span>
-<span class="c1">#         checkpoint_path=checkpoint_path,</span>
-<span class="c1">#         k=1,</span>
-<span class="c1">#         batch_size=8,</span>
-<span class="c1">#         cpu = cpu,</span>
-<span class="c1">#     )</span>
-<span class="c1">#     optimizer = BFGS(</span>
-<span class="c1">#         neb,</span>
-<span class="c1">#         trajectory=f&quot;ch_dissoc_on_Ru_{idx}.traj&quot;,</span>
-<span class="c1">#     )</span>
-<span class="c1">#     conv = optimizer.run(fmax=fmax + delta_fmax_climb, steps=200)</span>
-<span class="c1">#     if conv:</span>
-<span class="c1">#         neb.climb = True</span>
-<span class="c1">#         conv = optimizer.run(fmax=fmax, steps=300)</span>
-<span class="c1">#         if conv:</span>
-<span class="c1">#             converged_idxs.append(idx)</span>
-
-<span class="c1"># print(converged_idxs)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Load your frames (change to the appropriate loading method)</span>
+<span class="sd">The approach uses ase, so you must provide a list of ase.Atoms objects</span>
+<span class="sd">with the appropriate constraints.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">path_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span><span class="p">))</span>
+<span class="n">path_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;fairchem&quot;</span><span class="p">,</span> <span class="s2">&quot;applications&quot;</span><span class="p">,</span> <span class="s2">&quot;cattsunami&quot;</span><span class="p">,</span> <span class="s2">&quot;tutorial&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_traj.traj&quot;</span><span class="p">)</span>
+<span class="n">frame_set</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">path_</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># Change to the path to your atoms of the frame set</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you run the above cell -- dont run this one</span>
-<span class="n">fmax</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># [eV / ang**2]</span>
-<span class="n">delta_fmax_climb</span> <span class="o">=</span> <span class="mf">0.4</span>
-<span class="n">neb</span> <span class="o">=</span> <span class="n">OCPNEB</span><span class="p">(</span>
-    <span class="n">frame_sets</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neb</span> <span class="o">=</span> <span class="n">OCPNEB</span><span class="p">(</span>
+    <span class="n">frame_set</span><span class="p">,</span>
     <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span>
-    <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="c1"># If you get a memory error, try reducing this to 4</span>
     <span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span>
     <span class="n">neb</span><span class="p">,</span>
-    <span class="n">trajectory</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;ch_dissoc_on_Ru_0.traj&quot;</span><span class="p">,</span>
+    <span class="n">trajectory</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;your-neb.traj&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">conv</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="n">fmax</span> <span class="o">+</span> <span class="n">delta_fmax_climb</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">conv</span><span class="p">:</span>
@@ -844,12 +711,57 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="optional-visualize-the-results">
-<h2>(Optional) Visualize the results<a class="headerlink" href="#optional-visualize-the-results" title="Link to this heading">#</a></h2>
+<section id="if-you-have-a-proposed-initial-and-final-frame">
+<h2>If you have a proposed initial and final frame<a class="headerlink" href="#if-you-have-a-proposed-initial-and-final-frame" title="Link to this heading">#</a></h2>
+<p>You may use the <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> function we implemented which is very similar to idpp but not sensative to periodic boundary crossings. Alternatively you can adopt whatever interpolation scheme you prefer. The <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> function lacks some of the extra protections implemented in the <code class="docutils literal notranslate"><span class="pre">interpolate_and_correct_frames</span></code> which is used in the CatTSunami enumeration workflow. Care should be taken to ensure the results are reasonable.</p>
+<p>IMPORTANT NOTES:</p>
+<ol class="arabic simple">
+<li><p>Make sure the indices in the initial and final frame map to the same atoms</p></li>
+<li><p>Ensure you have the proper constraints on subsurface atoms</p></li>
+</ol>
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_of_interest</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">optimized_neb</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n2_dissoc_on_Ru_</span><span class="si">{</span><span class="n">idx_of_interest</span><span class="si">}</span><span class="s2">.traj&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">nframes</span><span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Load your initial and frames (change to the appropriate loading method)</span>
+<span class="sd">The approach uses ase, so you must provide ase.Atoms objects</span>
+<span class="sd">with the appropriate constraints (i.e. fixed subsurface atoms).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">initial_frame</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;path-to-your-initial-atoms.traj&quot;</span><span class="p">)</span>
+<span class="n">final_frame</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;path-to-your-final-atoms.traj&quot;</span><span class="p">)</span>
+<span class="n">num_frames</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># you may change this to whatever you like</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frame_set</span> <span class="o">=</span> <span class="n">interpolate</span><span class="p">(</span><span class="n">initial_frame</span><span class="p">,</span> <span class="n">final_frame</span><span class="p">,</span> <span class="n">num_frames</span><span class="p">)</span>
+
+<span class="n">neb</span> <span class="o">=</span> <span class="n">OCPNEB</span><span class="p">(</span>
+    <span class="n">frame_set</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="c1"># If you get a memory error, try reducing this to 4</span>
+    <span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span>
+    <span class="n">neb</span><span class="p">,</span>
+    <span class="n">trajectory</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;your-neb.traj&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">conv</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="n">fmax</span> <span class="o">+</span> <span class="n">delta_fmax_climb</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">conv</span><span class="p">:</span>
+    <span class="n">neb</span><span class="o">.</span><span class="n">climb</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">conv</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="n">fmax</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-the-results">
+<h2>Visualize the results<a class="headerlink" href="#visualize-the-results" title="Link to this heading">#</a></h2>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_neb</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;your-neb.traj&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">nframes</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -860,15 +772,20 @@ document.write(`
 <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">optimized_neb</span><span class="p">:</span>
     <span class="n">frame</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
     <span class="n">es</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
-
-<span class="c1"># Plot the reaction coordinate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the reaction coordinate</span>
 
 <span class="n">es</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="o">-</span> <span class="n">es</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">es</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">es</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;frame number&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;relative energy [eV]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CH dissociation on Ru(0001), Ea = </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;CH_dissoc_on_Ru_0001.png&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ea = </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;reaction_coordinate.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -877,7 +794,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make an interative html file of the optimized neb trajectory</span>
 <span class="n">x3d</span> <span class="o">=</span> <span class="n">X3D</span><span class="p">(</span><span class="n">optimized_neb</span><span class="p">)</span>
-<span class="n">x3d</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;optimized_neb_ch_disoc_on_Ru0001.html&quot;</span><span class="p">)</span>
+<span class="n">x3d</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;your-neb.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -916,12 +833,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="adsorbml_walkthrough.html"
+       href="cattsunami_tutorial.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AdsorbML tutorial</p>
+        <p class="prev-next-title">CatTSunami Tutorial</p>
       </div>
     </a>
     <a class="right-next"
@@ -949,13 +866,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-enumerations-in-an-adsorbml-style-for-ch-dissociation-on-ru-001">Do enumerations in an AdsorbML style for CH dissociation on Ru (001)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ml-local-relaxations">Run ML local relaxations:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-nebs">Enumerate NEBs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-nebs">Run NEBs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-visualize-the-results">(Optional) Visualize the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-inputs">Set up inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-have-your-own-set-of-neb-frames">If you have your own set of NEB frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-have-a-proposed-initial-and-final-frame">If you have a proposed initial and final frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-results">Visualize the results</a></li>
 </ul>
   </nav></div>
 

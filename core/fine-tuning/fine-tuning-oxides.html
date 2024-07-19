@@ -194,7 +194,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../papers_using_models.html">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers_using_models.html">Studies leveraging pre-trained or fine-tuned FAIR-Chem models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -244,7 +244,8 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cattsunami_tutorial.html">CatTSunami Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/fairchem_models_for_nebs.html">Tutorial for using Fair Chemistry models to relax NEBs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
@@ -650,7 +651,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/fairchem_checkpoints/&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -828,7 +829,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.4 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.3 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/e09235df67f6a4f604e2dc396140b3979de3a415db6696093790df3189ca2edf.png" src="../../_images/e09235df67f6a4f604e2dc396140b3979de3a415db6696093790df3189ca2edf.png" />
@@ -907,7 +908,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2280/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2255/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -1035,7 +1036,7 @@ Rows: 295 (showing first 20)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>amp: true
-checkpoint: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+checkpoint: /tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
 dataset:
   test:
     a2g_args:
@@ -1200,7 +1201,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 203.2 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 208.5 seconds
 </pre></div>
 </div>
 </div>
@@ -1216,7 +1217,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-07-14-21-54-08-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-07-19-20-37-20-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1275,7 +1276,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2afa38ee2ad4f3a3071f9f940aa53f830cf5c83ce9bf222f0930cf66f6b1622f.png" src="../../_images/2afa38ee2ad4f3a3071f9f940aa53f830cf5c83ce9bf222f0930cf66f6b1622f.png" />
+<img alt="../../_images/5620ea27ffb3b5681339b3d9052c2011d8c61c24ab637877fcd2b45fb6e81c96.png" src="../../_images/5620ea27ffb3b5681339b3d9052c2011d8c61c24ab637877fcd2b45fb6e81c96.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1286,7 +1287,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.789 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.480 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1305,7 +1306,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4824685f0ad98d72e49a4607601630c480c1bb562b7de0372abf12f6a4814109.png" src="../../_images/4824685f0ad98d72e49a4607601630c480c1bb562b7de0372abf12f6a4814109.png" />
+<img alt="../../_images/1135cb8f3db5ab6bc6c5f4784263c92318c81d1a6bc4f29374b7067f81a3d30e.png" src="../../_images/1135cb8f3db5ab6bc6c5f4784263c92318c81d1a6bc4f29374b7067f81a3d30e.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
