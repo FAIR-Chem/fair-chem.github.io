@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -624,23 +626,28 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater"><code class="docutils literal notranslate"><span class="pre">OCPCollater</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater.otf_graph"><code class="docutils literal notranslate"><span class="pre">OCPCollater.otf_graph</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater.__call__"><code class="docutils literal notranslate"><span class="pre">OCPCollater.__call__()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.balanced_partition"><code class="docutils literal notranslate"><span class="pre">balanced_partition()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._HasMetadata"><code class="docutils literal notranslate"><span class="pre">_HasMetadata</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._HasMetadata.metadata_path"><code class="docutils literal notranslate"><span class="pre">_HasMetadata.metadata_path</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._balanced_partition"><code class="docutils literal notranslate"><span class="pre">_balanced_partition()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.start_iter"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.start_iter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.batch_size"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.batch_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.__iter__"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.__iter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.set_epoch_and_start_iteration"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.set_epoch_and_start_iteration()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._ensure_supported"><code class="docutils literal notranslate"><span class="pre">_ensure_supported()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._load_dataset"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._load_dataset()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.__len__"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.disabled"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.disabled</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.on_error"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.on_error</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.sampler"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.sampler</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.device"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._get_natoms"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._get_natoms()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch_and_start_iteration"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.set_epoch_and_start_iteration()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.set_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._dist_enabled"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._dist_enabled()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.__iter__"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.__iter__()</span></code></a></li>
 </ul>
 </li>
@@ -669,14 +676,11 @@ LICENSE file in the root directory of this source tree.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.common.data_parallel.OCPCollater" title="core.common.data_parallel.OCPCollater"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OCPCollater</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.common.data_parallel._HasMetadata" title="core.common.data_parallel._HasMetadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_HasMetadata</span></code></a></p></td>
-<td><p>Base class for protocol classes.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.common.data_parallel.StatefulDistributedSampler" title="core.common.data_parallel.StatefulDistributedSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StatefulDistributedSampler</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.common.data_parallel.StatefulDistributedSampler" title="core.common.data_parallel.StatefulDistributedSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StatefulDistributedSampler</span></code></a></p></td>
 <td><p>More fine-grained state DataSampler that uses training iteration and epoch</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.common.data_parallel.BalancedBatchSampler" title="core.common.data_parallel.BalancedBatchSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BalancedBatchSampler</span></code></a></p></td>
-<td><p>Base class for all Samplers.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.common.data_parallel.BalancedBatchSampler" title="core.common.data_parallel.BalancedBatchSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BalancedBatchSampler</span></code></a></p></td>
+<td><p>Wraps another sampler to yield a mini-batch of indices.</p></td>
 </tr>
 </tbody>
 </table>
@@ -686,8 +690,11 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.common.data_parallel.balanced_partition" title="core.common.data_parallel.balanced_partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">balanced_partition</span></code></a>(sizes, num_parts)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.common.data_parallel._balanced_partition" title="core.common.data_parallel._balanced_partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_balanced_partition</span></code></a>(sizes, num_parts)</p></td>
 <td><p>Greedily partition the given set by always inserting</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.common.data_parallel._ensure_supported" title="core.common.data_parallel._ensure_supported"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_ensure_supported</span></code></a>(dataset)</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -698,7 +705,12 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.common.data_parallel.OCPCollater">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">OCPCollater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.OCPCollater" title="Link to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.OCPCollater.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.common.data_parallel.OCPCollater.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.common.data_parallel.OCPCollater.__call__">
 <span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch_geometric.data.Data</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.Batch</span></span></span><a class="headerlink" href="#core.common.data_parallel.OCPCollater.__call__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -706,50 +718,10 @@ LICENSE file in the root directory of this source tree.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="core.common.data_parallel.balanced_partition">
-<span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">balanced_partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int_</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_parts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.balanced_partition" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.common.data_parallel._balanced_partition">
+<span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">_balanced_partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int_</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_parts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel._balanced_partition" title="Link to this definition">#</a></dt>
 <dd><p>Greedily partition the given set by always inserting
 the largest element into the smallest partition.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="core.common.data_parallel._HasMetadata">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">_HasMetadata</span></span><a class="headerlink" href="#core.common.data_parallel._HasMetadata" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Protocol</span></code></p>
-<p>Base class for protocol classes.</p>
-<p>Protocol classes are defined as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Proto</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">meth</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="o">...</span>
-</pre></div>
-</div>
-<p>Such classes are primarily used with static type checkers that recognize
-structural subtyping (static duck-typing).</p>
-<p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">meth</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Proto</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">meth</span><span class="p">()</span>
-
-<span class="n">func</span><span class="p">(</span><span class="n">C</span><span class="p">())</span>  <span class="c1"># Passes static type check</span>
-</pre></div>
-</div>
-<p>See PEP 544 for details. Protocol classes decorated with
-&#64;typing.runtime_checkable act as simple-minded runtime protocols that check
-only the presence of given attributes, ignoring their type signatures.
-Protocol classes can be generic, they are defined as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GenProto</span><span class="p">(</span><span class="n">Protocol</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
-    <span class="k">def</span> <span class="nf">meth</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-        <span class="o">...</span>
-</pre></div>
-</div>
-<dl class="py property">
-<dt class="sig sig-object py" id="core.common.data_parallel._HasMetadata.metadata_path">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></em><a class="headerlink" href="#core.common.data_parallel._HasMetadata.metadata_path" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -761,6 +733,16 @@ both for shuffling data. PyTorch DistributedSampler only uses epoch
 for the shuffling and starts sampling data from the start. In case of training
 on very large data, we train for one epoch only and when we resume training,
 we want to resume the data sampler from the training iteration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.StatefulDistributedSampler.start_iter">
+<span class="sig-name descname"><span class="pre">start_iter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.common.data_parallel.StatefulDistributedSampler.start_iter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.StatefulDistributedSampler.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#core.common.data_parallel.StatefulDistributedSampler.batch_size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.data_parallel.StatefulDistributedSampler.__iter__">
 <span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.StatefulDistributedSampler.__iter__" title="Link to this definition">#</a></dt>
@@ -773,66 +755,71 @@ we want to resume the data sampler from the training iteration.</p>
 
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="core.common.data_parallel._ensure_supported">
+<span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">_ensure_supported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel._ensure_supported" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">BalancedBatchSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_replicas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'atoms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_balancing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">throw_on_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.Sampler</span></code></p>
-<p>Base class for all Samplers.</p>
-<p>Every Sampler subclass has to provide an <a class="reference internal" href="#core.common.data_parallel.BalancedBatchSampler.__iter__" title="core.common.data_parallel.BalancedBatchSampler.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> method, providing a
-way to iterate over indices or lists of indices (batches) of dataset elements, and a <a class="reference internal" href="#core.common.data_parallel.BalancedBatchSampler.__len__" title="core.common.data_parallel.BalancedBatchSampler.__len__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code></a> method
-that returns the length of the returned iterators.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.data_parallel.</span></span><span class="sig-name descname"><span class="pre">BalancedBatchSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.utils.data.Dataset</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_replicas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'atoms'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'atoms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'warn_and_balance'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'warn_and_no_balance'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'raise'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.BatchSampler</span></code></p>
+<p>Wraps another sampler to yield a mini-batch of indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data_source</strong> (<em>Dataset</em>) – This argument is not used and will be removed in 2.2.0.
-You may still have custom implementation that utilizes it.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampler</strong> (<em>Sampler</em><em> or </em><em>Iterable</em>) – Base sampler. Can be any iterable object</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Size of mini-batch.</p></li>
+<li><p><strong>drop_last</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the sampler will drop the last batch if
+its size would be less than <code class="docutils literal notranslate"><span class="pre">batch_size</span></code></p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># xdoctest: +SKIP</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AccedingSequenceLengthSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="n">sizes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="k">yield from</span> <span class="n">torch</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AccedingSequenceLengthBatchSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="n">sizes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span>        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">torch</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sizes</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
-<span class="gp">&gt;&gt;&gt; </span>            <span class="k">yield</span> <span class="n">batch</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">BatchSampler</span><span class="p">(</span><span class="n">SequentialSampler</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">[[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">BatchSampler</span><span class="p">(</span><span class="n">SequentialSampler</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[[0, 1, 2], [3, 4, 5], [6, 7, 8]]</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <a class="reference internal" href="#core.common.data_parallel.BalancedBatchSampler.__len__" title="core.common.data_parallel.BalancedBatchSampler.__len__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code></a> method isn’t strictly required by
-<code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>, but is expected in any
-calculation involving the length of a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>.</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler._load_dataset">
-<span class="sig-name descname"><span class="pre">_load_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'atoms'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'neighbors'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler._load_dataset" title="Link to this definition">#</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.disabled">
+<span class="sig-name descname"><span class="pre">disabled</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.disabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.on_error">
+<span class="sig-name descname"><span class="pre">on_error</span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.on_error" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.sampler">
+<span class="sig-name descname"><span class="pre">sampler</span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.sampler" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.device" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.__len__">
-<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.__len__" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler._get_natoms">
+<span class="sig-name descname"><span class="pre">_get_natoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler._get_natoms" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.set_epoch_and_start_iteration">
 <span class="sig-name descname"><span class="pre">set_epoch_and_start_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_iteration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch_and_start_iteration" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler.set_epoch">
+<span class="sig-name descname"><span class="pre">set_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.common.data_parallel.BalancedBatchSampler._dist_enabled">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_dist_enabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.common.data_parallel.BalancedBatchSampler._dist_enabled" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -913,23 +900,28 @@ calculation involving the length of a <code class="xref py py-class docutils lit
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater"><code class="docutils literal notranslate"><span class="pre">OCPCollater</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater.otf_graph"><code class="docutils literal notranslate"><span class="pre">OCPCollater.otf_graph</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.OCPCollater.__call__"><code class="docutils literal notranslate"><span class="pre">OCPCollater.__call__()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.balanced_partition"><code class="docutils literal notranslate"><span class="pre">balanced_partition()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._HasMetadata"><code class="docutils literal notranslate"><span class="pre">_HasMetadata</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._HasMetadata.metadata_path"><code class="docutils literal notranslate"><span class="pre">_HasMetadata.metadata_path</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._balanced_partition"><code class="docutils literal notranslate"><span class="pre">_balanced_partition()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.start_iter"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.start_iter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.batch_size"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.batch_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.__iter__"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.__iter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.StatefulDistributedSampler.set_epoch_and_start_iteration"><code class="docutils literal notranslate"><span class="pre">StatefulDistributedSampler.set_epoch_and_start_iteration()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel._ensure_supported"><code class="docutils literal notranslate"><span class="pre">_ensure_supported()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._load_dataset"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._load_dataset()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.__len__"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.disabled"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.disabled</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.on_error"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.on_error</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.sampler"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.sampler</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.device"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._get_natoms"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._get_natoms()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch_and_start_iteration"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.set_epoch_and_start_iteration()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.set_epoch"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.set_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler._dist_enabled"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler._dist_enabled()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.data_parallel.BalancedBatchSampler.__iter__"><code class="docutils literal notranslate"><span class="pre">BalancedBatchSampler.__iter__()</span></code></a></li>
 </ul>
 </li>

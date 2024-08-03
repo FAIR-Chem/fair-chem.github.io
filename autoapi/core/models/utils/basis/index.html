@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,33 +625,55 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine"><code class="docutils literal notranslate"><span class="pre">Sine</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine.w0"><code class="docutils literal notranslate"><span class="pre">Sine.w0</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine.forward"><code class="docutils literal notranslate"><span class="pre">Sine.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN"><code class="docutils literal notranslate"><span class="pre">SIREN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.layers"><code class="docutils literal notranslate"><span class="pre">SIREN.layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.network"><code class="docutils literal notranslate"><span class="pre">SIREN.network</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.forward"><code class="docutils literal notranslate"><span class="pre">SIREN.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing"><code class="docutils literal notranslate"><span class="pre">SINESmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">SINESmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">SINESmearing.out_dim</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.use_cosine"><code class="docutils literal notranslate"><span class="pre">SINESmearing.use_cosine</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.freq"><code class="docutils literal notranslate"><span class="pre">SINESmearing.freq</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.freq_filter"><code class="docutils literal notranslate"><span class="pre">SINESmearing.freq_filter</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.forward"><code class="docutils literal notranslate"><span class="pre">SINESmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.offset"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.offset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.coeff"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.coeff</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.forward"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing"><code class="docutils literal notranslate"><span class="pre">FourierSmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.out_dim</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.use_cosine"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.use_cosine</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.freq"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.freq</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.freq_filter"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.freq_filter</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.forward"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis"><code class="docutils literal notranslate"><span class="pre">Basis</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.smearing"><code class="docutils literal notranslate"><span class="pre">Basis.smearing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.num_freqs"><code class="docutils literal notranslate"><span class="pre">Basis.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.basis_type"><code class="docutils literal notranslate"><span class="pre">Basis.basis_type</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.forward"><code class="docutils literal notranslate"><span class="pre">Basis.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.m"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.m</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.n"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.n</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.max_n"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.max_n</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.m_list"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.m_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.n_list"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.n_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.out_dim</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.forward"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.forward()</span></code></a></li>
 </ul>
 </li>
@@ -737,6 +761,11 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.Sine.w0">
+<span class="sig-name descname"><span class="pre">w0</span></span><a class="headerlink" href="#core.models.utils.basis.Sine.w0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.utils.basis.Sine.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.utils.basis.Sine.forward" title="Link to this definition">#</a></dt>
@@ -779,6 +808,16 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SIREN.layers">
+<span class="sig-name descname"><span class="pre">layers</span></span><a class="headerlink" href="#core.models.utils.basis.SIREN.layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SIREN.network">
+<span class="sig-name descname"><span class="pre">network</span></span><a class="headerlink" href="#core.models.utils.basis.SIREN.network" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.utils.basis.SIREN.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.utils.basis.SIREN.forward" title="Link to this definition">#</a></dt>
@@ -821,6 +860,31 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.num_freqs">
+<span class="sig-name descname"><span class="pre">num_freqs</span></span><a class="headerlink" href="#core.models.utils.basis.SINESmearing.num_freqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.out_dim">
+<span class="sig-name descname"><span class="pre">out_dim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.utils.basis.SINESmearing.out_dim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.use_cosine">
+<span class="sig-name descname"><span class="pre">use_cosine</span></span><a class="headerlink" href="#core.models.utils.basis.SINESmearing.use_cosine" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.freq">
+<span class="sig-name descname"><span class="pre">freq</span></span><a class="headerlink" href="#core.models.utils.basis.SINESmearing.freq" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.freq_filter">
+<span class="sig-name descname"><span class="pre">freq_filter</span></span><a class="headerlink" href="#core.models.utils.basis.SINESmearing.freq_filter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.utils.basis.SINESmearing.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.utils.basis.SINESmearing.forward" title="Link to this definition">#</a></dt>
@@ -863,6 +927,21 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.GaussianSmearing.num_freqs">
+<span class="sig-name descname"><span class="pre">num_freqs</span></span><a class="headerlink" href="#core.models.utils.basis.GaussianSmearing.num_freqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.GaussianSmearing.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#core.models.utils.basis.GaussianSmearing.offset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.GaussianSmearing.coeff">
+<span class="sig-name descname"><span class="pre">coeff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#core.models.utils.basis.GaussianSmearing.coeff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.utils.basis.GaussianSmearing.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.utils.basis.GaussianSmearing.forward" title="Link to this definition">#</a></dt>
@@ -905,6 +984,31 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.num_freqs">
+<span class="sig-name descname"><span class="pre">num_freqs</span></span><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.num_freqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.out_dim">
+<span class="sig-name descname"><span class="pre">out_dim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.out_dim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.use_cosine">
+<span class="sig-name descname"><span class="pre">use_cosine</span></span><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.use_cosine" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.freq">
+<span class="sig-name descname"><span class="pre">freq</span></span><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.freq" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.freq_filter">
+<span class="sig-name descname"><span class="pre">freq_filter</span></span><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.freq_filter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.utils.basis.FourierSmearing.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.utils.basis.FourierSmearing.forward" title="Link to this definition">#</a></dt>
@@ -950,6 +1054,16 @@ evaluation mode.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.models.utils.basis.Basis.smearing">
 <span class="sig-name descname"><span class="pre">smearing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#core.models.utils.basis.SINESmearing" title="core.models.utils.basis.SINESmearing"><span class="pre">SINESmearing</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#core.models.utils.basis.FourierSmearing" title="core.models.utils.basis.FourierSmearing"><span class="pre">FourierSmearing</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#core.models.utils.basis.GaussianSmearing" title="core.models.utils.basis.GaussianSmearing"><span class="pre">GaussianSmearing</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">torch.nn.Sequential</span></em><a class="headerlink" href="#core.models.utils.basis.Basis.smearing" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.Basis.num_freqs">
+<span class="sig-name descname"><span class="pre">num_freqs</span></span><a class="headerlink" href="#core.models.utils.basis.Basis.num_freqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.Basis.basis_type">
+<span class="sig-name descname"><span class="pre">basis_type</span></span><a class="headerlink" href="#core.models.utils.basis.Basis.basis_type" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1002,6 +1116,26 @@ evaluation mode.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.models.utils.basis.SphericalSmearing.n">
 <span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int_</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.models.utils.basis.SphericalSmearing.n" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SphericalSmearing.max_n">
+<span class="sig-name descname"><span class="pre">max_n</span></span><a class="headerlink" href="#core.models.utils.basis.SphericalSmearing.max_n" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SphericalSmearing.m_list">
+<span class="sig-name descname"><span class="pre">m_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.models.utils.basis.SphericalSmearing.m_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SphericalSmearing.n_list">
+<span class="sig-name descname"><span class="pre">n_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.models.utils.basis.SphericalSmearing.n_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.utils.basis.SphericalSmearing.out_dim">
+<span class="sig-name descname"><span class="pre">out_dim</span></span><a class="headerlink" href="#core.models.utils.basis.SphericalSmearing.out_dim" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1081,33 +1215,55 @@ evaluation mode.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine"><code class="docutils literal notranslate"><span class="pre">Sine</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine.w0"><code class="docutils literal notranslate"><span class="pre">Sine.w0</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Sine.forward"><code class="docutils literal notranslate"><span class="pre">Sine.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN"><code class="docutils literal notranslate"><span class="pre">SIREN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.layers"><code class="docutils literal notranslate"><span class="pre">SIREN.layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.network"><code class="docutils literal notranslate"><span class="pre">SIREN.network</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SIREN.forward"><code class="docutils literal notranslate"><span class="pre">SIREN.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing"><code class="docutils literal notranslate"><span class="pre">SINESmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">SINESmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">SINESmearing.out_dim</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.use_cosine"><code class="docutils literal notranslate"><span class="pre">SINESmearing.use_cosine</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.freq"><code class="docutils literal notranslate"><span class="pre">SINESmearing.freq</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.freq_filter"><code class="docutils literal notranslate"><span class="pre">SINESmearing.freq_filter</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SINESmearing.forward"><code class="docutils literal notranslate"><span class="pre">SINESmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.offset"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.offset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.coeff"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.coeff</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.GaussianSmearing.forward"><code class="docutils literal notranslate"><span class="pre">GaussianSmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing"><code class="docutils literal notranslate"><span class="pre">FourierSmearing</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.num_freqs"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.out_dim</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.use_cosine"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.use_cosine</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.freq"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.freq</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.freq_filter"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.freq_filter</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.FourierSmearing.forward"><code class="docutils literal notranslate"><span class="pre">FourierSmearing.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis"><code class="docutils literal notranslate"><span class="pre">Basis</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.smearing"><code class="docutils literal notranslate"><span class="pre">Basis.smearing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.num_freqs"><code class="docutils literal notranslate"><span class="pre">Basis.num_freqs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.basis_type"><code class="docutils literal notranslate"><span class="pre">Basis.basis_type</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.Basis.forward"><code class="docutils literal notranslate"><span class="pre">Basis.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.m"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.m</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.n"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.n</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.max_n"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.max_n</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.m_list"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.m_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.n_list"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.n_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.out_dim"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.out_dim</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.utils.basis.SphericalSmearing.forward"><code class="docutils literal notranslate"><span class="pre">SphericalSmearing.forward()</span></code></a></li>
 </ul>
 </li>

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -697,7 +699,7 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">
 <h1>Enumerate the adsorbate-slab configurations to run relaxations on<a class="headerlink" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on" title="Link to this heading">#</a></h1>
-<p>Be sure to set the path in <code class="docutils literal notranslate"><span class="pre">fairchem/data/oc/configs/paths.py</span></code> to point to the correct place or pass the paths as an argument. The database pickles can be found in <code class="docutils literal notranslate"><span class="pre">fairchem/data/oc/databases/pkls</span></code>. We will show one explicitly here as an example and then run all of them in an automated fashion for brevity.</p>
+<p>Be sure to set the path in <code class="docutils literal notranslate"><span class="pre">fairchem/data/oc/configs/paths.py</span></code> to point to the correct place or pass the paths as an argument. The database pickles can be found in <code class="docutils literal notranslate"><span class="pre">fairchem/data/oc/databases/pkls</span></code> (some pkl files are only downloaded by running the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">src/fairchem/core/scripts/download_large_files.py</span> <span class="pre">oc</span></code> from the root of the fairchem repo). We will show one explicitly here as an example and then run all of them in an automated fashion for brevity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fairchem.data.oc</span>
@@ -828,49 +830,49 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy          fmax
-BFGS:    0 20:58:24        0.195045        0.716553
+BFGS:    0 02:28:53        0.195044        0.716552
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 20:58:26        0.175054        0.672982
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 02:28:55        0.175054        0.672982
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 20:58:27        0.059278        0.372825
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 02:28:56        0.059278        0.372825
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 20:58:29        0.056324        0.226596
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 02:28:58        0.056324        0.226600
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 20:58:30        0.052357        0.162362
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 02:28:59        0.052357        0.162363
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 20:58:31        0.044131        0.144186
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 02:29:00        0.044132        0.144192
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 20:58:33        0.041685        0.127925
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 02:29:02        0.041685        0.127932
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 20:58:34        0.041343        0.083163
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 02:29:03        0.041343        0.083160
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 20:58:36        0.040578        0.071776
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 02:29:04        0.040578        0.071778
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 20:58:37        0.032568        0.081571
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 02:29:06        0.032566        0.081608
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 20:58:39        0.031598        0.075665
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 02:29:07        0.031598        0.075652
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 20:58:40        0.030103        0.068330
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 02:29:09        0.030103        0.068318
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 20:58:41        0.028287        0.059001
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 02:29:10        0.028286        0.058980
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 20:58:43        0.023508        0.029214
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 02:29:11        0.023511        0.029246
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 19.8 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 19.3 seconds
 </pre></div>
 </div>
 </div>
@@ -1006,42 +1008,42 @@ BFGS:    0 20:58:24        0.195045        0.716553
 Running data/oqmd-349719_H/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 26.9 seconds for data/oqmd-349719_H/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 28.8 seconds for data/oqmd-349719_H/0
 Running data/oqmd-349719_H/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 39.7 seconds for data/oqmd-349719_H/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 38.9 seconds for data/oqmd-349719_H/1
 Running data/oqmd-349719_H/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 18.2 seconds for data/oqmd-349719_H/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 17.9 seconds for data/oqmd-349719_H/2
 Running data/oqmd-349719_H/3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 54.7 seconds for data/oqmd-349719_H/3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 53.9 seconds for data/oqmd-349719_H/3
 Running data/oqmd-349719_NNH/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.9 seconds for data/oqmd-349719_NNH/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 133.1 seconds for data/oqmd-349719_NNH/0
 Running data/oqmd-349719_NNH/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 137.4 seconds for data/oqmd-349719_NNH/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 134.7 seconds for data/oqmd-349719_NNH/1
 Running data/oqmd-349719_NNH/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 136.6 seconds for data/oqmd-349719_NNH/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 133.1 seconds for data/oqmd-349719_NNH/2
 Running data/oqmd-349719_NNH/3
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:30&lt;00:00, 690.01s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:17&lt;00:00, 677.01s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:30&lt;00:00, 690.01s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [11:17&lt;00:00, 677.01s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 137.9 seconds for data/oqmd-349719_NNH/3
-Elapsed time: 690.0 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 135.4 seconds for data/oqmd-349719_NNH/3
+Elapsed time: 677.0 seconds
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1286,7 +1288,7 @@ Elapsed time: 690.0 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5ea9123d4010ccf0797c15fe50c77eee0b4885930a80abf983790f5c16915dc3.png" src="../../_images/5ea9123d4010ccf0797c15fe50c77eee0b4885930a80abf983790f5c16915dc3.png" />
+<img alt="../../_images/7d7623cdd0d173b6b3433cefb4aee239df66b0e0bf970b5a312cde3fd4fa5fdf.png" src="../../_images/7d7623cdd0d173b6b3433cefb4aee239df66b0e0bf970b5a312cde3fd4fa5fdf.png" />
 </div>
 </div>
 </section>

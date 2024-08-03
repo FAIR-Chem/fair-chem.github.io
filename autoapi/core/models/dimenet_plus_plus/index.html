@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,26 +627,65 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.sym"><code class="docutils literal notranslate"><span class="pre">sym</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.act"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf1"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_rbf1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf2"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_rbf2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf1"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_sbf1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf2"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_sbf2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_kj"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_kj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_ji"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_ji</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_down"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_down</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_up"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_up</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_before_skip"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.layers_before_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_after_skip"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.layers_after_skip</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.forward"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.act"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_rbf"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_up"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin_up</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lins"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lins</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.forward"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.url"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.url</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.act"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.cutoff"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.num_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.num_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.rbf"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.sbf"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.sbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.emb"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.emb</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.output_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.output_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.interaction_blocks</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.reset_parameters"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.triplets"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.triplets()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.forward()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead.forward()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.regress_forces"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.use_pbc"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.cutoff"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.otf_graph"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.max_neighbors"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.max_neighbors</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap._forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.num_params</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapBackbone</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapBackbone.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -709,7 +750,13 @@ THE SOFTWARE.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus" title="core.models.dimenet_plus_plus.DimeNetPlusPlus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlus</span></code></a></p></td>
 <td><p>DimeNet++ implementation based on <a class="github reference external" href="https://github.com/klicperajo/dimenet">klicperajo/dimenet</a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap" title="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead" title="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead</span></code></a></p></td>
+<td><p>Base class for all neural network modules.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap" title="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap</span></code></a></p></td>
+<td><p>DimeNet++ implementation based on <a class="github reference external" href="https://github.com/klicperajo/dimenet">klicperajo/dimenet</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone" title="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapBackbone</span></code></a></p></td>
 <td><p>DimeNet++ implementation based on <a class="github reference external" href="https://github.com/klicperajo/dimenet">klicperajo/dimenet</a>.</p></td>
 </tr>
 </tbody>
@@ -758,6 +805,66 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf1">
+<span class="sig-name descname"><span class="pre">lin_rbf1</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf2">
+<span class="sig-name descname"><span class="pre">lin_rbf2</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf1">
+<span class="sig-name descname"><span class="pre">lin_sbf1</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf2">
+<span class="sig-name descname"><span class="pre">lin_sbf2</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_kj">
+<span class="sig-name descname"><span class="pre">lin_kj</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_kj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_ji">
+<span class="sig-name descname"><span class="pre">lin_ji</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_ji" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_down">
+<span class="sig-name descname"><span class="pre">lin_down</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_down" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin_up">
+<span class="sig-name descname"><span class="pre">lin_up</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_up" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.layers_before_skip">
+<span class="sig-name descname"><span class="pre">layers_before_skip</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_before_skip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.lin">
+<span class="sig-name descname"><span class="pre">lin</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.layers_after_skip">
+<span class="sig-name descname"><span class="pre">layers_after_skip</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_after_skip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.dimenet_plus_plus.InteractionPPBlock.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.InteractionPPBlock.reset_parameters" title="Link to this definition">#</a></dt>
@@ -805,6 +912,31 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.lin_rbf">
+<span class="sig-name descname"><span class="pre">lin_rbf</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.lin_up">
+<span class="sig-name descname"><span class="pre">lin_up</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_up" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.lins">
+<span class="sig-name descname"><span class="pre">lins</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.lins" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.lin">
+<span class="sig-name descname"><span class="pre">lin</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.dimenet_plus_plus.OutputPPBlock.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.OutputPPBlock.reset_parameters" title="Link to this definition">#</a></dt>
@@ -853,6 +985,46 @@ output blocks. (default: <code class="xref py py-obj docutils literal notranslat
 <span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://github.com/klicperajo/dimenet/raw/master/pretrained'</span></em><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.url" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.num_blocks">
+<span class="sig-name descname"><span class="pre">num_blocks</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.num_blocks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.rbf">
+<span class="sig-name descname"><span class="pre">rbf</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.sbf">
+<span class="sig-name descname"><span class="pre">sbf</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.sbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.emb">
+<span class="sig-name descname"><span class="pre">emb</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.emb" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.output_blocks">
+<span class="sig-name descname"><span class="pre">output_blocks</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.output_blocks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks">
+<span class="sig-name descname"><span class="pre">interaction_blocks</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlus.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.reset_parameters" title="Link to this definition">#</a></dt>
@@ -871,9 +1043,144 @@ output blocks. (default: <code class="xref py py-obj docutils literal notranslat
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.dimenet_plus_plus.</span></span><span class="sig-name descname"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">to()</span></code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training</strong> (<em>bool</em>) – Boolean represents whether this module is in training or
+evaluation mode.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces">
+<span class="sig-name descname"><span class="pre">regress_forces</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.batch.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.dimenet_plus_plus.</span></span><span class="sig-name descname"><span class="pre">DimeNetPlusPlusWrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_emb_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_spherical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_radial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope_exponent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_before_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_after_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_output_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus" title="core.models.dimenet_plus_plus.DimeNetPlusPlus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlus</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BaseModel</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.dimenet_plus_plus.</span></span><span class="sig-name descname"><span class="pre">DimeNetPlusPlusWrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_emb_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_spherical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_radial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope_exponent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_before_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_after_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_output_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus" title="core.models.dimenet_plus_plus.DimeNetPlusPlus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlus</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.GraphModelMixin</span></code></p>
+<p>DimeNet++ implementation based on <a class="github reference external" href="https://github.com/klicperajo/dimenet">klicperajo/dimenet</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hidden_channels</strong> (<em>int</em>) – Hidden embedding size.</p></li>
+<li><p><strong>out_channels</strong> (<em>int</em>) – Size of each output sample.</p></li>
+<li><p><strong>num_blocks</strong> (<em>int</em>) – Number of building blocks.</p></li>
+<li><p><strong>int_emb_size</strong> (<em>int</em>) – Embedding size used for interaction triplets</p></li>
+<li><p><strong>basis_emb_size</strong> (<em>int</em>) – Embedding size used in the basis transformation</p></li>
+<li><p><strong>out_emb_channels</strong> (<em>int</em>) – Embedding size used for atoms in the output block</p></li>
+<li><p><strong>num_spherical</strong> (<em>int</em>) – Number of spherical harmonics.</p></li>
+<li><p><strong>num_radial</strong> (<em>int</em>) – Number of radial basis functions.</p></li>
+<li><p><strong>cutoff</strong> – (float, optional): Cutoff distance for interatomic
+interactions. (default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">5.0</span></code>)</p></li>
+<li><p><strong>envelope_exponent</strong> (<em>int</em><em>, </em><em>optional</em>) – Shape of the smooth cutoff.
+(default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">5</span></code>)</p></li>
+<li><p><strong>num_before_skip</strong> – (int, optional): Number of residual layers in the
+interaction blocks before the skip connection. (default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+<li><p><strong>num_after_skip</strong> – (int, optional): Number of residual layers in the
+interaction blocks after the skip connection. (default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">2</span></code>)</p></li>
+<li><p><strong>num_output_layers</strong> – (int, optional): Number of linear layers for the
+output blocks. (default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">3</span></code>)</p></li>
+<li><p><strong>act</strong> – (function, optional): The activation funtion.
+(default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">silu</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.regress_forces">
+<span class="sig-name descname"><span class="pre">regress_forces</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.regress_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.use_pbc">
+<span class="sig-name descname"><span class="pre">use_pbc</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.use_pbc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.max_neighbors">
+<span class="sig-name descname"><span class="pre">max_neighbors</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.max_neighbors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward">
+<span class="sig-name descname"><span class="pre">_forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.dimenet_plus_plus.</span></span><span class="sig-name descname"><span class="pre">DimeNetPlusPlusWrapBackbone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_emb_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_emb_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_spherical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_radial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope_exponent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_before_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_after_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_output_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap" title="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BackboneInterface</span></code></p>
 <p>DimeNet++ implementation based on <a class="github reference external" href="https://github.com/klicperajo/dimenet">klicperajo/dimenet</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -902,18 +1209,8 @@ output blocks. (default: <code class="xref py py-obj docutils literal notranslat
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward">
-<span class="sig-name descname"><span class="pre">_forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.batch.Batch</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone.forward" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -990,26 +1287,65 @@ output blocks. (default: <code class="xref py py-obj docutils literal notranslat
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.sym"><code class="docutils literal notranslate"><span class="pre">sym</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.act"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf1"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_rbf1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_rbf2"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_rbf2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf1"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_sbf1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_sbf2"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_sbf2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_kj"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_kj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_ji"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_ji</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_down"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_down</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin_up"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin_up</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_before_skip"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.layers_before_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.lin"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.lin</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.layers_after_skip"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.layers_after_skip</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.InteractionPPBlock.forward"><code class="docutils literal notranslate"><span class="pre">InteractionPPBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.act"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_rbf"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin_up"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin_up</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lins"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lins</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.lin"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.lin</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.OutputPPBlock.forward"><code class="docutils literal notranslate"><span class="pre">OutputPPBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.url"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.url</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.act"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.cutoff"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.num_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.num_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.rbf"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.sbf"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.sbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.emb"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.emb</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.output_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.output_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.interaction_blocks</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.reset_parameters"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.triplets"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.triplets()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlus.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlus.forward()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapEnergyAndForceHead.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapEnergyAndForceHead.forward()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.regress_forces"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.use_pbc"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.cutoff"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.otf_graph"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.max_neighbors"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.max_neighbors</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap._forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap._forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.num_params"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrap.num_params</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapBackbone</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.dimenet_plus_plus.DimeNetPlusPlusWrapBackbone.forward"><code class="docutils literal notranslate"><span class="pre">DimeNetPlusPlusWrapBackbone.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>

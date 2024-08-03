@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,11 +625,19 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.name"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.dense_rbf"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.dense_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.scale_sum"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.scale_sum</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.layers"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.layers</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.get_mlp"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.get_mlp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.forward"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock"><code class="docutils literal notranslate"><span class="pre">OutputBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.output_init"><code class="docutils literal notranslate"><span class="pre">OutputBlock.output_init</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.direct_forces"><code class="docutils literal notranslate"><span class="pre">OutputBlock.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.seq_energy"><code class="docutils literal notranslate"><span class="pre">OutputBlock.seq_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.out_energy"><code class="docutils literal notranslate"><span class="pre">OutputBlock.out_energy</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">OutputBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.forward"><code class="docutils literal notranslate"><span class="pre">OutputBlock.forward()</span></code></a></li>
 </ul>
@@ -681,6 +691,26 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.dense_rbf">
+<span class="sig-name descname"><span class="pre">dense_rbf</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.dense_rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.scale_sum">
+<span class="sig-name descname"><span class="pre">scale_sum</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.scale_sum" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.layers">
+<span class="sig-name descname"><span class="pre">layers</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.get_mlp">
 <span class="sig-name descname"><span class="pre">get_mlp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">units_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nHidden</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.get_mlp" title="Link to this definition">#</a></dt>
@@ -719,6 +749,26 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.OutputBlock.output_init">
+<span class="sig-name descname"><span class="pre">output_init</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.output_init" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.OutputBlock.direct_forces">
+<span class="sig-name descname"><span class="pre">direct_forces</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.direct_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.OutputBlock.seq_energy">
+<span class="sig-name descname"><span class="pre">seq_energy</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.seq_energy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.OutputBlock.out_energy">
+<span class="sig-name descname"><span class="pre">out_energy</span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.out_energy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet.layers.atom_update_block.OutputBlock.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.reset_parameters" title="Link to this definition">#</a></dt>
@@ -812,11 +862,19 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.name"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.dense_rbf"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.dense_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.scale_sum"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.scale_sum</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.layers"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.layers</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.get_mlp"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.get_mlp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.forward"><code class="docutils literal notranslate"><span class="pre">AtomUpdateBlock.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock"><code class="docutils literal notranslate"><span class="pre">OutputBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.output_init"><code class="docutils literal notranslate"><span class="pre">OutputBlock.output_init</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.direct_forces"><code class="docutils literal notranslate"><span class="pre">OutputBlock.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.seq_energy"><code class="docutils literal notranslate"><span class="pre">OutputBlock.seq_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.out_energy"><code class="docutils literal notranslate"><span class="pre">OutputBlock.out_energy</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">OutputBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.atom_update_block.OutputBlock.forward"><code class="docutils literal notranslate"><span class="pre">OutputBlock.forward()</span></code></a></li>
 </ul>

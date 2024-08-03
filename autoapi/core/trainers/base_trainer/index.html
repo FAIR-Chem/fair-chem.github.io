@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,6 +625,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer"><code class="docutils literal notranslate"><span class="pre">BaseTrainer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.is_debug"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.is_debug</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.cpu"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.cpu</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.epoch"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.epoch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.step"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.step</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.timestamp_id"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.timestamp_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.commit_hash"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.commit_hash</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.logger_name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.logger_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.config"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.scaler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.scaler</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.train"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer._get_timestamp"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._get_timestamp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.load"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load()</span></code></a></li>
@@ -683,6 +695,56 @@ LICENSE file in the root directory of this source tree.</p>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
 <p>Helper class that provides a standard way to create an ABC using
 inheritance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.is_debug">
+<span class="sig-name descname"><span class="pre">is_debug</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.is_debug" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.cpu">
+<span class="sig-name descname"><span class="pre">cpu</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.cpu" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.epoch">
+<span class="sig-name descname"><span class="pre">epoch</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.epoch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.step">
+<span class="sig-name descname"><span class="pre">step</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.step" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.timestamp_id">
+<span class="sig-name descname"><span class="pre">timestamp_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.timestamp_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.commit_hash">
+<span class="sig-name descname"><span class="pre">commit_hash</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.commit_hash" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.logger_name">
+<span class="sig-name descname"><span class="pre">logger_name</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.logger_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.scaler">
+<span class="sig-name descname"><span class="pre">scaler</span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.scaler" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.trainers.base_trainer.BaseTrainer.train">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disable_eval_tqdm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.trainers.base_trainer.BaseTrainer.train" title="Link to this definition">#</a></dt>
@@ -861,6 +923,16 @@ inheritance.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer"><code class="docutils literal notranslate"><span class="pre">BaseTrainer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.is_debug"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.is_debug</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.cpu"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.cpu</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.epoch"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.epoch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.step"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.step</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.timestamp_id"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.timestamp_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.commit_hash"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.commit_hash</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.logger_name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.logger_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.config"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.scaler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.scaler</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.train"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer._get_timestamp"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._get_timestamp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.base_trainer.BaseTrainer.load"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load()</span></code></a></li>

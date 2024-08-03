@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="core.datasets.lmdb_dataset" href="../lmdb_dataset/index.html" />
-    <link rel="prev" title="core.datasets.ase_datasets" href="../ase_datasets/index.html" />
+    <link rel="prev" title="core.datasets.base_dataset" href="../base_dataset/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,6 +627,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.RESERVED_KEYS"><code class="docutils literal notranslate"><span class="pre">RESERVED_KEYS</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.readonly"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.readonly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.ids</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.deleted_ids</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>
@@ -695,6 +700,21 @@ and is thus licensed under the corresponding LGPL2.1 license</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.lmdb_database.</span></span><span class="sig-name descname"><span class="pre">LMDBDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_lock_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.lmdb_database.LMDBDatabase" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">ase.db.core.Database</span></code></p>
 <p>Base class for all databases.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.lmdb_database.LMDBDatabase.readonly">
+<span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#core.datasets.lmdb_database.LMDBDatabase.readonly" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.lmdb_database.LMDBDatabase.ids">
+<span class="sig-name descname"><span class="pre">ids</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.datasets.lmdb_database.LMDBDatabase.ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.lmdb_database.LMDBDatabase.deleted_ids">
+<span class="sig-name descname"><span class="pre">deleted_ids</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.datasets.lmdb_database.LMDBDatabase.deleted_ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.datasets.lmdb_database.LMDBDatabase.__enter__">
 <span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">typing_extensions.Self</span></span></span><a class="headerlink" href="#core.datasets.lmdb_database.LMDBDatabase.__enter__" title="Link to this definition">#</a></dt>
@@ -815,12 +835,12 @@ we just store the deleted ids.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ase_datasets/index.html"
+       href="../base_dataset/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">core.datasets.ase_datasets</p>
+        <p class="prev-next-title">core.datasets.base_dataset</p>
       </div>
     </a>
     <a class="right-next"
@@ -853,6 +873,9 @@ we just store the deleted ids.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.RESERVED_KEYS"><code class="docutils literal notranslate"><span class="pre">RESERVED_KEYS</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.readonly"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.readonly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.ids</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.deleted_ids</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.lmdb_database.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>

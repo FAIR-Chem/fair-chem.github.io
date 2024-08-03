@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -624,6 +626,36 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN"><code class="docutils literal notranslate"><span class="pre">eSCN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.regress_forces"><code class="docutils literal notranslate"><span class="pre">eSCN.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.use_pbc"><code class="docutils literal notranslate"><span class="pre">eSCN.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.cutoff"><code class="docutils literal notranslate"><span class="pre">eSCN.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.otf_graph"><code class="docutils literal notranslate"><span class="pre">eSCN.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.show_timing_info"><code class="docutils literal notranslate"><span class="pre">eSCN.show_timing_info</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.max_num_elements"><code class="docutils literal notranslate"><span class="pre">eSCN.max_num_elements</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.hidden_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_layers"><code class="docutils literal notranslate"><span class="pre">eSCN.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_atoms"><code class="docutils literal notranslate"><span class="pre">eSCN.num_atoms</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_sphere_samples"><code class="docutils literal notranslate"><span class="pre">eSCN.num_sphere_samples</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.max_neighbors"><code class="docutils literal notranslate"><span class="pre">eSCN.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.edge_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.edge_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.distance_resolution"><code class="docutils literal notranslate"><span class="pre">eSCN.distance_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.grad_forces"><code class="docutils literal notranslate"><span class="pre">eSCN.grad_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.lmax_list"><code class="docutils literal notranslate"><span class="pre">eSCN.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.mmax_list"><code class="docutils literal notranslate"><span class="pre">eSCN.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_resolutions"><code class="docutils literal notranslate"><span class="pre">eSCN.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_channels_all"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_channels_all</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.basis_width_scalar"><code class="docutils literal notranslate"><span class="pre">eSCN.basis_width_scalar</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.distance_function"><code class="docutils literal notranslate"><span class="pre">eSCN.distance_function</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.counter"><code class="docutils literal notranslate"><span class="pre">eSCN.counter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.act"><code class="docutils literal notranslate"><span class="pre">eSCN.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_embedding"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_gaussians"><code class="docutils literal notranslate"><span class="pre">eSCN.num_gaussians</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.SO3_grid"><code class="docutils literal notranslate"><span class="pre">eSCN.SO3_grid</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.layer_blocks"><code class="docutils literal notranslate"><span class="pre">eSCN.layer_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.energy_block"><code class="docutils literal notranslate"><span class="pre">eSCN.energy_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_points"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_points</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphharm_weights"><code class="docutils literal notranslate"><span class="pre">eSCN.sphharm_weights</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.forward"><code class="docutils literal notranslate"><span class="pre">eSCN.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN._init_edge_rot_mat"><code class="docutils literal notranslate"><span class="pre">eSCN._init_edge_rot_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_params"><code class="docutils literal notranslate"><span class="pre">eSCN.num_params</span></code></a></li>
@@ -668,8 +700,8 @@ document.write(`
 <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.models.escn.eSCN">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.escn.</span></span><span class="sig-name descname"><span class="pre">eSCN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sphere_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_width_scalar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_timing_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.eSCN" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BaseModel</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.escn.</span></span><span class="sig-name descname"><span class="pre">eSCN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sphere_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_width_scalar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_timing_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.eSCN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.GraphModelMixin</span></code></p>
 <p>Equivariant Spherical Channel Network
 Paper: Reducing SO(3) Convolutions to SO(2) for Efficient Equivariant GNNs</p>
 <dl class="field-list simple">
@@ -695,6 +727,156 @@ Paper: Reducing SO(3) Convolutions to SO(2) for Efficient Equivariant GNNs</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.regress_forces">
+<span class="sig-name descname"><span class="pre">regress_forces</span></span><a class="headerlink" href="#core.models.escn.eSCN.regress_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.use_pbc">
+<span class="sig-name descname"><span class="pre">use_pbc</span></span><a class="headerlink" href="#core.models.escn.eSCN.use_pbc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.escn.eSCN.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.escn.eSCN.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.show_timing_info">
+<span class="sig-name descname"><span class="pre">show_timing_info</span></span><a class="headerlink" href="#core.models.escn.eSCN.show_timing_info" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.max_num_elements">
+<span class="sig-name descname"><span class="pre">max_num_elements</span></span><a class="headerlink" href="#core.models.escn.eSCN.max_num_elements" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.hidden_channels">
+<span class="sig-name descname"><span class="pre">hidden_channels</span></span><a class="headerlink" href="#core.models.escn.eSCN.hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.num_layers">
+<span class="sig-name descname"><span class="pre">num_layers</span></span><a class="headerlink" href="#core.models.escn.eSCN.num_layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.num_atoms">
+<span class="sig-name descname"><span class="pre">num_atoms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.escn.eSCN.num_atoms" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.num_sphere_samples">
+<span class="sig-name descname"><span class="pre">num_sphere_samples</span></span><a class="headerlink" href="#core.models.escn.eSCN.num_sphere_samples" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.sphere_channels">
+<span class="sig-name descname"><span class="pre">sphere_channels</span></span><a class="headerlink" href="#core.models.escn.eSCN.sphere_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.max_neighbors">
+<span class="sig-name descname"><span class="pre">max_neighbors</span></span><a class="headerlink" href="#core.models.escn.eSCN.max_neighbors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.edge_channels">
+<span class="sig-name descname"><span class="pre">edge_channels</span></span><a class="headerlink" href="#core.models.escn.eSCN.edge_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.distance_resolution">
+<span class="sig-name descname"><span class="pre">distance_resolution</span></span><a class="headerlink" href="#core.models.escn.eSCN.distance_resolution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.grad_forces">
+<span class="sig-name descname"><span class="pre">grad_forces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#core.models.escn.eSCN.grad_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.lmax_list">
+<span class="sig-name descname"><span class="pre">lmax_list</span></span><a class="headerlink" href="#core.models.escn.eSCN.lmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.mmax_list">
+<span class="sig-name descname"><span class="pre">mmax_list</span></span><a class="headerlink" href="#core.models.escn.eSCN.mmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.num_resolutions">
+<span class="sig-name descname"><span class="pre">num_resolutions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.escn.eSCN.num_resolutions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.sphere_channels_all">
+<span class="sig-name descname"><span class="pre">sphere_channels_all</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.escn.eSCN.sphere_channels_all" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.basis_width_scalar">
+<span class="sig-name descname"><span class="pre">basis_width_scalar</span></span><a class="headerlink" href="#core.models.escn.eSCN.basis_width_scalar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.distance_function">
+<span class="sig-name descname"><span class="pre">distance_function</span></span><a class="headerlink" href="#core.models.escn.eSCN.distance_function" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.counter">
+<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.escn.eSCN.counter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.escn.eSCN.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.sphere_embedding">
+<span class="sig-name descname"><span class="pre">sphere_embedding</span></span><a class="headerlink" href="#core.models.escn.eSCN.sphere_embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.num_gaussians">
+<span class="sig-name descname"><span class="pre">num_gaussians</span></span><a class="headerlink" href="#core.models.escn.eSCN.num_gaussians" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.SO3_grid">
+<span class="sig-name descname"><span class="pre">SO3_grid</span></span><a class="headerlink" href="#core.models.escn.eSCN.SO3_grid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.layer_blocks">
+<span class="sig-name descname"><span class="pre">layer_blocks</span></span><a class="headerlink" href="#core.models.escn.eSCN.layer_blocks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.energy_block">
+<span class="sig-name descname"><span class="pre">energy_block</span></span><a class="headerlink" href="#core.models.escn.eSCN.energy_block" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.sphere_points">
+<span class="sig-name descname"><span class="pre">sphere_points</span></span><a class="headerlink" href="#core.models.escn.eSCN.sphere_points" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.eSCN.sphharm_weights">
+<span class="sig-name descname"><span class="pre">sphharm_weights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.nn.Parameter</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.models.escn.eSCN.sphharm_weights" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.eSCN.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.eSCN.forward" title="Link to this definition">#</a></dt>
@@ -783,6 +965,36 @@ Paper: Reducing SO(3) Convolutions to SO(2) for Efficient Equivariant GNNs</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN"><code class="docutils literal notranslate"><span class="pre">eSCN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.regress_forces"><code class="docutils literal notranslate"><span class="pre">eSCN.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.use_pbc"><code class="docutils literal notranslate"><span class="pre">eSCN.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.cutoff"><code class="docutils literal notranslate"><span class="pre">eSCN.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.otf_graph"><code class="docutils literal notranslate"><span class="pre">eSCN.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.show_timing_info"><code class="docutils literal notranslate"><span class="pre">eSCN.show_timing_info</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.max_num_elements"><code class="docutils literal notranslate"><span class="pre">eSCN.max_num_elements</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.hidden_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_layers"><code class="docutils literal notranslate"><span class="pre">eSCN.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_atoms"><code class="docutils literal notranslate"><span class="pre">eSCN.num_atoms</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_sphere_samples"><code class="docutils literal notranslate"><span class="pre">eSCN.num_sphere_samples</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.max_neighbors"><code class="docutils literal notranslate"><span class="pre">eSCN.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.edge_channels"><code class="docutils literal notranslate"><span class="pre">eSCN.edge_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.distance_resolution"><code class="docutils literal notranslate"><span class="pre">eSCN.distance_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.grad_forces"><code class="docutils literal notranslate"><span class="pre">eSCN.grad_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.lmax_list"><code class="docutils literal notranslate"><span class="pre">eSCN.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.mmax_list"><code class="docutils literal notranslate"><span class="pre">eSCN.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_resolutions"><code class="docutils literal notranslate"><span class="pre">eSCN.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_channels_all"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_channels_all</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.basis_width_scalar"><code class="docutils literal notranslate"><span class="pre">eSCN.basis_width_scalar</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.distance_function"><code class="docutils literal notranslate"><span class="pre">eSCN.distance_function</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.counter"><code class="docutils literal notranslate"><span class="pre">eSCN.counter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.act"><code class="docutils literal notranslate"><span class="pre">eSCN.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_embedding"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_gaussians"><code class="docutils literal notranslate"><span class="pre">eSCN.num_gaussians</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.SO3_grid"><code class="docutils literal notranslate"><span class="pre">eSCN.SO3_grid</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.layer_blocks"><code class="docutils literal notranslate"><span class="pre">eSCN.layer_blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.energy_block"><code class="docutils literal notranslate"><span class="pre">eSCN.energy_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphere_points"><code class="docutils literal notranslate"><span class="pre">eSCN.sphere_points</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.sphharm_weights"><code class="docutils literal notranslate"><span class="pre">eSCN.sphharm_weights</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.forward"><code class="docutils literal notranslate"><span class="pre">eSCN.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN._init_edge_rot_mat"><code class="docutils literal notranslate"><span class="pre">eSCN._init_edge_rot_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.eSCN.num_params"><code class="docutils literal notranslate"><span class="pre">eSCN.num_params</span></code></a></li>

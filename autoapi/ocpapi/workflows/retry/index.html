@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -630,6 +632,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after._default_wait"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after._default_wait</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after._rate_limit_logging"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after._rate_limit_logging</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after.__call__"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after.__call__()</span></code></a></li>
 </ul>
 </li>
@@ -717,6 +721,16 @@ document.write(`
 <p>Tenacity wait strategy that first checks whether RateLimitExceededException
 was raised and that it includes a retry-after value; if so wait, for that
 amount of time. Otherwise, fall back to the provided default strategy.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ocpapi.workflows.retry._wait_check_retry_after._default_wait">
+<span class="sig-name descname"><span class="pre">_default_wait</span></span><a class="headerlink" href="#ocpapi.workflows.retry._wait_check_retry_after._default_wait" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ocpapi.workflows.retry._wait_check_retry_after._rate_limit_logging">
+<span class="sig-name descname"><span class="pre">_rate_limit_logging</span></span><a class="headerlink" href="#ocpapi.workflows.retry._wait_check_retry_after._rate_limit_logging" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ocpapi.workflows.retry._wait_check_retry_after.__call__">
 <span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retry_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tenacity.RetryCallState</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ocpapi.workflows.retry._wait_check_retry_after.__call__" title="Link to this definition">#</a></dt>
@@ -835,6 +849,8 @@ mostly for testing.</p></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after._default_wait"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after._default_wait</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after._rate_limit_logging"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after._rate_limit_logging</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.workflows.retry._wait_check_retry_after.__call__"><code class="docutils literal notranslate"><span class="pre">_wait_check_retry_after.__call__()</span></code></a></li>
 </ul>
 </li>

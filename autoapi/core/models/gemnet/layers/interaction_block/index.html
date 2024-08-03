@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,10 +625,30 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.name"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.block_nr"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.block_nr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.dense_ca</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.trip_interaction"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.trip_interaction</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_before_skip"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.layers_before_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_after_skip"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.layers_after_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.atom_update"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.atom_update</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.concat_layer"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.concat_layer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.residual_m"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.residual_m</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.forward"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction"><code class="docutils literal notranslate"><span class="pre">TripletInteraction</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.name"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.dense_ba</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_rbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.mlp_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_rbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.scale_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_cbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.mlp_cbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_cbf_sum"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.scale_cbf_sum</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.down_projection"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.down_projection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ca"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.up_projection_ca</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ac"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.up_projection_ac</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.forward"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.forward()</span></code></a></li>
 </ul>
 </li>
@@ -686,6 +708,56 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.block_nr">
+<span class="sig-name descname"><span class="pre">block_nr</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.block_nr" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca">
+<span class="sig-name descname"><span class="pre">dense_ca</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.trip_interaction">
+<span class="sig-name descname"><span class="pre">trip_interaction</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.trip_interaction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_before_skip">
+<span class="sig-name descname"><span class="pre">layers_before_skip</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_before_skip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_after_skip">
+<span class="sig-name descname"><span class="pre">layers_after_skip</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_after_skip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.atom_update">
+<span class="sig-name descname"><span class="pre">atom_update</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.atom_update" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.concat_layer">
+<span class="sig-name descname"><span class="pre">concat_layer</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.concat_layer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.residual_m">
+<span class="sig-name descname"><span class="pre">residual_m</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.residual_m" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.inv_sqrt_2">
+<span class="sig-name descname"><span class="pre">inv_sqrt_2</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.inv_sqrt_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbf3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ragged_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_swap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ca</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx_t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.forward" title="Link to this definition">#</a></dt>
@@ -719,6 +791,56 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba">
+<span class="sig-name descname"><span class="pre">dense_ba</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_rbf">
+<span class="sig-name descname"><span class="pre">mlp_rbf</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.scale_rbf">
+<span class="sig-name descname"><span class="pre">scale_rbf</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_cbf">
+<span class="sig-name descname"><span class="pre">mlp_cbf</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_cbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.scale_cbf_sum">
+<span class="sig-name descname"><span class="pre">scale_cbf_sum</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_cbf_sum" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.down_projection">
+<span class="sig-name descname"><span class="pre">down_projection</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.down_projection" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ca">
+<span class="sig-name descname"><span class="pre">up_projection_ca</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ca" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ac">
+<span class="sig-name descname"><span class="pre">up_projection_ac</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ac" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.inv_sqrt_2">
+<span class="sig-name descname"><span class="pre">inv_sqrt_2</span></span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.inv_sqrt_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet.layers.interaction_block.TripletInteraction.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbf3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ragged_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_swap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id3_ca</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.forward" title="Link to this definition">#</a></dt>
@@ -804,10 +926,30 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.name"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.block_nr"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.block_nr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.dense_ca</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.trip_interaction"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.trip_interaction</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_before_skip"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.layers_before_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.layers_after_skip"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.layers_after_skip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.atom_update"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.atom_update</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.concat_layer"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.concat_layer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.residual_m"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.residual_m</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.forward"><code class="docutils literal notranslate"><span class="pre">InteractionBlockTripletsOnly.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction"><code class="docutils literal notranslate"><span class="pre">TripletInteraction</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.name"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.dense_ba</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_rbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.mlp_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_rbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.scale_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.mlp_cbf"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.mlp_cbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.scale_cbf_sum"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.scale_cbf_sum</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.down_projection"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.down_projection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ca"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.up_projection_ca</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.up_projection_ac"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.up_projection_ac</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet.layers.interaction_block.TripletInteraction.forward"><code class="docutils literal notranslate"><span class="pre">TripletInteraction.forward()</span></code></a></li>
 </ul>
 </li>

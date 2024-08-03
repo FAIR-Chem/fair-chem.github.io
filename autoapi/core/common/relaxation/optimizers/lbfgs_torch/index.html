@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,6 +625,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS"><code class="docutils literal notranslate"><span class="pre">LBFGS</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.batch"><code class="docutils literal notranslate"><span class="pre">LBFGS.batch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.model"><code class="docutils literal notranslate"><span class="pre">LBFGS.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.maxstep"><code class="docutils literal notranslate"><span class="pre">LBFGS.maxstep</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.memory"><code class="docutils literal notranslate"><span class="pre">LBFGS.memory</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.damping"><code class="docutils literal notranslate"><span class="pre">LBFGS.damping</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.alpha"><code class="docutils literal notranslate"><span class="pre">LBFGS.alpha</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.H0"><code class="docutils literal notranslate"><span class="pre">LBFGS.H0</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.force_consistent"><code class="docutils literal notranslate"><span class="pre">LBFGS.force_consistent</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.device"><code class="docutils literal notranslate"><span class="pre">LBFGS.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.save_full"><code class="docutils literal notranslate"><span class="pre">LBFGS.save_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_dir"><code class="docutils literal notranslate"><span class="pre">LBFGS.traj_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_names"><code class="docutils literal notranslate"><span class="pre">LBFGS.traj_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.early_stop_batch"><code class="docutils literal notranslate"><span class="pre">LBFGS.early_stop_batch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.otf_graph"><code class="docutils literal notranslate"><span class="pre">LBFGS.otf_graph</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.get_energy_and_forces"><code class="docutils literal notranslate"><span class="pre">LBFGS.get_energy_and_forces()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.set_positions"><code class="docutils literal notranslate"><span class="pre">LBFGS.set_positions()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.check_convergence"><code class="docutils literal notranslate"><span class="pre">LBFGS.check_convergence()</span></code></a></li>
@@ -632,6 +648,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc"><code class="docutils literal notranslate"><span class="pre">TorchCalc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.model"><code class="docutils literal notranslate"><span class="pre">TorchCalc.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.transform"><code class="docutils literal notranslate"><span class="pre">TorchCalc.transform</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.get_energy_and_forces"><code class="docutils literal notranslate"><span class="pre">TorchCalc.get_energy_and_forces()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.update_graph"><code class="docutils literal notranslate"><span class="pre">TorchCalc.update_graph()</span></code></a></li>
 </ul>
@@ -673,7 +691,77 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.relaxation.optimizers.lbfgs_torch.</span></span><span class="sig-name descname"><span class="pre">LBFGS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc" title="core.common.relaxation.optimizers.lbfgs_torch.TorchCalc"><span class="pre">TorchCalc</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxstep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_consistent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cuda:0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_full_traj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traj_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traj_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">early_stop_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS" title="Link to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.batch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.maxstep">
+<span class="sig-name descname"><span class="pre">maxstep</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.maxstep" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.memory">
+<span class="sig-name descname"><span class="pre">memory</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.memory" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.damping">
+<span class="sig-name descname"><span class="pre">damping</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.damping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.alpha" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.H0">
+<span class="sig-name descname"><span class="pre">H0</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.H0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.force_consistent">
+<span class="sig-name descname"><span class="pre">force_consistent</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.force_consistent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.save_full">
+<span class="sig-name descname"><span class="pre">save_full</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.save_full" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_dir">
+<span class="sig-name descname"><span class="pre">traj_dir</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_dir" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_names">
+<span class="sig-name descname"><span class="pre">traj_names</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_names" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.early_stop_batch">
+<span class="sig-name descname"><span class="pre">early_stop_batch</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.early_stop_batch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.LBFGS.get_energy_and_forces">
 <span class="sig-name descname"><span class="pre">get_energy_and_forces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apply_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.get_energy_and_forces" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -708,7 +796,17 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.TorchCalc">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.common.relaxation.optimizers.lbfgs_torch.</span></span><span class="sig-name descname"><span class="pre">TorchCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc" title="Link to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.transform" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.get_energy_and_forces">
 <span class="sig-name descname"><span class="pre">get_energy_and_forces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.get_energy_and_forces" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -790,6 +888,20 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS"><code class="docutils literal notranslate"><span class="pre">LBFGS</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.batch"><code class="docutils literal notranslate"><span class="pre">LBFGS.batch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.model"><code class="docutils literal notranslate"><span class="pre">LBFGS.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.maxstep"><code class="docutils literal notranslate"><span class="pre">LBFGS.maxstep</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.memory"><code class="docutils literal notranslate"><span class="pre">LBFGS.memory</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.damping"><code class="docutils literal notranslate"><span class="pre">LBFGS.damping</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.alpha"><code class="docutils literal notranslate"><span class="pre">LBFGS.alpha</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.H0"><code class="docutils literal notranslate"><span class="pre">LBFGS.H0</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.force_consistent"><code class="docutils literal notranslate"><span class="pre">LBFGS.force_consistent</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.device"><code class="docutils literal notranslate"><span class="pre">LBFGS.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.save_full"><code class="docutils literal notranslate"><span class="pre">LBFGS.save_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_dir"><code class="docutils literal notranslate"><span class="pre">LBFGS.traj_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.traj_names"><code class="docutils literal notranslate"><span class="pre">LBFGS.traj_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.early_stop_batch"><code class="docutils literal notranslate"><span class="pre">LBFGS.early_stop_batch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.otf_graph"><code class="docutils literal notranslate"><span class="pre">LBFGS.otf_graph</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.get_energy_and_forces"><code class="docutils literal notranslate"><span class="pre">LBFGS.get_energy_and_forces()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.set_positions"><code class="docutils literal notranslate"><span class="pre">LBFGS.set_positions()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.check_convergence"><code class="docutils literal notranslate"><span class="pre">LBFGS.check_convergence()</span></code></a></li>
@@ -799,6 +911,8 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc"><code class="docutils literal notranslate"><span class="pre">TorchCalc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.model"><code class="docutils literal notranslate"><span class="pre">TorchCalc.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.transform"><code class="docutils literal notranslate"><span class="pre">TorchCalc.transform</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.get_energy_and_forces"><code class="docutils literal notranslate"><span class="pre">TorchCalc.get_energy_and_forces()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.optimizers.lbfgs_torch.TorchCalc.update_graph"><code class="docutils literal notranslate"><span class="pre">TorchCalc.update_graph()</span></code></a></li>
 </ul>

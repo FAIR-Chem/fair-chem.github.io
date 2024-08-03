@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -626,6 +628,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.batch_to_atoms"><code class="docutils literal notranslate"><span class="pre">batch_to_atoms()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator"><code class="docutils literal notranslate"><span class="pre">OCPCalculator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.implemented_properties"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.implemented_properties</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.checkpoint"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.checkpoint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.config"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.trainer"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.trainer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.seed"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.seed</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.a2g"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.a2g</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.load_checkpoint"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.load_checkpoint()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.calculate"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.calculate()</span></code></a></li>
 </ul>
@@ -695,6 +702,31 @@ properties: ‘energy’, ‘forces’, ‘stress’, ‘dipole’, ‘charges�
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.implemented_properties">
 <span class="sig-name descname"><span class="pre">implemented_properties</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['energy',</span> <span class="pre">'forces']</span></em><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.implemented_properties" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.checkpoint">
+<span class="sig-name descname"><span class="pre">checkpoint</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.checkpoint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.trainer">
+<span class="sig-name descname"><span class="pre">trainer</span></span><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.trainer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.seed">
+<span class="sig-name descname"><span class="pre">seed</span></span><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.seed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.a2g">
+<span class="sig-name descname"><span class="pre">a2g</span></span><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.a2g" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -816,6 +848,11 @@ directories.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.batch_to_atoms"><code class="docutils literal notranslate"><span class="pre">batch_to_atoms()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator"><code class="docutils literal notranslate"><span class="pre">OCPCalculator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.implemented_properties"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.implemented_properties</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.checkpoint"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.checkpoint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.config"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.trainer"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.trainer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.seed"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.seed</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.a2g"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.a2g</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.load_checkpoint"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.load_checkpoint()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.relaxation.ase_utils.OCPCalculator.calculate"><code class="docutils literal notranslate"><span class="pre">OCPCalculator.calculate()</span></code></a></li>
 </ul>

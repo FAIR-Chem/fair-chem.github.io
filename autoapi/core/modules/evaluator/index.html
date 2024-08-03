@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -628,6 +630,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator"><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task_metrics"><code class="docutils literal notranslate"><span class="pre">Evaluator.task_metrics</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task_primary_metric"><code class="docutils literal notranslate"><span class="pre">Evaluator.task_primary_metric</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task"><code class="docutils literal notranslate"><span class="pre">Evaluator.task</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.target_metrics"><code class="docutils literal notranslate"><span class="pre">Evaluator.target_metrics</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.eval"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.update"><code class="docutils literal notranslate"><span class="pre">Evaluator.update()</span></code></a></li>
 </ul>
@@ -754,6 +758,16 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.modules.evaluator.Evaluator.task_primary_metric">
 <span class="sig-name descname"><span class="pre">task_primary_metric</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.modules.evaluator.Evaluator.task_primary_metric" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.evaluator.Evaluator.task">
+<span class="sig-name descname"><span class="pre">task</span></span><a class="headerlink" href="#core.modules.evaluator.Evaluator.task" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.evaluator.Evaluator.target_metrics">
+<span class="sig-name descname"><span class="pre">target_metrics</span></span><a class="headerlink" href="#core.modules.evaluator.Evaluator.target_metrics" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -913,6 +927,8 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator"><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task_metrics"><code class="docutils literal notranslate"><span class="pre">Evaluator.task_metrics</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task_primary_metric"><code class="docutils literal notranslate"><span class="pre">Evaluator.task_primary_metric</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.task"><code class="docutils literal notranslate"><span class="pre">Evaluator.task</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.target_metrics"><code class="docutils literal notranslate"><span class="pre">Evaluator.target_metrics</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.eval"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.evaluator.Evaluator.update"><code class="docutils literal notranslate"><span class="pre">Evaluator.update()</span></code></a></li>
 </ul>

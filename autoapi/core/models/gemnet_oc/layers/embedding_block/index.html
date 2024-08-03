@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,10 +625,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.emb_size"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.emb_size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.embeddings"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.embeddings</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.in_features"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.in_features</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.dense</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.forward()</span></code></a></li>
 </ul>
 </li>
@@ -674,6 +680,16 @@ LICENSE file in the root directory of this source tree.</p>
 <dd class="field-odd"><p><strong>emb_size</strong> (<em>int</em>) – Atom embeddings size</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.emb_size">
+<span class="sig-name descname"><span class="pre">emb_size</span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.emb_size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.embeddings">
+<span class="sig-name descname"><span class="pre">embeddings</span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.embeddings" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.forward" title="Link to this definition">#</a></dt>
@@ -705,6 +721,16 @@ and a subsequent dense layer.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.in_features">
+<span class="sig-name descname"><span class="pre">in_features</span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.in_features" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense">
+<span class="sig-name descname"><span class="pre">dense</span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.forward" title="Link to this definition">#</a></dt>
@@ -797,10 +823,14 @@ edge embedding in interaction block.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.emb_size"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.emb_size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.embeddings"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.embeddings</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">AtomEmbedding.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.in_features"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.in_features</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.dense</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">EdgeEmbedding.forward()</span></code></a></li>
 </ul>
 </li>

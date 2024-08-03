@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -648,12 +650,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-07-19 20:41:57--  https://figshare.com/ndownloader/files/11948267
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-08-03 02:12:54--  https://figshare.com/ndownloader/files/11948267
 Resolving figshare.com (figshare.com)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63.35.77.217, 54.171.176.177, 2a05:d018:1f4:d000:ee50:b4b2:15fa:a068, ...
-Connecting to figshare.com (figshare.com)|63.35.77.217|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.251.200.7, 18.203.35.208, 2a05:d018:1f4:d000:1396:2ead:ffc3:8b6c, ...
+Connecting to figshare.com (figshare.com)|34.251.200.7|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -663,13 +665,13 @@ Connecting to figshare.com (figshare.com)|63.35.77.217|:443...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
-Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240719/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240719T204157Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f0d174dca2f1e4c26b2bd79c05a6c61aa7f902691c92c09f996f6064c381fc0a [following]
---2024-07-19 20:41:57--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240719/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240719T204157Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f0d174dca2f1e4c26b2bd79c05a6c61aa7f902691c92c09f996f6064c381fc0a
-Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 
+Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240803/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240803T021254Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=8392082962903229ece4324b2f08f868d64c84b6272715a532977d64271d0c81 [following]
+--2024-08-03 02:12:54--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240803/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240803T021254Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=8392082962903229ece4324b2f08f868d64c84b6272715a532977d64271d0c81
+Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 52.218.29.11, 52.218.61.163
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.218.40.35, 52.92.1.216, 52.92.3.248, ...
-Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.40.35|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>, 52.92.4.40, ...
+Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.29.11|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -686,27 +688,28 @@ Saving to: ‘data.db’
 data.db               0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 109.49K   517KB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 128.38K   605KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1002K  2.31MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1.22M  2.87MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              16%[==&gt;                 ]   6.94M  10.9MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              18%[==&gt;                 ]   7.57M  11.9MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  15.66M  18.4MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  15.78M  18.5MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              59%[==========&gt;         ]  24.27M  22.8MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              58%[==========&gt;         ]  23.93M  22.3MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              79%[==============&gt;     ]  32.86M  25.8MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              77%[==============&gt;     ]  32.07M  25.0MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db             100%[===================&gt;]  41.13M  28.6MB/s    in 1.4s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              98%[==================&gt; ]  40.65M  27.1MB/s               
+data.db             100%[===================&gt;]  41.13M  27.4MB/s    in 1.5s    
 
-2024-07-19 20:41:59 (28.6 MB/s) - ‘data.db’ saved [43125760/43125760]
+2024-08-03 02:12:56 (27.4 MB/s) - ‘data.db’ saved [43125760/43125760]
 </pre></div>
 </div>
 </div>
@@ -749,28 +752,28 @@ Comment or skip this block to use the whole dataset!</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|     mass
- 1| 0s|runner|Au16   |unknown   | -37.184|    16|0.187|TTT|3923.762| 0.000| 3151.465
- 2| 0s|runner|Au49   |unknown   |-140.987|    49|1.427|TTT|2511.041| 0.000| 9651.362
- 3| 0s|runner|Au41   |unknown   |-106.690|    41|0.307|TTT|6012.425| 0.000| 8075.629
- 4| 0s|runner|Au4    |unknown   | -11.647|     4|0.098|TTT| 156.940| 0.000|  787.866
- 5| 0s|runner|Au26   |unknown   | -78.494|    26|0.100|TTT| 544.890| 0.000| 5121.131
- 6| 0s|runner|Au13   |unknown   | -25.321|    13|1.777|TTT|6884.666| 0.000| 2560.565
- 7| 0s|runner|Au54   |unknown   |-141.917|    54|0.174|TTT|6906.090| 0.000|10636.195
- 8| 0s|runner|Au13   |unknown   | -28.402|    13|0.682|TTT|3635.026| 0.000| 2560.565
- 9| 0s|runner|Au38   |unknown   |-100.400|    38|0.308|TTT|5846.048| 0.000| 7484.730
-10| 0s|runner|Au52   |unknown   |-124.821|    52|1.882|TTT|6744.510| 0.000|10242.262
-11| 0s|runner|Au26   |unknown   | -82.859|    26|0.022|TTT| 476.354| 0.000| 5121.131
-12| 0s|runner|Au6    |unknown   | -10.077|     6|1.189|TTT|2459.786| 0.000| 1181.799
-13| 0s|runner|Au41   |unknown   |-105.952|    41|0.108|TTT|6012.425| 0.000| 8075.629
-14| 0s|runner|Au31   |unknown   | -74.217|    31|0.606|TTT|5304.824| 0.000| 6105.964
-15| 0s|runner|Au39   |unknown   |-101.499|    39|0.285|TTT|6927.770| 0.000| 7681.696
-16| 0s|runner|Au53   |unknown   |-139.206|    53|0.239|TTT|6796.009| 0.000|10439.228
-17| 0s|runner|Au31   |unknown   | -79.158|    31|0.070|TTT|5304.824| 0.000| 6105.964
-18| 0s|runner|Au35   |unknown   | -89.862|    35|0.100|TTT|5504.869| 0.000| 6893.830
-19| 0s|runner|Au26   |unknown   | -77.157|    26|0.304|TTT|1127.047| 0.000| 5121.131
-20| 0s|runner|Au9    |unknown   | -18.922|     9|0.097|TTT|3256.028| 0.000| 1772.699
+ 1| 0s|runner|Au26   |unknown   | -82.906|    26|0.973|TTT| 483.391| 0.000| 5121.131
+ 2| 0s|runner|Au44   |unknown   |-114.109|    44|0.262|TTT|6257.369| 0.000| 8666.529
+ 3| 0s|runner|Au115  |vasp      |-351.890|   115|0.266|TTT|9178.098| 0.000|22651.155
+ 4| 0s|runner|Au7    |unknown   | -14.220|     7|0.103|TTT|3511.808| 0.000| 1378.766
+ 5| 0s|runner|Au16   |unknown   | -38.155|    16|0.271|TTT|3746.637| 0.000| 3151.465
+ 6| 0s|runner|Au40   |unknown   |-102.387|    40|0.404|TTT|5868.580| 0.000| 7878.663
+ 7| 0s|runner|Au4    |unknown   | -11.336|     4|1.022|TTT| 156.940| 0.000|  787.866
+ 8| 0s|runner|Au41   |unknown   |-106.119|    41|0.203|TTT|6012.425| 0.000| 8075.629
+ 9| 0s|runner|Au10   |unknown   | -21.719|    10|0.310|TTT|2868.259| 0.000| 1969.666
+10| 0s|runner|Au2    |unknown   |  -5.155|     2|0.000|TTT|  51.653| 0.000|  393.933
+11| 0s|runner|Au55   |unknown   |-134.315|    55|0.231|TTT|7703.754| 0.000|10833.161
+12| 0s|runner|Au45   |unknown   |-117.580|    45|0.186|TTT|6185.400| 0.000| 8863.496
+13| 0s|runner|Au     |unknown   |  -0.374|     1|0.000|TTT| 101.172| 0.000|  196.967
+14| 0s|runner|Au51   |unknown   |-117.953|    51|3.109|TTT|6691.718| 0.000|10045.295
+15| 0s|runner|Au20   |unknown   | -48.167|    20|0.072|TTT|4413.396| 0.000| 3939.331
+16| 0s|runner|Au51   |unknown   |-132.357|    51|0.404|TTT|6691.718| 0.000|10045.295
+17| 0s|runner|Au40   |unknown   |-104.532|    40|0.272|TTT|5868.580| 0.000| 7878.663
+18| 0s|runner|Au21   |unknown   | -49.936|    21|0.271|TTT|4395.170| 0.000| 4136.298
+19| 0s|runner|Au4    |unknown   | -12.106|     4|0.517|TTT| 143.096| 0.000|  787.866
+20| 0s|runner|Au12   |unknown   | -25.401|    12|0.066|TTT|5639.752| 0.000| 2363.599
 Rows: 50 (showing first 20)
-Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion, ediff, ... (28 more)
+Keys: NEB, bulk, calc_time, cluster, concentration, config, diffusion, ediff, ediffg, encut, factor, fermi, gga, group, identity, image, kpt1, kpt2, kpt3, lattice, miller, neural_energy, reax_energy, strain, structure, surf, tag, train_set, traj, type, vacuum, volume, xc
 </pre></div>
 </div>
 </div>
@@ -871,7 +874,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-07-19 20:42:22 (INFO): Total time taken: 10.0305335521698
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-08-03 02:13:15 (INFO): Total time taken: 7.171952247619629
 </pre></div>
 </div>
 </div>
@@ -911,7 +914,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
        17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
-       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44])
+       34, 35, 36])
 </pre></div>
 </div>
 </div>
@@ -940,7 +943,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f508405455676bf2a7ab2b64f3133d6a31c7e2bed12b4e68b1bae30fb759e03b.png" src="../_images/f508405455676bf2a7ab2b64f3133d6a31c7e2bed12b4e68b1bae30fb759e03b.png" />
+<img alt="../_images/42d04c02da635cd2935230cb4d8801936d732bdb07786af8bfdbe1653be90c35.png" src="../_images/42d04c02da635cd2935230cb4d8801936d732bdb07786af8bfdbe1653be90c35.png" />
 </div>
 </div>
 </section>
@@ -989,110 +992,98 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0it [00:00, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2655/402181013.py:7: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2695/402181013.py:7: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2it [00:00,  3.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1it [00:00,  3.64it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3it [00:00,  3.69it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3it [00:00,  8.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4it [00:01,  3.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5it [00:00,  5.53it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:01,  4.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7it [00:01,  5.66it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8it [00:01,  5.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8it [00:01,  4.94it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9it [00:02,  4.55it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9it [00:01,  4.46it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11it [00:02,  5.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10it [00:01,  5.12it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12it [00:02,  5.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11it [00:02,  4.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13it [00:02,  4.86it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12it [00:02,  4.28it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14it [00:03,  4.17it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13it [00:02,  5.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15it [00:03,  4.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15it [00:02,  6.58it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16it [00:03,  4.55it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17it [00:02,  7.53it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17it [00:03,  4.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18it [00:03,  5.69it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19it [00:04,  3.55it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19it [00:03,  5.17it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21it [00:04,  4.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20it [00:03,  5.33it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23it [00:05,  4.83it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21it [00:03,  5.27it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25it [00:05,  3.70it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22it [00:04,  4.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26it [00:06,  4.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23it [00:04,  4.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29it [00:06,  6.13it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24it [00:04,  5.04it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30it [00:06,  6.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26it [00:05,  3.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31it [00:06,  5.43it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28it [00:05,  4.25it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32it [00:06,  5.85it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29it [00:05,  4.15it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33it [00:07,  2.38it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32it [00:06,  6.24it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34it [00:08,  2.77it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33it [00:06,  5.20it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36it [00:08,  3.68it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34it [00:06,  4.85it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37it [00:08,  3.97it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35it [00:06,  5.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38it [00:09,  3.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36it [00:07,  4.37it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39it [00:09,  3.78it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37it [00:07,  4.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41it [00:09,  4.92it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37it [00:07,  5.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42it [00:09,  5.07it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43it [00:10,  4.20it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44it [00:10,  4.62it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45it [00:10,  4.40it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 1e+01 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 7e+00 seconds
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1110,7 +1101,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/078ce4f4475733b0f35a252d810b61fb444427662bad332a2767171e51f40078.png" src="../_images/078ce4f4475733b0f35a252d810b61fb444427662bad332a2767171e51f40078.png" />
+<img alt="../_images/840fd9b56d89510820efe17927a6a44338394f247338c8dab39ebf2f6a876883.png" src="../_images/840fd9b56d89510820efe17927a6a44338394f247338c8dab39ebf2f6a876883.png" />
 </div>
 </div>
 </section>
@@ -1126,7 +1117,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66.73204350742293
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.25553682409472
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1129,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-357.07658767700195, 357.0759153366089)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-148.4094009399414, 148.4094009399414)
 </pre></div>
 </div>
 </div>
@@ -1150,7 +1141,7 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32ce1e7593a154d5c27f44d27ff7148f9acf5b23c8408d13a143ee100d00fc99.png" src="../_images/32ce1e7593a154d5c27f44d27ff7148f9acf5b23c8408d13a143ee100d00fc99.png" />
+<img alt="../_images/b1252f464df0e847d99658867f29ece2c8d6c5a669e58c282aedda2412ba8974.png" src="../_images/b1252f464df0e847d99658867f29ece2c8d6c5a669e58c282aedda2412ba8974.png" />
 </div>
 </div>
 <p>Here we see many of the differences are very small. 0.0078125 = 1 / 128, and these errors strongly suggest some kind of mixed precision is responsible for these differences. It is an open issue to remove them and identify where the cause is.</p>
@@ -1161,19 +1152,19 @@ Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.00000000e+00,  1.00199566e+02,  7.33330650e+01, ...,
-         4.28310204e+01,  3.50638771e+01, -2.80601711e+01],
-       [-1.00199566e+02,  0.00000000e+00, -2.68665009e+01, ...,
-        -5.73685455e+01, -6.51356888e+01, -1.28259737e+02],
-       [-7.33330650e+01,  2.68665009e+01,  0.00000000e+00, ...,
-        -3.05020447e+01, -3.82691879e+01, -1.01393236e+02],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.00000000e+00, -1.06605972e+02, -8.06813393e+01, ...,
+        -5.81016159e+01, -3.86192932e+01, -5.80107803e+01],
+       [ 1.06605972e+02,  0.00000000e+00,  2.59246330e+01, ...,
+         4.85043564e+01,  6.79866791e+01,  4.85951920e+01],
+       [ 8.06813393e+01, -2.59246330e+01,  0.00000000e+00, ...,
+         2.25797234e+01,  4.20620461e+01,  2.26705589e+01],
        ...,
-       [-4.28310204e+01,  5.73685455e+01,  3.05020447e+01, ...,
-         0.00000000e+00, -7.76714325e+00, -7.08911915e+01],
-       [-3.50638771e+01,  6.51356888e+01,  3.82691879e+01, ...,
-         7.76714325e+00,  0.00000000e+00, -6.31240482e+01],
-       [ 2.80601692e+01,  1.28259735e+02,  1.01393234e+02, ...,
-         7.08911896e+01,  6.31240463e+01, -1.90734863e-06]])
+       [ 5.81016159e+01, -4.85043564e+01, -2.25797234e+01, ...,
+         0.00000000e+00,  1.94823227e+01,  9.08355713e-02],
+       [ 3.86192932e+01, -6.79866791e+01, -4.20620461e+01, ...,
+        -1.94823227e+01,  0.00000000e+00, -1.93914871e+01],
+       [ 5.80107803e+01, -4.85951920e+01, -2.26705589e+01, ...,
+        -9.08355713e-02,  1.93914871e+01,  0.00000000e+00]])
 </pre></div>
 </div>
 </div>

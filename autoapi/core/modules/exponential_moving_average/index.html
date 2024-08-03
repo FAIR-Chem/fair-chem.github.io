@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,6 +625,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.decay"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.decay</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.num_updates"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.num_updates</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.parameters"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.parameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.shadow_params"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.shadow_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.collected_params"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.collected_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._params_refs"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage._params_refs</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._get_parameters"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage._get_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.update"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.update()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.copy_to"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.copy_to()</span></code></a></li>
@@ -677,6 +685,36 @@ averages.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage.decay">
+<span class="sig-name descname"><span class="pre">decay</span></span><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.decay" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage.num_updates">
+<span class="sig-name descname"><span class="pre">num_updates</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.num_updates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.parameters" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage.shadow_params">
+<span class="sig-name descname"><span class="pre">shadow_params</span></span><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.shadow_params" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage.collected_params">
+<span class="sig-name descname"><span class="pre">collected_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.nn.Parameter</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.collected_params" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage._params_refs">
+<span class="sig-name descname"><span class="pre">_params_refs</span></span><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._params_refs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.modules.exponential_moving_average.ExponentialMovingAverage._get_parameters">
 <span class="sig-name descname"><span class="pre">_get_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.nn.Parameter</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">collections.abc.Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.nn.Parameter</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._get_parameters" title="Link to this definition">#</a></dt>
@@ -833,6 +871,12 @@ from a call to <a class="reference internal" href="#core.modules.exponential_mov
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.decay"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.decay</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.num_updates"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.num_updates</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.parameters"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.parameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.shadow_params"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.shadow_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.collected_params"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.collected_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._params_refs"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage._params_refs</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage._get_parameters"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage._get_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.update"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.update()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.modules.exponential_moving_average.ExponentialMovingAverage.copy_to"><code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage.copy_to()</span></code></a></li>

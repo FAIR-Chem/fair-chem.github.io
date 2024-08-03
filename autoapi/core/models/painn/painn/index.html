@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -318,6 +318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -356,6 +357,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,6 +627,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN"><code class="docutils literal notranslate"><span class="pre">PaiNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNN.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.num_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.num_rbf"><code class="docutils literal notranslate"><span class="pre">PaiNN.num_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.cutoff"><code class="docutils literal notranslate"><span class="pre">PaiNN.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.max_neighbors"><code class="docutils literal notranslate"><span class="pre">PaiNN.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.regress_forces"><code class="docutils literal notranslate"><span class="pre">PaiNN.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.direct_forces"><code class="docutils literal notranslate"><span class="pre">PaiNN.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.otf_graph"><code class="docutils literal notranslate"><span class="pre">PaiNN.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.use_pbc"><code class="docutils literal notranslate"><span class="pre">PaiNN.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.symmetric_edge_symmetrization"><code class="docutils literal notranslate"><span class="pre">PaiNN.symmetric_edge_symmetrization</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.atom_emb"><code class="docutils literal notranslate"><span class="pre">PaiNN.atom_emb</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.radial_basis"><code class="docutils literal notranslate"><span class="pre">PaiNN.radial_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.message_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.message_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.update_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.update_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.out_energy"><code class="docutils literal notranslate"><span class="pre">PaiNN.out_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">PaiNN.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNN.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.select_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">PaiNN.select_symmetric_edges()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.symmetrize_edges"><code class="docutils literal notranslate"><span class="pre">PaiNN.symmetrize_edges()</span></code></a></li>
@@ -634,7 +652,17 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.__repr__"><code class="docutils literal notranslate"><span class="pre">PaiNN.__repr__()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNBackbone"><code class="docutils literal notranslate"><span class="pre">PaiNNBackbone</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNBackbone.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNBackbone.forward()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.x_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.x_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.rbf_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.rbf_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_3"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.inv_sqrt_3</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_h"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.inv_sqrt_h</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.x_layernorm"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.x_layernorm</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.message"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.message()</span></code></a></li>
@@ -643,18 +671,40 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.vec_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.vec_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.xvec_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.xvec_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.inv_sqrt_2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_h"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.inv_sqrt_h</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.output_network"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.output_network</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.out_channels"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.vec1_proj"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.vec1_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.vec2_proj"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.vec2_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.update_net"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.update_net</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.act"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.forward"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead.out_energy"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead.out_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead.direct_forces"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -700,17 +750,26 @@ SOFTWARE.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNN" title="core.models.painn.painn.PaiNN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNN</span></code></a></p></td>
 <td><p>PaiNN model based on the description in Schütt et al. (2021):</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNMessage" title="core.models.painn.painn.PaiNNMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNMessage</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNBackbone" title="core.models.painn.painn.PaiNNBackbone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNBackbone</span></code></a></p></td>
+<td><p>PaiNN model based on the description in Schütt et al. (2021):</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNMessage" title="core.models.painn.painn.PaiNNMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNMessage</span></code></a></p></td>
 <td><p>Base class for creating message passing layers of the form</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNUpdate" title="core.models.painn.painn.PaiNNUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNUpdate</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNUpdate" title="core.models.painn.painn.PaiNNUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNUpdate</span></code></a></p></td>
 <td><p>Base class for all neural network modules.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNOutput" title="core.models.painn.painn.PaiNNOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNOutput</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNOutput" title="core.models.painn.painn.PaiNNOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNOutput</span></code></a></p></td>
 <td><p>Base class for all neural network modules.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.GatedEquivariantBlock" title="core.models.painn.painn.GatedEquivariantBlock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GatedEquivariantBlock</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.GatedEquivariantBlock" title="core.models.painn.painn.GatedEquivariantBlock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GatedEquivariantBlock</span></code></a></p></td>
 <td><p>Gated Equivariant Block as defined in Schütt et al. (2021):</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNEnergyHead" title="core.models.painn.painn.PaiNNEnergyHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNEnergyHead</span></code></a></p></td>
+<td><p>Base class for all neural network modules.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNForceHead" title="core.models.painn.painn.PaiNNForceHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNForceHead</span></code></a></p></td>
+<td><p>Base class for all neural network modules.</p></td>
 </tr>
 </tbody>
 </table>
@@ -720,11 +779,91 @@ SOFTWARE.</p>
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNN">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">83</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNN" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BaseModel</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">83</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.GraphModelMixin</span></code></p>
 <p>PaiNN model based on the description in Schütt et al. (2021):
 Equivariant message passing for the prediction of tensorial properties
 and molecular spectra, <a class="reference external" href="https://arxiv.org/abs/2102.03150">https://arxiv.org/abs/2102.03150</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.hidden_channels">
+<span class="sig-name descname"><span class="pre">hidden_channels</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.num_layers">
+<span class="sig-name descname"><span class="pre">num_layers</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.num_layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.num_rbf">
+<span class="sig-name descname"><span class="pre">num_rbf</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.num_rbf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.max_neighbors">
+<span class="sig-name descname"><span class="pre">max_neighbors</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.max_neighbors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.regress_forces">
+<span class="sig-name descname"><span class="pre">regress_forces</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.regress_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.direct_forces">
+<span class="sig-name descname"><span class="pre">direct_forces</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.direct_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.use_pbc">
+<span class="sig-name descname"><span class="pre">use_pbc</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.use_pbc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.symmetric_edge_symmetrization">
+<span class="sig-name descname"><span class="pre">symmetric_edge_symmetrization</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#core.models.painn.painn.PaiNN.symmetric_edge_symmetrization" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.atom_emb">
+<span class="sig-name descname"><span class="pre">atom_emb</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.atom_emb" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.radial_basis">
+<span class="sig-name descname"><span class="pre">radial_basis</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.radial_basis" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.message_layers">
+<span class="sig-name descname"><span class="pre">message_layers</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.message_layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.update_layers">
+<span class="sig-name descname"><span class="pre">update_layers</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.update_layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.out_energy">
+<span class="sig-name descname"><span class="pre">out_energy</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.out_energy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.inv_sqrt_2">
+<span class="sig-name descname"><span class="pre">inv_sqrt_2</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.inv_sqrt_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.reset_parameters" title="Link to this definition">#</a></dt>
@@ -767,6 +906,32 @@ we always use both directions.</p>
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNN.__repr__">
 <span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNN.__repr__" title="Link to this definition">#</a></dt>
 <dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNBackbone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNNBackbone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">83</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNNBackbone" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#core.models.painn.painn.PaiNN" title="core.models.painn.painn.PaiNN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNN</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BackboneInterface</span></code></p>
+<p>PaiNN model based on the description in Schütt et al. (2021):
+Equivariant message passing for the prediction of tensorial properties
+and molecular spectra, <a class="reference external" href="https://arxiv.org/abs/2102.03150">https://arxiv.org/abs/2102.03150</a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNBackbone.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNBackbone.forward" title="Link to this definition">#</a></dt>
+<dd><p>Backbone forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>embedding</strong> – Return backbone embeddings for the given input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -832,6 +997,36 @@ true for execution speedups. (default: <code class="xref py py-obj docutils lite
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.hidden_channels">
+<span class="sig-name descname"><span class="pre">hidden_channels</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.x_proj">
+<span class="sig-name descname"><span class="pre">x_proj</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.x_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.rbf_proj">
+<span class="sig-name descname"><span class="pre">rbf_proj</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.rbf_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.inv_sqrt_3">
+<span class="sig-name descname"><span class="pre">inv_sqrt_3</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.inv_sqrt_h">
+<span class="sig-name descname"><span class="pre">inv_sqrt_h</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_h" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.x_layernorm">
+<span class="sig-name descname"><span class="pre">x_layernorm</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.x_layernorm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage.reset_parameters" title="Link to this definition">#</a></dt>
@@ -916,6 +1111,31 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.hidden_channels">
+<span class="sig-name descname"><span class="pre">hidden_channels</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.vec_proj">
+<span class="sig-name descname"><span class="pre">vec_proj</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.vec_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.xvec_proj">
+<span class="sig-name descname"><span class="pre">xvec_proj</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.xvec_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.inv_sqrt_2">
+<span class="sig-name descname"><span class="pre">inv_sqrt_2</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.inv_sqrt_h">
+<span class="sig-name descname"><span class="pre">inv_sqrt_h</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_h" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNNUpdate.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNUpdate.reset_parameters" title="Link to this definition">#</a></dt>
@@ -963,6 +1183,16 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNOutput.hidden_channels">
+<span class="sig-name descname"><span class="pre">hidden_channels</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNOutput.hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNOutput.output_network">
+<span class="sig-name descname"><span class="pre">output_network</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNOutput.output_network" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNNOutput.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNOutput.reset_parameters" title="Link to this definition">#</a></dt>
@@ -981,6 +1211,31 @@ evaluation mode.</p>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
 <p>Gated Equivariant Block as defined in Schütt et al. (2021):
 Equivariant message passing for the prediction of tensorial properties and molecular spectra</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.out_channels">
+<span class="sig-name descname"><span class="pre">out_channels</span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.out_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.vec1_proj">
+<span class="sig-name descname"><span class="pre">vec1_proj</span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.vec1_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.vec2_proj">
+<span class="sig-name descname"><span class="pre">vec2_proj</span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.vec2_proj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.update_net">
+<span class="sig-name descname"><span class="pre">update_net</span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.update_net" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.reset_parameters">
 <span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.reset_parameters" title="Link to this definition">#</a></dt>
@@ -990,6 +1245,130 @@ Equivariant message passing for the prediction of tensorial properties and molec
 <dt class="sig sig-object py" id="core.models.painn.painn.GatedEquivariantBlock.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.GatedEquivariantBlock.forward" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNEnergyHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNNEnergyHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNNEnergyHead" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">to()</span></code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training</strong> (<em>bool</em>) – Boolean represents whether this module is in training or
+evaluation mode.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNEnergyHead.out_energy">
+<span class="sig-name descname"><span class="pre">out_energy</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNEnergyHead.out_energy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNEnergyHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.batch.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNEnergyHead.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNForceHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNNForceHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNNForceHead" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">to()</span></code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training</strong> (<em>bool</em>) – Boolean represents whether this module is in training or
+evaluation mode.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNForceHead.direct_forces">
+<span class="sig-name descname"><span class="pre">direct_forces</span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNForceHead.direct_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.painn.painn.PaiNNForceHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.batch.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.painn.painn.PaiNNForceHead.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -1063,6 +1442,22 @@ Equivariant message passing for the prediction of tensorial properties and molec
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN"><code class="docutils literal notranslate"><span class="pre">PaiNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNN.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.num_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.num_rbf"><code class="docutils literal notranslate"><span class="pre">PaiNN.num_rbf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.cutoff"><code class="docutils literal notranslate"><span class="pre">PaiNN.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.max_neighbors"><code class="docutils literal notranslate"><span class="pre">PaiNN.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.regress_forces"><code class="docutils literal notranslate"><span class="pre">PaiNN.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.direct_forces"><code class="docutils literal notranslate"><span class="pre">PaiNN.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.otf_graph"><code class="docutils literal notranslate"><span class="pre">PaiNN.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.use_pbc"><code class="docutils literal notranslate"><span class="pre">PaiNN.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.symmetric_edge_symmetrization"><code class="docutils literal notranslate"><span class="pre">PaiNN.symmetric_edge_symmetrization</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.atom_emb"><code class="docutils literal notranslate"><span class="pre">PaiNN.atom_emb</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.radial_basis"><code class="docutils literal notranslate"><span class="pre">PaiNN.radial_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.message_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.message_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.update_layers"><code class="docutils literal notranslate"><span class="pre">PaiNN.update_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.out_energy"><code class="docutils literal notranslate"><span class="pre">PaiNN.out_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">PaiNN.inv_sqrt_2</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNN.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.select_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">PaiNN.select_symmetric_edges()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.symmetrize_edges"><code class="docutils literal notranslate"><span class="pre">PaiNN.symmetrize_edges()</span></code></a></li>
@@ -1072,7 +1467,17 @@ Equivariant message passing for the prediction of tensorial properties and molec
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNN.__repr__"><code class="docutils literal notranslate"><span class="pre">PaiNN.__repr__()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNBackbone"><code class="docutils literal notranslate"><span class="pre">PaiNNBackbone</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNBackbone.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNBackbone.forward()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.x_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.x_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.rbf_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.rbf_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_3"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.inv_sqrt_3</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.inv_sqrt_h"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.inv_sqrt_h</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.x_layernorm"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.x_layernorm</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNMessage.message"><code class="docutils literal notranslate"><span class="pre">PaiNNMessage.message()</span></code></a></li>
@@ -1081,18 +1486,40 @@ Equivariant message passing for the prediction of tensorial properties and molec
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.vec_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.vec_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.xvec_proj"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.xvec_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_2"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.inv_sqrt_2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.inv_sqrt_h"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.inv_sqrt_h</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNUpdate.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNUpdate.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.hidden_channels"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.output_network"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.output_network</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.reset_parameters"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNOutput.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNOutput.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.out_channels"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.vec1_proj"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.vec1_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.vec2_proj"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.vec2_proj</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.update_net"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.update_net</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.act"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.reset_parameters"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.reset_parameters()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.GatedEquivariantBlock.forward"><code class="docutils literal notranslate"><span class="pre">GatedEquivariantBlock.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead.out_energy"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead.out_energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNEnergyHead.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNEnergyHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead.direct_forces"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead.direct_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.painn.painn.PaiNNForceHead.forward"><code class="docutils literal notranslate"><span class="pre">PaiNNForceHead.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -629,8 +631,8 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset._load_dataset_get_ids"><code class="docutils literal notranslate"><span class="pre">AseDBDataset._load_dataset_get_ids()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_atoms"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_atoms()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.close_db"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.close_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.__del__"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.__del__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.sample_property_metadata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_relaxed_energy()</span></code></a></li>
 </ul>
 </li>
@@ -643,11 +645,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset._load_dataset_get_ids"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset._load_dataset_get_ids()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_atoms"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_atoms()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.sample_property_metadata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_relaxed_energy()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.create_dataset"><code class="docutils literal notranslate"><span class="pre">create_dataset()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.readonly"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.readonly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.ids</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.deleted_ids</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>
@@ -665,25 +671,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset"><code class="docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.metadata_path"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.metadata_path</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.sharded"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.sharded</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__len__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.path"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.path</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.key_mapping"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.key_mapping</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.transforms"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.transforms</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__getitem__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__getitem__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.close_db"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.close_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__del__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__del__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.sample_property_metadata()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.SinglePointLmdbDataset"><code class="docutils literal notranslate"><span class="pre">SinglePointLmdbDataset</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.TrajectoryLmdbDataset"><code class="docutils literal notranslate"><span class="pre">TrajectoryLmdbDataset</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.data_list_collater"><code class="docutils literal notranslate"><span class="pre">data_list_collater()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.__len__"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.__len__()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.__getitem__"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.__getitem__()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.close_db"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.close_db()</span></code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -713,6 +711,7 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -737,16 +736,7 @@ document.write(`
 <td><p>Base class for all databases.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.LmdbDataset" title="core.datasets.LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a></p></td>
-<td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.datasets.SinglePointLmdbDataset" title="core.datasets.SinglePointLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SinglePointLmdbDataset</span></code></a></p></td>
-<td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.TrajectoryLmdbDataset" title="core.datasets.TrajectoryLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajectoryLmdbDataset</span></code></a></p></td>
-<td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.datasets.OC22LmdbDataset" title="core.datasets.OC22LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code></a></p></td>
-<td><p>Dataset class to load from LMDB files containing relaxation</p></td>
+<td><p>Base Dataset class for all OCP datasets.</p></td>
 </tr>
 </tbody>
 </table>
@@ -756,7 +746,10 @@ document.write(`
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.data_list_collater" title="core.datasets.data_list_collater"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_list_collater</span></code></a>(→ torch_geometric.data.data.BaseData)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.create_dataset" title="core.datasets.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dataset</span></code></a>(→ Subset)</p></td>
+<td><p>Create a dataset from a config dictionary</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.datasets.data_list_collater" title="core.datasets.data_list_collater"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_list_collater</span></code></a>(→ torch_geometric.data.data.BaseData)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -849,13 +842,13 @@ object. Useful for applying tags, for example.</p></li>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.AseDBDataset.close_db">
-<span class="sig-name descname"><span class="pre">close_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.datasets.AseDBDataset.close_db" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.datasets.AseDBDataset.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.AseDBDataset.__del__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.AseDBDataset.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#core.datasets.AseDBDataset.get_metadata" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.datasets.AseDBDataset.sample_property_metadata">
+<span class="sig-name descname"><span class="pre">sample_property_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#core.datasets.AseDBDataset.sample_property_metadata" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -994,8 +987,8 @@ object. Useful for applying tags, for example.</p></li>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.AseReadMultiStructureDataset.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#core.datasets.AseReadMultiStructureDataset.get_metadata" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.datasets.AseReadMultiStructureDataset.sample_property_metadata">
+<span class="sig-name descname"><span class="pre">sample_property_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#core.datasets.AseReadMultiStructureDataset.sample_property_metadata" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1005,11 +998,46 @@ object. Useful for applying tags, for example.</p></li>
 
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="core.datasets.create_dataset">
+<span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">create_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="base_dataset/index.html#core.datasets.base_dataset.Subset" title="core.datasets.base_dataset.Subset"><span class="pre">Subset</span></a></span></span><a class="headerlink" href="#core.datasets.create_dataset" title="Link to this definition">#</a></dt>
+<dd><p>Create a dataset from a config dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em>) – dataset config dictionary</p></li>
+<li><p><strong>split</strong> (<em>str</em>) – name of split</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dataset subset class</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_dataset/index.html#core.datasets.base_dataset.Subset" title="core.datasets.base_dataset.Subset">Subset</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="core.datasets.LMDBDatabase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">LMDBDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_lock_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.LMDBDatabase" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">ase.db.core.Database</span></code></p>
 <p>Base class for all databases.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LMDBDatabase.readonly">
+<span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#core.datasets.LMDBDatabase.readonly" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LMDBDatabase.ids">
+<span class="sig-name descname"><span class="pre">ids</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.datasets.LMDBDatabase.ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LMDBDatabase.deleted_ids">
+<span class="sig-name descname"><span class="pre">deleted_ids</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#core.datasets.LMDBDatabase.deleted_ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.datasets.LMDBDatabase.__enter__">
 <span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">typing_extensions.Self</span></span></span><a class="headerlink" href="#core.datasets.LMDBDatabase.__enter__" title="Link to this definition">#</a></dt>
@@ -1099,28 +1127,8 @@ we just store the deleted ids.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.datasets.LmdbDataset">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">LmdbDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.LmdbDataset" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T_co</span></code>]</p>
-<p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p>
-<p>All datasets that represent a map from keys to data samples should subclass
-it. All subclasses should overwrite <a class="reference internal" href="#core.datasets.LmdbDataset.__getitem__" title="core.datasets.LmdbDataset.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code></a>, supporting fetching a
-data sample for a given key. Subclasses could also optionally overwrite
-<a class="reference internal" href="#core.datasets.LmdbDataset.__len__" title="core.datasets.LmdbDataset.__len__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code></a>, which is expected to return the size of the dataset by many
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Sampler</span></code> implementations and the default options
-of <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>. Subclasses could also
-optionally implement <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitems__()</span></code>, for speedup batched samples
-loading. This method accepts list of indices of samples of batch and returns
-list of samples.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code> by default constructs an index
-sampler that yields integral indices.  To make it work with a map-style
-dataset with non-integral indices/keys, a custom sampler must be provided.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.datasets.LmdbDataset.metadata_path">
-<span class="sig-name descname"><span class="pre">metadata_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></em><a class="headerlink" href="#core.datasets.LmdbDataset.metadata_path" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.datasets.base_dataset.BaseDataset</span></code></p>
+<p>Base Dataset class for all OCP datasets.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.datasets.LmdbDataset.sharded">
 <span class="sig-name descname"><span class="pre">sharded</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#core.datasets.LmdbDataset.sharded" title="Link to this definition">#</a></dt>
@@ -1136,9 +1144,19 @@ folder, but lmdb lengths are now calculated directly from the number of keys.
 :type config: dict</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.LmdbDataset.__len__">
-<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#core.datasets.LmdbDataset.__len__" title="Link to this definition">#</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LmdbDataset.path">
+<span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#core.datasets.LmdbDataset.path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LmdbDataset.key_mapping">
+<span class="sig-name descname"><span class="pre">key_mapping</span></span><a class="headerlink" href="#core.datasets.LmdbDataset.key_mapping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.datasets.LmdbDataset.transforms">
+<span class="sig-name descname"><span class="pre">transforms</span></span><a class="headerlink" href="#core.datasets.LmdbDataset.transforms" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1152,108 +1170,21 @@ folder, but lmdb lengths are now calculated directly from the number of keys.
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.LmdbDataset.close_db">
-<span class="sig-name descname"><span class="pre">close_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.datasets.LmdbDataset.close_db" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.datasets.LmdbDataset.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.LmdbDataset.__del__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.LmdbDataset.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.LmdbDataset.get_metadata" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.datasets.LmdbDataset.sample_property_metadata">
+<span class="sig-name descname"><span class="pre">sample_property_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.LmdbDataset.sample_property_metadata" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="core.datasets.SinglePointLmdbDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">SinglePointLmdbDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.SinglePointLmdbDataset" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#core.datasets.LmdbDataset" title="core.datasets.LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch_geometric.data.data.BaseData</span></code>]</p>
-<p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p>
-<p>All datasets that represent a map from keys to data samples should subclass
-it. All subclasses should overwrite <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code>, supporting fetching a
-data sample for a given key. Subclasses could also optionally overwrite
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code>, which is expected to return the size of the dataset by many
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Sampler</span></code> implementations and the default options
-of <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>. Subclasses could also
-optionally implement <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitems__()</span></code>, for speedup batched samples
-loading. This method accepts list of indices of samples of batch and returns
-list of samples.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code> by default constructs an index
-sampler that yields integral indices.  To make it work with a map-style
-dataset with non-integral indices/keys, a custom sampler must be provided.</p>
-</div>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="core.datasets.TrajectoryLmdbDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">TrajectoryLmdbDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.TrajectoryLmdbDataset" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#core.datasets.LmdbDataset" title="core.datasets.LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch_geometric.data.data.BaseData</span></code>]</p>
-<p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p>
-<p>All datasets that represent a map from keys to data samples should subclass
-it. All subclasses should overwrite <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code>, supporting fetching a
-data sample for a given key. Subclasses could also optionally overwrite
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code>, which is expected to return the size of the dataset by many
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Sampler</span></code> implementations and the default options
-of <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>. Subclasses could also
-optionally implement <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitems__()</span></code>, for speedup batched samples
-loading. This method accepts list of indices of samples of batch and returns
-list of samples.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code> by default constructs an index
-sampler that yields integral indices.  To make it work with a map-style
-dataset with non-integral indices/keys, a custom sampler must be provided.</p>
-</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="core.datasets.data_list_collater">
 <span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">data_list_collater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch_geometric.data.data.BaseData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.data.BaseData</span></span></span><a class="headerlink" href="#core.datasets.data_list_collater" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="core.datasets.OC22LmdbDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.</span></span><span class="sig-name descname"><span class="pre">OC22LmdbDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.OC22LmdbDataset" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code></p>
-<p>Dataset class to load from LMDB files containing relaxation
-trajectories or single point computations.</p>
-<p>Useful for Structure to Energy &amp; Force (S2EF), Initial State to
-Relaxed State (IS2RS), and Initial State to Relaxed Energy (IS2RE) tasks.</p>
-<p>The keys in the LMDB must be integers (stored as ascii objects) starting
-from 0 through the length of the LMDB. For historical reasons any key named
-“length” is ignored since that was used to infer length of many lmdbs in the same
-folder, but lmdb lengths are now calculated directly from the number of keys.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (<em>dict</em>) – Dataset configuration</p></li>
-<li><p><strong>transform</strong> (<em>callable</em><em>, </em><em>optional</em>) – Data transform function.
-(default: <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.OC22LmdbDataset.__len__">
-<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#core.datasets.OC22LmdbDataset.__len__" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.OC22LmdbDataset.__getitem__">
-<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.OC22LmdbDataset.__getitem__" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.OC22LmdbDataset.connect_db">
-<span class="sig-name descname"><span class="pre">connect_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lmdb_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.OC22LmdbDataset.connect_db" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.datasets.OC22LmdbDataset.close_db">
-<span class="sig-name descname"><span class="pre">close_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.datasets.OC22LmdbDataset.close_db" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
 
 </section>
 </section>
@@ -1331,8 +1262,8 @@ folder, but lmdb lengths are now calculated directly from the number of keys.</p
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset._load_dataset_get_ids"><code class="docutils literal notranslate"><span class="pre">AseDBDataset._load_dataset_get_ids()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_atoms"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_atoms()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.close_db"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.close_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.__del__"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.__del__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.sample_property_metadata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseDBDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseDBDataset.get_relaxed_energy()</span></code></a></li>
 </ul>
 </li>
@@ -1345,11 +1276,15 @@ folder, but lmdb lengths are now calculated directly from the number of keys.</p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset._load_dataset_get_ids"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset._load_dataset_get_ids()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_atoms"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_atoms()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.sample_property_metadata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.AseReadMultiStructureDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_relaxed_energy()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.create_dataset"><code class="docutils literal notranslate"><span class="pre">create_dataset()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.readonly"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.readonly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.ids</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.deleted_ids</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>
@@ -1367,25 +1302,17 @@ folder, but lmdb lengths are now calculated directly from the number of keys.</p
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset"><code class="docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.metadata_path"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.metadata_path</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.sharded"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.sharded</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__len__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.path"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.path</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.key_mapping"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.key_mapping</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.transforms"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.transforms</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__getitem__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__getitem__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.close_db"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.close_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.get_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.__del__"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.__del__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.LmdbDataset.sample_property_metadata"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.sample_property_metadata()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.SinglePointLmdbDataset"><code class="docutils literal notranslate"><span class="pre">SinglePointLmdbDataset</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.TrajectoryLmdbDataset"><code class="docutils literal notranslate"><span class="pre">TrajectoryLmdbDataset</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.data_list_collater"><code class="docutils literal notranslate"><span class="pre">data_list_collater()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.__len__"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.__len__()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.__getitem__"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.__getitem__()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.connect_db"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.connect_db()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.OC22LmdbDataset.close_db"><code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset.close_db()</span></code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

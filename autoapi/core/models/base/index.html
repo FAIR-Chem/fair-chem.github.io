@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -622,11 +624,39 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.forward"><code class="docutils literal notranslate"><span class="pre">BaseModel.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.generate_graph"><code class="docutils literal notranslate"><span class="pre">BaseModel.generate_graph()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.num_params"><code class="docutils literal notranslate"><span class="pre">BaseModel.num_params</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.no_weight_decay"><code class="docutils literal notranslate"><span class="pre">BaseModel.no_weight_decay()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData"><code class="docutils literal notranslate"><span class="pre">GraphData</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_index"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_distance"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_distance</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_distance_vec"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_distance_vec</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.cell_offsets"><code class="docutils literal notranslate"><span class="pre">GraphData.cell_offsets</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.offset_distances"><code class="docutils literal notranslate"><span class="pre">GraphData.offset_distances</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.neighbors"><code class="docutils literal notranslate"><span class="pre">GraphData.neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.batch_full"><code class="docutils literal notranslate"><span class="pre">GraphData.batch_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.atomic_numbers_full"><code class="docutils literal notranslate"><span class="pre">GraphData.atomic_numbers_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.node_offset"><code class="docutils literal notranslate"><span class="pre">GraphData.node_offset</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.generate_graph"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.generate_graph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.num_params"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.num_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.no_weight_decay"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.no_weight_decay()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface"><code class="docutils literal notranslate"><span class="pre">HeadInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.forward"><code class="docutils literal notranslate"><span class="pre">HeadInterface.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface"><code class="docutils literal notranslate"><span class="pre">BackboneInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface.forward"><code class="docutils literal notranslate"><span class="pre">BackboneInterface.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel"><code class="docutils literal notranslate"><span class="pre">HydraModel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.otf_graph"><code class="docutils literal notranslate"><span class="pre">HydraModel.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone_model_name"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone_model_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.output_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.output_heads</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.head_names_sorted"><code class="docutils literal notranslate"><span class="pre">HydraModel.head_names_sorted</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.forward"><code class="docutils literal notranslate"><span class="pre">HydraModel.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -651,7 +681,19 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.BaseModel" title="core.models.base.BaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.GraphData" title="core.models.base.GraphData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphData</span></code></a></p></td>
+<td><p>Class to keep graph attributes nicely packaged.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.base.GraphModelMixin" title="core.models.base.GraphModelMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a></p></td>
+<td><p>Mixin Model class implementing some general convenience properties and methods.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.HeadInterface" title="core.models.base.HeadInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HeadInterface</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.base.BackboneInterface" title="core.models.base.BackboneInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BackboneInterface</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.HydraModel" title="core.models.base.HydraModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydraModel</span></code></a></p></td>
 <td><p>Base class for all neural network modules.</p></td>
 </tr>
 </tbody>
@@ -661,9 +703,129 @@ LICENSE file in the root directory of this source tree.</p>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="core.models.base.BaseModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.BaseModel" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<dt class="sig sig-object py" id="core.models.base.GraphData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">GraphData</span></span><a class="headerlink" href="#core.models.base.GraphData" title="Link to this definition">#</a></dt>
+<dd><p>Class to keep graph attributes nicely packaged.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.edge_index">
+<span class="sig-name descname"><span class="pre">edge_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.edge_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.edge_distance">
+<span class="sig-name descname"><span class="pre">edge_distance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.edge_distance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.edge_distance_vec">
+<span class="sig-name descname"><span class="pre">edge_distance_vec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.edge_distance_vec" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.cell_offsets">
+<span class="sig-name descname"><span class="pre">cell_offsets</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.cell_offsets" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.offset_distances">
+<span class="sig-name descname"><span class="pre">offset_distances</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.offset_distances" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.neighbors">
+<span class="sig-name descname"><span class="pre">neighbors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.neighbors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.batch_full">
+<span class="sig-name descname"><span class="pre">batch_full</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.batch_full" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.atomic_numbers_full">
+<span class="sig-name descname"><span class="pre">atomic_numbers_full</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></em><a class="headerlink" href="#core.models.base.GraphData.atomic_numbers_full" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.GraphData.node_offset">
+<span class="sig-name descname"><span class="pre">node_offset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.base.GraphData.node_offset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.base.GraphModelMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">GraphModelMixin</span></span><a class="headerlink" href="#core.models.base.GraphModelMixin" title="Link to this definition">#</a></dt>
+<dd><p>Mixin Model class implementing some general convenience properties and methods.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.base.GraphModelMixin.generate_graph">
+<span class="sig-name descname"><span class="pre">generate_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_max_neighbors_strictly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.GraphModelMixin.generate_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="core.models.base.GraphModelMixin.num_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.base.GraphModelMixin.num_params" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.base.GraphModelMixin.no_weight_decay">
+<span class="sig-name descname"><span class="pre">no_weight_decay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#core.models.base.GraphModelMixin.no_weight_decay" title="Link to this definition">#</a></dt>
+<dd><p>Returns a list of parameters with no weight decay.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.base.HeadInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HeadInterface</span></span><a class="headerlink" href="#core.models.base.HeadInterface" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="core.models.base.HeadInterface.forward">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.base.HeadInterface.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.base.BackboneInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">BackboneInterface</span></span><a class="headerlink" href="#core.models.base.BackboneInterface" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="core.models.base.BackboneInterface.forward">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.base.BackboneInterface.forward" title="Link to this definition">#</a></dt>
+<dd><p>Backbone forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>embedding</strong> – Return backbone embeddings for the given input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.base.HydraModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HydraModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.HydraModel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <a class="reference internal" href="#core.models.base.GraphModelMixin" title="core.models.base.GraphModelMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a></p>
 <p>Base class for all neural network modules.</p>
 <p>Your models should also subclass this class.</p>
 <p>Modules can also contain other Modules, allowing to nest them in
@@ -695,26 +857,35 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.BaseModel.forward">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.BaseModel.forward" title="Link to this definition">#</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.base.HydraModel.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.backbone_model_name">
+<span class="sig-name descname"><span class="pre">backbone_model_name</span></span><a class="headerlink" href="#core.models.base.HydraModel.backbone_model_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.backbone">
+<span class="sig-name descname"><span class="pre">backbone</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#core.models.base.BackboneInterface" title="core.models.base.BackboneInterface"><span class="pre">BackboneInterface</span></a></em><a class="headerlink" href="#core.models.base.HydraModel.backbone" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.output_heads">
+<span class="sig-name descname"><span class="pre">output_heads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#core.models.base.HeadInterface" title="core.models.base.HeadInterface"><span class="pre">HeadInterface</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.models.base.HydraModel.output_heads" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.head_names_sorted">
+<span class="sig-name descname"><span class="pre">head_names_sorted</span></span><a class="headerlink" href="#core.models.base.HydraModel.head_names_sorted" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.BaseModel.generate_graph">
-<span class="sig-name descname"><span class="pre">generate_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_max_neighbors_strictly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.BaseModel.generate_graph" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.base.HydraModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.HydraModel.forward" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="core.models.base.BaseModel.num_params">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.base.BaseModel.num_params" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.BaseModel.no_weight_decay">
-<span class="sig-name descname"><span class="pre">no_weight_decay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#core.models.base.BaseModel.no_weight_decay" title="Link to this definition">#</a></dt>
-<dd><p>Returns a list of parameters with no weight decay.</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -787,11 +958,39 @@ evaluation mode.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.forward"><code class="docutils literal notranslate"><span class="pre">BaseModel.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.generate_graph"><code class="docutils literal notranslate"><span class="pre">BaseModel.generate_graph()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.num_params"><code class="docutils literal notranslate"><span class="pre">BaseModel.num_params</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BaseModel.no_weight_decay"><code class="docutils literal notranslate"><span class="pre">BaseModel.no_weight_decay()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData"><code class="docutils literal notranslate"><span class="pre">GraphData</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_index"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_distance"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_distance</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.edge_distance_vec"><code class="docutils literal notranslate"><span class="pre">GraphData.edge_distance_vec</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.cell_offsets"><code class="docutils literal notranslate"><span class="pre">GraphData.cell_offsets</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.offset_distances"><code class="docutils literal notranslate"><span class="pre">GraphData.offset_distances</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.neighbors"><code class="docutils literal notranslate"><span class="pre">GraphData.neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.batch_full"><code class="docutils literal notranslate"><span class="pre">GraphData.batch_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.atomic_numbers_full"><code class="docutils literal notranslate"><span class="pre">GraphData.atomic_numbers_full</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphData.node_offset"><code class="docutils literal notranslate"><span class="pre">GraphData.node_offset</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.generate_graph"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.generate_graph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.num_params"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.num_params</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.GraphModelMixin.no_weight_decay"><code class="docutils literal notranslate"><span class="pre">GraphModelMixin.no_weight_decay()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface"><code class="docutils literal notranslate"><span class="pre">HeadInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.forward"><code class="docutils literal notranslate"><span class="pre">HeadInterface.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface"><code class="docutils literal notranslate"><span class="pre">BackboneInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface.forward"><code class="docutils literal notranslate"><span class="pre">BackboneInterface.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel"><code class="docutils literal notranslate"><span class="pre">HydraModel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.otf_graph"><code class="docutils literal notranslate"><span class="pre">HydraModel.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone_model_name"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone_model_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.output_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.output_heads</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.head_names_sorted"><code class="docutils literal notranslate"><span class="pre">HydraModel.head_names_sorted</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.forward"><code class="docutils literal notranslate"><span class="pre">HydraModel.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>

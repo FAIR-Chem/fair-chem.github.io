@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="core.models.equiformer_v2.input_block" href="../input_block/index.html" />
-    <link rel="prev" title="core.models.equiformer_v2.equiformer_v2_oc20" href="../equiformer_v2_oc20/index.html" />
+    <link rel="prev" title="core.models.equiformer_v2.equiformer_v2" href="../equiformer_v2/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,6 +627,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.gaussian"><code class="docutils literal notranslate"><span class="pre">gaussian()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.num_basis"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.num_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.cutoff"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.weight"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.weight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.bias"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.bias</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_max"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std_init_max</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_min"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std_init_min</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean_init_max</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean_init_min</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.forward"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.extra_repr"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.extra_repr()</span></code></a></li>
 </ul>
@@ -708,6 +720,56 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.num_basis">
+<span class="sig-name descname"><span class="pre">num_basis</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.num_basis" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean">
+<span class="sig-name descname"><span class="pre">mean</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std">
+<span class="sig-name descname"><span class="pre">std</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.weight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.bias">
+<span class="sig-name descname"><span class="pre">bias</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.bias" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_max">
+<span class="sig-name descname"><span class="pre">std_init_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_max" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_min">
+<span class="sig-name descname"><span class="pre">std_init_min</span></span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_min" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max">
+<span class="sig-name descname"><span class="pre">mean_init_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min">
+<span class="sig-name descname"><span class="pre">mean_init_min</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_atom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_src</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_dst</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.forward" title="Link to this definition">#</a></dt>
@@ -758,12 +820,12 @@ strings are acceptable.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../equiformer_v2_oc20/index.html"
+       href="../equiformer_v2/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">core.models.equiformer_v2.equiformer_v2_oc20</p>
+        <p class="prev-next-title">core.models.equiformer_v2.equiformer_v2</p>
       </div>
     </a>
     <a class="right-next"
@@ -796,6 +858,16 @@ strings are acceptable.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.gaussian"><code class="docutils literal notranslate"><span class="pre">gaussian()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.num_basis"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.num_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.cutoff"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.weight"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.weight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.bias"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.bias</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_max"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std_init_max</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std_init_min"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.std_init_min</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean_init_max</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.mean_init_min</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.forward"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.extra_repr"><code class="docutils literal notranslate"><span class="pre">GaussianRadialBasisLayer.extra_repr()</span></code></a></li>
 </ul>

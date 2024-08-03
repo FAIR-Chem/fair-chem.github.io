@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -626,6 +628,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client._host"><code class="docutils literal notranslate"><span class="pre">Client._host</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client._base_url"><code class="docutils literal notranslate"><span class="pre">Client._base_url</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.host"><code class="docutils literal notranslate"><span class="pre">Client.host</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.get_models"><code class="docutils literal notranslate"><span class="pre">Client.get_models()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.get_bulks"><code class="docutils literal notranslate"><span class="pre">Client.get_bulks()</span></code></a></li>
@@ -642,6 +646,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.NonRetryableRequestException"><code class="docutils literal notranslate"><span class="pre">NonRetryableRequestException</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RateLimitExceededException"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RateLimitExceededException.retry_after"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException.retry_after</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException.retry_after</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RequestException"><code class="docutils literal notranslate"><span class="pre">RequestException</span></code></a></li>
@@ -856,6 +861,16 @@ document.write(`
 <dt class="sig sig-object py" id="ocpapi.client.Client">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpapi.client.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'open-catalyst-api.metademolab.com'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'https'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpapi.client.Client" title="Link to this definition">#</a></dt>
 <dd><p>Exposes each route in the OCP API as a method.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ocpapi.client.Client._host">
+<span class="sig-name descname"><span class="pre">_host</span></span><a class="headerlink" href="#ocpapi.client.Client._host" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ocpapi.client.Client._base_url">
+<span class="sig-name descname"><span class="pre">_base_url</span></span><a class="headerlink" href="#ocpapi.client.Client._base_url" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="ocpapi.client.Client.host">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ocpapi.client.Client.host" title="Link to this definition">#</a></dt>
@@ -1145,6 +1160,11 @@ been exceeded.</p>
 <dd><p>If known, the time to wait before the next attempt to
 call the API should be made.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">retry_after</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime.timedelta</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1695,6 +1715,8 @@ API host is not recognized.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client._host"><code class="docutils literal notranslate"><span class="pre">Client._host</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client._base_url"><code class="docutils literal notranslate"><span class="pre">Client._base_url</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.host"><code class="docutils literal notranslate"><span class="pre">Client.host</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.get_models"><code class="docutils literal notranslate"><span class="pre">Client.get_models()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.Client.get_bulks"><code class="docutils literal notranslate"><span class="pre">Client.get_bulks()</span></code></a></li>
@@ -1711,6 +1733,7 @@ API host is not recognized.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.NonRetryableRequestException"><code class="docutils literal notranslate"><span class="pre">NonRetryableRequestException</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RateLimitExceededException"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RateLimitExceededException.retry_after"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException.retry_after</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">RateLimitExceededException.retry_after</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpapi.client.RequestException"><code class="docutils literal notranslate"><span class="pre">RequestException</span></code></a></li>

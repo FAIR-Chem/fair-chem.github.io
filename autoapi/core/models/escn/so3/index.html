@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,11 +627,29 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3._Jd"><code class="docutils literal notranslate"><span class="pre">_Jd</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.lmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.mmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.num_resolutions"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.device"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.l_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.l_harmonic</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_harmonic</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_complex"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.res_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.res_size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.offset"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.offset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.num_coefficients"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_coefficients</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.to_m"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.to_m</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.complex_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.complex_idx()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.coefficient_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.coefficient_idx()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_channels"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.device"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.dtype"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.dtype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_resolutions"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_coefficients"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_coefficients</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.embedding</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.clone"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.clone()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.set_embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.set_embedding()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.set_lmax_mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.set_lmax_mmax()</span></code></a></li>
@@ -646,6 +666,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.device"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.dtype"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.dtype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.wigner"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.wigner</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.wigner_inv"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.wigner_inv</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.set_lmax"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.set_lmax()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.rotate"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.rotate()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.rotate_inv"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.rotate_inv()</span></code></a></li>
@@ -655,6 +679,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.lmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.lat_resolution"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lat_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.initialized"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.initialized</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid._initialize"><code class="docutils literal notranslate"><span class="pre">SO3_Grid._initialize()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.get_to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_to_grid_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.get_from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_from_grid_mat()</span></code></a></li>
@@ -731,6 +759,66 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.lmax_list">
+<span class="sig-name descname"><span class="pre">lmax_list</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.lmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.mmax_list">
+<span class="sig-name descname"><span class="pre">mmax_list</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.mmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.num_resolutions">
+<span class="sig-name descname"><span class="pre">num_resolutions</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.num_resolutions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.l_harmonic">
+<span class="sig-name descname"><span class="pre">l_harmonic</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.l_harmonic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.m_harmonic">
+<span class="sig-name descname"><span class="pre">m_harmonic</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.m_harmonic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.m_complex">
+<span class="sig-name descname"><span class="pre">m_complex</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.m_complex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.res_size">
+<span class="sig-name descname"><span class="pre">res_size</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.res_size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.offset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.num_coefficients">
+<span class="sig-name descname"><span class="pre">num_coefficients</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.num_coefficients" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.to_m">
+<span class="sig-name descname"><span class="pre">to_m</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.to_m" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.m_size">
+<span class="sig-name descname"><span class="pre">m_size</span></span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.m_size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3.CoefficientMapping.complex_idx">
 <span class="sig-name descname"><span class="pre">complex_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.so3.CoefficientMapping.complex_idx" title="Link to this definition">#</a></dt>
@@ -759,6 +847,36 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.num_channels">
+<span class="sig-name descname"><span class="pre">num_channels</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.num_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.dtype">
+<span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.dtype" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.num_resolutions">
+<span class="sig-name descname"><span class="pre">num_resolutions</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.num_resolutions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.num_coefficients">
+<span class="sig-name descname"><span class="pre">num_coefficients</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.num_coefficients" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.embedding">
+<span class="sig-name descname"><span class="pre">embedding</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3.SO3_Embedding.clone">
 <span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#core.models.escn.so3.SO3_Embedding" title="core.models.escn.so3.SO3_Embedding"><span class="pre">SO3_Embedding</span></a></span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Embedding.clone" title="Link to this definition">#</a></dt>
@@ -839,6 +957,26 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Rotation.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Rotation.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Rotation.dtype">
+<span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Rotation.dtype" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Rotation.wigner">
+<span class="sig-name descname"><span class="pre">wigner</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Rotation.wigner" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Rotation.wigner_inv">
+<span class="sig-name descname"><span class="pre">wigner_inv</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Rotation.wigner_inv" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3.SO3_Rotation.set_lmax">
 <span class="sig-name descname"><span class="pre">set_lmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lmax</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Rotation.set_lmax" title="Link to this definition">#</a></dt>
@@ -884,6 +1022,26 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Grid.lmax">
+<span class="sig-name descname"><span class="pre">lmax</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Grid.lmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Grid.mmax">
+<span class="sig-name descname"><span class="pre">mmax</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Grid.mmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Grid.lat_resolution">
+<span class="sig-name descname"><span class="pre">lat_resolution</span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Grid.lat_resolution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.escn.so3.SO3_Grid.initialized">
+<span class="sig-name descname"><span class="pre">initialized</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#core.models.escn.so3.SO3_Grid.initialized" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3.SO3_Grid._initialize">
 <span class="sig-name descname"><span class="pre">_initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.device</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.models.escn.so3.SO3_Grid._initialize" title="Link to this definition">#</a></dt>
@@ -983,11 +1141,29 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3._Jd"><code class="docutils literal notranslate"><span class="pre">_Jd</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.lmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.mmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.num_resolutions"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.device"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.l_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.l_harmonic</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_harmonic</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_complex"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.res_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.res_size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.offset"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.offset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.num_coefficients"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_coefficients</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.to_m"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.to_m</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.m_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.complex_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.complex_idx()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.CoefficientMapping.coefficient_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.coefficient_idx()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_channels"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.device"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.dtype"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.dtype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_resolutions"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.num_coefficients"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.num_coefficients</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.embedding</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.clone"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.clone()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.set_embedding"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.set_embedding()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Embedding.set_lmax_mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Embedding.set_lmax_mmax()</span></code></a></li>
@@ -1004,6 +1180,10 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.device"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.dtype"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.dtype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.wigner"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.wigner</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.wigner_inv"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.wigner_inv</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.set_lmax"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.set_lmax()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.rotate"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.rotate()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Rotation.rotate_inv"><code class="docutils literal notranslate"><span class="pre">SO3_Rotation.rotate_inv()</span></code></a></li>
@@ -1013,6 +1193,10 @@ LICENSE file in the root directory of this source tree.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.lmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.lat_resolution"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lat_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.initialized"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.initialized</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid._initialize"><code class="docutils literal notranslate"><span class="pre">SO3_Grid._initialize()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.get_to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_to_grid_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3.SO3_Grid.get_from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_from_grid_mat()</span></code></a></li>

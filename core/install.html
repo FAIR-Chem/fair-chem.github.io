@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,9 +627,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi">PyPi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-fairchem-core">Install fairchem-core</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-install">Development install</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-installation-of-fairchem-core">Standard installation of fairchem-core</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-installation">Development installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-and-installing-the-git-repository-on-windows">Cloning and installing the git repository on windows</a></li>
 </ul>
 </li>
@@ -687,28 +691,30 @@ similarly by selecting the appropriate versions in the official
 </ol>
 </section>
 </section>
-<section id="install-fairchem-core">
-<h2>Install fairchem-core<a class="headerlink" href="#install-fairchem-core" title="Link to this heading">#</a></h2>
+<section id="standard-installation-of-fairchem-core">
+<h2>Standard installation of fairchem-core<a class="headerlink" href="#standard-installation-of-fairchem-core" title="Link to this heading">#</a></h2>
 <p>Install <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code> from PyPi</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>fairchem-core
 </pre></div>
 </div>
-</section>
 <section id="additional-packages">
-<h2>Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h2>
+<h3>Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">fairchem</span></code> is a namespace package, meaning all packages are installed seperately. If you need
 to install other packages you can do so by:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>fairchem-<span class="o">{</span>package-to-install<span class="o">}</span>
 </pre></div>
 </div>
+<p>Available <code class="docutils literal notranslate"><span class="pre">fairchem</span></code> packages are <code class="docutils literal notranslate"><span class="pre">fairchem-core</span></code>,<code class="docutils literal notranslate"><span class="pre">fairchem-data-oc</span></code>,<code class="docutils literal notranslate"><span class="pre">fairchem-demo-ocpapi</span></code>,<code class="docutils literal notranslate"><span class="pre">fairchem-applications-cattsunami</span></code></p>
 </section>
-<section id="development-install">
-<h2>Development install<a class="headerlink" href="#development-install" title="Link to this heading">#</a></h2>
+</section>
+<section id="development-installation">
+<h2>Development installation<a class="headerlink" href="#development-installation" title="Link to this heading">#</a></h2>
 <p>If you plan to make contributions you will need to fork and clone (for windows user please see next section) the repo,
 set up the environment, and install fairchem-core from source in editable mode with dev dependencies,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/FAIR-Chem/fairchem.git
 <span class="nb">cd</span><span class="w"> </span>fairchem
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>packages/fairchem-core<span class="o">[</span>dev<span class="o">]</span>
+pytest<span class="w"> </span>tests/core
 </pre></div>
 </div>
 <p>And similarly for any other namespace package:</p>
@@ -799,9 +805,11 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi">PyPi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-fairchem-core">Install fairchem-core</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-install">Development install</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-installation-of-fairchem-core">Standard installation of fairchem-core</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages">Additional packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-installation">Development installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-and-installing-the-git-repository-on-windows">Cloning and installing the git repository on windows</a></li>
 </ul>
 </li>

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -623,41 +625,70 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.inplace"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.inplace</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.in_channels"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.in_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.out_channels"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.w"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.w</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.act"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU"><code class="docutils literal notranslate"><span class="pre">SwiGLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.in_channels"><code class="docutils literal notranslate"><span class="pre">SwiGLU.in_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.out_channels"><code class="docutils literal notranslate"><span class="pre">SwiGLU.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.w"><code class="docutils literal notranslate"><span class="pre">SwiGLU.w</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.act"><code class="docutils literal notranslate"><span class="pre">SwiGLU.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.forward"><code class="docutils literal notranslate"><span class="pre">SwiGLU.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.alpha"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.alpha</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.forward"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.act"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation"><code class="docutils literal notranslate"><span class="pre">GateActivation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.lmax"><code class="docutils literal notranslate"><span class="pre">GateActivation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.mmax"><code class="docutils literal notranslate"><span class="pre">GateActivation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.num_channels"><code class="docutils literal notranslate"><span class="pre">GateActivation.num_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.num_components"><code class="docutils literal notranslate"><span class="pre">GateActivation.num_components</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.expand_index"><code class="docutils literal notranslate"><span class="pre">GateActivation.expand_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.start_idx"><code class="docutils literal notranslate"><span class="pre">GateActivation.start_idx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.scalar_act"><code class="docutils literal notranslate"><span class="pre">GateActivation.scalar_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.gate_act"><code class="docutils literal notranslate"><span class="pre">GateActivation.gate_act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.forward"><code class="docutils literal notranslate"><span class="pre">GateActivation.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation"><code class="docutils literal notranslate"><span class="pre">S2Activation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.lmax"><code class="docutils literal notranslate"><span class="pre">S2Activation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.mmax"><code class="docutils literal notranslate"><span class="pre">S2Activation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.act"><code class="docutils literal notranslate"><span class="pre">S2Activation.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.forward"><code class="docutils literal notranslate"><span class="pre">S2Activation.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.lmax"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.mmax"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.scalar_act"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.scalar_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.s2_act"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.s2_act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.forward"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.forward()</span></code></a></li>
 </ul>
 </li>
@@ -748,6 +779,16 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSiLU.inplace">
+<span class="sig-name descname"><span class="pre">inplace</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSiLU.inplace" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSiLU.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.6791767923989418</span></em><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSiLU.scale_factor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSiLU.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSiLU.forward" title="Link to this definition">#</a></dt>
@@ -799,6 +840,26 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSwiGLU.in_channels">
+<span class="sig-name descname"><span class="pre">in_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.in_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSwiGLU.out_channels">
+<span class="sig-name descname"><span class="pre">out_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.out_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSwiGLU.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.w" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSwiGLU.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSwiGLU.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.forward" title="Link to this definition">#</a></dt>
@@ -841,6 +902,26 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SwiGLU.in_channels">
+<span class="sig-name descname"><span class="pre">in_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SwiGLU.in_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SwiGLU.out_channels">
+<span class="sig-name descname"><span class="pre">out_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SwiGLU.out_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SwiGLU.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SwiGLU.w" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SwiGLU.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SwiGLU.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SwiGLU.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.SwiGLU.forward" title="Link to this definition">#</a></dt>
@@ -883,6 +964,11 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SmoothLeakyReLU.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.alpha" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SmoothLeakyReLU.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.forward" title="Link to this definition">#</a></dt>
@@ -934,6 +1020,16 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.531320475574866</span></em><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.scale_factor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.forward" title="Link to this definition">#</a></dt>
@@ -985,6 +1081,11 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSigmoid.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.8467055342154763</span></em><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSigmoid.scale_factor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.ScaledSigmoid.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.ScaledSigmoid.forward" title="Link to this definition">#</a></dt>
@@ -1027,6 +1128,46 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.lmax">
+<span class="sig-name descname"><span class="pre">lmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.lmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.mmax">
+<span class="sig-name descname"><span class="pre">mmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.mmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.num_channels">
+<span class="sig-name descname"><span class="pre">num_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.num_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.num_components">
+<span class="sig-name descname"><span class="pre">num_components</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.num_components" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.expand_index">
+<span class="sig-name descname"><span class="pre">expand_index</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.expand_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.start_idx">
+<span class="sig-name descname"><span class="pre">start_idx</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.start_idx" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.scalar_act">
+<span class="sig-name descname"><span class="pre">scalar_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.scalar_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.gate_act">
+<span class="sig-name descname"><span class="pre">gate_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.gate_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.GateActivation.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gating_scalars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_tensors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.GateActivation.forward" title="Link to this definition">#</a></dt>
@@ -1041,6 +1182,21 @@ evaluation mode.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.activation.</span></span><span class="sig-name descname"><span class="pre">S2Activation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.S2Activation" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
 <p>Assume we only have one resolution</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.S2Activation.lmax">
+<span class="sig-name descname"><span class="pre">lmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.S2Activation.lmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.S2Activation.mmax">
+<span class="sig-name descname"><span class="pre">mmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.S2Activation.mmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.S2Activation.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.S2Activation.act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.S2Activation.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SO3_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.S2Activation.forward" title="Link to this definition">#</a></dt>
@@ -1083,6 +1239,26 @@ must be made before assignment on the child.</p>
 evaluation mode.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SeparableS2Activation.lmax">
+<span class="sig-name descname"><span class="pre">lmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SeparableS2Activation.lmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SeparableS2Activation.mmax">
+<span class="sig-name descname"><span class="pre">mmax</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SeparableS2Activation.mmax" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SeparableS2Activation.scalar_act">
+<span class="sig-name descname"><span class="pre">scalar_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SeparableS2Activation.scalar_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SeparableS2Activation.s2_act">
+<span class="sig-name descname"><span class="pre">s2_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.activation.SeparableS2Activation.s2_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.activation.SeparableS2Activation.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_scalars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_tensors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SO3_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.activation.SeparableS2Activation.forward" title="Link to this definition">#</a></dt>
@@ -1160,41 +1336,70 @@ evaluation mode.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.inplace"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.inplace</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSiLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">ScaledSiLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.in_channels"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.in_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.out_channels"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.w"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.w</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.act"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSwiGLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSwiGLU.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU"><code class="docutils literal notranslate"><span class="pre">SwiGLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.in_channels"><code class="docutils literal notranslate"><span class="pre">SwiGLU.in_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.out_channels"><code class="docutils literal notranslate"><span class="pre">SwiGLU.out_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.w"><code class="docutils literal notranslate"><span class="pre">SwiGLU.w</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.act"><code class="docutils literal notranslate"><span class="pre">SwiGLU.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SwiGLU.forward"><code class="docutils literal notranslate"><span class="pre">SwiGLU.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.alpha"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.alpha</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.forward"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SmoothLeakyReLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">SmoothLeakyReLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.act"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSmoothLeakyReLU.extra_repr"><code class="docutils literal notranslate"><span class="pre">ScaledSmoothLeakyReLU.extra_repr()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid.scale_factor"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid.scale_factor</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.ScaledSigmoid.forward"><code class="docutils literal notranslate"><span class="pre">ScaledSigmoid.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation"><code class="docutils literal notranslate"><span class="pre">GateActivation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.lmax"><code class="docutils literal notranslate"><span class="pre">GateActivation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.mmax"><code class="docutils literal notranslate"><span class="pre">GateActivation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.num_channels"><code class="docutils literal notranslate"><span class="pre">GateActivation.num_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.num_components"><code class="docutils literal notranslate"><span class="pre">GateActivation.num_components</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.expand_index"><code class="docutils literal notranslate"><span class="pre">GateActivation.expand_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.start_idx"><code class="docutils literal notranslate"><span class="pre">GateActivation.start_idx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.scalar_act"><code class="docutils literal notranslate"><span class="pre">GateActivation.scalar_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.gate_act"><code class="docutils literal notranslate"><span class="pre">GateActivation.gate_act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.GateActivation.forward"><code class="docutils literal notranslate"><span class="pre">GateActivation.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation"><code class="docutils literal notranslate"><span class="pre">S2Activation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.lmax"><code class="docutils literal notranslate"><span class="pre">S2Activation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.mmax"><code class="docutils literal notranslate"><span class="pre">S2Activation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.act"><code class="docutils literal notranslate"><span class="pre">S2Activation.act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.S2Activation.forward"><code class="docutils literal notranslate"><span class="pre">S2Activation.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.lmax"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.lmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.mmax"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.mmax</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.scalar_act"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.scalar_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.s2_act"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.s2_act</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.activation.SeparableS2Activation.forward"><code class="docutils literal notranslate"><span class="pre">SeparableS2Activation.forward()</span></code></a></li>
 </ul>
 </li>

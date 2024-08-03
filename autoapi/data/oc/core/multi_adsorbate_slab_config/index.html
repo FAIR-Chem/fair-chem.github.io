@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -624,6 +626,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.slab"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.slab</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.adsorbates"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.adsorbates</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.num_sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.num_sites</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.interstitial_gap"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.interstitial_gap</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.mode"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.mode</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.sites</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.place_adsorbates_on_sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.place_adsorbates_on_sites()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.get_metadata_dict"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.get_metadata_dict()</span></code></a></li>
 </ul>
@@ -709,6 +717,36 @@ overlap with the slab plus <cite>interstitial_gap</cite> along the surface norma
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.slab">
+<span class="sig-name descname"><span class="pre">slab</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.slab" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.adsorbates">
+<span class="sig-name descname"><span class="pre">adsorbates</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.adsorbates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.num_sites">
+<span class="sig-name descname"><span class="pre">num_sites</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.num_sites" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.interstitial_gap">
+<span class="sig-name descname"><span class="pre">interstitial_gap</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.interstitial_gap" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.mode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.sites">
+<span class="sig-name descname"><span class="pre">sites</span></span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.sites" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.place_adsorbates_on_sites">
 <span class="sig-name descname"><span class="pre">place_adsorbates_on_sites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sites</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_configurations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interstitial_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.place_adsorbates_on_sites" title="Link to this definition">#</a></dt>
@@ -810,6 +848,12 @@ calculation to prevent atom overlap.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.slab"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.slab</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.adsorbates"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.adsorbates</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.num_sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.num_sites</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.interstitial_gap"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.interstitial_gap</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.mode"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.mode</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.sites</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.place_adsorbates_on_sites"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.place_adsorbates_on_sites()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.get_metadata_dict"><code class="docutils literal notranslate"><span class="pre">MultipleAdsorbateSlabConfig.get_metadata_dict()</span></code></a></li>
 </ul>

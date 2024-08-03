@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -908,7 +910,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2255/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2319/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -983,6 +985,7 @@ Rows: 295 (showing first 20)
 <span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;optim.loss_force&#39;</span><span class="p">,</span> <span class="c1"># the checkpoint setting causes an error</span>
+			   <span class="s1">&#39;optim.load_balancing&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
                    <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -1144,7 +1147,6 @@ optim:
   eval_every: 10
   factor: 0.8
   force_coefficient: 1
-  load_balancing: atoms
   loss_energy: mae
   lr_initial: 0.0005
   max_epochs: 1
@@ -1201,7 +1203,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 208.5 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 202.0 seconds
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1219,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-07-19-20-37-20-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-08-03-02-08-00-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1278,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5620ea27ffb3b5681339b3d9052c2011d8c61c24ab637877fcd2b45fb6e81c96.png" src="../../_images/5620ea27ffb3b5681339b3d9052c2011d8c61c24ab637877fcd2b45fb6e81c96.png" />
+<img alt="../../_images/e7ce684c03eda3f18545b9385f2ed3f95fe9fdaea9a1fa0ad15e5a88f24474eb.png" src="../../_images/e7ce684c03eda3f18545b9385f2ed3f95fe9fdaea9a1fa0ad15e5a88f24474eb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1287,7 +1289,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.480 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.986 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1306,7 +1308,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1135cb8f3db5ab6bc6c5f4784263c92318c81d1a6bc4f29374b7067f81a3d30e.png" src="../../_images/1135cb8f3db5ab6bc6c5f4784263c92318c81d1a6bc4f29374b7067f81a3d30e.png" />
+<img alt="../../_images/ad1d711bb77a15852a06b27c3f353d97e613c695ca9499873d11a81c9a482bde.png" src="../../_images/ad1d711bb77a15852a06b27c3f353d97e613c695ca9499873d11a81c9a482bde.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

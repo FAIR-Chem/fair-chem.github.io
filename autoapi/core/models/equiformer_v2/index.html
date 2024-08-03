@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -625,6 +627,60 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2"><code class="docutils literal notranslate"><span class="pre">EquiformerV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_pbc"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.regress_forces"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.otf_graph"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_neighbors"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_radius"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_radius</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.cutoff"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_num_elements"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_num_elements</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_layers"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_hidden_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_heads"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_heads</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_alpha_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_alpha_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_value_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_value_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.ffn_hidden_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.ffn_hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.norm_type"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.norm_type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.lmax_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.mmax_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.grid_resolution"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.grid_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_sphere_samples"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_sphere_samples</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_atom_edge_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.share_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.share_atom_edge_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_m_share_rad"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_m_share_rad</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.distance_function"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.distance_function</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_distance_basis"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_distance_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_activation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_activation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_s2_act_attn"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_s2_act_attn</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_attn_renorm"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_attn_renorm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.ffn_activation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.ffn_activation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_gate_act"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_gate_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_grid_mlp"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_grid_mlp</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_sep_s2_act"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_sep_s2_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.alpha_drop"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.alpha_drop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.drop_path_rate"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.drop_path_rate</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.proj_drop"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.proj_drop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.avg_num_nodes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.avg_degree"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.avg_degree</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_energy_lin_ref"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_energy_lin_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.load_energy_lin_ref"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.load_energy_lin_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.weight_init"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.weight_init</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.enforce_max_neighbors_strictly"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.enforce_max_neighbors_strictly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.device"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.grad_forces"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.grad_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_resolutions"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels_all"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_channels_all</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_channels_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_channels_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.SO3_rotation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.SO3_rotation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.mappingReduced"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.mappingReduced</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.SO3_grid"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.SO3_grid</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_degree_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_degree_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.blocks"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.norm"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.energy_block"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.energy_block</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2._init_gp_partitions"><code class="docutils literal notranslate"><span class="pre">EquiformerV2._init_gp_partitions()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.forward"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2._init_edge_rot_mat"><code class="docutils literal notranslate"><span class="pre">EquiformerV2._init_edge_rot_mat()</span></code></a></li>
@@ -665,7 +721,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="activation/index.html">core.models.equiformer_v2.activation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="drop/index.html">core.models.equiformer_v2.drop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="edge_rot_mat/index.html">core.models.equiformer_v2.edge_rot_mat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="equiformer_v2_oc20/index.html">core.models.equiformer_v2.equiformer_v2_oc20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equiformer_v2/index.html">core.models.equiformer_v2.equiformer_v2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gaussian_rbf/index.html">core.models.equiformer_v2.gaussian_rbf</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input_block/index.html">core.models.equiformer_v2.input_block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="layer_norm/index.html">core.models.equiformer_v2.layer_norm</a></li>
@@ -693,8 +749,8 @@ document.write(`
 <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.</span></span><span class="sig-name descname"><span class="pre">EquiformerV2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_alpha_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_value_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffn_hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rms_norm_sh'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sphere_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_m_share_rad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_distance_basis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scaled_silu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_s2_act_attn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_attn_renorm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffn_activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scaled_silu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gate_act</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_grid_mlp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sep_s2_act</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_drop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_path_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proj_drop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_max_neighbors_strictly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_energy_lin_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_energy_lin_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.BaseModel</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.</span></span><span class="sig-name descname"><span class="pre">EquiformerV2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_alpha_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_value_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffn_hidden_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rms_norm_sh'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sphere_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_m_share_rad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_distance_basis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scaled_silu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_s2_act_attn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_attn_renorm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffn_activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scaled_silu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gate_act</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_grid_mlp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_sep_s2_act</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_drop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_path_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proj_drop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_max_neighbors_strictly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_energy_lin_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_energy_lin_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.GraphModelMixin</span></code></p>
 <p>Equiformer with graph attention built upon SO(2) convolution and feedforward network built upon S2 activation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -745,6 +801,276 @@ You can’t have use_energy_lin_ref = True and load_energy_lin_ref = False, sinc
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_pbc">
+<span class="sig-name descname"><span class="pre">use_pbc</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_pbc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.regress_forces">
+<span class="sig-name descname"><span class="pre">regress_forces</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.regress_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.otf_graph">
+<span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.otf_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.max_neighbors">
+<span class="sig-name descname"><span class="pre">max_neighbors</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.max_neighbors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.max_radius">
+<span class="sig-name descname"><span class="pre">max_radius</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.max_radius" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.cutoff">
+<span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.cutoff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.max_num_elements">
+<span class="sig-name descname"><span class="pre">max_num_elements</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.max_num_elements" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.num_layers">
+<span class="sig-name descname"><span class="pre">num_layers</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.num_layers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.sphere_channels">
+<span class="sig-name descname"><span class="pre">sphere_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.attn_hidden_channels">
+<span class="sig-name descname"><span class="pre">attn_hidden_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.attn_hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.num_heads">
+<span class="sig-name descname"><span class="pre">num_heads</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.num_heads" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.attn_alpha_channels">
+<span class="sig-name descname"><span class="pre">attn_alpha_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.attn_alpha_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.attn_value_channels">
+<span class="sig-name descname"><span class="pre">attn_value_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.attn_value_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.ffn_hidden_channels">
+<span class="sig-name descname"><span class="pre">ffn_hidden_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.ffn_hidden_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.norm_type">
+<span class="sig-name descname"><span class="pre">norm_type</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.norm_type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.lmax_list">
+<span class="sig-name descname"><span class="pre">lmax_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.lmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.mmax_list">
+<span class="sig-name descname"><span class="pre">mmax_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.mmax_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.grid_resolution">
+<span class="sig-name descname"><span class="pre">grid_resolution</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.grid_resolution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.num_sphere_samples">
+<span class="sig-name descname"><span class="pre">num_sphere_samples</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.num_sphere_samples" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.edge_channels">
+<span class="sig-name descname"><span class="pre">edge_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.edge_channels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_atom_edge_embedding">
+<span class="sig-name descname"><span class="pre">use_atom_edge_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_atom_edge_embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.share_atom_edge_embedding">
+<span class="sig-name descname"><span class="pre">share_atom_edge_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.share_atom_edge_embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_m_share_rad">
+<span class="sig-name descname"><span class="pre">use_m_share_rad</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_m_share_rad" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.distance_function">
+<span class="sig-name descname"><span class="pre">distance_function</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.distance_function" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.num_distance_basis">
+<span class="sig-name descname"><span class="pre">num_distance_basis</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.num_distance_basis" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.attn_activation">
+<span class="sig-name descname"><span class="pre">attn_activation</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.attn_activation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_s2_act_attn">
+<span class="sig-name descname"><span class="pre">use_s2_act_attn</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_s2_act_attn" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_attn_renorm">
+<span class="sig-name descname"><span class="pre">use_attn_renorm</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_attn_renorm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.ffn_activation">
+<span class="sig-name descname"><span class="pre">ffn_activation</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.ffn_activation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_gate_act">
+<span class="sig-name descname"><span class="pre">use_gate_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_gate_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_grid_mlp">
+<span class="sig-name descname"><span class="pre">use_grid_mlp</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_grid_mlp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_sep_s2_act">
+<span class="sig-name descname"><span class="pre">use_sep_s2_act</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_sep_s2_act" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.alpha_drop">
+<span class="sig-name descname"><span class="pre">alpha_drop</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.alpha_drop" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.drop_path_rate">
+<span class="sig-name descname"><span class="pre">drop_path_rate</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.drop_path_rate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.proj_drop">
+<span class="sig-name descname"><span class="pre">proj_drop</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.proj_drop" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.avg_num_nodes">
+<span class="sig-name descname"><span class="pre">avg_num_nodes</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.avg_num_nodes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.avg_degree">
+<span class="sig-name descname"><span class="pre">avg_degree</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.avg_degree" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.use_energy_lin_ref">
+<span class="sig-name descname"><span class="pre">use_energy_lin_ref</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.use_energy_lin_ref" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.load_energy_lin_ref">
+<span class="sig-name descname"><span class="pre">load_energy_lin_ref</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.load_energy_lin_ref" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.weight_init">
+<span class="sig-name descname"><span class="pre">weight_init</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.weight_init" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.enforce_max_neighbors_strictly">
+<span class="sig-name descname"><span class="pre">enforce_max_neighbors_strictly</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.enforce_max_neighbors_strictly" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.device">
+<span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'cpu'</span></em><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.grad_forces">
+<span class="sig-name descname"><span class="pre">grad_forces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.grad_forces" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.num_resolutions">
+<span class="sig-name descname"><span class="pre">num_resolutions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.num_resolutions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.sphere_channels_all">
+<span class="sig-name descname"><span class="pre">sphere_channels_all</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels_all" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.sphere_embedding">
+<span class="sig-name descname"><span class="pre">sphere_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.sphere_embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.edge_channels_list">
+<span class="sig-name descname"><span class="pre">edge_channels_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.edge_channels_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.SO3_rotation">
+<span class="sig-name descname"><span class="pre">SO3_rotation</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.SO3_rotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.mappingReduced">
+<span class="sig-name descname"><span class="pre">mappingReduced</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.mappingReduced" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.SO3_grid">
+<span class="sig-name descname"><span class="pre">SO3_grid</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.SO3_grid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.edge_degree_embedding">
+<span class="sig-name descname"><span class="pre">edge_degree_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.edge_degree_embedding" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.blocks">
+<span class="sig-name descname"><span class="pre">blocks</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.blocks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.norm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2.energy_block">
+<span class="sig-name descname"><span class="pre">energy_block</span></span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2.energy_block" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.equiformer_v2.EquiformerV2._init_gp_partitions">
 <span class="sig-name descname"><span class="pre">_init_gp_partitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers_full</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_batch_full</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_distance_vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.EquiformerV2._init_gp_partitions" title="Link to this definition">#</a></dt>
@@ -863,6 +1189,60 @@ The tensors are split on the dimension along the node index using node_partition
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2"><code class="docutils literal notranslate"><span class="pre">EquiformerV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_pbc"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_pbc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.regress_forces"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.regress_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.otf_graph"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.otf_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_neighbors"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_neighbors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_radius"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_radius</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.cutoff"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.cutoff</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.max_num_elements"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.max_num_elements</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_layers"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_hidden_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_heads"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_heads</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_alpha_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_alpha_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_value_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_value_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.ffn_hidden_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.ffn_hidden_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.norm_type"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.norm_type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.lmax_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.lmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.mmax_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.mmax_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.grid_resolution"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.grid_resolution</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_sphere_samples"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_sphere_samples</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_channels"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_channels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_atom_edge_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.share_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.share_atom_edge_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_m_share_rad"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_m_share_rad</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.distance_function"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.distance_function</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_distance_basis"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_distance_basis</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.attn_activation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.attn_activation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_s2_act_attn"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_s2_act_attn</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_attn_renorm"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_attn_renorm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.ffn_activation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.ffn_activation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_gate_act"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_gate_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_grid_mlp"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_grid_mlp</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_sep_s2_act"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_sep_s2_act</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.alpha_drop"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.alpha_drop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.drop_path_rate"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.drop_path_rate</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.proj_drop"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.proj_drop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.avg_num_nodes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.avg_degree"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.avg_degree</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.use_energy_lin_ref"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.use_energy_lin_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.load_energy_lin_ref"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.load_energy_lin_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.weight_init"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.weight_init</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.enforce_max_neighbors_strictly"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.enforce_max_neighbors_strictly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.device"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.grad_forces"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.grad_forces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.num_resolutions"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.num_resolutions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_channels_all"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_channels_all</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.sphere_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.sphere_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_channels_list"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_channels_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.SO3_rotation"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.SO3_rotation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.mappingReduced"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.mappingReduced</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.SO3_grid"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.SO3_grid</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.edge_degree_embedding"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.edge_degree_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.blocks"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.blocks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.norm"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.energy_block"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.energy_block</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2._init_gp_partitions"><code class="docutils literal notranslate"><span class="pre">EquiformerV2._init_gp_partitions()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2.forward"><code class="docutils literal notranslate"><span class="pre">EquiformerV2.forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.EquiformerV2._init_edge_rot_mat"><code class="docutils literal notranslate"><span class="pre">EquiformerV2._init_edge_rot_mat()</span></code></a></li>

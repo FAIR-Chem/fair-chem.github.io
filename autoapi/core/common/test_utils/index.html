@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -316,6 +316,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -354,6 +355,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -635,8 +637,9 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.PGConfig.use_gp"><code class="docutils literal notranslate"><span class="pre">PGConfig.use_gp</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_env_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_env_rank_and_launch_test()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_pg_and_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.spawn_multi_process"><code class="docutils literal notranslate"><span class="pre">spawn_multi_process()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils._init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">_init_pg_and_rank_and_launch_test()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -670,11 +673,14 @@ document.write(`
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.common.test_utils.init_env_rank_and_launch_test" title="core.common.test_utils.init_env_rank_and_launch_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_env_rank_and_launch_test</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.common.test_utils.init_pg_and_rank_and_launch_test" title="core.common.test_utils.init_pg_and_rank_and_launch_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_pg_and_rank_and_launch_test</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.common.test_utils.spawn_multi_process" title="core.common.test_utils.spawn_multi_process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spawn_multi_process</span></code></a>(→ list[Any])</p></td>
 <td><p>Spawn single node, multi-rank function.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.common.test_utils._init_pg_and_rank_and_launch_test" title="core.common.test_utils._init_pg_and_rank_and_launch_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_init_pg_and_rank_and_launch_test</span></code></a>(→ None)</p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -732,8 +738,18 @@ ForkedPdb().set_trace()</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="core.common.test_utils.init_env_rank_and_launch_test">
+<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">init_env_rank_and_launch_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_setup_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.test_utils.PGConfig" title="core.common.test_utils.PGConfig"><span class="pre">PGConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp_output_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.test_utils.init_env_rank_and_launch_test" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.common.test_utils.init_pg_and_rank_and_launch_test">
+<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">init_pg_and_rank_and_launch_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_setup_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.test_utils.PGConfig" title="core.common.test_utils.PGConfig"><span class="pre">PGConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp_output_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.test_utils.init_pg_and_rank_and_launch_test" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="core.common.test_utils.spawn_multi_process">
-<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">spawn_multi_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.test_utils.PGConfig" title="core.common.test_utils.PGConfig"><span class="pre">PGConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">test_method_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">test_method_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.common.test_utils.spawn_multi_process" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">spawn_multi_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.test_utils.PGConfig" title="core.common.test_utils.PGConfig"><span class="pre">PGConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_and_launch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">test_method_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">test_method_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.common.test_utils.spawn_multi_process" title="Link to this definition">#</a></dt>
 <dd><p>Spawn single node, multi-rank function.
 Uses localhost and free port to communicate.</p>
 <dl class="field-list simple">
@@ -751,11 +767,6 @@ Uses localhost and free port to communicate.</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="core.common.test_utils._init_pg_and_rank_and_launch_test">
-<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">_init_pg_and_rank_and_launch_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_setup_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.common.test_utils.PGConfig" title="core.common.test_utils.PGConfig"><span class="pre">PGConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp_output_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.common.test_utils._init_pg_and_rank_and_launch_test" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
 
 </section>
 </section>
@@ -839,8 +850,9 @@ Uses localhost and free port to communicate.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.PGConfig.use_gp"><code class="docutils literal notranslate"><span class="pre">PGConfig.use_gp</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_env_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_env_rank_and_launch_test()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_pg_and_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.spawn_multi_process"><code class="docutils literal notranslate"><span class="pre">spawn_multi_process()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils._init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">_init_pg_and_rank_and_launch_test()</span></code></a></li>
 </ul>
 </li>
 </ul>
