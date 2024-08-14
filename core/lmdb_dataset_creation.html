@@ -305,6 +305,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
@@ -334,16 +335,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalizer/index.html">core.modules.normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -356,6 +358,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -381,7 +385,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/tests/index.html">data.oc.tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
@@ -691,7 +694,7 @@ about these steps as they’ve been automated as part of this
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2780/901556023.py:8: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2758/901556023.py:8: DeprecationWarning: Please use atoms.calc = calc
   adslab.set_calculator(EMT())
 </pre></div>
 </div>
@@ -833,7 +836,7 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 636], cell_offsets=[636, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], pos_relaxed=[14, 3], sid=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 635], cell_offsets=[635, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], pos_relaxed=[14, 3], sid=0)
 </pre></div>
 </div>
 </div>
@@ -906,43 +909,49 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1001 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 59/1001 [00:00&lt;00:01, 586.66it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 53/1001 [00:00&lt;00:01, 527.72it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▍        | 141/1001 [00:00&lt;00:01, 718.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█▏        | 122/1001 [00:00&lt;00:01, 618.81it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██▏       | 221/1001 [00:00&lt;00:01, 753.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | 192/1001 [00:00&lt;00:01, 654.74it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 301/1001 [00:00&lt;00:00, 770.05it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██▌       | 258/1001 [00:00&lt;00:01, 615.47it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 378/1001 [00:00&lt;00:00, 734.75it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 331/1001 [00:00&lt;00:01, 653.66it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 46%|████▌     | 459/1001 [00:00&lt;00:00, 757.16it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████      | 401/1001 [00:00&lt;00:00, 668.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 539/1001 [00:00&lt;00:00, 767.96it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 472/1001 [00:00&lt;00:00, 681.72it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████▏   | 621/1001 [00:00&lt;00:00, 783.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 541/1001 [00:00&lt;00:00, 682.08it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████   | 701/1001 [00:00&lt;00:00, 787.61it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 61%|██████    | 611/1001 [00:00&lt;00:00, 684.88it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | 780/1001 [00:01&lt;00:00, 775.59it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 680/1001 [00:01&lt;00:00, 661.68it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|████████▌ | 861/1001 [00:01&lt;00:00, 782.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | 752/1001 [00:01&lt;00:00, 676.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 940/1001 [00:01&lt;00:00, 779.82it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 828/1001 [00:01&lt;00:00, 699.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 756.24it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 91%|█████████ | 907/1001 [00:01&lt;00:00, 725.51it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 98%|█████████▊| 985/1001 [00:01&lt;00:00, 741.54it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 686.67it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -970,7 +979,7 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 636], cell_offsets=[636, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], sid=[1], fid=[1], id=&#39;0_0&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 635], cell_offsets=[635, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], sid=[1], fid=[1], id=&#39;0_0&#39;)
 </pre></div>
 </div>
 </div>
@@ -998,7 +1007,7 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 636], cell_offsets=[636, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], sid=[1], fid=[1], id=&#39;0_0&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data(pos=[14, 3], cell=[1, 3, 3], atomic_numbers=[14], natoms=14, tags=[14], edge_index=[2, 635], cell_offsets=[635, 3], energy=3.9893144106683787, forces=[14, 3], fixed=[14], sid=[1], fid=[1], id=&#39;0_0&#39;)
 </pre></div>
 </div>
 </div>
@@ -1026,7 +1035,7 @@ In addition to the attributes defined by AtomsToGraph, the following attributes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b8284e835b356d7f68fe10199f75ad35ff59c61539962b4f9738817de79022ed.png" src="../_images/b8284e835b356d7f68fe10199f75ad35ff59c61539962b4f9738817de79022ed.png" />
+<img alt="../_images/70ff966b9de81dc742342614c724a59eb856b0be98cff6b7329d09daf084fa31.png" src="../_images/70ff966b9de81dc742342614c724a59eb856b0be98cff6b7329d09daf084fa31.png" />
 </div>
 </div>
 </section>

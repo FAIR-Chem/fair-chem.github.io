@@ -305,6 +305,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
@@ -334,16 +335,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalizer/index.html">core.modules.normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -356,6 +358,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -381,7 +385,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/tests/index.html">data.oc.tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
@@ -730,7 +733,7 @@ document.write(`
   atoms.set_calculator(calc)
 </pre></div>
 </div>
-<img alt="../../_images/99a4f8f828cea8bf99fa262dae13c363a22e4ecfb8634852ceba0fb62f38ee76.png" src="../../_images/99a4f8f828cea8bf99fa262dae13c363a22e4ecfb8634852ceba0fb62f38ee76.png" />
+<img alt="../../_images/d95f1e9e1a2053f463c216a6c931977c945f1e8bd8c2b6bf59be64da41ae3a66.png" src="../../_images/d95f1e9e1a2053f463c216a6c931977c945f1e8bd8c2b6bf59be64da41ae3a66.png" />
 </div>
 </div>
 <p>Something is a little off in this equation of state, there is an unphysical bump in it. We now rerun this and get the embeddings. You simply call the <code class="docutils literal notranslate"><span class="pre">calc.embed</span></code> method. We need a reference configuration to compare too. We choose a lattice constant of 3.63 angstroms and compute three different embeddings.</p>
@@ -803,7 +806,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c3cad5fabd7d194f682c7781df8cb29fb801535cb4cbcb2c830584b6c6ffc72d.png" src="../../_images/c3cad5fabd7d194f682c7781df8cb29fb801535cb4cbcb2c830584b6c6ffc72d.png" />
+<img alt="../../_images/b618a440ac6e28c1074cbc44d70c947600061410b1bf9e4328b62a023dee925a.png" src="../../_images/b618a440ac6e28c1074cbc44d70c947600061410b1bf9e4328b62a023dee925a.png" />
 </div>
 </div>
 <p>We can see that near the minimum the different embeddings are all quite similar. But, near the unphysical peak, the x_E embedding shows a significant deviation. The atomic energy is linear in this embedding, which is why we see the peak. This means the embedding is not sufficiently trained in this region, and fine-tuning should be considered with data in that region.</p>
@@ -888,7 +891,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/756ffd7fe413dd24a1c8d3824960c35167f5a303e78d4971c1eaf1382c82fe73.png" src="../../_images/756ffd7fe413dd24a1c8d3824960c35167f5a303e78d4971c1eaf1382c82fe73.png" />
+<img alt="../../_images/9b352c76d25a9ed9f842185220fcb7d663b56fe2cc68da33f0cfa626f2d799d7.png" src="../../_images/9b352c76d25a9ed9f842185220fcb7d663b56fe2cc68da33f0cfa626f2d799d7.png" />
 </div>
 </div>
 <section id="clustering-individual-atoms">
@@ -936,7 +939,7 @@ document.write(`
   warn(f&quot;n_jobs value {self.n_jobs} overridden to 1 by setting random_state. Use no seed for parallelism.&quot;)
 </pre></div>
 </div>
-<img alt="../../_images/b4dfce6447f7a533e7bffcff3e393c1328bd0415fda521754b6761cbff57903e.png" src="../../_images/b4dfce6447f7a533e7bffcff3e393c1328bd0415fda521754b6761cbff57903e.png" />
+<img alt="../../_images/57f11d76813d1e21dd04af0b0b64c72549156f7c76bdfb81616387ecb9619555.png" src="../../_images/57f11d76813d1e21dd04af0b0b64c72549156f7c76bdfb81616387ecb9619555.png" />
 </div>
 </div>
 <p>You can see from this there are roughly three kinds of atoms. One is bulk like, with the lowest energy (the dark red points), the second is also lower in energy (the reddish-orange points), and the others are surface atoms, with higher energies (the bluish points).</p>
@@ -1056,7 +1059,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/4e62701901a436db91accf959034131fa3f13737244e437740ddae980ebd1e28.png" src="../../_images/4e62701901a436db91accf959034131fa3f13737244e437740ddae980ebd1e28.png" />
+<img alt="../../_images/8f4b96a1fa7c2b561281842fe2ac549124fff2cce7a0746b6d3a762b322e60a1.png" src="../../_images/8f4b96a1fa7c2b561281842fe2ac549124fff2cce7a0746b6d3a762b322e60a1.png" />
 </div>
 </div>
 </section>

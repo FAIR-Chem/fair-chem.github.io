@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/common/registry/index';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="core.common.test_utils" href="../test_utils/index.html" />
+    <link rel="next" title="core.common.slurm" href="../slurm/index.html" />
     <link rel="prev" title="core.common.profiler_utils" href="../profiler_utils/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -305,6 +305,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorial_utils/index.html">core.common.tutorial_utils</a></li>
@@ -334,16 +335,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../modules/normalization/index.html">core.modules.normalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/loss/index.html">core.modules.loss</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/normalizer/index.html">core.modules.normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -356,6 +358,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -381,7 +385,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/oc/tests/index.html">data.oc.tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
@@ -982,11 +985,11 @@ internal operations. Default: False</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="../test_utils/index.html"
+       href="../slurm/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">core.common.test_utils</p>
+        <p class="prev-next-title">core.common.slurm</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

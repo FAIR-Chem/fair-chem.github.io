@@ -305,6 +305,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
@@ -334,16 +335,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/normalization/index.html">core.modules.normalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/loss/index.html">core.modules.loss</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../modules/normalizer/index.html">core.modules.normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -356,6 +358,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -381,7 +385,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data/oc/tests/index.html">data.oc.tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
@@ -636,6 +639,11 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.logger_name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.logger_name</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.config"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.config</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.scaler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.scaler</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.elementrefs"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.elementrefs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.normalizers"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.normalizers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.train_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train_dataset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.val_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.val_dataset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.test_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.test_dataset</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.train"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer._get_timestamp"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._get_timestamp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load()</span></code></a></li>
@@ -645,6 +653,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.get_sampler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.get_sampler()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.get_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.get_dataloader()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_datasets"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_datasets()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_references_and_normalizers"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_references_and_normalizers()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_task"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_task()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_model"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_model()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer._unwrapped_model"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._unwrapped_model</span></code></a></li>
@@ -661,6 +670,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer"><code class="docutils literal notranslate"><span class="pre">OCPTrainer</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer.train"><code class="docutils literal notranslate"><span class="pre">OCPTrainer.train()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._denorm_preds"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._denorm_preds()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._forward"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._compute_loss"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._compute_loss()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._compute_metrics"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._compute_metrics()</span></code></a></li>
@@ -764,6 +774,31 @@ inheritance.</p>
 <span class="sig-name descname"><span class="pre">scaler</span></span><a class="headerlink" href="#core.trainers.BaseTrainer.scaler" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.elementrefs">
+<span class="sig-name descname"><span class="pre">elementrefs</span></span><a class="headerlink" href="#core.trainers.BaseTrainer.elementrefs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.normalizers">
+<span class="sig-name descname"><span class="pre">normalizers</span></span><a class="headerlink" href="#core.trainers.BaseTrainer.normalizers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.train_dataset">
+<span class="sig-name descname"><span class="pre">train_dataset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.trainers.BaseTrainer.train_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.val_dataset">
+<span class="sig-name descname"><span class="pre">val_dataset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.trainers.BaseTrainer.val_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.test_dataset">
+<span class="sig-name descname"><span class="pre">test_dataset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.trainers.BaseTrainer.test_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="core.trainers.BaseTrainer.train">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disable_eval_tqdm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.trainers.BaseTrainer.train" title="Link to this definition">#</a></dt>
@@ -809,6 +844,12 @@ inheritance.</p>
 <dt class="sig sig-object py" id="core.trainers.BaseTrainer.load_datasets">
 <span class="sig-name descname"><span class="pre">load_datasets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#core.trainers.BaseTrainer.load_datasets" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.trainers.BaseTrainer.load_references_and_normalizers">
+<span class="sig-name descname"><span class="pre">load_references_and_normalizers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.trainers.BaseTrainer.load_references_and_normalizers" title="Link to this definition">#</a></dt>
+<dd><p>Load or create element references and normalizers from config</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="core.trainers.BaseTrainer.load_task">
@@ -922,6 +963,12 @@ and <a class="reference external" href="https://github.com/Open-Catalyst-Project
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="core.trainers.OCPTrainer._denorm_preds">
+<span class="sig-name descname"><span class="pre">_denorm_preds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.trainers.OCPTrainer._denorm_preds" title="Link to this definition">#</a></dt>
+<dd><p>Convert model output from a batch into raw prediction by denormalizing and adding references</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.trainers.OCPTrainer._forward">
 <span class="sig-name descname"><span class="pre">_forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.trainers.OCPTrainer._forward" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -1029,6 +1076,11 @@ and <a class="reference external" href="https://github.com/Open-Catalyst-Project
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.logger_name"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.logger_name</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.config"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.config</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.scaler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.scaler</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.elementrefs"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.elementrefs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.normalizers"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.normalizers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.train_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train_dataset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.val_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.val_dataset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.test_dataset"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.test_dataset</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.train"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.train()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer._get_timestamp"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._get_timestamp()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load()</span></code></a></li>
@@ -1038,6 +1090,7 @@ and <a class="reference external" href="https://github.com/Open-Catalyst-Project
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.get_sampler"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.get_sampler()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.get_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.get_dataloader()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_datasets"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_datasets()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_references_and_normalizers"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_references_and_normalizers()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_task"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_task()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer.load_model"><code class="docutils literal notranslate"><span class="pre">BaseTrainer.load_model()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.BaseTrainer._unwrapped_model"><code class="docutils literal notranslate"><span class="pre">BaseTrainer._unwrapped_model</span></code></a></li>
@@ -1054,6 +1107,7 @@ and <a class="reference external" href="https://github.com/Open-Catalyst-Project
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer"><code class="docutils literal notranslate"><span class="pre">OCPTrainer</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer.train"><code class="docutils literal notranslate"><span class="pre">OCPTrainer.train()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._denorm_preds"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._denorm_preds()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._forward"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._forward()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._compute_loss"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._compute_loss()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.trainers.OCPTrainer._compute_metrics"><code class="docutils literal notranslate"><span class="pre">OCPTrainer._compute_metrics()</span></code></a></li>

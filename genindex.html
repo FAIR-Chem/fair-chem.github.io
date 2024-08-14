@@ -304,6 +304,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/tutorial_utils/index.html">core.common.tutorial_utils</a></li>
@@ -333,16 +334,17 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/normalizer/index.html">core.modules.normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -355,6 +357,8 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
@@ -380,7 +384,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/tests/index.html">data.oc.tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
@@ -719,9 +722,17 @@ document.write(`
 </li>
         <li><a href="autoapi/data/oc/core/bulk/index.html#data.oc.core.bulk.Bulk.__len__">(data.oc.core.bulk.Bulk method)</a>
 </li>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion.__len__">(data.oc.core.Ion method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion.__len__">(data.oc.core.ion.Ion method)</a>
+</li>
         <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Slab.__len__">(data.oc.core.Slab method)</a>
 </li>
         <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.Slab.__len__">(data.oc.core.slab.Slab method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.__len__">(data.oc.core.Solvent method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.__len__">(data.oc.core.solvent.Solvent method)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/common/transforms/index.html#core.common.transforms.RandomRotate.__repr__">__repr__() (core.common.transforms.RandomRotate method)</a>
@@ -761,6 +772,8 @@ document.write(`
 </li>
         <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.Slab.__repr__">(data.oc.core.slab.Slab method)</a>
 </li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.__repr__">(data.oc.utils.geometry.BoxGeometry method)</a>
+</li>
       </ul></li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Adsorbate.__str__">__str__() (data.oc.core.Adsorbate method)</a>
 
@@ -771,9 +784,17 @@ document.write(`
 </li>
         <li><a href="autoapi/data/oc/core/bulk/index.html#data.oc.core.bulk.Bulk.__str__">(data.oc.core.bulk.Bulk method)</a>
 </li>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion.__str__">(data.oc.core.Ion method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion.__str__">(data.oc.core.ion.Ion method)</a>
+</li>
         <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Slab.__str__">(data.oc.core.Slab method)</a>
 </li>
         <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.Slab.__str__">(data.oc.core.slab.Slab method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.__str__">(data.oc.core.Solvent method)</a>
+</li>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.__str__">(data.oc.core.solvent.Solvent method)</a>
 </li>
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.Status.__str__">(ocpapi.client.models.Status method)</a>
 </li>
@@ -803,6 +824,8 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="autoapi/ocpapi/client/ui/index.html#ocpapi.client.ui._API_TO_UI_HOSTS">_API_TO_UI_HOSTS (in module ocpapi.client.ui)</a>
+</li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.LinearReferences._apply_refs">_apply_refs() (core.modules.normalization.element_references.LinearReferences method)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2._AVG_DEGREE">_AVG_DEGREE (in module core.models.equiformer_v2.equiformer_v2)</a>
 </li>
@@ -854,6 +877,12 @@ document.write(`
 </li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._delete_system">_delete_system() (in module ocpapi.workflows.adsorbates)</a>
 </li>
+      <li><a href="autoapi/core/trainers/ocp_trainer/index.html#core.trainers.ocp_trainer.OCPTrainer._denorm_preds">_denorm_preds() (core.trainers.ocp_trainer.OCPTrainer method)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.OCPTrainer._denorm_preds">(core.trainers.OCPTrainer method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/common/data_parallel/index.html#core.common.data_parallel.BalancedBatchSampler._dist_enabled">_dist_enabled() (core.common.data_parallel.BalancedBatchSampler static method)</a>
 </li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor.ScaleFactor._enforce_consistency">_enforce_consistency() (core.modules.scaling.scale_factor.ScaleFactor method)</a>
@@ -906,14 +935,14 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/common/gp_utils/index.html#core.common.gp_utils._gather">_gather() (in module core.common.gp_utils)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/common/gp_utils/index.html#core.common.gp_utils._gather_with_padding">_gather_with_padding() (in module core.common.gp_utils)</a>
 </li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry._get_absolute_mapping">_get_absolute_mapping() (in module core.common.registry)</a>
 </li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._get_absorbate_configs_on_slab">_get_absorbate_configs_on_slab() (in module ocpapi.workflows.adsorbates)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._get_absorbate_configs_on_slab_with_logging">_get_absorbate_configs_on_slab_with_logging() (in module ocpapi.workflows.adsorbates)</a>
 </li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._get_adsorbate_configs_on_slabs">_get_adsorbate_configs_on_slabs() (in module ocpapi.workflows.adsorbates)</a>
@@ -1048,6 +1077,8 @@ document.write(`
         <li><a href="autoapi/data/oc/core/adsorbate/index.html#data.oc.core.adsorbate.Adsorbate._load_adsorbate">(data.oc.core.adsorbate.Adsorbate method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/normalization/_load_utils/index.html#core.modules.normalization._load_utils._load_check_duplicates">_load_check_duplicates() (in module core.modules.normalization._load_utils)</a>
+</li>
       <li><a href="autoapi/core/datasets/ase_datasets/index.html#core.datasets.ase_datasets.AseAtomsDataset._load_dataset_get_ids">_load_dataset_get_ids() (core.datasets.ase_datasets.AseAtomsDataset method)</a>
 
       <ul>
@@ -1064,14 +1095,28 @@ document.write(`
         <li><a href="autoapi/core/datasets/index.html#core.datasets.AseReadMultiStructureDataset._load_dataset_get_ids">(core.datasets.AseReadMultiStructureDataset method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/normalization/_load_utils/index.html#core.modules.normalization._load_utils._load_from_config">_load_from_config() (in module core.modules.normalization._load_utils)</a>
+</li>
       <li><a href="autoapi/core/datasets/lmdb_database/index.html#core.datasets.lmdb_database.LMDBDatabase._load_ids">_load_ids() (core.datasets.lmdb_database.LMDBDatabase method)</a>
 
       <ul>
         <li><a href="autoapi/core/datasets/index.html#core.datasets.LMDBDatabase._load_ids">(core.datasets.LMDBDatabase method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion._load_ion">_load_ion() (data.oc.core.Ion method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion._load_ion">(data.oc.core.ion.Ion method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/modules/scaling/compat/index.html#core.modules.scaling.compat._load_scale_dict">_load_scale_dict() (in module core.modules.scaling.compat)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent._load_solvent">_load_solvent() (data.oc.core.Solvent method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent._load_solvent">(data.oc.core.solvent.Solvent method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding._m_primary">_m_primary() (core.models.equiformer_v2.so3.SO3_Embedding method)</a>
 
       <ul>
@@ -1084,6 +1129,8 @@ document.write(`
         <li><a href="autoapi/core/datasets/base_dataset/index.html#core.datasets.base_dataset.Subset._metadata">(core.datasets.base_dataset.Subset property)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig._mode">_mode (core.models.finetune_hydra.FTConfig attribute)</a>
+</li>
       <li><a href="autoapi/core/datasets/lmdb_database/index.html#core.datasets.lmdb_database.LMDBDatabase._nextid">_nextid (core.datasets.lmdb_database.LMDBDatabase property)</a>
 
       <ul>
@@ -1265,6 +1312,8 @@ document.write(`
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.a">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.a">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
+</li>
       </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.a2g">a2g (cattsunami.core.OCPNEB attribute)</a>
 
@@ -1347,6 +1396,8 @@ document.write(`
       <li><a href="autoapi/core/common/flags/index.html#core.common.flags.Flags.add_core_args">add_core_args() (core.common.flags.Flags method)</a>
 </li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.add_edge_distance_to_graph">add_edge_distance_to_graph() (in module core.common.utils)</a>
+</li>
+      <li><a href="autoapi/core/common/slurm/index.html#core.common.slurm.add_timestamp_id_to_submission_pickle">add_timestamp_id_to_submission_pickle() (in module core.common.slurm)</a>
 </li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Adsorbate">Adsorbate (class in data.oc.core)</a>
 
@@ -1516,6 +1567,8 @@ document.write(`
         <li><a href="autoapi/adsorbml/scripts/dense_eval/index.html#module-adsorbml.scripts.dense_eval">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     adsorbml.scripts.process_mlrs
 
@@ -1523,8 +1576,6 @@ document.write(`
         <li><a href="autoapi/adsorbml/scripts/process_mlrs/index.html#module-adsorbml.scripts.process_mlrs">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     adsorbml.scripts.utils
 
@@ -1806,9 +1857,15 @@ document.write(`
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.b">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.b">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
+</li>
       </ul></li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.backbone">backbone (core.models.base.HydraModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.backbone">(core.models.finetune_hydra.FineTuneHydra attribute)</a>
 </li>
+      </ul></li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.backbone_model_name">backbone_model_name (core.models.base.HydraModel attribute)</a>
 </li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.BackboneInterface">BackboneInterface (class in core.models.base)</a>
@@ -1923,7 +1980,11 @@ document.write(`
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_LinearV2.bound">bound (core.models.equiformer_v2.so3.SO3_LinearV2 attribute)</a>
 </li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry">BoxGeometry (class in data.oc.utils.geometry)</a>
+</li>
       <li><a href="autoapi/core/common/distutils/index.html#core.common.distutils.broadcast">broadcast() (in module core.common.distutils)</a>
+</li>
+      <li><a href="autoapi/core/common/distutils/index.html#core.common.distutils.broadcast_object_list">broadcast_object_list() (in module core.common.distutils)</a>
 </li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.build_config">build_config() (in module core.common.utils)</a>
 </li>
@@ -1983,7 +2044,7 @@ document.write(`
         <li><a href="autoapi/ocpapi/index.html#ocpapi.SlabMetadata.bulk_src_id">(ocpapi.SlabMetadata attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/data/oc/utils/vasp/index.html#data.oc.utils.vasp.BULK_VASP_FLAGS">BULK_VASP_FLAGS (in module data.oc.utils.vasp)</a>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.BULK_VASP_FLAGS">BULK_VASP_FLAGS (in module data.oc.utils.vasp_flags)</a>
 </li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Bulks">Bulks (class in ocpapi)</a>
 
@@ -2013,6 +2074,8 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope.c">(core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.c">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
+</li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.c">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.cached">cached (cattsunami.core.OCPNEB attribute)</a>
@@ -2126,9 +2189,11 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/layers/spherical_basis/index.html#core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer.cbf_name">(core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/ocpapi/index.html#ocpapi.AdsorbateSlabRelaxationResult.cell">cell (ocpapi.AdsorbateSlabRelaxationResult attribute)</a>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.cell">cell (data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 
       <ul>
+        <li><a href="autoapi/ocpapi/index.html#ocpapi.AdsorbateSlabRelaxationResult.cell">(ocpapi.AdsorbateSlabRelaxationResult attribute)</a>
+</li>
         <li><a href="autoapi/ocpapi/index.html#ocpapi.Atoms.cell">(ocpapi.Atoms attribute)</a>
 </li>
         <li><a href="autoapi/ocpapi/client/index.html#ocpapi.client.AdsorbateSlabRelaxationResult.cell">(ocpapi.client.AdsorbateSlabRelaxationResult attribute)</a>
@@ -2140,6 +2205,8 @@ document.write(`
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.Atoms.cell">(ocpapi.client.models.Atoms attribute)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry.cell2planes">cell2planes() (data.oc.utils.geometry.Geometry static method)</a>
+</li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.GraphData.cell_offsets">cell_offsets (core.models.base.GraphData attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2.centering">centering (core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2 attribute)</a>
@@ -2296,6 +2363,8 @@ document.write(`
         <li><a href="autoapi/core/datasets/base_dataset/index.html#core.datasets.base_dataset.Subset.config">(core.datasets.base_dataset.Subset attribute)</a>
 </li>
         <li><a href="autoapi/core/models/equiformer_v2/trainers/lr_scheduler/index.html#core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler.config">(core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.config">(core.models.finetune_hydra.FTConfig attribute)</a>
 </li>
         <li><a href="autoapi/core/modules/scheduler/index.html#core.modules.scheduler.LRScheduler.config">(core.modules.scheduler.LRScheduler attribute)</a>
 </li>
@@ -2488,6 +2557,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/core/common/relaxation/optimizers/lbfgs_torch/index.html#module-core.common.relaxation.optimizers.lbfgs_torch">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.common.slurm
+
+      <ul>
+        <li><a href="autoapi/core/common/slurm/index.html#module-core.common.slurm">module</a>
 </li>
       </ul></li>
       <li>
@@ -2686,8 +2762,6 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/input_block/index.html#module-core.models.equiformer_v2.input_block">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core.models.equiformer_v2.layer_norm
 
@@ -2709,6 +2783,8 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/radial_function/index.html#module-core.models.equiformer_v2.radial_function">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core.models.equiformer_v2.so2_ops
 
@@ -2784,6 +2860,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/core/models/escn/so3/index.html#module-core.models.escn.so3">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.models.finetune_hydra
+
+      <ul>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#module-core.models.finetune_hydra">module</a>
 </li>
       </ul></li>
       <li>
@@ -3193,10 +3276,31 @@ document.write(`
 </li>
       </ul></li>
       <li>
-    core.modules.normalizer
+    core.modules.normalization
 
       <ul>
-        <li><a href="autoapi/core/modules/normalizer/index.html#module-core.modules.normalizer">module</a>
+        <li><a href="autoapi/core/modules/normalization/index.html#module-core.modules.normalization">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.modules.normalization._load_utils
+
+      <ul>
+        <li><a href="autoapi/core/modules/normalization/_load_utils/index.html#module-core.modules.normalization._load_utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.modules.normalization.element_references
+
+      <ul>
+        <li><a href="autoapi/core/modules/normalization/element_references/index.html#module-core.modules.normalization.element_references">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.modules.normalization.normalizer
+
+      <ul>
+        <li><a href="autoapi/core/modules/normalization/normalizer/index.html#module-core.modules.normalization.normalizer">module</a>
 </li>
       </ul></li>
       <li>
@@ -3281,6 +3385,20 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/core/scripts/download_large_files/index.html#module-core.scripts.download_large_files">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.scripts.fit_normalizers
+
+      <ul>
+        <li><a href="autoapi/core/scripts/fit_normalizers/index.html#module-core.scripts.fit_normalizers">module</a>
+</li>
+      </ul></li>
+      <li>
+    core.scripts.fit_references
+
+      <ul>
+        <li><a href="autoapi/core/scripts/fit_references/index.html#module-core.scripts.fit_references">module</a>
 </li>
       </ul></li>
       <li>
@@ -3428,8 +3546,24 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.create_dict_from_args">create_dict_from_args() (in module core.common.utils)</a>
 </li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.create_element_references">create_element_references() (in module core.modules.normalization.element_references)</a>
+</li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.create_grid">create_grid() (in module core.common.utils)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.create_interface_on_sites">create_interface_on_sites() (data.oc.core.interface_config.InterfaceConfig method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.create_interface_on_sites">(data.oc.core.InterfaceConfig method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.create_normalizer">create_normalizer() (in module core.modules.normalization.normalizer)</a>
+</li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.create_packmol_atoms">create_packmol_atoms() (data.oc.core.interface_config.InterfaceConfig method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.create_packmol_atoms">(data.oc.core.InterfaceConfig method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.current_entry">current_entry (in module data.odac.promising_mof.promising_mof_energies.energy)</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id3">[1]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id4">[2]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id5">[3]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id6">[4]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id7">[5]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id8">[6]</a>, <a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#id9">[7]</a>
 </li>
       <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.custom_tile_atoms">custom_tile_atoms() (in module data.oc.core.adsorbate_slab_config)</a>
@@ -3521,6 +3655,20 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    data.oc.core.interface_config
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/interface_config/index.html#module-data.oc.core.interface_config">module</a>
+</li>
+      </ul></li>
+      <li>
+    data.oc.core.ion
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#module-data.oc.core.ion">module</a>
+</li>
+      </ul></li>
+      <li>
     data.oc.core.multi_adsorbate_slab_config
 
       <ul>
@@ -3532,6 +3680,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/data/oc/core/slab/index.html#module-data.oc.core.slab">module</a>
+</li>
+      </ul></li>
+      <li>
+    data.oc.core.solvent
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#module-data.oc.core.solvent">module</a>
 </li>
       </ul></li>
       <li>
@@ -3605,13 +3760,6 @@ document.write(`
 </li>
       </ul></li>
       <li>
-    data.oc.tests
-
-      <ul>
-        <li><a href="autoapi/data/oc/tests/index.html#module-data.oc.tests">module</a>
-</li>
-      </ul></li>
-      <li>
     data.oc.utils
 
       <ul>
@@ -3626,10 +3774,24 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    data.oc.utils.geometry
+
+      <ul>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#module-data.oc.utils.geometry">module</a>
+</li>
+      </ul></li>
+      <li>
     data.oc.utils.vasp
 
       <ul>
         <li><a href="autoapi/data/oc/utils/vasp/index.html#module-data.oc.utils.vasp">module</a>
+</li>
+      </ul></li>
+      <li>
+    data.oc.utils.vasp_flags
+
+      <ul>
+        <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#module-data.oc.utils.vasp_flags">module</a>
 </li>
       </ul></li>
       <li>
@@ -3710,6 +3872,8 @@ document.write(`
         <li><a href="autoapi/core/datasets/lmdb_dataset/index.html#core.datasets.lmdb_dataset.data_list_collater">(in module core.datasets.lmdb_dataset)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneMode.DATA_ONLY">DATA_ONLY (core.models.finetune_hydra.FineTuneMode attribute)</a>
+</li>
       <li><a href="autoapi/core/datasets/base_dataset/index.html#core.datasets.base_dataset.DatasetMetadata">DatasetMetadata (class in core.datasets.base_dataset)</a>
 </li>
       <li><a href="autoapi/core/modules/transforms/index.html#core.modules.transforms.DataTransforms">DataTransforms (class in core.modules.transforms)</a>
@@ -3758,7 +3922,7 @@ document.write(`
         <li><a href="autoapi/core/datasets/index.html#core.datasets.LMDBDatabase.deleted_ids">(core.datasets.LMDBDatabase attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.denorm">denorm() (core.modules.normalizer.Normalizer method)</a>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.Normalizer.denorm">denorm() (core.modules.normalization.normalizer.Normalizer method)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet/layers/base_layers/index.html#core.models.gemnet.layers.base_layers.Dense">Dense (class in core.models.gemnet.layers.base_layers)</a>
 
@@ -3776,6 +3940,8 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/layers/embedding_block/index.html#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense">(core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/gemnet/layers/interaction_block/index.html#core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba">dense_ba (core.models.gemnet.layers.interaction_block.TripletInteraction attribute)</a>
 
       <ul>
@@ -3784,8 +3950,6 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.TripletInteraction.dense_ba">(core.models.gemnet_oc.layers.interaction_block.TripletInteraction attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/gemnet/layers/interaction_block/index.html#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca">dense_ca (core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly attribute)</a>
 
       <ul>
@@ -3813,6 +3977,8 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_gp/layers/atom_update_block/index.html#core.models.gemnet_gp.layers.atom_update_block.OutputBlock.dense_rbf_F">dense_rbf_F (core.models.gemnet_gp.layers.atom_update_block.OutputBlock attribute)</a>
+</li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.LinearReferences.dereference">dereference() (core.modules.normalization.element_references.LinearReferences method)</a>
 </li>
       <li><a href="autoapi/core/common/tutorial_utils/index.html#core.common.tutorial_utils.describe_fairchem">describe_fairchem() (in module core.common.tutorial_utils)</a>
 </li>
@@ -3926,6 +4092,8 @@ document.write(`
         <li><a href="autoapi/core/models/scn/index.html#core.models.scn.SphericalChannelNetwork.distance_function">(core.models.scn.SphericalChannelNetwork attribute)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry.distance_point_plane">distance_point_plane() (data.oc.utils.geometry.Geometry static method)</a>
+</li>
       <li><a href="autoapi/core/models/escn/index.html#core.models.escn.eSCN.distance_resolution">distance_resolution (core.models.escn.eSCN attribute)</a>
 
       <ul>
@@ -4120,6 +4288,12 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_gp/layers/efficient/index.html#core.models.gemnet_gp.layers.efficient.EfficientInteractionDownProjection">(class in core.models.gemnet_gp.layers.efficient)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.elementrefs">elementrefs (core.trainers.base_trainer.BaseTrainer attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.elementrefs">(core.trainers.BaseTrainer attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Bulk.elements">elements (ocpapi.Bulk attribute)</a>
 
       <ul>
@@ -4187,6 +4361,8 @@ document.write(`
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.energy_block">energy_block (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
 
       <ul>
+        <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.energy_block">(core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
+</li>
         <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2EnergyHead.energy_block">(core.models.equiformer_v2.equiformer_v2.EquiformerV2EnergyHead attribute)</a>
 </li>
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.energy_block">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
@@ -4226,10 +4402,10 @@ document.write(`
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.AdsorbateSlabRelaxationResult.energy_trajectory">(ocpapi.client.models.AdsorbateSlabRelaxationResult attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.energy_within_threshold">energy_within_threshold() (in module core.modules.evaluator)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.energy_within_threshold">energy_within_threshold() (in module core.modules.evaluator)</a>
+</li>
       <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.EnergyBlock">EnergyBlock (class in core.models.escn.escn)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.enforce_max_neighbors_strictly">enforce_max_neighbors_strictly (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
@@ -4430,6 +4606,8 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.extra_repr">(core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry.extract_box_properties">extract_box_properties() (data.oc.utils.geometry.Geometry static method)</a>
+</li>
       <li><a href="autoapi/data/oc/experimental/get_energies/index.html#data.oc.experimental.get_energies.extract_file">extract_file() (in module data.oc.experimental.get_energies)</a>
 
       <ul>
@@ -4576,6 +4754,10 @@ document.write(`
 </li>
       <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.find_surface_atoms_with_voronoi_given_height">find_surface_atoms_with_voronoi_given_height() (in module data.oc.core.slab)</a>
 </li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra">FineTuneHydra (class in core.models.finetune_hydra)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneMode">FineTuneMode (class in core.models.finetune_hydra)</a>
+</li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/force_scaler/index.html#core.models.gemnet_oc.layers.force_scaler.ForceScaler.finite_force_results">finite_force_results (core.models.gemnet_oc.layers.force_scaler.ForceScaler attribute)</a>
 </li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor.ScaleFactor.fit_">fit_() (core.modules.scaling.scale_factor.ScaleFactor method)</a>
@@ -4590,6 +4772,14 @@ document.write(`
         <li><a href="autoapi/core/modules/scaling/index.html#core.modules.scaling.ScaleFactor.fit_context_">(core.modules.scaling.ScaleFactor method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.fit_linear_references">fit_linear_references() (in module core.modules.normalization.element_references)</a>
+</li>
+      <li><a href="autoapi/core/scripts/fit_references/index.html#core.scripts.fit_references.fit_linref">fit_linref() (in module core.scripts.fit_references)</a>
+</li>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.fit_normalizers">fit_normalizers() (in module core.modules.normalization.normalizer)</a>
+</li>
+      <li><a href="autoapi/core/scripts/fit_normalizers/index.html#core.scripts.fit_normalizers.fit_norms">fit_norms() (in module core.scripts.fit_normalizers)</a>
+</li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor.ScaleFactor.fitted">fitted (core.modules.scaling.scale_factor.ScaleFactor property)</a>
 
       <ul>
@@ -4608,9 +4798,11 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/scn/spherical_harmonics/index.html#core.models.scn.spherical_harmonics.SphericalHarmonicsHelper.FlipGrid">FlipGrid() (core.models.scn.spherical_harmonics.SphericalHarmonicsHelper method)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2ForceHead.force_block">force_block (core.models.equiformer_v2.equiformer_v2.EquiformerV2ForceHead attribute)</a>
+      <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.force_block">force_block (core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
 
       <ul>
+        <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2ForceHead.force_block">(core.models.equiformer_v2.equiformer_v2.EquiformerV2ForceHead attribute)</a>
+</li>
         <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.eSCNForceHead.force_block">(core.models.escn.escn.eSCNForceHead attribute)</a>
 </li>
       </ul></li>
@@ -4804,6 +4996,8 @@ document.write(`
         <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.SO2Block.forward">(core.models.escn.escn.SO2Block method)</a>
 </li>
         <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.SO2Conv.forward">(core.models.escn.escn.SO2Conv method)</a>
+</li>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.forward">(core.models.finetune_hydra.FineTuneHydra method)</a>
 </li>
         <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.forward">(core.models.gemnet.gemnet.GemNetT method)</a>
 </li>
@@ -5003,6 +5197,10 @@ document.write(`
 </li>
         <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2MAELoss.forward">(core.modules.loss.L2MAELoss method)</a>
 </li>
+        <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.LinearReferences.forward">(core.modules.normalization.element_references.LinearReferences method)</a>
+</li>
+        <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.Normalizer.forward">(core.modules.normalization.normalizer.Normalizer method)</a>
+</li>
         <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor.ScaleFactor.forward">(core.modules.scaling.scale_factor.ScaleFactor method)</a>
 </li>
         <li><a href="autoapi/core/modules/scaling/index.html#core.modules.scaling.ScaleFactor.forward">(core.modules.scaling.ScaleFactor method)</a>
@@ -5069,6 +5267,14 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/scn/spherical_harmonics/index.html#core.models.scn.spherical_harmonics.SphericalHarmonicsHelper.FromGrid">FromGrid() (core.models.scn.spherical_harmonics.SphericalHarmonicsHelper method)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.ft_config">ft_config (core.models.finetune_hydra.FineTuneHydra attribute)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.FT_CONFIG_NAME">FT_CONFIG_NAME (core.models.finetune_hydra.FTConfig attribute)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig">FTConfig (class in core.models.finetune_hydra)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTHYDRA_NAME">FTHYDRA_NAME (in module core.models.finetune_hydra)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -5152,6 +5358,8 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/common/tutorial_utils/index.html#core.common.tutorial_utils.generate_yml_config">generate_yml_config() (in module core.common.tutorial_utils)</a>
 </li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry">Geometry (class in data.oc.utils.geometry)</a>
+</li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.get">get() (core.common.registry.Registry class method)</a>
 </li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Client.get_adsorbate_slab_configs">get_adsorbate_slab_configs() (ocpapi.Client method)</a>
@@ -5210,6 +5418,14 @@ document.write(`
         <li><a href="autoapi/core/datasets/index.html#core.datasets.AseReadDataset.get_atoms">(core.datasets.AseReadDataset method)</a>
 </li>
         <li><a href="autoapi/core/datasets/index.html#core.datasets.AseReadMultiStructureDataset.get_atoms">(core.datasets.AseReadMultiStructureDataset method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraInterface.get_backbone">get_backbone() (core.models.base.HydraInterface method)</a>
+
+      <ul>
+        <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.get_backbone">(core.models.base.HydraModel method)</a>
+</li>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.get_backbone">(core.models.finetune_hydra.FineTuneHydra method)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOC.get_bases">get_bases() (core.models.gemnet_oc.gemnet_oc.GemNetOC method)</a>
@@ -5322,14 +5538,28 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/index.html#core.models.gemnet_oc.GemNetOC.get_graphs_and_indices">(core.models.gemnet_oc.GemNetOC method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet_oc/initializers/index.html#core.models.gemnet_oc.initializers.get_initializer">get_initializer() (in module core.models.gemnet_oc.initializers)</a>
+      <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraInterface.get_heads">get_heads() (core.models.base.HydraInterface method)</a>
+
+      <ul>
+        <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.get_heads">(core.models.base.HydraModel method)</a>
 </li>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.get_heads">(core.models.finetune_hydra.FineTuneHydra method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/core/models/gemnet_oc/initializers/index.html#core.models.gemnet_oc.initializers.get_initializer">get_initializer() (in module core.models.gemnet_oc.initializers)</a>
+</li>
       <li><a href="autoapi/core/models/gemnet_oc/utils/index.html#core.models.gemnet_oc.utils.get_inner_idx">get_inner_idx() (in module core.models.gemnet_oc.utils)</a>
 </li>
       <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.get_interstitial_distances">get_interstitial_distances() (in module data.oc.core.adsorbate_slab_config)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion.get_ion_concentration">get_ion_concentration() (data.oc.core.Ion method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion.get_ion_concentration">(data.oc.core.ion.Ion method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.get_l_to_all_m_expand_index">get_l_to_all_m_expand_index() (in module core.models.equiformer_v2.layer_norm)</a>
 </li>
       <li><a href="autoapi/core/scripts/make_lmdb_sizes/index.html#core.scripts.make_lmdb_sizes.get_lmdb_sizes_parser">get_lmdb_sizes_parser() (in module core.scripts.make_lmdb_sizes)</a>
@@ -5379,6 +5609,8 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.get_model_class">get_model_class() (core.common.registry.Registry class method)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.get_model_config_from_checkpoint">get_model_config_from_checkpoint() (in module core.models.finetune_hydra)</a>
 </li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Client.get_models">get_models() (ocpapi.Client method)</a>
 
@@ -5490,6 +5722,8 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/basis_utils/index.html#core.models.gemnet_oc.layers.basis_utils.get_sph_harm_basis">get_sph_harm_basis() (in module core.models.gemnet_oc.layers.basis_utils)</a>
 </li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.get_standalone_config">get_standalone_config() (core.models.finetune_hydra.FTConfig method)</a>
+</li>
       <li><a href="autoapi/cattsunami/core/autoframe/index.html#cattsunami.core.autoframe.AutoFrameTransfer.get_system_pairs_final">get_system_pairs_final() (cattsunami.core.autoframe.AutoFrameTransfer method)</a>
 </li>
       <li><a href="autoapi/cattsunami/core/autoframe/index.html#cattsunami.core.autoframe.AutoFrameTransfer.get_system_pairs_initial">get_system_pairs_initial() (cattsunami.core.autoframe.AutoFrameTransfer method)</a>
@@ -5590,9 +5824,15 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/initializers/index.html#core.models.gemnet_oc.initializers.he_orthogonal_init">(in module core.models.gemnet_oc.initializers)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.head_config">head_config (core.models.finetune_hydra.FTConfig property)</a>
+</li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.head_names_sorted">head_names_sorted (core.models.base.HydraModel attribute)</a>
 </li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.HeadInterface">HeadInterface (class in core.models.base)</a>
+</li>
+      <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.heads">heads (core.models.base.HydraModel attribute)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.HEADS">HEADS (core.models.finetune_hydra.FTConfig attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.FeedForwardNetwork.hidden_channels">hidden_channels (core.models.equiformer_v2.transformer_block.FeedForwardNetwork attribute)</a>
 
@@ -5638,6 +5878,10 @@ document.write(`
         <li><a href="autoapi/ocpapi/client/client/index.html#ocpapi.client.client.Client.host">(ocpapi.client.client.Client property)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneHydra.hydra_model">hydra_model (core.models.finetune_hydra.FineTuneHydra attribute)</a>
+</li>
+      <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraInterface">HydraInterface (class in core.models.base)</a>
+</li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel">HydraModel (class in core.models.base)</a>
 </li>
   </ul></td>
@@ -5790,8 +6034,6 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_gp/index.html#core.models.gemnet_gp.GraphParallelGemNetT.interaction_block">(core.models.gemnet_gp.GraphParallelGemNetT attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks">interaction_blocks (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock">InteractionBlock (class in core.models.gemnet_oc.layers.interaction_block)</a>
@@ -5804,6 +6046,14 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.InteractionPPBlock">InteractionPPBlock (class in core.models.dimenet_plus_plus)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig">InterfaceConfig (class in data.oc.core)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig">(class in data.oc.core.interface_config)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.intermediate_energies">intermediate_energies (cattsunami.core.OCPNEB attribute)</a>
 
       <ul>
@@ -5886,6 +6136,32 @@ document.write(`
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock.inv_sqrt_num_eint">inv_sqrt_num_eint (core.models.gemnet_oc.layers.interaction_block.InteractionBlock attribute)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion">Ion (class in data.oc.core)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion">(class in data.oc.core.ion)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion.ion_db_path">ion_db_path (data.oc.core.Ion attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion.ion_db_path">(data.oc.core.ion.Ion attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Ion.ion_id_from_db">ion_id_from_db (data.oc.core.Ion attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/ion/index.html#data.oc.core.ion.Ion.ion_id_from_db">(data.oc.core.ion.Ion attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/databases/pkls/index.html#data.oc.databases.pkls.ION_PKL_PATH">ION_PKL_PATH (in module data.oc.databases.pkls)</a>
+</li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.ions">ions (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.ions">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/drop/index.html#core.models.equiformer_v2.drop.EquivariantDropout.irreps">irreps (core.models.equiformer_v2.drop.EquivariantDropout attribute)</a>
 
       <ul>
@@ -6070,6 +6346,8 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/common/relaxation/optimizers/lbfgs_torch/index.html#core.common.relaxation.optimizers.lbfgs_torch.LBFGS">LBFGS (class in core.common.relaxation.optimizers.lbfgs_torch)</a>
 </li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.length">length (data.oc.utils.geometry.BoxGeometry attribute)</a>
+</li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Lifetime">Lifetime (class in ocpapi)</a>
 
       <ul>
@@ -6118,9 +6396,13 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Linear.linear_list">linear_list (core.models.equiformer_v2.so3.SO3_Linear attribute)</a>
 </li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.LinearReferences">LinearReferences (class in core.modules.normalization.element_references)</a>
+</li>
       <li><a href="autoapi/core/models/scn/smearing/index.html#core.models.scn.smearing.LinearSigmoidSmearing">LinearSigmoidSmearing (class in core.models.scn.smearing)</a>
 </li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.OutputPPBlock.lins">lins (core.models.dimenet_plus_plus.OutputPPBlock attribute)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.ll_corner">ll_corner (data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.lmax">lmax (core.models.equiformer_v2.activation.GateActivation attribute)</a>
 
@@ -6246,6 +6528,8 @@ document.write(`
         <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.load_extras">(core.trainers.BaseTrainer method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.load_hydra_model">load_hydra_model() (in module core.models.finetune_hydra)</a>
+</li>
       <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_logger">load_logger() (core.trainers.base_trainer.BaseTrainer method)</a>
 
       <ul>
@@ -6258,18 +6542,30 @@ document.write(`
         <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.load_loss">(core.trainers.BaseTrainer method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_model">load_model() (core.trainers.base_trainer.BaseTrainer method)</a>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.load_model">load_model() (core.models.finetune_hydra.FTConfig method)</a>
 
       <ul>
+        <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_model">(core.trainers.base_trainer.BaseTrainer method)</a>
+</li>
         <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.load_model">(core.trainers.BaseTrainer method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.load_normalizers_from_config">load_normalizers_from_config() (in module core.modules.normalization.normalizer)</a>
+</li>
       <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_optimizer">load_optimizer() (core.trainers.base_trainer.BaseTrainer method)</a>
 
       <ul>
         <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.load_optimizer">(core.trainers.BaseTrainer method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_references_and_normalizers">load_references_and_normalizers() (core.trainers.base_trainer.BaseTrainer method)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.load_references_and_normalizers">(core.trainers.BaseTrainer method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.load_references_from_config">load_references_from_config() (in module core.modules.normalization.element_references)</a>
+</li>
       <li><a href="autoapi/core/modules/scaling/compat/index.html#core.modules.scaling.compat.load_scales_compat">load_scales_compat() (in module core.modules.scaling.compat)</a>
 </li>
       <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.load_seed_from_config">load_seed_from_config() (core.trainers.base_trainer.BaseTrainer method)</a>
@@ -6281,7 +6577,7 @@ document.write(`
       <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.load_state_dict">load_state_dict() (core.modules.exponential_moving_average.ExponentialMovingAverage method)</a>
 
       <ul>
-        <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.load_state_dict">(core.modules.normalizer.Normalizer method)</a>
+        <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.Normalizer.load_state_dict">(core.modules.normalization.normalizer.Normalizer method)</a>
 </li>
         <li><a href="autoapi/core/common/utils/index.html#core.common.utils.load_state_dict">(in module core.common.utils)</a>
 </li>
@@ -6520,6 +6816,8 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_oc/utils/index.html#core.models.gemnet_oc.utils.masked_select_sparsetensor_flat">masked_select_sparsetensor_flat() (in module core.models.gemnet_oc.utils)</a>
 </li>
+      <li><a href="autoapi/core/common/utils/index.html#core.common.utils.match_state_dict">match_state_dict() (in module core.common.utils)</a>
+</li>
       <li><a href="autoapi/core/models/equiformer_v2/trainers/lr_scheduler/index.html#core.models.equiformer_v2.trainers.lr_scheduler.CosineLRLambda.max_epochs">max_epochs (core.models.equiformer_v2.trainers.lr_scheduler.CosineLRLambda attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/force_scaler/index.html#core.models.gemnet_oc.layers.force_scaler.ForceScaler.max_force_iters">max_force_iters (core.models.gemnet_oc.layers.force_scaler.ForceScaler attribute)</a>
@@ -6600,12 +6898,10 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/common/relaxation/optimizers/lbfgs_torch/index.html#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.maxstep">maxstep (core.common.relaxation.optimizers.lbfgs_torch.LBFGS attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean">mean (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.mean">(core.modules.normalizer.Normalizer attribute)</a>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.MD_FLAGS">MD_FLAGS (in module data.oc.utils.vasp_flags)</a>
 </li>
-      </ul></li>
+      <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean">mean (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
+</li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max">mean_init_max (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min">mean_init_min (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
@@ -6673,6 +6969,8 @@ document.write(`
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.missing_DDEC_defective">missing_DDEC_defective (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
 </li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.missing_DDEC_pristine">missing_DDEC_pristine (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.ML_FLAGS">ML_FLAGS (in module data.oc.utils.vasp_flags)</a>
 </li>
       <li><a href="autoapi/core/common/relaxation/ml_relaxation/index.html#core.common.relaxation.ml_relaxation.ml_relax">ml_relax() (in module core.common.relaxation.ml_relaxation)</a>
 </li>
@@ -6790,9 +7088,13 @@ document.write(`
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.mmax_list">(core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig.mode">mode (data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig attribute)</a>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.MODE">MODE (core.models.finetune_hydra.FTConfig attribute)</a>
+</li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.mode">mode (core.models.finetune_hydra.FTConfig property)</a>
 
       <ul>
+        <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig.mode">(data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig attribute)</a>
+</li>
         <li><a href="autoapi/data/oc/core/index.html#data.oc.core.AdsorbateSlabConfig.mode">(data.oc.core.AdsorbateSlabConfig attribute)</a>
 </li>
         <li><a href="autoapi/data/oc/core/multi_adsorbate_slab_config/index.html#data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig.mode">(data.oc.core.multi_adsorbate_slab_config.MultipleAdsorbateSlabConfig attribute)</a>
@@ -6910,6 +7212,8 @@ document.write(`
 </li>
         <li><a href="autoapi/core/common/relaxation/optimizers/lbfgs_torch/index.html#module-core.common.relaxation.optimizers.lbfgs_torch">core.common.relaxation.optimizers.lbfgs_torch</a>
 </li>
+        <li><a href="autoapi/core/common/slurm/index.html#module-core.common.slurm">core.common.slurm</a>
+</li>
         <li><a href="autoapi/core/common/test_utils/index.html#module-core.common.test_utils">core.common.test_utils</a>
 </li>
         <li><a href="autoapi/core/common/transforms/index.html#module-core.common.transforms">core.common.transforms</a>
@@ -6993,6 +7297,8 @@ document.write(`
         <li><a href="autoapi/core/models/escn/escn/index.html#module-core.models.escn.escn">core.models.escn.escn</a>
 </li>
         <li><a href="autoapi/core/models/escn/so3/index.html#module-core.models.escn.so3">core.models.escn.so3</a>
+</li>
+        <li><a href="autoapi/core/models/finetune_hydra/index.html#module-core.models.finetune_hydra">core.models.finetune_hydra</a>
 </li>
         <li><a href="autoapi/core/models/gemnet/index.html#module-core.models.gemnet">core.models.gemnet</a>
 </li>
@@ -7110,7 +7416,13 @@ document.write(`
 </li>
         <li><a href="autoapi/core/modules/loss/index.html#module-core.modules.loss">core.modules.loss</a>
 </li>
-        <li><a href="autoapi/core/modules/normalizer/index.html#module-core.modules.normalizer">core.modules.normalizer</a>
+        <li><a href="autoapi/core/modules/normalization/index.html#module-core.modules.normalization">core.modules.normalization</a>
+</li>
+        <li><a href="autoapi/core/modules/normalization/_load_utils/index.html#module-core.modules.normalization._load_utils">core.modules.normalization._load_utils</a>
+</li>
+        <li><a href="autoapi/core/modules/normalization/element_references/index.html#module-core.modules.normalization.element_references">core.modules.normalization.element_references</a>
+</li>
+        <li><a href="autoapi/core/modules/normalization/normalizer/index.html#module-core.modules.normalization.normalizer">core.modules.normalization.normalizer</a>
 </li>
         <li><a href="autoapi/core/modules/scaling/index.html#module-core.modules.scaling">core.modules.scaling</a>
 </li>
@@ -7135,6 +7447,10 @@ document.write(`
         <li><a href="autoapi/core/scripts/download_data/index.html#module-core.scripts.download_data">core.scripts.download_data</a>
 </li>
         <li><a href="autoapi/core/scripts/download_large_files/index.html#module-core.scripts.download_large_files">core.scripts.download_large_files</a>
+</li>
+        <li><a href="autoapi/core/scripts/fit_normalizers/index.html#module-core.scripts.fit_normalizers">core.scripts.fit_normalizers</a>
+</li>
+        <li><a href="autoapi/core/scripts/fit_references/index.html#module-core.scripts.fit_references">core.scripts.fit_references</a>
 </li>
         <li><a href="autoapi/core/scripts/gif_maker_parallelized/index.html#module-core.scripts.gif_maker_parallelized">core.scripts.gif_maker_parallelized</a>
 </li>
@@ -7178,9 +7494,15 @@ document.write(`
 </li>
         <li><a href="autoapi/data/oc/core/bulk/index.html#module-data.oc.core.bulk">data.oc.core.bulk</a>
 </li>
+        <li><a href="autoapi/data/oc/core/interface_config/index.html#module-data.oc.core.interface_config">data.oc.core.interface_config</a>
+</li>
+        <li><a href="autoapi/data/oc/core/ion/index.html#module-data.oc.core.ion">data.oc.core.ion</a>
+</li>
         <li><a href="autoapi/data/oc/core/multi_adsorbate_slab_config/index.html#module-data.oc.core.multi_adsorbate_slab_config">data.oc.core.multi_adsorbate_slab_config</a>
 </li>
         <li><a href="autoapi/data/oc/core/slab/index.html#module-data.oc.core.slab">data.oc.core.slab</a>
+</li>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#module-data.oc.core.solvent">data.oc.core.solvent</a>
 </li>
         <li><a href="autoapi/data/oc/databases/index.html#module-data.oc.databases">data.oc.databases</a>
 </li>
@@ -7202,13 +7524,15 @@ document.write(`
 </li>
         <li><a href="autoapi/data/oc/structure_generator/index.html#module-data.oc.structure_generator">data.oc.structure_generator</a>
 </li>
-        <li><a href="autoapi/data/oc/tests/index.html#module-data.oc.tests">data.oc.tests</a>
-</li>
         <li><a href="autoapi/data/oc/utils/index.html#module-data.oc.utils">data.oc.utils</a>
 </li>
         <li><a href="autoapi/data/oc/utils/flag_anomaly/index.html#module-data.oc.utils.flag_anomaly">data.oc.utils.flag_anomaly</a>
 </li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#module-data.oc.utils.geometry">data.oc.utils.geometry</a>
+</li>
         <li><a href="autoapi/data/oc/utils/vasp/index.html#module-data.oc.utils.vasp">data.oc.utils.vasp</a>
+</li>
+        <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#module-data.oc.utils.vasp_flags">data.oc.utils.vasp_flags</a>
 </li>
         <li><a href="autoapi/data/odac/index.html#module-data.odac">data.odac</a>
 </li>
@@ -7265,6 +7589,18 @@ document.write(`
 </li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.mof_name">mof_name (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.molar_mass">molar_mass (data.oc.core.Solvent attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.molar_mass">(data.oc.core.solvent.Solvent attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.molecules_per_volume">molecules_per_volume (data.oc.core.Solvent property)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.molecules_per_volume">(data.oc.core.solvent.Solvent property)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.mse">mse() (in module core.modules.evaluator)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/drop/index.html#core.models.equiformer_v2.drop.EquivariantDropout.mul">mul (core.models.equiformer_v2.drop.EquivariantDropout attribute)</a>
@@ -7291,6 +7627,12 @@ document.write(`
 </li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.n_list">n_list (core.models.utils.basis.SphericalSmearing attribute)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.n_mol_per_volume">n_mol_per_volume (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.n_mol_per_volume">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor._Stats.n_samples">n_samples (core.modules.scaling.scale_factor._Stats attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet/layers/atom_update_block/index.html#core.models.gemnet.layers.atom_update_block.AtomUpdateBlock.name">name (core.models.gemnet.layers.atom_update_block.AtomUpdateBlock attribute)</a>
@@ -7365,7 +7707,7 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.norm">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.norm">norm() (core.modules.normalizer.Normalizer method)</a>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.Normalizer.norm">norm() (core.modules.normalization.normalizer.Normalizer method)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.TransBlockV2.norm_1">norm_1 (core.models.equiformer_v2.transformer_block.TransBlockV2 attribute)</a>
 </li>
@@ -7397,8 +7739,14 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2.normalization">(core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2 attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer">Normalizer (class in core.modules.normalizer)</a>
+      <li><a href="autoapi/core/modules/normalization/normalizer/index.html#core.modules.normalization.normalizer.Normalizer">Normalizer (class in core.modules.normalization.normalizer)</a>
 </li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.normalizers">normalizers (core.trainers.base_trainer.BaseTrainer attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.normalizers">(core.trainers.BaseTrainer attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.Status.NOT_AVAILABLE">NOT_AVAILABLE (ocpapi.client.models.Status attribute)</a>
 
       <ul>
@@ -7507,14 +7855,14 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.num_components">num_components (core.models.equiformer_v2.activation.GateActivation attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.num_distance_basis">num_distance_basis (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
 
       <ul>
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.num_distance_basis">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/scn/scn/index.html#core.models.scn.scn.DistanceBlock.num_edge_channels">num_edge_channels (core.models.scn.scn.DistanceBlock attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock.num_eint">num_eint (core.models.gemnet_oc.layers.interaction_block.InteractionBlock attribute)</a>
@@ -8063,6 +8411,20 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.p">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.packmol_structure">packmol_structure() (data.oc.utils.geometry.BoxGeometry method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry.packmol_structure">(data.oc.utils.geometry.Geometry method)</a>
+</li>
+        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.packmol_structure">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.packmol_tolerance">packmol_tolerance (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.packmol_tolerance">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/common/gp_utils/index.html#core.common.gp_utils.pad_tensor">pad_tensor() (in module core.common.gp_utils)</a>
 </li>
       <li><a href="autoapi/core/models/painn/index.html#core.models.painn.PaiNN">PaiNN (class in core.models.painn)</a>
@@ -8088,6 +8450,8 @@ document.write(`
       <li><a href="autoapi/core/scripts/gif_maker_parallelized/index.html#core.scripts.gif_maker_parallelized.parallelize_generation">parallelize_generation() (in module core.scripts.gif_maker_parallelized)</a>
 </li>
       <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.parameters">parameters (core.modules.exponential_moving_average.ExponentialMovingAverage attribute)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.params">params (data.oc.utils.geometry.BoxGeometry attribute)</a>
 </li>
       <li><a href="autoapi/adsorbml/2023_neurips_challenge/challenge_eval/index.html#adsorbml.2023_neurips_challenge.challenge_eval.parse_args">parse_args() (in module adsorbml.2023_neurips_challenge.challenge_eval)</a>
 
@@ -8117,6 +8481,10 @@ document.write(`
         <li><a href="autoapi/cattsunami/run_validation/run_validation/index.html#cattsunami.run_validation.run_validation.parser">(in module cattsunami.run_validation.run_validation)</a>
 </li>
         <li><a href="autoapi/core/scripts/download_data/index.html#core.scripts.download_data.parser">(in module core.scripts.download_data)</a>
+</li>
+        <li><a href="autoapi/core/scripts/fit_normalizers/index.html#core.scripts.fit_normalizers.parser">(in module core.scripts.fit_normalizers)</a>
+</li>
+        <li><a href="autoapi/core/scripts/fit_references/index.html#core.scripts.fit_references.parser">(in module core.scripts.fit_references)</a>
 </li>
         <li><a href="autoapi/core/scripts/gif_maker_parallelized/index.html#core.scripts.gif_maker_parallelized.parser">(in module core.scripts.gif_maker_parallelized)</a>
 </li>
@@ -8159,10 +8527,16 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/data/oc/databases/update/index.html#data.oc.databases.update.pbc_patch">pbc_patch() (in module data.oc.databases.update)</a>
 </li>
-      <li><a href="autoapi/core/common/test_utils/index.html#core.common.test_utils.PGConfig">PGConfig (class in core.common.test_utils)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.pbc_shift">pbc_shift (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.pbc_shift">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/common/test_utils/index.html#core.common.test_utils.PGConfig">PGConfig (class in core.common.test_utils)</a>
+</li>
       <li><a href="autoapi/data/odac/force_field/FF_analysis/index.html#data.odac.force_field.FF_analysis.phys_err">phys_err() (in module data.odac.force_field.FF_analysis)</a>
 </li>
       <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig.place_adsorbate_on_site">place_adsorbate_on_site() (data.oc.core.adsorbate_slab_config.AdsorbateSlabConfig method)</a>
@@ -8183,6 +8557,10 @@ document.write(`
         <li><a href="autoapi/data/oc/core/index.html#data.oc.core.MultipleAdsorbateSlabConfig.place_adsorbates_on_sites">(data.oc.core.MultipleAdsorbateSlabConfig method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry">PlaneBoundTriclinicGeometry (class in data.oc.utils.geometry)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.planes">planes (data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
+</li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.plot_histogram">plot_histogram() (in module core.common.utils)</a>
 </li>
       <li><a href="autoapi/data/oc/experimental/utils/index.html#data.oc.experimental.utils.plot_traj">plot_traj() (in module data.oc.experimental.utils)</a>
@@ -8279,6 +8657,8 @@ document.write(`
         <li><a href="autoapi/ocpapi/workflows/filter/index.html#ocpapi.workflows.filter.prompt_for_slabs_to_keep">(class in ocpapi.workflows.filter)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.props">props (data.oc.utils.geometry.BoxGeometry attribute)</a>
+</li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.pyg2_data_transform">pyg2_data_transform() (in module core.common.utils)</a>
 </li>
   </ul></td>
@@ -8435,6 +8815,12 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_gp/utils/index.html#core.models.gemnet_gp.utils.ragged_range">(in module core.models.gemnet_gp.utils)</a>
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/utils/index.html#core.models.gemnet_oc.utils.ragged_range">(in module core.models.gemnet_oc.utils)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.randomize_coords">randomize_coords() (data.oc.core.interface_config.InterfaceConfig method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.randomize_coords">(data.oc.core.InterfaceConfig method)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/data/oc/core/adsorbate/index.html#data.oc.core.adsorbate.randomly_rotate_adsorbate">randomly_rotate_adsorbate() (in module data.oc.core.adsorbate)</a>
@@ -8601,6 +8987,8 @@ document.write(`
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.RELAX_FLAGS">RELAX_FLAGS (in module data.oc.utils.vasp_flags)</a>
+</li>
       <li><a href="autoapi/core/tasks/index.html#core.tasks.RelaxationTask">RelaxationTask (class in core.tasks)</a>
 
       <ul>
@@ -8711,6 +9099,8 @@ document.write(`
 </li>
       <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.restore">restore() (core.modules.exponential_moving_average.ExponentialMovingAverage method)</a>
 </li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FineTuneMode.RETAIN_BACKBONE_ONLY">RETAIN_BACKBONE_ONLY (core.models.finetune_hydra.FineTuneMode attribute)</a>
+</li>
       <li><a href="autoapi/ocpapi/client/client/index.html#id0">retry_after (ocpapi.client.client.RateLimitExceededException attribute)</a>, <a href="autoapi/ocpapi/client/client/index.html#ocpapi.client.client.RateLimitExceededException.retry_after">[1]</a>
 
       <ul>
@@ -8779,6 +9169,12 @@ document.write(`
         <li><a href="autoapi/core/tasks/index.html#core.tasks.ValidateTask.run">(core.tasks.ValidateTask method)</a>
 </li>
         <li><a href="autoapi/data/oc/structure_generator/index.html#data.oc.structure_generator.StructureGenerator.run">(data.oc.structure_generator.StructureGenerator method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.run_packmol">run_packmol() (data.oc.core.interface_config.InterfaceConfig method)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.run_packmol">(data.oc.core.InterfaceConfig method)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/data/oc/structure_generator/index.html#data.oc.structure_generator.run_placements">run_placements() (in module data.oc.structure_generator)</a>
@@ -9243,8 +9639,6 @@ document.write(`
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.SlabMetadata">(class in ocpapi.client.models)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Slabs">Slabs (class in ocpapi)</a>
 
       <ul>
@@ -9267,6 +9661,8 @@ document.write(`
         <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates.AdsorbateBindingSites.slabs">(ocpapi.workflows.adsorbates.AdsorbateBindingSites attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/utils/activations/index.html#core.models.utils.activations.Act.slope">slope (core.models.utils.activations.Act attribute)</a>
 </li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.Basis.smearing">smearing (core.models.utils.basis.Basis attribute)</a>
@@ -9361,6 +9757,54 @@ document.write(`
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.BernsteinBasis.softplus">(core.models.gemnet_oc.layers.radial_basis.BernsteinBasis attribute)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent">Solvent (class in data.oc.core)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent">(class in data.oc.core.solvent)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.solvent">solvent (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.solvent">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.SOLVENT_BASE_FLAGS">SOLVENT_BASE_FLAGS (in module data.oc.utils.vasp_flags)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.SOLVENT_BULK_VASP_FLAGS">SOLVENT_BULK_VASP_FLAGS (in module data.oc.utils.vasp_flags)</a>
+</li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.solvent_db_path">solvent_db_path (data.oc.core.Solvent attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.solvent_db_path">(data.oc.core.solvent.Solvent attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.solvent_density">solvent_density (data.oc.core.Solvent attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.solvent_density">(data.oc.core.solvent.Solvent attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.solvent_depth">solvent_depth (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.solvent_depth">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Solvent.solvent_id_from_db">solvent_id_from_db (data.oc.core.Solvent attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/solvent/index.html#data.oc.core.solvent.Solvent.solvent_id_from_db">(data.oc.core.solvent.Solvent attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.solvent_interstitial_gap">solvent_interstitial_gap (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.solvent_interstitial_gap">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/data/oc/databases/pkls/index.html#data.oc.databases.pkls.SOLVENT_PKL_PATH">SOLVENT_PKL_PATH (in module data.oc.databases.pkls)</a>
+</li>
       <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.EdgeBlock.source_embedding">source_embedding (core.models.escn.escn.EdgeBlock attribute)</a>
 
       <ul>
@@ -9531,12 +9975,12 @@ document.write(`
 </li>
       <li><a href="autoapi/core/common/data_parallel/index.html#core.common.data_parallel.StatefulDistributedSampler.start_iter">start_iter (core.common.data_parallel.StatefulDistributedSampler attribute)</a>
 </li>
-      <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.state_dict">state_dict() (core.modules.exponential_moving_average.ExponentialMovingAverage method)</a>
-
-      <ul>
-        <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.state_dict">(core.modules.normalizer.Normalizer method)</a>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.STARTING_CHECKPOINT">STARTING_CHECKPOINT (core.models.finetune_hydra.FTConfig attribute)</a>
 </li>
-      </ul></li>
+      <li><a href="autoapi/core/models/finetune_hydra/index.html#core.models.finetune_hydra.FTConfig.STARTING_MODEL">STARTING_MODEL (core.models.finetune_hydra.FTConfig attribute)</a>
+</li>
+      <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.state_dict">state_dict() (core.modules.exponential_moving_average.ExponentialMovingAverage method)</a>
+</li>
       <li><a href="autoapi/core/common/data_parallel/index.html#core.common.data_parallel.StatefulDistributedSampler">StatefulDistributedSampler (class in core.common.data_parallel)</a>
 </li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor.ScaleFactor.stats">stats (core.modules.scaling.scale_factor.ScaleFactor attribute)</a>
@@ -9562,11 +10006,7 @@ document.write(`
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.std">std (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.std">(core.modules.normalizer.Normalizer attribute)</a>
 </li>
-      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantLayerNormArraySphericalHarmonics.std_balance_degrees">std_balance_degrees (core.models.equiformer_v2.layer_norm.EquivariantLayerNormArraySphericalHarmonics attribute)</a>
 
       <ul>
@@ -9741,6 +10181,12 @@ document.write(`
 </li>
       <li><a href="autoapi/core/common/logger/index.html#core.common.logger.TensorboardLogger">TensorboardLogger (class in core.common.logger)</a>
 </li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.test_dataset">test_dataset (core.trainers.base_trainer.BaseTrainer attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.test_dataset">(core.trainers.BaseTrainer attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/data/oc/core/adsorbate_slab_config/index.html#data.oc.core.adsorbate_slab_config.there_is_overlap">there_is_overlap() (in module data.oc.core.adsorbate_slab_config)</a>
 </li>
       <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.tile_and_tag_atoms">tile_and_tag_atoms() (in module data.oc.core.slab)</a>
@@ -9753,8 +10199,6 @@ document.write(`
         <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.timestamp_id">(core.trainers.BaseTrainer attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/normalizer/index.html#core.modules.normalizer.Normalizer.to">to() (core.modules.normalizer.Normalizer method)</a>
-</li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.AdsorbateSlabRelaxationResult.to_ase_atoms">to_ase_atoms() (ocpapi.AdsorbateSlabRelaxationResult method)</a>
 
       <ul>
@@ -9813,6 +10257,12 @@ document.write(`
         <li><a href="autoapi/core/trainers/ocp_trainer/index.html#core.trainers.ocp_trainer.OCPTrainer.train">(core.trainers.ocp_trainer.OCPTrainer method)</a>
 </li>
         <li><a href="autoapi/core/trainers/index.html#core.trainers.OCPTrainer.train">(core.trainers.OCPTrainer method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.train_dataset">train_dataset (core.trainers.base_trainer.BaseTrainer attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.train_dataset">(core.trainers.BaseTrainer attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/datasets/oc22_lmdb_dataset/index.html#core.datasets.oc22_lmdb_dataset.OC22LmdbDataset.train_on_oc20_total_energies">train_on_oc20_total_energies (core.datasets.oc22_lmdb_dataset.OC22LmdbDataset attribute)</a>
@@ -9983,6 +10433,8 @@ document.write(`
 </li>
       <li><a href="autoapi/data/oc/databases/update/index.html#data.oc.databases.update.update_pkls">update_pkls() (in module data.oc.databases.update)</a>
 </li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.ur_corner">ur_corner (data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
+</li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.url">url (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.use_atom_edge_embedding">use_atom_edge_embedding (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
@@ -9995,8 +10447,6 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.SO2EquivariantGraphAttention.use_atom_edge_embedding">(core.models.equiformer_v2.transformer_block.SO2EquivariantGraphAttention attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.use_attn_renorm">use_attn_renorm (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
 
       <ul>
@@ -10017,6 +10467,8 @@ document.write(`
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.use_energy_lin_ref">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.use_gate_act">use_gate_act (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
 
       <ul>
@@ -10087,6 +10539,40 @@ document.write(`
         <li><a href="autoapi/core/models/scn/index.html#core.models.scn.SphericalChannelNetwork.use_pbc">(core.models.scn.SphericalChannelNetwork attribute)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlusWrap.use_pbc_single">use_pbc_single (core.models.dimenet_plus_plus.DimeNetPlusPlusWrap attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.use_pbc_single">(core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.use_pbc_single">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/escn/index.html#core.models.escn.eSCN.use_pbc_single">(core.models.escn.eSCN attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.eSCN.use_pbc_single">(core.models.escn.escn.eSCN attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.use_pbc_single">(core.models.gemnet.gemnet.GemNetT attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet/index.html#core.models.gemnet.GemNetT.use_pbc_single">(core.models.gemnet.GemNetT attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet_gp/gemnet/index.html#core.models.gemnet_gp.gemnet.GraphParallelGemNetT.use_pbc_single">(core.models.gemnet_gp.gemnet.GraphParallelGemNetT attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet_gp/index.html#core.models.gemnet_gp.GraphParallelGemNetT.use_pbc_single">(core.models.gemnet_gp.GraphParallelGemNetT attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOC.use_pbc_single">(core.models.gemnet_oc.gemnet_oc.GemNetOC attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/gemnet_oc/index.html#core.models.gemnet_oc.GemNetOC.use_pbc_single">(core.models.gemnet_oc.GemNetOC attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/painn/index.html#core.models.painn.PaiNN.use_pbc_single">(core.models.painn.PaiNN attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.PaiNN.use_pbc_single">(core.models.painn.painn.PaiNN attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/schnet/index.html#core.models.schnet.SchNetWrap.use_pbc_single">(core.models.schnet.SchNetWrap attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/scn/scn/index.html#core.models.scn.scn.SphericalChannelNetwork.use_pbc_single">(core.models.scn.scn.SphericalChannelNetwork attribute)</a>
+</li>
+        <li><a href="autoapi/core/models/scn/index.html#core.models.scn.SphericalChannelNetwork.use_pbc_single">(core.models.scn.SphericalChannelNetwork attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2.use_s2_act_attn">use_s2_act_attn (core.models.equiformer_v2.equiformer_v2.EquiformerV2 attribute)</a>
 
       <ul>
@@ -10113,6 +10599,18 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/data/oc/experimental/utils/index.html#data.oc.experimental.utils.v0_check">v0_check() (in module data.oc.experimental.utils)</a>
 </li>
+      <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.vacuum_size">vacuum_size (data.oc.core.interface_config.InterfaceConfig attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.vacuum_size">(data.oc.core.InterfaceConfig attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.val_dataset">val_dataset (core.trainers.base_trainer.BaseTrainer attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.val_dataset">(core.trainers.BaseTrainer attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.validate">validate() (core.trainers.base_trainer.BaseTrainer method)</a>
 
       <ul>
@@ -10127,19 +10625,21 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor._Stats.variance_in">variance_in (core.modules.scaling.scale_factor._Stats attribute)</a>
 </li>
-      <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor._Stats.variance_out">variance_out (core.modules.scaling.scale_factor._Stats attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/core/modules/scaling/scale_factor/index.html#core.modules.scaling.scale_factor._Stats.variance_out">variance_out (core.modules.scaling.scale_factor._Stats attribute)</a>
+</li>
       <li><a href="autoapi/adsorbml/scripts/write_top_k_vasp/index.html#adsorbml.scripts.write_top_k_vasp.VASP_FLAGS">VASP_FLAGS (in module adsorbml.scripts.write_top_k_vasp)</a>
 
       <ul>
-        <li><a href="autoapi/data/oc/utils/vasp/index.html#data.oc.utils.vasp.VASP_FLAGS">(in module data.oc.utils.vasp)</a>
+        <li><a href="autoapi/data/oc/utils/vasp_flags/index.html#data.oc.utils.vasp_flags.VASP_FLAGS">(in module data.oc.utils.vasp_flags)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.GatedEquivariantBlock.vec1_proj">vec1_proj (core.models.painn.painn.GatedEquivariantBlock attribute)</a>
 </li>
       <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.GatedEquivariantBlock.vec2_proj">vec2_proj (core.models.painn.painn.GatedEquivariantBlock attribute)</a>
+</li>
+      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.Geometry.vec_and_point_to_plane">vec_and_point_to_plane() (data.oc.utils.geometry.Geometry static method)</a>
 </li>
       <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.PaiNNUpdate.vec_proj">vec_proj (core.models.painn.painn.PaiNNUpdate attribute)</a>
 </li>
