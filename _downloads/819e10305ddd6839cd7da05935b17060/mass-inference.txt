@@ -1,17 +1,17 @@
-2024-08-14 00:54:09 (INFO): Running in non-distributed local mode
-2024-08-14 00:54:09 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-2024-08-14 00:54:09 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
-2024-08-14 00:54:10 (INFO): amp: true
+2024-08-14 17:37:16 (INFO): Running in non-distributed local mode
+2024-08-14 17:37:16 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+2024-08-14 17:37:16 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-08-14 17:37:17 (INFO): amp: true
 cmd:
-  checkpoint_dir: ./checkpoints/2024-08-14-00-53-20
+  checkpoint_dir: ./checkpoints/2024-08-14-17-38-08
   commit: 8fb16d6
   identifier: ''
-  logs_dir: ./logs/tensorboard/2024-08-14-00-53-20
+  logs_dir: ./logs/tensorboard/2024-08-14-17-38-08
   print_every: 10
-  results_dir: ./results/2024-08-14-00-53-20
+  results_dir: ./results/2024-08-14-17-38-08
   seed: 0
-  timestamp_id: 2024-08-14-00-53-20
-  version: 1.1.0
+  timestamp_id: 2024-08-14-17-38-08
+  version: 0.1.dev1+g8fb16d6
 dataset: {}
 evaluation_metrics:
   metrics:
@@ -114,24 +114,24 @@ test_dataset:
 trainer: ocp
 val_dataset: {}
 
-2024-08-14 00:54:10 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('data.db')]'
-2024-08-14 00:54:10 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
-2024-08-14 00:54:10 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
-2024-08-14 00:54:10 (INFO): rank: 0: Sampler created...
-2024-08-14 00:54:10 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7f18d61afd90>, batch_size=16, drop_last=False
-2024-08-14 00:54:10 (INFO): Loading model: gemnet_t
-2024-08-14 00:54:12 (INFO): Loaded GemNetT with 31671825 parameters.
-2024-08-14 00:54:12 (WARNING): log_summary for Tensorboard not supported
-2024-08-14 00:54:12 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
-2024-08-14 00:54:12 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
-2024-08-14 00:54:12 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
-2024-08-14 00:54:12 (WARNING): Scale factor comment not found in model
-2024-08-14 00:54:12 (INFO): Predicting on test.
+2024-08-14 17:37:17 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('data.db')]'
+2024-08-14 17:37:17 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
+2024-08-14 17:37:17 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
+2024-08-14 17:37:17 (INFO): rank: 0: Sampler created...
+2024-08-14 17:37:17 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7fcfd9f6c850>, batch_size=16, drop_last=False
+2024-08-14 17:37:17 (INFO): Loading model: gemnet_t
+2024-08-14 17:37:19 (INFO): Loaded GemNetT with 31671825 parameters.
+2024-08-14 17:37:19 (WARNING): log_summary for Tensorboard not supported
+2024-08-14 17:37:19 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
+2024-08-14 17:37:19 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
+2024-08-14 17:37:20 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-08-14 17:37:20 (WARNING): Scale factor comment not found in model
+2024-08-14 17:37:20 (INFO): Predicting on test.
 device 0:   0%|                                           | 0/3 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  33%|███████████▋                       | 1/3 [00:02<00:04,  2.02s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:04<00:02,  2.18s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.33s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.28s/it]
-2024-08-14 00:54:19 (INFO): Writing results to ./results/2024-08-14-00-53-20/ocp_predictions.npz
-2024-08-14 00:54:19 (INFO): Total time taken: 6.979607820510864
-Elapsed time = 13.0 seconds
+device 0:  33%|███████████▋                       | 1/3 [00:02<00:05,  2.85s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:04<00:02,  2.14s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:05<00:00,  1.85s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.01s/it]
+2024-08-14 17:37:26 (INFO): Writing results to ./results/2024-08-14-17-38-08/ocp_predictions.npz
+2024-08-14 17:37:26 (INFO): Total time taken: 6.164632797241211
+Elapsed time = 12.3 seconds
