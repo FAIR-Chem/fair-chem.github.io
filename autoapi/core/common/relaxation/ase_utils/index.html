@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -705,7 +705,8 @@ properties: ‘energy’, ‘forces’, ‘stress’, ‘dipole’, ‘charges�
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.implemented_properties">
 <span class="sig-name descname"><span class="pre">implemented_properties</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['energy',</span> <span class="pre">'forces']</span></em><a class="headerlink" href="#core.common.relaxation.ase_utils.OCPCalculator.implemented_properties" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Properties calculator can handle (energy, forces, …)</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core.common.relaxation.ase_utils.OCPCalculator.checkpoint">

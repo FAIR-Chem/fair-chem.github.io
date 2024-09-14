@@ -1,17 +1,17 @@
-2024-08-14 17:31:27 (INFO): Running in non-distributed local mode
-2024-08-14 17:31:27 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-2024-08-14 17:31:27 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
-2024-08-14 17:31:28 (INFO): amp: true
+2024-09-13 23:27:40 (INFO): Running in local mode without elastic launch (single gpu only)
+2024-09-13 23:27:40 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+2024-09-13 23:27:40 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-09-13 23:27:41 (INFO): amp: false
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-08-14-17-31-44-ft-oxides
-  commit: 8fb16d6
+  checkpoint_dir: fine-tuning/checkpoints/2024-09-13-23-28-00-ft-oxides
+  commit: 7d40b20
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/tensorboard/2024-08-14-17-31-44-ft-oxides
+  logs_dir: fine-tuning/logs/tensorboard/2024-09-13-23-28-00-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-08-14-17-31-44-ft-oxides
+  results_dir: fine-tuning/results/2024-09-13-23-28-00-ft-oxides
   seed: 0
-  timestamp_id: 2024-08-14-17-31-44-ft-oxides
-  version: 0.1.dev1+g8fb16d6
+  timestamp_id: 2024-09-13-23-28-00-ft-oxides
+  version: 0.1.dev1+g7d40b20
 dataset:
   a2g_args:
     r_energy: true
@@ -97,7 +97,6 @@ model:
   sbf:
     name: legendre_outer
   symmetric_edge_symmetrization: false
-noddp: false
 optim:
   batch_size: 4
   clip_grad_norm: 10
@@ -142,93 +141,100 @@ val_dataset:
   format: ase_db
   src: val.db
 
-2024-08-14 17:31:28 (INFO): Loading dataset: ase_db
-2024-08-14 17:31:28 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('train.db')]'
-2024-08-14 17:31:28 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
-2024-08-14 17:31:28 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
-2024-08-14 17:31:28 (INFO): rank: 0: Sampler created...
-2024-08-14 17:31:28 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7ff16e4d5b10>, batch_size=4, drop_last=False
-2024-08-14 17:31:28 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('val.db')]'
-2024-08-14 17:31:28 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
-2024-08-14 17:31:28 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
-2024-08-14 17:31:28 (INFO): rank: 0: Sampler created...
-2024-08-14 17:31:28 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7ff16e222890>, batch_size=16, drop_last=False
-2024-08-14 17:31:28 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('test.db')]'
-2024-08-14 17:31:28 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
-2024-08-14 17:31:28 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
-2024-08-14 17:31:28 (INFO): rank: 0: Sampler created...
-2024-08-14 17:31:28 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7ff16e222b90>, batch_size=16, drop_last=False
-2024-08-14 17:31:28 (INFO): Loading model: gemnet_oc
-2024-08-14 17:31:28 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
-2024-08-14 17:31:30 (INFO): Loaded GemNetOC with 38864438 parameters.
-2024-08-14 17:31:30 (WARNING): log_summary for Tensorboard not supported
-2024-08-14 17:31:30 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-08-14 17:31:31 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
-2024-08-14 17:31:31 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
-2024-08-14 17:31:31 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-09-13 23:27:41 (INFO): Loading model: gemnet_oc
+2024-09-13 23:27:41 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
+2024-09-13 23:27:43 (INFO): Loaded GemNetOC with 38864438 parameters.
+2024-09-13 23:27:43 (WARNING): log_summary for Tensorboard not supported
+2024-09-13 23:27:43 (INFO): Loading dataset: ase_db
+2024-09-13 23:27:43 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('train.db')]'
+2024-09-13 23:27:43 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
+2024-09-13 23:27:43 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
+2024-09-13 23:27:43 (INFO): rank: 0: Sampler created...
+2024-09-13 23:27:43 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7f4679e13410>, batch_size=4, drop_last=False
+2024-09-13 23:27:43 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('val.db')]'
+2024-09-13 23:27:43 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
+2024-09-13 23:27:43 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
+2024-09-13 23:27:43 (INFO): rank: 0: Sampler created...
+2024-09-13 23:27:43 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7f4679fb6510>, batch_size=16, drop_last=False
+2024-09-13 23:27:43 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('test.db')]'
+2024-09-13 23:27:43 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
+2024-09-13 23:27:43 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
+2024-09-13 23:27:43 (INFO): rank: 0: Sampler created...
+2024-09-13 23:27:43 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7f4679e163d0>, batch_size=16, drop_last=False
+2024-09-13 23:27:43 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-09-13 23:27:43 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+2024-09-13 23:27:43 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+2024-09-13 23:27:44 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-2024-08-14 17:31:54 (INFO): energy_mae: 9.52e+00, forcesx_mae: 7.22e-02, forcesy_mae: 3.94e-02, forcesz_mae: 5.74e-02, forces_mae: 5.63e-02, forces_cosine_similarity: 1.39e-01, forces_magnitude_error: 1.11e-01, energy_forces_within_threshold: 0.00e+00, loss: 9.65e+00, lr: 5.00e-04, epoch: 1.69e-01, step: 1.00e+01
-2024-08-14 17:31:55 (INFO): Evaluating on val.
+2024-09-13 23:28:07 (INFO): energy_mae: 9.48e+00, forcesx_mae: 7.26e-02, forcesy_mae: 3.95e-02, forcesz_mae: 5.74e-02, forces_mae: 5.65e-02, forces_cosine_similarity: 1.12e-01, forces_magnitude_error: 1.11e-01, energy_forces_within_threshold: 0.00e+00, loss: 9.61e+00, lr: 5.00e-04, epoch: 1.69e-01, step: 1.00e+01
+2024-09-13 23:28:08 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.06s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.57s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.69s/it]
-2024-08-14 17:32:03 (INFO): energy_mae: 21.1403, forcesx_mae: 0.1788, forcesy_mae: 0.1386, forcesz_mae: 0.1381, forces_mae: 0.1518, forces_cosine_similarity: -0.0453, forces_magnitude_error: 0.3104, energy_forces_within_threshold: 0.0000, loss: 21.3618, epoch: 0.1695
-2024-08-14 17:32:03 (INFO): Predicting on test.
+device 0:  50%|█████     | 1/2 [00:04<00:04,  4.08s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.56s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.69s/it]
+2024-09-13 23:28:16 (INFO): energy_mae: 19.3118, forcesx_mae: 0.2055, forcesy_mae: 0.1585, forcesz_mae: 0.1641, forces_mae: 0.1760, forces_cosine_similarity: -0.0775, forces_magnitude_error: 0.3616, energy_forces_within_threshold: 0.0000, loss: 19.5682, epoch: 0.1695
+2024-09-13 23:28:16 (INFO): Predicting on test.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:03<00:03,  3.59s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.84s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.03s/it]
-2024-08-14 17:32:09 (INFO): Writing results to fine-tuning/results/2024-08-14-17-31-44-ft-oxides/ocp_predictions.npz
-2024-08-14 17:32:31 (INFO): energy_mae: 8.02e+00, forcesx_mae: 6.10e-02, forcesy_mae: 5.99e-02, forcesz_mae: 4.23e-02, forces_mae: 5.44e-02, forces_cosine_similarity: 4.33e-02, forces_magnitude_error: 1.07e-01, energy_forces_within_threshold: 0.00e+00, loss: 8.15e+00, lr: 5.00e-04, epoch: 3.39e-01, step: 2.00e+01
-2024-08-14 17:32:32 (INFO): Evaluating on val.
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.58s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.78s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.97s/it]
+2024-09-13 23:28:22 (INFO): Writing results to fine-tuning/results/2024-09-13-23-28-00-ft-oxides/ocp_predictions.npz
+2024-09-13 23:28:43 (INFO): energy_mae: 7.51e+00, forcesx_mae: 5.95e-02, forcesy_mae: 5.59e-02, forcesz_mae: 4.46e-02, forces_mae: 5.33e-02, forces_cosine_similarity: -5.85e-03, forces_magnitude_error: 1.04e-01, energy_forces_within_threshold: 0.00e+00, loss: 7.64e+00, lr: 5.00e-04, epoch: 3.39e-01, step: 2.00e+01
+2024-09-13 23:28:45 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.03s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.61s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.74s/it]
-2024-08-14 17:32:40 (INFO): energy_mae: 8.0172, forcesx_mae: 0.0637, forcesy_mae: 0.0538, forcesz_mae: 0.0443, forces_mae: 0.0539, forces_cosine_similarity: 0.1081, forces_magnitude_error: 0.0973, energy_forces_within_threshold: 0.0000, loss: 8.1750, epoch: 0.3390
-2024-08-14 17:32:40 (INFO): Predicting on test.
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.81s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.54s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.66s/it]
+2024-09-13 23:28:52 (INFO): energy_mae: 6.5808, forcesx_mae: 0.0251, forcesy_mae: 0.0256, forcesz_mae: 0.0186, forces_mae: 0.0231, forces_cosine_similarity: -0.0857, forces_magnitude_error: 0.0280, energy_forces_within_threshold: 0.0000, loss: 6.6023, epoch: 0.3390
+2024-09-13 23:28:53 (INFO): Predicting on test.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:03<00:03,  3.72s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  2.89s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.11s/it]
-2024-08-14 17:32:47 (INFO): Writing results to fine-tuning/results/2024-08-14-17-31-44-ft-oxides/ocp_predictions.npz
-2024-08-14 17:33:12 (INFO): energy_mae: 6.14e+00, forcesx_mae: 3.84e-02, forcesy_mae: 2.62e-02, forcesz_mae: 2.87e-02, forces_mae: 3.11e-02, forces_cosine_similarity: -1.42e-01, forces_magnitude_error: 4.31e-02, energy_forces_within_threshold: 0.00e+00, loss: 6.20e+00, lr: 5.00e-04, epoch: 5.08e-01, step: 3.00e+01
-2024-08-14 17:33:14 (INFO): Evaluating on val.
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.51s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.73s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.92s/it]
+2024-09-13 23:28:59 (INFO): Writing results to fine-tuning/results/2024-09-13-23-28-00-ft-oxides/ocp_predictions.npz
+2024-09-13 23:29:23 (INFO): energy_mae: 1.06e+01, forcesx_mae: 4.34e-02, forcesy_mae: 3.21e-02, forcesz_mae: 3.93e-02, forces_mae: 3.82e-02, forces_cosine_similarity: -1.03e-01, forces_magnitude_error: 5.50e-02, energy_forces_within_threshold: 0.00e+00, loss: 1.06e+01, lr: 5.00e-04, epoch: 5.08e-01, step: 3.00e+01
+2024-09-13 23:29:25 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.06s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.72s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.85s/it]
-2024-08-14 17:33:22 (INFO): energy_mae: 1.7861, forcesx_mae: 0.0296, forcesy_mae: 0.0216, forcesz_mae: 0.0233, forces_mae: 0.0249, forces_cosine_similarity: -0.0051, forces_magnitude_error: 0.0353, energy_forces_within_threshold: 0.0000, loss: 1.8445, epoch: 0.5085
-2024-08-14 17:33:22 (INFO): Predicting on test.
+device 0:  50%|█████     | 1/2 [00:03<00:03,  4.00s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.52s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.67s/it]
+2024-09-13 23:29:33 (INFO): energy_mae: 2.0742, forcesx_mae: 0.0192, forcesy_mae: 0.0265, forcesz_mae: 0.0217, forces_mae: 0.0225, forces_cosine_similarity: 0.0334, forces_magnitude_error: 0.0346, energy_forces_within_threshold: 0.0000, loss: 2.1347, epoch: 0.5085
+2024-09-13 23:29:33 (INFO): Predicting on test.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:03<00:03,  3.66s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.87s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.07s/it]
-2024-08-14 17:33:28 (INFO): Writing results to fine-tuning/results/2024-08-14-17-31-44-ft-oxides/ocp_predictions.npz
-2024-08-14 17:33:53 (INFO): energy_mae: 4.74e+00, forcesx_mae: 1.69e-02, forcesy_mae: 1.46e-02, forcesz_mae: 1.91e-02, forces_mae: 1.69e-02, forces_cosine_similarity: -3.22e-02, forces_magnitude_error: 1.82e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.77e+00, lr: 5.00e-04, epoch: 6.78e-01, step: 4.00e+01
-2024-08-14 17:33:54 (INFO): Evaluating on val.
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.76s/it]device 0: 100%|██████████| 2/2 [00:05<00:00,  2.86s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.09s/it]
+2024-09-13 23:29:39 (INFO): Writing results to fine-tuning/results/2024-09-13-23-28-00-ft-oxides/ocp_predictions.npz
+2024-09-13 23:30:04 (INFO): energy_mae: 5.50e+00, forcesx_mae: 2.11e-02, forcesy_mae: 1.38e-02, forcesz_mae: 1.98e-02, forces_mae: 1.83e-02, forces_cosine_similarity: 6.55e-02, forces_magnitude_error: 2.17e-02, energy_forces_within_threshold: 0.00e+00, loss: 5.54e+00, lr: 5.00e-04, epoch: 6.78e-01, step: 4.00e+01
+2024-09-13 23:30:05 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:03<00:03,  3.90s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.58s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.71s/it]
-2024-08-14 17:34:02 (INFO): energy_mae: 4.7076, forcesx_mae: 0.0381, forcesy_mae: 0.0251, forcesz_mae: 0.0156, forces_mae: 0.0263, forces_cosine_similarity: 0.0493, forces_magnitude_error: 0.0415, energy_forces_within_threshold: 0.0000, loss: 4.8101, epoch: 0.6780
-2024-08-14 17:34:24 (INFO): energy_mae: 4.59e+00, forcesx_mae: 2.96e-02, forcesy_mae: 2.66e-02, forcesz_mae: 2.86e-02, forces_mae: 2.83e-02, forces_cosine_similarity: 2.52e-02, forces_magnitude_error: 4.53e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.64e+00, lr: 5.00e-04, epoch: 8.47e-01, step: 5.00e+01
-2024-08-14 17:34:26 (INFO): Evaluating on val.
+device 0:  50%|█████     | 1/2 [00:04<00:04,  4.01s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.58s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.74s/it]
+2024-09-13 23:30:13 (INFO): energy_mae: 8.1024, forcesx_mae: 0.0212, forcesy_mae: 0.0208, forcesz_mae: 0.0150, forces_mae: 0.0190, forces_cosine_similarity: -0.0206, forces_magnitude_error: 0.0252, energy_forces_within_threshold: 0.0000, loss: 8.1792, epoch: 0.6780
+2024-09-13 23:30:13 (INFO): Predicting on test.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.10s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.65s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.81s/it]
-2024-08-14 17:34:33 (INFO): energy_mae: 4.3288, forcesx_mae: 0.0886, forcesy_mae: 0.0841, forcesz_mae: 0.0913, forces_mae: 0.0880, forces_cosine_similarity: -0.0039, forces_magnitude_error: 0.1547, energy_forces_within_threshold: 0.0000, loss: 4.4813, epoch: 0.8475
-2024-08-14 17:34:55 (INFO): Total time taken: 204.43217825889587
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.78s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  2.89s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.11s/it]
+2024-09-13 23:30:20 (INFO): Writing results to fine-tuning/results/2024-09-13-23-28-00-ft-oxides/ocp_predictions.npz
+2024-09-13 23:30:41 (INFO): energy_mae: 4.05e+00, forcesx_mae: 3.54e-02, forcesy_mae: 2.40e-02, forcesz_mae: 2.67e-02, forces_mae: 2.87e-02, forces_cosine_similarity: -1.05e-01, forces_magnitude_error: 3.73e-02, energy_forces_within_threshold: 0.00e+00, loss: 4.11e+00, lr: 5.00e-04, epoch: 8.47e-01, step: 5.00e+01
+2024-09-13 23:30:43 (INFO): Evaluating on val.
+device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+device 0:  50%|█████     | 1/2 [00:03<00:03,  3.95s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.45s/it]device 0: 100%|██████████| 2/2 [00:07<00:00,  3.61s/it]
+2024-09-13 23:30:50 (INFO): energy_mae: 4.9834, forcesx_mae: 0.0294, forcesy_mae: 0.0219, forcesz_mae: 0.0186, forces_mae: 0.0233, forces_cosine_similarity: -0.1321, forces_magnitude_error: 0.0325, energy_forces_within_threshold: 0.0000, loss: 5.0432, epoch: 0.8475
+2024-09-13 23:31:12 (INFO): Total time taken: 208.20058917999268

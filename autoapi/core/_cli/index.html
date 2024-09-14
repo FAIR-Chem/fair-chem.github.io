@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -630,7 +630,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner"><code class="docutils literal notranslate"><span class="pre">Runner</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.config"><code class="docutils literal notranslate"><span class="pre">Runner.config</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.distributed"><code class="docutils literal notranslate"><span class="pre">Runner.distributed</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.__call__"><code class="docutils literal notranslate"><span class="pre">Runner.__call__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.checkpoint"><code class="docutils literal notranslate"><span class="pre">Runner.checkpoint()</span></code></a></li>
 </ul>
@@ -670,10 +669,10 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core._cli.runner_wrapper" title="core._cli.runner_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runner_wrapper</span></code></a>(distributed, config)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core._cli.runner_wrapper" title="core._cli.runner_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runner_wrapper</span></code></a>(config)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core._cli.main" title="core._cli.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core._cli.main" title="core._cli.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>([args, override_args])</p></td>
 <td><p>Run the main fairchem program.</p></td>
 </tr>
 </tbody>
@@ -684,7 +683,7 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="core._cli.Runner">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">Runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distributed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core._cli.Runner" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">Runner</span></span><a class="headerlink" href="#core._cli.Runner" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">submitit.helpers.Checkpointable</span></code></p>
 <p>Derived callable classes are requeued after timeout with their current
 state dumped at checkpoint.</p>
@@ -699,11 +698,6 @@ the state so that not to pickle it) and change/remove the initial parameters.</p
 <dl class="py attribute">
 <dt class="sig sig-object py" id="core._cli.Runner.config">
 <span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core._cli.Runner.config" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core._cli.Runner.distributed">
-<span class="sig-name descname"><span class="pre">distributed</span></span><a class="headerlink" href="#core._cli.Runner.distributed" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -721,12 +715,12 @@ the state so that not to pickle it) and change/remove the initial parameters.</p
 
 <dl class="py function">
 <dt class="sig sig-object py" id="core._cli.runner_wrapper">
-<span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">runner_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distributed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core._cli.runner_wrapper" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">runner_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core._cli.runner_wrapper" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="core._cli.main">
-<span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core._cli.main" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core._cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core._cli.main" title="Link to this definition">#</a></dt>
 <dd><p>Run the main fairchem program.</p>
 </dd></dl>
 
@@ -802,7 +796,6 @@ the state so that not to pickle it) and change/remove the initial parameters.</p
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner"><code class="docutils literal notranslate"><span class="pre">Runner</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.config"><code class="docutils literal notranslate"><span class="pre">Runner.config</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.distributed"><code class="docutils literal notranslate"><span class="pre">Runner.distributed</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.__call__"><code class="docutils literal notranslate"><span class="pre">Runner.__call__()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core._cli.Runner.checkpoint"><code class="docutils literal notranslate"><span class="pre">Runner.checkpoint()</span></code></a></li>
 </ul>

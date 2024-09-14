@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -629,6 +629,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.T"><code class="docutils literal notranslate"><span class="pre">T</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.DISTRIBUTED_PORT"><code class="docutils literal notranslate"><span class="pre">DISTRIBUTED_PORT</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.os_environ_get_or_throw"><code class="docutils literal notranslate"><span class="pre">os_environ_get_or_throw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.setup"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.cleanup"><code class="docutils literal notranslate"><span class="pre">cleanup()</span></code></a></li>
@@ -665,6 +666,9 @@ LICENSE file in the root directory of this source tree.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.common.distutils.T" title="core.common.distutils.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.common.distutils.DISTRIBUTED_PORT" title="core.common.distutils.DISTRIBUTED_PORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DISTRIBUTED_PORT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -723,6 +727,11 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="core.common.distutils.T">
 <span class="sig-prename descclassname"><span class="pre">core.common.distutils.</span></span><span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#core.common.distutils.T" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="core.common.distutils.DISTRIBUTED_PORT">
+<span class="sig-prename descclassname"><span class="pre">core.common.distutils.</span></span><span class="sig-name descname"><span class="pre">DISTRIBUTED_PORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13356</span></em><a class="headerlink" href="#core.common.distutils.DISTRIBUTED_PORT" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -862,6 +871,7 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.T"><code class="docutils literal notranslate"><span class="pre">T</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.DISTRIBUTED_PORT"><code class="docutils literal notranslate"><span class="pre">DISTRIBUTED_PORT</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.os_environ_get_or_throw"><code class="docutils literal notranslate"><span class="pre">os_environ_get_or_throw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.setup"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.distutils.cleanup"><code class="docutils literal notranslate"><span class="pre">cleanup()</span></code></a></li>

@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -653,6 +653,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.r_data_keys</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs._get_neighbors_pymatgen"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs._get_neighbors_pymatgen()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs._reshape_features"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs._reshape_features()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.get_edge_distance_vec"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.get_edge_distance_vec()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.convert()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert_all"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.convert_all()</span></code></a></li>
 </ul>
@@ -940,6 +941,11 @@ takes in np.arrays and returns torch tensors</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="core.preprocessing.atoms_to_graphs.AtomsToGraphs.get_edge_distance_vec">
+<span class="sig-name descname"><span class="pre">get_edge_distance_vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_offsets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.get_edge_distance_vec" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert">
 <span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ase.Atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert" title="Link to this definition">#</a></dt>
 <dd><p>Convert a single atomic structure to a graph.</p>
@@ -1082,6 +1088,7 @@ Optional properties can included by setting r_property=True when constructing th
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.r_data_keys</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs._get_neighbors_pymatgen"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs._get_neighbors_pymatgen()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs._reshape_features"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs._reshape_features()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.get_edge_distance_vec"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.get_edge_distance_vec()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.convert()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.preprocessing.atoms_to_graphs.AtomsToGraphs.convert_all"><code class="docutils literal notranslate"><span class="pre">AtomsToGraphs.convert_all()</span></code></a></li>
 </ul>

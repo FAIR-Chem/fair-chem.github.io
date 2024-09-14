@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -661,16 +661,22 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="core.datasets._utils.rename_data_object_keys">
-<span class="sig-prename descclassname"><span class="pre">core.datasets._utils.</span></span><span class="sig-name descname"><span class="pre">rename_data_object_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.Data</span></span></span><a class="headerlink" href="#core.datasets._utils.rename_data_object_keys" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core.datasets._utils.</span></span><span class="sig-name descname"><span class="pre">rename_data_object_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.Data</span></span></span><a class="headerlink" href="#core.datasets._utils.rename_data_object_keys" title="Link to this definition">#</a></dt>
 <dd><p>Rename data object keys</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_object</strong> – data object</p></li>
 <li><p><strong>key_mapping</strong> – dictionary specifying keys to rename and new names {prev_key: new_key}</p></li>
+<li><p><strong>keys</strong> (<em>new_key can be a list</em><em> of </em><em>new</em>)</p></li>
+<li><p><strong>example</strong> (<em>for</em>)</p></li>
 </ul>
 </dd>
 </dl>
+<p>:param :
+:param prev_key: energy
+:param new_key: [common_energy, oc20_energy]
+:param This is currently required when we use a single target/label for multiple tasks:</p>
 </dd></dl>
 
 </section>

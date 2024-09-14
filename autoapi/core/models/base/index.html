@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -646,6 +646,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface"><code class="docutils literal notranslate"><span class="pre">HeadInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.use_amp"><code class="docutils literal notranslate"><span class="pre">HeadInterface.use_amp</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.forward"><code class="docutils literal notranslate"><span class="pre">HeadInterface.forward()</span></code></a></li>
 </ul>
 </li>
@@ -653,21 +654,12 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface.forward"><code class="docutils literal notranslate"><span class="pre">BackboneInterface.forward()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface"><code class="docutils literal notranslate"><span class="pre">HydraInterface</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface.get_backbone"><code class="docutils literal notranslate"><span class="pre">HydraInterface.get_backbone()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface.get_heads"><code class="docutils literal notranslate"><span class="pre">HydraInterface.get_heads()</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel"><code class="docutils literal notranslate"><span class="pre">HydraModel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.device"><code class="docutils literal notranslate"><span class="pre">HydraModel.device</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.otf_graph"><code class="docutils literal notranslate"><span class="pre">HydraModel.otf_graph</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.heads</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone_model_name"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone_model_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.output_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.output_heads</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.head_names_sorted"><code class="docutils literal notranslate"><span class="pre">HydraModel.head_names_sorted</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.pass_through_head_outputs"><code class="docutils literal notranslate"><span class="pre">HydraModel.pass_through_head_outputs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.starting_model"><code class="docutils literal notranslate"><span class="pre">HydraModel.starting_model</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.forward"><code class="docutils literal notranslate"><span class="pre">HydraModel.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.get_backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.get_backbone()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.get_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.get_heads()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -704,10 +696,7 @@ LICENSE file in the root directory of this source tree.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#core.models.base.BackboneInterface" title="core.models.base.BackboneInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BackboneInterface</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.HydraInterface" title="core.models.base.HydraInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydraInterface</span></code></a></p></td>
-<td><p>Helper class that provides a standard way to create an ABC using</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.base.HydraModel" title="core.models.base.HydraModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydraModel</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.base.HydraModel" title="core.models.base.HydraModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydraModel</span></code></a></p></td>
 <td><p>Base class for all neural network modules.</p></td>
 </tr>
 </tbody>
@@ -792,7 +781,12 @@ LICENSE file in the root directory of this source tree.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.models.base.HeadInterface">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HeadInterface</span></span><a class="headerlink" href="#core.models.base.HeadInterface" title="Link to this definition">#</a></dt>
-<dd><dl class="py method">
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="core.models.base.HeadInterface.use_amp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_amp</span></span><a class="headerlink" href="#core.models.base.HeadInterface.use_amp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.models.base.HeadInterface.forward">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.base.HeadInterface.forward" title="Link to this definition">#</a></dt>
 <dd><p>Head forward.</p>
@@ -837,27 +831,9 @@ LICENSE file in the root directory of this source tree.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="core.models.base.HydraInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HydraInterface</span></span><a class="headerlink" href="#core.models.base.HydraInterface" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
-<p>Helper class that provides a standard way to create an ABC using
-inheritance.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.HydraInterface.get_backbone">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_backbone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#core.models.base.BackboneInterface" title="core.models.base.BackboneInterface"><span class="pre">BackboneInterface</span></a></span></span><a class="headerlink" href="#core.models.base.HydraInterface.get_backbone" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.HydraInterface.get_heads">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_heads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#core.models.base.HeadInterface" title="core.models.base.HeadInterface"><span class="pre">HeadInterface</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.base.HydraInterface.get_heads" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="core.models.base.HydraModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HydraModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.HydraModel" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <a class="reference internal" href="#core.models.base.GraphModelMixin" title="core.models.base.GraphModelMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a>, <a class="reference internal" href="#core.models.base.HydraInterface" title="core.models.base.HydraInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydraInterface</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.base.</span></span><span class="sig-name descname"><span class="pre">HydraModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finetune_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pass_through_head_outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.HydraModel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <a class="reference internal" href="#core.models.base.GraphModelMixin" title="core.models.base.GraphModelMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphModelMixin</span></code></a></p>
 <p>Base class for all neural network modules.</p>
 <p>Your models should also subclass this class.</p>
 <p>Modules can also contain other Modules, allowing to nest them in
@@ -890,48 +866,28 @@ evaluation mode.</p>
 </dd>
 </dl>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.base.HydraModel.device">
+<span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.models.base.HydraModel.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="core.models.base.HydraModel.otf_graph">
 <span class="sig-name descname"><span class="pre">otf_graph</span></span><a class="headerlink" href="#core.models.base.HydraModel.otf_graph" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.backbone">
-<span class="sig-name descname"><span class="pre">backbone</span></span><a class="headerlink" href="#core.models.base.HydraModel.backbone" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.base.HydraModel.pass_through_head_outputs">
+<span class="sig-name descname"><span class="pre">pass_through_head_outputs</span></span><a class="headerlink" href="#core.models.base.HydraModel.pass_through_head_outputs" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.heads">
-<span class="sig-name descname"><span class="pre">heads</span></span><a class="headerlink" href="#core.models.base.HydraModel.heads" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.backbone_model_name">
-<span class="sig-name descname"><span class="pre">backbone_model_name</span></span><a class="headerlink" href="#core.models.base.HydraModel.backbone_model_name" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.output_heads">
-<span class="sig-name descname"><span class="pre">output_heads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#core.models.base.HeadInterface" title="core.models.base.HeadInterface"><span class="pre">HeadInterface</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.models.base.HydraModel.output_heads" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.head_names_sorted">
-<span class="sig-name descname"><span class="pre">head_names_sorted</span></span><a class="headerlink" href="#core.models.base.HydraModel.head_names_sorted" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.base.HydraModel.starting_model">
+<span class="sig-name descname"><span class="pre">starting_model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.models.base.HydraModel.starting_model" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.base.HydraModel.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.base.HydraModel.forward" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.get_backbone">
-<span class="sig-name descname"><span class="pre">get_backbone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#core.models.base.BackboneInterface" title="core.models.base.BackboneInterface"><span class="pre">BackboneInterface</span></a></span></span><a class="headerlink" href="#core.models.base.HydraModel.get_backbone" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.base.HydraModel.get_heads">
-<span class="sig-name descname"><span class="pre">get_heads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#core.models.base.HeadInterface" title="core.models.base.HeadInterface"><span class="pre">HeadInterface</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.base.HydraModel.get_heads" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1024,6 +980,7 @@ evaluation mode.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface"><code class="docutils literal notranslate"><span class="pre">HeadInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.use_amp"><code class="docutils literal notranslate"><span class="pre">HeadInterface.use_amp</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HeadInterface.forward"><code class="docutils literal notranslate"><span class="pre">HeadInterface.forward()</span></code></a></li>
 </ul>
 </li>
@@ -1031,21 +988,12 @@ evaluation mode.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.BackboneInterface.forward"><code class="docutils literal notranslate"><span class="pre">BackboneInterface.forward()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface"><code class="docutils literal notranslate"><span class="pre">HydraInterface</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface.get_backbone"><code class="docutils literal notranslate"><span class="pre">HydraInterface.get_backbone()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraInterface.get_heads"><code class="docutils literal notranslate"><span class="pre">HydraInterface.get_heads()</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel"><code class="docutils literal notranslate"><span class="pre">HydraModel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.device"><code class="docutils literal notranslate"><span class="pre">HydraModel.device</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.otf_graph"><code class="docutils literal notranslate"><span class="pre">HydraModel.otf_graph</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.heads</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.backbone_model_name"><code class="docutils literal notranslate"><span class="pre">HydraModel.backbone_model_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.output_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.output_heads</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.head_names_sorted"><code class="docutils literal notranslate"><span class="pre">HydraModel.head_names_sorted</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.pass_through_head_outputs"><code class="docutils literal notranslate"><span class="pre">HydraModel.pass_through_head_outputs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.starting_model"><code class="docutils literal notranslate"><span class="pre">HydraModel.starting_model</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.forward"><code class="docutils literal notranslate"><span class="pre">HydraModel.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.get_backbone"><code class="docutils literal notranslate"><span class="pre">HydraModel.get_backbone()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.base.HydraModel.get_heads"><code class="docutils literal notranslate"><span class="pre">HydraModel.get_heads()</span></code></a></li>
 </ul>
 </li>
 </ul>

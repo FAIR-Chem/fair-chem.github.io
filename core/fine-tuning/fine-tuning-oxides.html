@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -673,6 +673,10 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 
+<span class="kn">from</span> <span class="nn">fairchem.core.scripts</span> <span class="kn">import</span> <span class="n">download_large_files</span>
+
+<span class="n">download_large_files</span><span class="o">.</span><span class="n">download_file_group</span><span class="p">(</span><span class="s2">&quot;docs&quot;</span><span class="p">)</span>
+
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;supporting-information.json&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         
@@ -684,6 +688,15 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading docs/tutorials/NRR/NRR_example_bulks.pkl...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading docs/core/fine-tuning/supporting-information.json...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading docs/core/data.db...
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&#39;SnO2&#39;, &#39;IrO2&#39;, &#39;RuO2&#39;, &#39;TiO2&#39;, &#39;VO2&#39;],
  [&#39;rutile&#39;, &#39;pyrite&#39;, &#39;columbite&#39;, &#39;brookite&#39;, &#39;fluorite&#39;, &#39;anatase&#39;])
 </pre></div>
@@ -788,9 +801,6 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
@@ -834,7 +844,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 87.9 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 86.0 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/341531b0218eea408d04046d981d55fe218d43494f1ecf51297aeefb6668761e.png" src="../../_images/341531b0218eea408d04046d981d55fe218d43494f1ecf51297aeefb6668761e.png" />
@@ -913,7 +923,7 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2301/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2184/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -1021,9 +1031,6 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
@@ -1188,14 +1195,14 @@ trainer: ocp
 </pre></div>
 </div>
 <p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
-<p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
+<p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens. If you have a gpu or multiple gpus, you should use the flag –num-gpus=<number of gpus> and remove the –cpu flag.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">fairchem_main</span>
 
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="o">!</span><span class="w"> </span>python<span class="w"> </span><span class="o">{</span>fairchem_main<span class="o">()}</span><span class="w"> </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span><span class="o">{</span>yml<span class="o">}</span><span class="w"> </span>--checkpoint<span class="w"> </span><span class="o">{</span>checkpoint_path<span class="o">}</span><span class="w"> </span>--run-dir<span class="w"> </span>fine-tuning<span class="w"> </span>--identifier<span class="w"> </span>ft-oxides<span class="w"> </span>--amp<span class="w"> </span>&gt;<span class="w"> </span>train.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span>
+<span class="o">!</span><span class="w"> </span>python<span class="w"> </span><span class="o">{</span>fairchem_main<span class="o">()}</span><span class="w"> </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span><span class="o">{</span>yml<span class="o">}</span><span class="w"> </span>--checkpoint<span class="w"> </span><span class="o">{</span>checkpoint_path<span class="o">}</span><span class="w"> </span>--run-dir<span class="w"> </span>fine-tuning<span class="w"> </span>--identifier<span class="w"> </span>ft-oxides<span class="w"> </span>--cpu<span class="w"> </span>&gt;<span class="w"> </span>train.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1206,7 +1213,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 211.8 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 215.5 seconds
 </pre></div>
 </div>
 </div>
@@ -1222,7 +1229,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-08-14-17-31-44-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-09-13-23-28-00-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1238,9 +1245,6 @@ trainer: ocp
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
@@ -1281,7 +1285,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b2bf4ee508c709ceadee47f6590f44d1a6100638efe3e9d68f9f85378e11d301.png" src="../../_images/b2bf4ee508c709ceadee47f6590f44d1a6100638efe3e9d68f9f85378e11d301.png" />
+<img alt="../../_images/282c005c4621487061b9b673e4d633ab137307b6929d6071878c4e7fe434bad1.png" src="../../_images/282c005c4621487061b9b673e4d633ab137307b6929d6071878c4e7fe434bad1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1292,7 +1296,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.904 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.422 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1311,7 +1315,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3e678dc75e2808fec03a15c3aa5c9156836323cfa191c413f4d52e2201abe66b.png" src="../../_images/3e678dc75e2808fec03a15c3aa5c9156836323cfa191c413f4d52e2201abe66b.png" />
+<img alt="../../_images/0fa5846a445798bfb278be6b58999f6dc139c14786d2525bfc48f4b4a2526a38.png" src="../../_images/0fa5846a445798bfb278be6b58999f6dc139c14786d2525bfc48f4b4a2526a38.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

@@ -1,17 +1,17 @@
-2024-08-14 17:37:16 (INFO): Running in non-distributed local mode
-2024-08-14 17:37:16 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-2024-08-14 17:37:16 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
-2024-08-14 17:37:17 (INFO): amp: true
+2024-09-13 23:33:27 (INFO): Running in local mode without elastic launch (single gpu only)
+2024-09-13 23:33:27 (INFO): Setting env PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+2024-09-13 23:33:27 (INFO): Project root: /home/runner/work/fairchem/fairchem/src/fairchem
+2024-09-13 23:33:28 (INFO): amp: false
 cmd:
-  checkpoint_dir: ./checkpoints/2024-08-14-17-38-08
-  commit: 8fb16d6
+  checkpoint_dir: /home/runner/work/fairchem/fairchem/docs/core/checkpoints/2024-09-13-23-34-24
+  commit: 7d40b20
   identifier: ''
-  logs_dir: ./logs/tensorboard/2024-08-14-17-38-08
+  logs_dir: /home/runner/work/fairchem/fairchem/docs/core/logs/tensorboard/2024-09-13-23-34-24
   print_every: 10
-  results_dir: ./results/2024-08-14-17-38-08
+  results_dir: /home/runner/work/fairchem/fairchem/docs/core/results/2024-09-13-23-34-24
   seed: 0
-  timestamp_id: 2024-08-14-17-38-08
-  version: 0.1.dev1+g8fb16d6
+  timestamp_id: 2024-09-13-23-34-24
+  version: 0.1.dev1+g7d40b20
 dataset: {}
 evaluation_metrics:
   metrics:
@@ -67,7 +67,6 @@ model:
   rbf:
     name: gaussian
   regress_forces: true
-noddp: false
 optim:
   batch_size: 16
   clip_grad_norm: 10
@@ -114,24 +113,24 @@ test_dataset:
 trainer: ocp
 val_dataset: {}
 
-2024-08-14 17:37:17 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('data.db')]'
-2024-08-14 17:37:17 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
-2024-08-14 17:37:17 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
-2024-08-14 17:37:17 (INFO): rank: 0: Sampler created...
-2024-08-14 17:37:17 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7fcfd9f6c850>, batch_size=16, drop_last=False
-2024-08-14 17:37:17 (INFO): Loading model: gemnet_t
-2024-08-14 17:37:19 (INFO): Loaded GemNetT with 31671825 parameters.
-2024-08-14 17:37:19 (WARNING): log_summary for Tensorboard not supported
-2024-08-14 17:37:19 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
-2024-08-14 17:37:19 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
-2024-08-14 17:37:20 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
-2024-08-14 17:37:20 (WARNING): Scale factor comment not found in model
-2024-08-14 17:37:20 (INFO): Predicting on test.
+2024-09-13 23:33:28 (INFO): Loading model: gemnet_t
+2024-09-13 23:33:30 (INFO): Loaded GemNetT with 31671825 parameters.
+2024-09-13 23:33:30 (WARNING): log_summary for Tensorboard not supported
+2024-09-13 23:33:30 (WARNING): Could not find dataset metadata.npz files in '[PosixPath('data.db')]'
+2024-09-13 23:33:30 (WARNING): Disabled BalancedBatchSampler because num_replicas=1.
+2024-09-13 23:33:30 (WARNING): Failed to get data sizes, falling back to uniform partitioning. BalancedBatchSampler requires a dataset that has a metadata attributed with number of atoms.
+2024-09-13 23:33:30 (INFO): rank: 0: Sampler created...
+2024-09-13 23:33:30 (INFO): Created BalancedBatchSampler with sampler=<fairchem.core.common.data_parallel.StatefulDistributedSampler object at 0x7f89cc9d3d10>, batch_size=16, drop_last=False
+2024-09-13 23:33:30 (INFO): Attemping to load user specified checkpoint at /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
+2024-09-13 23:33:30 (INFO): Loading checkpoint from: /tmp/fairchem_checkpoints/gndt_oc22_all_s2ef.pt
+2024-09-13 23:33:30 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-09-13 23:33:30 (WARNING): Scale factor comment not found in model
+2024-09-13 23:33:30 (INFO): Predicting on test.
 device 0:   0%|                                           | 0/3 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  33%|███████████▋                       | 1/3 [00:02<00:05,  2.85s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:04<00:02,  2.14s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:05<00:00,  1.85s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:06<00:00,  2.01s/it]
-2024-08-14 17:37:26 (INFO): Writing results to ./results/2024-08-14-17-38-08/ocp_predictions.npz
-2024-08-14 17:37:26 (INFO): Total time taken: 6.164632797241211
-Elapsed time = 12.3 seconds
+device 0:  33%|███████████▋                       | 1/3 [00:02<00:05,  2.97s/it]device 0:  67%|███████████████████████▎           | 2/3 [00:05<00:02,  2.76s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:10<00:00,  3.54s/it]device 0: 100%|███████████████████████████████████| 3/3 [00:10<00:00,  3.36s/it]
+2024-09-13 23:33:40 (INFO): Writing results to /home/runner/work/fairchem/fairchem/docs/core/results/2024-09-13-23-34-24/ocp_predictions.npz
+2024-09-13 23:33:40 (INFO): Total time taken: 10.21991777420044
+Elapsed time = 16.4 seconds

@@ -335,7 +335,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/finetune_hydra/index.html">core.models.finetune_hydra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
@@ -358,6 +357,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
@@ -643,6 +643,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_env_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_env_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_pg_and_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.spawn_multi_process"><code class="docutils literal notranslate"><span class="pre">spawn_multi_process()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_local_distributed_process_group"><code class="docutils literal notranslate"><span class="pre">init_local_distributed_process_group()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -684,6 +685,9 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.common.test_utils.spawn_multi_process" title="core.common.test_utils.spawn_multi_process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spawn_multi_process</span></code></a>(→ list[Any])</p></td>
 <td><p>Spawn single node, multi-rank function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.common.test_utils.init_local_distributed_process_group" title="core.common.test_utils.init_local_distributed_process_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_local_distributed_process_group</span></code></a>([backend])</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -771,6 +775,11 @@ Uses localhost and free port to communicate.</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="core.common.test_utils.init_local_distributed_process_group">
+<span class="sig-prename descclassname"><span class="pre">core.common.test_utils.</span></span><span class="sig-name descname"><span class="pre">init_local_distributed_process_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nccl'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.test_utils.init_local_distributed_process_group" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 </section>
 </section>
 
@@ -856,6 +865,7 @@ Uses localhost and free port to communicate.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_env_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_env_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_pg_and_rank_and_launch_test"><code class="docutils literal notranslate"><span class="pre">init_pg_and_rank_and_launch_test()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.spawn_multi_process"><code class="docutils literal notranslate"><span class="pre">spawn_multi_process()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.test_utils.init_local_distributed_process_group"><code class="docutils literal notranslate"><span class="pre">init_local_distributed_process_group()</span></code></a></li>
 </ul>
 </li>
 </ul>

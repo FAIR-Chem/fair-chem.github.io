@@ -10,6 +10,7 @@ Subpackages
 .. toctree::
    :maxdepth: 1
 
+   /autoapi/core/models/equiformer_v2/prediction_heads/index
    /autoapi/core/models/equiformer_v2/trainers/index
 
 
@@ -23,6 +24,8 @@ Submodules
    /autoapi/core/models/equiformer_v2/drop/index
    /autoapi/core/models/equiformer_v2/edge_rot_mat/index
    /autoapi/core/models/equiformer_v2/equiformer_v2/index
+   /autoapi/core/models/equiformer_v2/equiformer_v2_deprecated/index
+   /autoapi/core/models/equiformer_v2/eqv2_to_eqv2_hydra/index
    /autoapi/core/models/equiformer_v2/gaussian_rbf/index
    /autoapi/core/models/equiformer_v2/input_block/index
    /autoapi/core/models/equiformer_v2/layer_norm/index
@@ -49,6 +52,8 @@ Package Contents
 
    Bases: :py:obj:`torch.nn.Module`, :py:obj:`fairchem.core.models.base.GraphModelMixin`
 
+
+   THIS CLASS HAS BEEN DEPRECATED! Please use "EquiformerV2BackboneAndHeads"
 
    Equiformer with graph attention built upon SO(2) convolution and feedforward network built upon S2 activation
 
