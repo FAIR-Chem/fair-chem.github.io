@@ -625,12 +625,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.__Jd"><code class="docutils literal notranslate"><span class="pre">__Jd</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.get_jd"><code class="docutils literal notranslate"><span class="pre">get_jd()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.wigner_D"><code class="docutils literal notranslate"><span class="pre">wigner_D()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable._z_rot_mat"><code class="docutils literal notranslate"><span class="pre">_z_rot_mat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.rotation_to_wigner"><code class="docutils literal notranslate"><span class="pre">rotation_to_wigner()</span></code></a></li>
@@ -683,17 +680,6 @@ document.write(`
                   
   <section id="module-core.models.escn.so3_exportable">
 <span id="core-models-escn-so3-exportable"></span><h1>core.models.escn.so3_exportable<a class="headerlink" href="#module-core.models.escn.so3_exportable" title="Link to this heading">#</a></h1>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.__Jd" title="core.models.escn.so3_exportable.__Jd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__Jd</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -712,16 +698,13 @@ document.write(`
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.get_jd" title="core.models.escn.so3_exportable.get_jd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_jd</span></code></a>(→ torch.Tensor)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.wigner_D" title="core.models.escn.so3_exportable.wigner_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wigner_D</span></code></a>(→ torch.Tensor)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.wigner_D" title="core.models.escn.so3_exportable.wigner_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wigner_D</span></code></a>(→ torch.Tensor)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable._z_rot_mat" title="core.models.escn.so3_exportable._z_rot_mat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_z_rot_mat</span></code></a>(→ torch.Tensor)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable._z_rot_mat" title="core.models.escn.so3_exportable._z_rot_mat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_z_rot_mat</span></code></a>(→ torch.Tensor)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.rotation_to_wigner" title="core.models.escn.so3_exportable.rotation_to_wigner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotation_to_wigner</span></code></a>(→ torch.Tensor)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.escn.so3_exportable.rotation_to_wigner" title="core.models.escn.so3_exportable.rotation_to_wigner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotation_to_wigner</span></code></a>(→ torch.Tensor)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -730,19 +713,9 @@ document.write(`
 </section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
-<dl class="py data">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.__Jd">
-<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">__Jd</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.__Jd" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.get_jd">
-<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">get_jd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.escn.so3_exportable.get_jd" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="core.models.escn.so3_exportable.wigner_D">
-<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">wigner_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.escn.so3_exportable.wigner_D" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">wigner_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_Jd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.escn.so3_exportable.wigner_D" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -752,7 +725,7 @@ document.write(`
 
 <dl class="py function">
 <dt class="sig sig-object py" id="core.models.escn.so3_exportable.rotation_to_wigner">
-<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">rotation_to_wigner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_rot_mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.escn.so3_exportable.rotation_to_wigner" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">core.models.escn.so3_exportable.</span></span><span class="sig-name descname"><span class="pre">rotation_to_wigner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_rot_mat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#core.models.escn.so3_exportable.rotation_to_wigner" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
@@ -997,12 +970,9 @@ since we cannot use <cite>self.m_complex</cite>.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.__Jd"><code class="docutils literal notranslate"><span class="pre">__Jd</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.get_jd"><code class="docutils literal notranslate"><span class="pre">get_jd()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.wigner_D"><code class="docutils literal notranslate"><span class="pre">wigner_D()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable._z_rot_mat"><code class="docutils literal notranslate"><span class="pre">_z_rot_mat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.rotation_to_wigner"><code class="docutils literal notranslate"><span class="pre">rotation_to_wigner()</span></code></a></li>

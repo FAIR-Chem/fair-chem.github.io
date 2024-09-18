@@ -758,7 +758,7 @@ SOFTWARE.</p>
 <td><p>PaiNN model based on the description in Schütt et al. (2021):</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNMessage" title="core.models.painn.painn.PaiNNMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNMessage</span></code></a></p></td>
-<td><p>Base class for creating message passing layers of the form</p></td>
+<td><p>Base class for creating message passing layers.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#core.models.painn.painn.PaiNNUpdate" title="core.models.painn.painn.PaiNNUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PaiNNUpdate</span></code></a></p></td>
 <td><p>Base class for all neural network modules.</p></td>
@@ -948,7 +948,8 @@ and molecular spectra, <a class="reference external" href="https://arxiv.org/abs
 <dt class="sig sig-object py" id="core.models.painn.painn.PaiNNMessage">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.painn.painn.</span></span><span class="sig-name descname"><span class="pre">PaiNNMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rbf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.painn.painn.PaiNNMessage" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch_geometric.nn.MessagePassing</span></code></p>
-<p>Base class for creating message passing layers of the form</p>
+<p>Base class for creating message passing layers.</p>
+<p>Message passing layers follow the form</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{x}_i^{\prime} = \gamma_{\mathbf{\Theta}} \left( \mathbf{x}_i,
 \bigoplus_{j \in \mathcal{N}(i)} \, \phi_{\mathbf{\Theta}}
@@ -962,8 +963,8 @@ See <a class="reference external" href="https://pytorch-geometric.readthedocs.io
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggr</strong> (<em>str</em><em> or </em><em>[</em><em>str</em><em>] or </em><em>Aggregation</em><em>, </em><em>optional</em>) – The aggregation scheme
-to use, <em>e.g.</em>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;add&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;sum&quot;</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;mean&quot;</span></code>,
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;min&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;mul&quot;</span></code>.
+to use, <em>e.g.</em>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;sum&quot;</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;mean&quot;</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;min&quot;</span></code>,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">&quot;mul&quot;</span></code>.
 In addition, can be any
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code> module (or any string
 that automatically resolves to it).
