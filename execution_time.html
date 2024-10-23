@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -64,6 +67,7 @@
     <link rel="prev" title="cattsunami.databases" href="autoapi/cattsunami/databases/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,15 +147,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -354,6 +343,7 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
@@ -378,6 +368,7 @@
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,24 +574,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -641,105 +624,105 @@ give you an idea how long each one will take to run start-to-finish!</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="core/fine-tuning/fine-tuning-oxides.html"><span class="doc">core/fine-tuning/fine-tuning-oxides</span></a></p></td>
-<td><p>2024-09-18 21:18</p></td>
+<td><p>2024-10-23 20:38</p></td>
 <td><p>auto</p></td>
-<td><p>421.9</p></td>
+<td><p>416.02</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="core/gotchas.html"><span class="doc">core/gotchas</span></a></p></td>
-<td><p>2024-09-18 21:18</p></td>
+<td><p>2024-10-23 20:39</p></td>
 <td><p>auto</p></td>
-<td><p>34.66</p></td>
+<td><p>36.73</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="core/inference.html"><span class="doc">core/inference</span></a></p></td>
-<td><p>2024-09-18 21:19</p></td>
+<td><p>2024-10-23 20:39</p></td>
 <td><p>auto</p></td>
-<td><p>35.98</p></td>
+<td><p>39.84</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="core/lmdb_dataset_creation.html"><span class="doc">core/lmdb_dataset_creation</span></a></p></td>
-<td><p>2024-09-18 21:19</p></td>
+<td><p>2024-10-23 20:39</p></td>
 <td><p>auto</p></td>
-<td><p>13.53</p></td>
+<td><p>15.83</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="core/ocpapi.html"><span class="doc">core/ocpapi</span></a></p></td>
-<td><p>2024-09-18 21:19</p></td>
+<td><p>2024-10-23 20:40</p></td>
 <td><p>auto</p></td>
-<td><p>4.18</p></td>
+<td><p>3.0</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="core/quickstart.html"><span class="doc">core/quickstart</span></a></p></td>
-<td><p>2024-09-18 21:20</p></td>
+<td><p>2024-10-23 20:40</p></td>
 <td><p>auto</p></td>
-<td><p>16.49</p></td>
+<td><p>17.84</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="legacy_tutorials/OCP_Tutorial.html"><span class="doc">legacy_tutorials/OCP_Tutorial</span></a></p></td>
-<td><p>2024-09-18 21:33</p></td>
+<td><p>2024-10-23 20:53</p></td>
 <td><p>auto</p></td>
-<td><p>790.91</p></td>
+<td><p>809.23</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="legacy_tutorials/data_preprocessing.html"><span class="doc">legacy_tutorials/data_preprocessing</span></a></p></td>
-<td><p>2024-09-18 21:33</p></td>
+<td><p>2024-10-23 20:54</p></td>
 <td><p>auto</p></td>
-<td><p>12.59</p></td>
+<td><p>14.61</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="legacy_tutorials/data_visualization.html"><span class="doc">legacy_tutorials/data_visualization</span></a></p></td>
-<td><p>2024-09-18 21:34</p></td>
+<td><p>2024-10-23 20:54</p></td>
 <td><p>auto</p></td>
-<td><p>44.97</p></td>
+<td><p>52.01</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="tutorials/NRR/NRR_example.html"><span class="doc">tutorials/NRR/NRR_example</span></a></p></td>
-<td><p>2024-09-18 21:46</p></td>
+<td><p>2024-10-23 21:07</p></td>
 <td><p>auto</p></td>
-<td><p>737.3</p></td>
+<td><p>757.06</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="tutorials/OCP-introduction.html"><span class="doc">tutorials/OCP-introduction</span></a></p></td>
-<td><p>2024-09-18 21:50</p></td>
+<td><p>2024-10-23 21:11</p></td>
 <td><p>auto</p></td>
-<td><p>250.63</p></td>
+<td><p>265.3</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="tutorials/adsorbml_walkthrough.html"><span class="doc">tutorials/adsorbml_walkthrough</span></a></p></td>
-<td><p>2024-09-18 21:58</p></td>
+<td><p>2024-10-23 21:19</p></td>
 <td><p>auto</p></td>
-<td><p>442.46</p></td>
+<td><p>462.63</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="tutorials/advanced/embeddings.html"><span class="doc">tutorials/advanced/embeddings</span></a></p></td>
-<td><p>2024-09-18 21:59</p></td>
+<td><p>2024-10-23 21:21</p></td>
 <td><p>auto</p></td>
-<td><p>108.66</p></td>
+<td><p>118.06</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="tutorials/advanced/fine-tuning-in-python.html"><span class="doc">tutorials/advanced/fine-tuning-in-python</span></a></p></td>
-<td><p>2024-09-18 22:03</p></td>
+<td><p>2024-10-23 21:25</p></td>
 <td><p>auto</p></td>
-<td><p>220.74</p></td>
+<td><p>227.85</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="tutorials/cattsunami_tutorial.html"><span class="doc">tutorials/cattsunami_tutorial</span></a></p></td>
-<td><p>2024-09-18 22:03</p></td>
+<td><p>2024-10-23 21:25</p></td>
 <td><p>auto</p></td>
-<td><p>0.96</p></td>
+<td><p>1.13</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="xref doc reference internal" href="tutorials/fairchem_models_for_nebs.html"><span class="doc">tutorials/fairchem_models_for_nebs</span></a></p></td>
-<td><p>2024-09-18 22:03</p></td>
+<td><p>2024-10-23 21:25</p></td>
 <td><p>auto</p></td>
-<td><p>0.71</p></td>
+<td><p>1.12</p></td>
 <td><p>✅</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="xref doc reference internal" href="tutorials/intro.html"><span class="doc">tutorials/intro</span></a></p></td>
-<td><p>2024-09-18 22:03</p></td>
+<td><p>2024-10-23 21:25</p></td>
 <td><p>auto</p></td>
-<td><p>5.29</p></td>
+<td><p>6.27</p></td>
 <td><p>✅</p></td>
 </tr>
 </tbody>
@@ -836,8 +819,8 @@ By FAIR Chemistry & Collaborators
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

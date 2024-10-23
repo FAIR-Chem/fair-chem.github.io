@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -65,6 +68,7 @@
     <link rel="prev" title="Training and evaluating custom models on OCP datasets" href="model_training.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,15 +148,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -355,6 +344,7 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/eqv2_to_hydra_eqv2/index.html">core.scripts.eqv2_to_hydra_eqv2</a></li>
@@ -379,6 +369,7 @@
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -584,24 +575,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -698,29 +681,29 @@ Comment or skip this block to use the whole dataset!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|     mass
- 1| 0s|runner|Au38   |unknown   |-100.459|    38|0.349|TTT|5846.048| 0.000| 7484.730
- 2| 0s|runner|Au39   |unknown   | -97.139|    39|0.829|TTT|5893.874| 0.000| 7681.696
- 3| 0s|runner|Au15   |unknown   | -47.869|    15|0.028|TTT| 280.010| 0.000| 2954.499
- 4| 0s|runner|Au16   |unknown   | -37.401|    16|0.156|TTT|3923.762| 0.000| 3151.465
- 5| 0s|runner|Au35   |unknown   | -90.962|    35|0.126|TTT|5504.869| 0.000| 6893.830
- 6| 0s|runner|Au35   |unknown   | -90.824|    35|0.169|TTT|5504.869| 0.000| 6893.830
- 7| 0s|runner|Au15   |unknown   | -47.869|    15|0.024|TTT| 279.885| 0.000| 2954.499
- 8| 0s|runner|Au24   |unknown   | -59.349|    24|0.042|TTT|4672.311| 0.000| 4727.198
- 9| 0s|runner|Au7    |unknown   | -13.834|     7|0.259|TTT|2498.476| 0.000| 1378.766
-10| 0s|runner|Au24   |unknown   | -59.318|    24|0.106|TTT|4672.311| 0.000| 4727.198
-11| 0s|runner|Au33   |unknown   | -84.824|    33|0.149|TTT|5480.808| 0.000| 6499.897
-12| 0s|runner|Au20   |unknown   | -48.159|    20|0.139|TTT|4413.396| 0.000| 3939.331
-13| 0s|runner|Au25   |unknown   | -61.171|    25|0.199|TTT|4771.343| 0.000| 4924.164
-14| 0s|runner|Au107  |vasp      |-325.310|   107|0.209|TTT|9178.098| 0.000|21075.423
-15| 0s|runner|Au2    |unknown   |  -1.073|     2|0.000|TTT|  23.169| 0.000|  393.933
-16| 0s|runner|Au7    |unknown   | -13.705|     7|1.983|TTT|3511.808| 0.000| 1378.766
-17| 0s|runner|Au25   |unknown   | -60.797|    25|0.667|TTT|4771.343| 0.000| 4924.164
-18| 0s|runner|Au8    |unknown   | -19.571|     8|0.000|TTT| 209.823| 0.000| 1575.733
-19| 0s|runner|Au4    |unknown   | -12.005|     4|0.883|TTT| 143.096| 0.000|  787.866
-20| 0s|runner|Au36   |unknown   | -93.633|    36|0.132|TTT|5663.627| 0.000| 7090.796
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|    mass
+ 1| 0s|runner|Au13   |unknown   | -24.813|    13|1.304|TTT|7503.218| 0.000|2560.565
+ 2| 0s|runner|Au31   |unknown   | -77.672|    31|0.511|TTT|5304.824| 0.000|6105.964
+ 3| 0s|runner|Au38   |unknown   | -98.126|    38|0.060|TTT|5846.048| 0.000|7484.730
+ 4| 0s|runner|Au8    |unknown   | -16.826|     8|0.085|TTT|3511.808| 0.000|1575.733
+ 5| 0s|runner|Au27   |unknown   | -78.371|    27|0.012|TTT|1412.460| 0.000|5318.097
+ 6| 0s|runner|Au15   |unknown   | -35.063|    15|0.137|TTT|3809.068| 0.000|2954.499
+ 7| 0s|runner|Au35   |unknown   | -90.311|    35|0.119|TTT|5504.869| 0.000|6893.830
+ 8| 0s|runner|Au26   |unknown   | -83.082|    26|0.581|TTT| 475.618| 0.000|5121.131
+ 9| 0s|runner|Au44   |unknown   |-116.603|    44|0.336|TTT|6257.369| 0.000|8666.529
+10| 0s|runner|Au6    |unknown   | -10.634|     6|0.589|TTT|2459.786| 0.000|1181.799
+11| 0s|runner|Au14   |unknown   | -32.897|    14|0.149|TTT|3066.950| 0.000|2757.532
+12| 0s|runner|Au16   |unknown   | -37.960|    16|0.067|TTT|3746.637| 0.000|3151.465
+13| 0s|runner|Au32   |unknown   | -78.575|    32|0.417|TTT|5385.186| 0.000|6302.930
+14| 0s|runner|Au6    |unknown   | -10.912|     6|1.844|TTT|2933.887| 0.000|1181.799
+15| 0s|runner|Au38   |unknown   |-100.260|    38|0.514|TTT|5846.048| 0.000|7484.730
+16| 0s|runner|Au4    |unknown   | -12.213|     4|0.019|TTT| 143.096| 0.000| 787.866
+17| 0s|runner|Au38   |unknown   | -95.367|    38|1.634|TTT|5846.048| 0.000|7484.730
+18| 0s|runner|Au25   |unknown   | -61.387|    25|0.192|TTT|4771.343| 0.000|4924.164
+19| 0s|runner|Au19   |unknown   | -45.788|    19|0.288|TTT|4101.856| 0.000|3742.365
+20| 0s|runner|Au43   |unknown   |-113.518|    43|0.125|TTT|6014.312| 0.000|8469.562
 Rows: 50 (showing first 20)
-Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion, ediff, ... (31 more)
+Keys: NEB, bulk, calc_time, cluster, concentration, config, converged, diffusion, ediff, ... (27 more)
 </pre></div>
 </div>
 </div>
@@ -837,7 +820,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-18 21:19:13 (INFO): Total time taken: 7.306535959243774
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-10-23 20:39:26 (INFO): Total time taken: 8.327327013015747
 </pre></div>
 </div>
 </div>
@@ -906,7 +889,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4dcb128b635cd71a2eef3c94324a4f8a5c6f157a4b0bc98d9c8be1b386bd6a53.png" src="../_images/4dcb128b635cd71a2eef3c94324a4f8a5c6f157a4b0bc98d9c8be1b386bd6a53.png" />
+<img alt="../_images/aea3db562f5c103a2b6a397166d765950f2cf0f5d9d7fc35b31b78c364d02752.png" src="../_images/aea3db562f5c103a2b6a397166d765950f2cf0f5d9d7fc35b31b78c364d02752.png" />
 </div>
 </div>
 </section>
@@ -957,133 +940,139 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0it [00:00, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2750/402181013.py:7: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2696/402181013.py:7: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
-/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:451: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
+/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:453: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
   with torch.cuda.amp.autocast(enabled=self.scaler is not None):
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1it [00:00,  3.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2it [00:00,  5.81it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2it [00:00,  3.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3it [00:00,  4.22it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3it [00:00,  3.48it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4it [00:00,  5.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4it [00:01,  4.29it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5it [00:01,  3.94it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5it [00:01,  3.76it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:01,  4.58it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:01,  3.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7it [00:01,  4.25it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7it [00:01,  3.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8it [00:01,  3.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8it [00:02,  3.87it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9it [00:02,  4.46it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10it [00:02,  4.92it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10it [00:02,  5.05it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11it [00:02,  4.66it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11it [00:02,  5.12it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12it [00:02,  4.94it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12it [00:02,  4.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13it [00:03,  4.95it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13it [00:02,  5.28it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15it [00:03,  5.44it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14it [00:03,  4.49it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16it [00:03,  5.59it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15it [00:03,  3.94it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17it [00:03,  5.10it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16it [00:03,  4.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18it [00:03,  5.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17it [00:03,  4.34it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19it [00:04,  4.19it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18it [00:04,  3.62it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20it [00:04,  4.25it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19it [00:04,  3.59it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21it [00:04,  4.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20it [00:04,  4.12it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22it [00:04,  4.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21it [00:04,  4.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23it [00:05,  4.01it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22it [00:05,  2.69it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24it [00:05,  3.88it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23it [00:05,  2.66it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25it [00:05,  4.08it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24it [00:06,  2.66it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26it [00:05,  4.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25it [00:06,  2.63it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27it [00:06,  4.10it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26it [00:07,  2.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28it [00:06,  3.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27it [00:07,  3.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30it [00:07,  3.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28it [00:07,  3.73it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31it [00:07,  3.47it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29it [00:07,  3.83it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32it [00:07,  3.76it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30it [00:07,  4.07it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33it [00:07,  4.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31it [00:07,  4.69it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34it [00:08,  4.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32it [00:08,  4.67it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35it [00:08,  4.03it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33it [00:08,  4.63it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36it [00:08,  3.69it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34it [00:08,  3.72it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37it [00:08,  4.00it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35it [00:09,  3.07it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38it [00:09,  4.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36it [00:09,  3.27it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39it [00:09,  5.06it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37it [00:09,  3.22it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40it [00:09,  4.16it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38it [00:10,  3.31it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41it [00:09,  4.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39it [00:10,  3.88it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42it [00:09,  4.30it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40it [00:10,  3.65it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43it [00:10,  4.73it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41it [00:10,  4.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43it [00:10,  4.25it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42it [00:10,  4.06it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43it [00:11,  3.71it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43it [00:11,  3.80it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 1e+01 seconds
@@ -1104,7 +1093,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2d33d2519b86aa6a1c181115d2d4536b85d09e8a37a78075c3cec7263c717409.png" src="../_images/2d33d2519b86aa6a1c181115d2d4536b85d09e8a37a78075c3cec7263c717409.png" />
+<img alt="../_images/fe3986b7ae5456a196311a6374cc2f21870ce78f70771b7a24ed66c87f01e292.png" src="../_images/fe3986b7ae5456a196311a6374cc2f21870ce78f70771b7a24ed66c87f01e292.png" />
 </div>
 </div>
 </section>
@@ -1120,7 +1109,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39.12066565699807
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.318762511546836
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1121,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-134.28153038024902, 134.28153038024902)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-217.1829319000244, 217.1829319000244)
 </pre></div>
 </div>
 </div>
@@ -1144,7 +1133,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73d4397bc47adf7dd1bfaf0ad95149745534bc70b888193565051cdebb08b017.png" src="../_images/73d4397bc47adf7dd1bfaf0ad95149745534bc70b888193565051cdebb08b017.png" />
+<img alt="../_images/7cb94665edb1d98736dd09114ee2d764d582a7b6c589e95c0553b2c1827daea3.png" src="../_images/7cb94665edb1d98736dd09114ee2d764d582a7b6c589e95c0553b2c1827daea3.png" />
 </div>
 </div>
 <p>Here we see many of the differences are very small. 0.0078125 = 1 / 128, and these errors strongly suggest some kind of mixed precision is responsible for these differences. It is an open issue to remove them and identify where the cause is.</p>
@@ -1155,19 +1144,19 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.42108547e-14, -1.32502747e+00, -6.39400826e+01, ...,
-        -7.13904953e+01, -1.99435120e+01, -7.34947090e+01],
-       [ 1.32502747e+00,  0.00000000e+00, -6.26150551e+01, ...,
-        -7.00654678e+01, -1.86184845e+01, -7.21696815e+01],
-       [ 6.39400826e+01,  6.26150551e+01,  0.00000000e+00, ...,
-        -7.45041275e+00,  4.39965706e+01, -9.55462646e+00],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  0.        ,  54.07962418,  75.71732712, ...,  15.47605515,
+         44.29102707,  76.73733139],
+       [-54.07962418,   0.        ,  21.63770294, ..., -38.60356903,
+         -9.78859711,  22.65770721],
+       [-75.71732712, -21.63770294,   0.        , ..., -60.24127197,
+        -31.42630005,   1.02000427],
        ...,
-       [ 7.13904953e+01,  7.00654678e+01,  7.45041275e+00, ...,
-         0.00000000e+00,  5.14469833e+01, -2.10421371e+00],
-       [ 1.99435120e+01,  1.86184845e+01, -4.39965706e+01, ...,
-        -5.14469833e+01,  0.00000000e+00, -5.35511971e+01],
-       [ 7.34947090e+01,  7.21696815e+01,  9.55462646e+00, ...,
-         2.10421371e+00,  5.35511971e+01,  0.00000000e+00]])
+       [-15.47605515,  38.60356903,  60.24127197, ...,   0.        ,
+         28.81497192,  61.26127625],
+       [-44.29102707,   9.78859711,  31.42630005, ..., -28.81497192,
+          0.        ,  32.44630432],
+       [-76.73733139, -22.65770721,  -1.02000427, ..., -61.26127625,
+        -32.44630432,   0.        ]])
 </pre></div>
 </div>
 </div>
@@ -1229,7 +1218,8 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1290,8 +1280,8 @@ By FAIR Chemistry & Collaborators
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
