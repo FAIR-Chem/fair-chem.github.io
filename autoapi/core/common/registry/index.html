@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/common/registry/index';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="core.common.slurm" href="../slurm/index.html" />
+    <link rel="next" title="core.common.relaxation" href="../relaxation/index.html" />
     <link rel="prev" title="core.common.profiler_utils" href="../profiler_utils/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../core/datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -284,8 +285,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html">core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../index.html">core.common</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../flags/index.html">core.common.flags</a></li>
@@ -294,6 +296,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../transforms/index.html">core.common.transforms</a></li>
@@ -303,10 +306,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -314,26 +317,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -343,7 +346,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -351,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -368,16 +371,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -394,6 +395,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -402,7 +404,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -619,6 +620,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.mapping"><code class="docutils literal notranslate"><span class="pre">Registry.mapping</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_task"><code class="docutils literal notranslate"><span class="pre">Registry.register_task()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_dataset"><code class="docutils literal notranslate"><span class="pre">Registry.register_dataset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_loss"><code class="docutils literal notranslate"><span class="pre">Registry.register_loss()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_model"><code class="docutils literal notranslate"><span class="pre">Registry.register_model()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_logger"><code class="docutils literal notranslate"><span class="pre">Registry.register_logger()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_trainer"><code class="docutils literal notranslate"><span class="pre">Registry.register_trainer()</span></code></a></li>
@@ -627,6 +629,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_task_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_task_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_dataset_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_dataset_class()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_loss_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_loss_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_model_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_model_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_logger_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_logger_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_trainer_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_trainer_class()</span></code></a></li>
@@ -768,6 +771,26 @@ class TrainTask(BaseTask):</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="core.common.registry.Registry.register_loss">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.registry.Registry.register_loss" title="Link to this definition">#</a></dt>
+<dd><p>Register a loss to registry with key ‘name’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – Key with which the loss will be registered.</p>
+</dd>
+</dl>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="nd">@registry</span><span class="o">.</span><span class="n">register_loss</span><span class="p">(</span><span class="s2">&quot;mae&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">MAELoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="core.common.registry.Registry.register_model">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.registry.Registry.register_model" title="Link to this definition">#</a></dt>
 <dd><p>Register a model to registry with key ‘name’</p>
@@ -860,6 +883,11 @@ class TrainTask(BaseTask):</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="core.common.registry.Registry.get_dataset_class">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_dataset_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.registry.Registry.get_dataset_class" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.common.registry.Registry.get_loss_class">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_loss_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.common.registry.Registry.get_loss_class" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -968,11 +996,11 @@ internal operations. Default: False</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="../slurm/index.html"
+       href="../relaxation/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">core.common.slurm</p>
+        <p class="prev-next-title">core.common.relaxation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1004,6 +1032,7 @@ internal operations. Default: False</p></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.mapping"><code class="docutils literal notranslate"><span class="pre">Registry.mapping</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_task"><code class="docutils literal notranslate"><span class="pre">Registry.register_task()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_dataset"><code class="docutils literal notranslate"><span class="pre">Registry.register_dataset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_loss"><code class="docutils literal notranslate"><span class="pre">Registry.register_loss()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_model"><code class="docutils literal notranslate"><span class="pre">Registry.register_model()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_logger"><code class="docutils literal notranslate"><span class="pre">Registry.register_logger()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.register_trainer"><code class="docutils literal notranslate"><span class="pre">Registry.register_trainer()</span></code></a></li>
@@ -1012,6 +1041,7 @@ internal operations. Default: False</p></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_task_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_task_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_dataset_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_dataset_class()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_loss_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_loss_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_model_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_model_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_logger_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_logger_class()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.common.registry.Registry.get_trainer_class"><code class="docutils literal notranslate"><span class="pre">Registry.get_trainer_class()</span></code></a></li>

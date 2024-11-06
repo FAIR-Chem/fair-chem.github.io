@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -286,8 +287,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="core/index.html">core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="core/common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/flags/index.html">core.common.flags</a></li>
@@ -296,6 +298,7 @@
 <li class="toctree-l4"><a class="reference internal" href="core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/common/transforms/index.html">core.common.transforms</a></li>
@@ -305,10 +308,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="core/datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -316,26 +319,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="core/models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -345,7 +348,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -353,6 +355,7 @@
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -370,16 +373,14 @@
 <li class="toctree-l4"><a class="reference internal" href="core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -396,6 +397,7 @@
 <li class="toctree-l4"><a class="reference internal" href="ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -404,7 +406,6 @@
 <li class="toctree-l4"><a class="reference internal" href="ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -618,16 +619,9 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="core/index.html">core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/common/index.html">core.common</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="core/common/relaxation/index.html">core.common.relaxation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/optimizers/index.html">core.common.relaxation.optimizers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="core/common/relaxation/optimizers/lbfgs_torch/index.html">core.common.relaxation.optimizers.lbfgs_torch</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/ase_utils/index.html">core.common.relaxation.ase_utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/ml_relaxation/index.html">core.common.relaxation.ml_relaxation</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/flags/index.html">core.common.flags</a></li>
@@ -636,6 +630,15 @@
 <li class="toctree-l3"><a class="reference internal" href="core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/common/relaxation/index.html">core.common.relaxation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/ase_utils/index.html">core.common.relaxation.ase_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/ml_relaxation/index.html">core.common.relaxation.ml_relaxation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/common/relaxation/optimizers/index.html">core.common.relaxation.optimizers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="core/common/relaxation/optimizers/lbfgs_torch/index.html">core.common.relaxation.optimizers.lbfgs_torch</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/common/transforms/index.html">core.common.transforms</a></li>
@@ -645,6 +648,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="core/datasets/index.html">core.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/datasets/_utils/index.html">core.datasets._utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/datasets/embeddings/index.html">core.datasets.embeddings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/embeddings/atomic_radii/index.html">core.datasets.embeddings.atomic_radii</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/embeddings/continuous_embeddings/index.html">core.datasets.embeddings.continuous_embeddings</a></li>
@@ -652,9 +658,6 @@
 <li class="toctree-l4"><a class="reference internal" href="core/datasets/embeddings/qmof_khot_embeddings/index.html">core.datasets.embeddings.qmof_khot_embeddings</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="core/datasets/_utils/index.html">core.datasets._utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -662,17 +665,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="core/models/index.html">core.models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/equiformer_v2/index.html">core.models.equiformer_v2</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/prediction_heads/index.html">core.models.equiformer_v2.prediction_heads</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/prediction_heads/rank2/index.html">core.models.equiformer_v2.prediction_heads.rank2</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/trainers/index.html">core.models.equiformer_v2.trainers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/energy_trainer/index.html">core.models.equiformer_v2.trainers.energy_trainer</a></li>
-<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/forces_trainer/index.html">core.models.equiformer_v2.trainers.forces_trainer</a></li>
-<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/lr_scheduler/index.html">core.models.equiformer_v2.trainers.lr_scheduler</a></li>
-</ul>
-</li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/activation/index.html">core.models.equiformer_v2.activation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/drop/index.html">core.models.equiformer_v2.drop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/edge_rot_mat/index.html">core.models.equiformer_v2.edge_rot_mat</a></li>
@@ -683,9 +678,19 @@
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/input_block/index.html">core.models.equiformer_v2.input_block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/layer_norm/index.html">core.models.equiformer_v2.layer_norm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/module_list/index.html">core.models.equiformer_v2.module_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/prediction_heads/index.html">core.models.equiformer_v2.prediction_heads</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/prediction_heads/rank2/index.html">core.models.equiformer_v2.prediction_heads.rank2</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/radial_function/index.html">core.models.equiformer_v2.radial_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/so2_ops/index.html">core.models.equiformer_v2.so2_ops</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/so3/index.html">core.models.equiformer_v2.so3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/trainers/index.html">core.models.equiformer_v2.trainers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/energy_trainer/index.html">core.models.equiformer_v2.trainers.energy_trainer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/forces_trainer/index.html">core.models.equiformer_v2.trainers.forces_trainer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="core/models/equiformer_v2/trainers/lr_scheduler/index.html">core.models.equiformer_v2.trainers.lr_scheduler</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/transformer_block/index.html">core.models.equiformer_v2.transformer_block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/equiformer_v2/wigner/index.html">core.models.equiformer_v2.wigner</a></li>
 </ul>
@@ -698,6 +703,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/gemnet/index.html">core.models.gemnet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/gemnet/index.html">core.models.gemnet.gemnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/initializers/index.html">core.models.gemnet.initializers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/layers/index.html">core.models.gemnet.layers</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet/layers/atom_update_block/index.html">core.models.gemnet.layers.atom_update_block</a></li>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet/layers/base_layers/index.html">core.models.gemnet.layers.base_layers</a></li>
@@ -709,12 +716,12 @@
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet/layers/spherical_basis/index.html">core.models.gemnet.layers.spherical_basis</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/gemnet/index.html">core.models.gemnet.gemnet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/initializers/index.html">core.models.gemnet.initializers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet/utils/index.html">core.models.gemnet.utils</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/gemnet_gp/index.html">core.models.gemnet_gp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/gemnet/index.html">core.models.gemnet_gp.gemnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/initializers/index.html">core.models.gemnet_gp.initializers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/layers/index.html">core.models.gemnet_gp.layers</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_gp/layers/atom_update_block/index.html">core.models.gemnet_gp.layers.atom_update_block</a></li>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_gp/layers/base_layers/index.html">core.models.gemnet_gp.layers.base_layers</a></li>
@@ -726,12 +733,13 @@
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_gp/layers/spherical_basis/index.html">core.models.gemnet_gp.layers.spherical_basis</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/gemnet/index.html">core.models.gemnet_gp.gemnet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/initializers/index.html">core.models.gemnet_gp.initializers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_gp/utils/index.html">core.models.gemnet_gp.utils</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/gemnet_oc/index.html">core.models.gemnet_oc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/gemnet_oc/index.html">core.models.gemnet_oc.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/initializers/index.html">core.models.gemnet_oc.initializers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/interaction_indices/index.html">core.models.gemnet_oc.interaction_indices</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/layers/index.html">core.models.gemnet_oc.layers</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_oc/layers/atom_update_block/index.html">core.models.gemnet_oc.layers.atom_update_block</a></li>
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_oc/layers/base_layers/index.html">core.models.gemnet_oc.layers.base_layers</a></li>
@@ -744,17 +752,16 @@
 <li class="toctree-l5"><a class="reference internal" href="core/models/gemnet_oc/layers/spherical_basis/index.html">core.models.gemnet_oc.layers.spherical_basis</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/gemnet_oc/index.html">core.models.gemnet_oc.gemnet_oc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/initializers/index.html">core.models.gemnet_oc.initializers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/interaction_indices/index.html">core.models.gemnet_oc.interaction_indices</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/gemnet_oc/utils/index.html">core.models.gemnet_oc.utils</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/painn/index.html">core.models.painn</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="core/models/painn/painn/index.html">core.models.painn.painn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/painn/utils/index.html">core.models.painn.utils</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/models/scn/index.html">core.models.scn</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="core/models/scn/sampling/index.html">core.models.scn.sampling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/models/scn/scn/index.html">core.models.scn.scn</a></li>
@@ -767,13 +774,12 @@
 <li class="toctree-l4"><a class="reference internal" href="core/models/utils/basis/index.html">core.models.utils.basis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="core/modules/index.html">core.modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="core/modules/evaluator/index.html">core.modules.evaluator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/modules/loss/index.html">core.modules.loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/modules/normalization/index.html">core.modules.normalization</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/normalization/_load_utils/index.html">core.modules.normalization._load_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core/modules/normalization/element_references/index.html">core.modules.normalization.element_references</a></li>
@@ -787,9 +793,6 @@
 <li class="toctree-l4"><a class="reference internal" href="core/modules/scaling/util/index.html">core.modules.scaling.util</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="core/modules/evaluator/index.html">core.modules.evaluator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/modules/loss/index.html">core.modules.loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -799,11 +802,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="core/scripts/index.html">core.scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="core/scripts/hpo/index.html">core.scripts.hpo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/run_tune/index.html">core.scripts.hpo.run_tune</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/run_tune_pbt/index.html">core.scripts.hpo.run_tune_pbt</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -811,6 +809,11 @@
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/scripts/hpo/index.html">core.scripts.hpo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/run_tune/index.html">core.scripts.hpo.run_tune</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core/scripts/hpo/run_tune_pbt/index.html">core.scripts.hpo.run_tune_pbt</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -828,8 +831,6 @@
 <li class="toctree-l3"><a class="reference internal" href="core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data/index.html">data</a><ul>
@@ -850,6 +851,7 @@
 <li class="toctree-l4"><a class="reference internal" href="data/oc/databases/update/index.html">data.oc.databases.update</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/oc/utils/index.html">data.oc.utils</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="data/oc/utils/flag_anomaly/index.html">data.oc.utils.flag_anomaly</a></li>
 <li class="toctree-l4"><a class="reference internal" href="data/oc/utils/geometry/index.html">data.oc.utils.geometry</a></li>
@@ -857,7 +859,6 @@
 <li class="toctree-l4"><a class="reference internal" href="data/oc/utils/vasp_flags/index.html">data.oc.utils.vasp_flags</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/odac/index.html">data.odac</a><ul>
@@ -874,6 +875,7 @@
 <li class="toctree-l3"><a class="reference internal" href="ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ocpapi/workflows/index.html">ocpapi.workflows</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -882,7 +884,6 @@
 <li class="toctree-l3"><a class="reference internal" href="ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cattsunami/index.html">cattsunami</a><ul>

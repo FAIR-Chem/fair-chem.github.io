@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../core/datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -284,8 +285,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../../index.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../index.html">core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/flags/index.html">core.common.flags</a></li>
@@ -294,6 +296,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../common/transforms/index.html">core.common.transforms</a></li>
@@ -303,10 +306,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -314,26 +317,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../../index.html">core.models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4 current active"><a class="reference internal" href="../index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -343,7 +346,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -351,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -368,16 +371,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -394,6 +395,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -402,7 +404,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -618,13 +619,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.lmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.lmax_list</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.mmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.mmax_list</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.num_resolutions"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_resolutions</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.l_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.l_harmonic</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_harmonic</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_complex"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_complex</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.res_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.res_size</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.offset"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.offset</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.num_coefficients"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_coefficients</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.to_m"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.to_m</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.complex_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.complex_idx()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.pre_compute_coefficient_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.pre_compute_coefficient_idx()</span></code></a></li>
@@ -639,13 +634,10 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mmax</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.lat_resolution"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lat_resolution</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.mapping"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mapping</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.device"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.device</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid_mat</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid_mat</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.get_to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_to_grid_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.get_from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_from_grid_mat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -741,38 +733,8 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.l_harmonic">
-<span class="sig-name descname"><span class="pre">l_harmonic</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.l_harmonic" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.m_harmonic">
-<span class="sig-name descname"><span class="pre">m_harmonic</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.m_harmonic" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.m_complex">
-<span class="sig-name descname"><span class="pre">m_complex</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.m_complex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.res_size">
 <span class="sig-name descname"><span class="pre">res_size</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.res_size" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.offset">
-<span class="sig-name descname"><span class="pre">offset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.offset" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.num_coefficients">
-<span class="sig-name descname"><span class="pre">num_coefficients</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.num_coefficients" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.CoefficientMapping.to_m">
-<span class="sig-name descname"><span class="pre">to_m</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.CoefficientMapping.to_m" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -849,31 +811,6 @@ since we cannot use <cite>self.m_complex</cite>.</p>
 <span class="sig-name descname"><span class="pre">mapping</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.mapping" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.device">
-<span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'cpu'</span></em><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.device" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.to_grid">
-<span class="sig-name descname"><span class="pre">to_grid</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.to_grid_mat">
-<span class="sig-name descname"><span class="pre">to_grid_mat</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid_mat" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.from_grid">
-<span class="sig-name descname"><span class="pre">from_grid</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.from_grid_mat">
-<span class="sig-name descname"><span class="pre">from_grid_mat</span></span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid_mat" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.get_to_grid_mat">
 <span class="sig-name descname"><span class="pre">get_to_grid_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.get_to_grid_mat" title="Link to this definition">#</a></dt>
@@ -882,6 +819,16 @@ since we cannot use <cite>self.m_complex</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.get_from_grid_mat">
 <span class="sig-name descname"><span class="pre">get_from_grid_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.get_from_grid_mat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.to_grid">
+<span class="sig-name descname"><span class="pre">to_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.escn.so3_exportable.SO3_Grid.from_grid">
+<span class="sig-name descname"><span class="pre">from_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -964,13 +911,7 @@ since we cannot use <cite>self.m_complex</cite>.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.lmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.lmax_list</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.mmax_list"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.mmax_list</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.num_resolutions"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_resolutions</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.l_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.l_harmonic</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_harmonic"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_harmonic</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_complex"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_complex</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.res_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.res_size</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.offset"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.offset</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.num_coefficients"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.num_coefficients</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.to_m"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.to_m</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.m_size"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.m_size</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.complex_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.complex_idx()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.CoefficientMapping.pre_compute_coefficient_idx"><code class="docutils literal notranslate"><span class="pre">CoefficientMapping.pre_compute_coefficient_idx()</span></code></a></li>
@@ -985,13 +926,10 @@ since we cannot use <cite>self.m_complex</cite>.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.mmax"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mmax</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.lat_resolution"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.lat_resolution</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.mapping"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.mapping</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.device"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.device</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid_mat</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid_mat</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.get_to_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_to_grid_mat()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.get_from_grid_mat"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.get_from_grid_mat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.to_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.to_grid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.escn.so3_exportable.SO3_Grid.from_grid"><code class="docutils literal notranslate"><span class="pre">SO3_Grid.from_grid()</span></code></a></li>
 </ul>
 </li>
 </ul>

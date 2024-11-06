@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="core/datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="core/datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core/datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="core/model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -283,8 +284,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="autoapi/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/core/index.html">core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/flags/index.html">core.common.flags</a></li>
@@ -293,6 +295,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -302,10 +305,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -313,26 +316,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -342,7 +345,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -350,6 +352,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -367,16 +370,14 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -393,6 +394,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -401,7 +403,6 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -873,6 +874,8 @@
 </li>
       <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models._DataModel">_DataModel (class in ocpapi.client.models)</a>
 </li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss._ddp_mean">_ddp_mean() (core.modules.loss.DDPLoss method)</a>
+</li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._DEFAULT_ADSLAB_FILTER">_DEFAULT_ADSLAB_FILTER (in module ocpapi.workflows.adsorbates)</a>
 </li>
       <li><a href="autoapi/ocpapi/workflows/retry/index.html#ocpapi.workflows.retry._wait_check_retry_after._default_wait">_default_wait (ocpapi.workflows.retry._wait_check_retry_after attribute)</a>
@@ -1177,6 +1180,8 @@
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding._reduce_edge">(core.models.escn.so3.SO3_Embedding method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss._reduction">_reduction() (core.modules.loss.DDPLoss method)</a>
+</li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._refresh_pbar">_refresh_pbar() (in module ocpapi.workflows.adsorbates)</a>
 </li>
       <li><a href="autoapi/ocpapi/workflows/adsorbates/index.html#ocpapi.workflows.adsorbates._relax_binding_sites_on_slabs">_relax_binding_sites_on_slabs() (in module ocpapi.workflows.adsorbates)</a>
@@ -1322,8 +1327,6 @@
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.a">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
-        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.a">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
-</li>
       </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.a2g">a2g (cattsunami.core.OCPNEB attribute)</a>
 
@@ -1335,15 +1338,11 @@
         <li><a href="autoapi/core/datasets/ase_datasets/index.html#core.datasets.ase_datasets.AseAtomsDataset.a2g">(core.datasets.ase_datasets.AseAtomsDataset attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/datasets/ase_datasets/index.html#core.datasets.ase_datasets.AseAtomsDataset.a2g_args">a2g_args (core.datasets.ase_datasets.AseAtomsDataset attribute)</a>
-</li>
       <li><a href="autoapi/core/models/utils/activations/index.html#core.models.utils.activations.Act">Act (class in core.models.utils.activations)</a>
 </li>
-      <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.act">act (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
+      <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.InteractionPPBlock.act">act (core.models.dimenet_plus_plus.InteractionPPBlock attribute)</a>
 
       <ul>
-        <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.InteractionPPBlock.act">(core.models.dimenet_plus_plus.InteractionPPBlock attribute)</a>
-</li>
         <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.OutputPPBlock.act">(core.models.dimenet_plus_plus.OutputPPBlock attribute)</a>
 </li>
         <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.S2Activation.act">(core.models.equiformer_v2.activation.S2Activation attribute)</a>
@@ -1473,12 +1472,6 @@
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.AdsorbateSlabRelaxationsRequest.adsorbate_configs">(ocpapi.client.models.AdsorbateSlabRelaxationsRequest attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.Reaction.adsorbate_db">adsorbate_db (cattsunami.core.Reaction attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/cattsunami/core/reaction/index.html#cattsunami.core.reaction.Reaction.adsorbate_db">(cattsunami.core.reaction.Reaction attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Adsorbate.adsorbate_db_path">adsorbate_db_path (data.oc.core.Adsorbate attribute)</a>
 
       <ul>
@@ -1603,8 +1596,6 @@
         <li><a href="autoapi/adsorbml/scripts/dense_eval/index.html#module-adsorbml.scripts.dense_eval">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     adsorbml.scripts.process_mlrs
 
@@ -1612,6 +1603,8 @@
         <li><a href="autoapi/adsorbml/scripts/process_mlrs/index.html#module-adsorbml.scripts.process_mlrs">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     adsorbml.scripts.utils
 
@@ -1822,8 +1815,6 @@
         <li><a href="autoapi/core/models/gemnet_oc/layers/atom_update_block/index.html#core.models.gemnet_oc.layers.atom_update_block.AtomUpdateBlock">(class in core.models.gemnet_oc.layers.atom_update_block)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.AtomwiseL2Loss">AtomwiseL2Loss (class in core.modules.loss)</a>
-</li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.attn_activation">attn_activation (core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
 
       <ul>
@@ -1912,8 +1903,6 @@
         <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope.b">(core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.b">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
-</li>
-        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.b">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.BackboneInterface">BackboneInterface (class in core.models.base)</a>
@@ -2012,22 +2001,16 @@
         <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.PairInteraction.bilinear">(core.models.gemnet_oc.layers.interaction_block.PairInteraction attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/data/odac/force_field/FF_analysis/index.html#data.odac.force_field.FF_analysis.bin_plot">bin_plot() (in module data.odac.force_field.FF_analysis)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/data/odac/force_field/FF_analysis/index.html#data.odac.force_field.FF_analysis.bin_plot">bin_plot() (in module data.odac.force_field.FF_analysis)</a>
+</li>
       <li><a href="autoapi/data/odac/force_field/FF_analysis/index.html#data.odac.force_field.FF_analysis.binned_average">binned_average() (in module data.odac.force_field.FF_analysis)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/prediction_heads/rank2/index.html#core.models.equiformer_v2.prediction_heads.rank2.Rank2SymmetricTensorHead.block">block (core.models.equiformer_v2.prediction_heads.rank2.Rank2SymmetricTensorHead attribute)</a>
 
       <ul>
         <li><a href="autoapi/core/models/equiformer_v2/prediction_heads/index.html#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.block">(core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/interaction_block/index.html#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.block_nr">block_nr (core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/interaction_block/index.html#core.models.gemnet_gp.layers.interaction_block.InteractionBlockTripletsOnly.block_nr">(core.models.gemnet_gp.layers.interaction_block.InteractionBlockTripletsOnly attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.blocks">blocks (core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
@@ -2041,8 +2024,6 @@
       <li><a href="autoapi/cattsunami/run_validation/run_validation/index.html#cattsunami.run_validation.run_validation.both_barriered">both_barriered() (in module cattsunami.run_validation.run_validation)</a>
 </li>
       <li><a href="autoapi/cattsunami/run_validation/run_validation/index.html#cattsunami.run_validation.run_validation.both_barrierless">both_barrierless() (in module cattsunami.run_validation.run_validation)</a>
-</li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_LinearV2.bound">bound (core.models.equiformer_v2.so3.SO3_LinearV2 attribute)</a>
 </li>
       <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry">BoxGeometry (class in data.oc.utils.geometry)</a>
 </li>
@@ -2138,8 +2119,6 @@
         <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope.c">(core.models.gemnet_gp.layers.radial_basis.PolynomialEnvelope attribute)</a>
 </li>
         <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope.c">(core.models.gemnet_oc.layers.radial_basis.PolynomialEnvelope attribute)</a>
-</li>
-        <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.c">(data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.cached">cached (cattsunami.core.OCPNEB attribute)</a>
@@ -2237,22 +2216,6 @@
         <li><a href="autoapi/core/models/gemnet_gp/index.html#core.models.gemnet_gp.GraphParallelGemNetT.cbf_basis3">(core.models.gemnet_gp.GraphParallelGemNetT attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/spherical_basis/index.html#core.models.gemnet.layers.spherical_basis.CircularBasisLayer.cbf_hparams">cbf_hparams (core.models.gemnet.layers.spherical_basis.CircularBasisLayer attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/spherical_basis/index.html#core.models.gemnet_gp.layers.spherical_basis.CircularBasisLayer.cbf_hparams">(core.models.gemnet_gp.layers.spherical_basis.CircularBasisLayer attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/spherical_basis/index.html#core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer.cbf_hparams">(core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/spherical_basis/index.html#core.models.gemnet.layers.spherical_basis.CircularBasisLayer.cbf_name">cbf_name (core.models.gemnet.layers.spherical_basis.CircularBasisLayer attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/spherical_basis/index.html#core.models.gemnet_gp.layers.spherical_basis.CircularBasisLayer.cbf_name">(core.models.gemnet_gp.layers.spherical_basis.CircularBasisLayer attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/spherical_basis/index.html#core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer.cbf_name">(core.models.gemnet_oc.layers.spherical_basis.CircularBasisLayer attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.PlaneBoundTriclinicGeometry.cell">cell (data.oc.utils.geometry.PlaneBoundTriclinicGeometry attribute)</a>
 
       <ul>
@@ -2282,8 +2245,6 @@
       <li><a href="autoapi/core/common/relaxation/optimizers/lbfgs_torch/index.html#core.common.relaxation.optimizers.lbfgs_torch.LBFGS.check_convergence">check_convergence() (core.common.relaxation.optimizers.lbfgs_torch.LBFGS method)</a>
 </li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.check_traj_files">check_traj_files() (in module core.common.utils)</a>
-</li>
-      <li><a href="autoapi/core/common/relaxation/ase_utils/index.html#core.common.relaxation.ase_utils.OCPCalculator.checkpoint">checkpoint (core.common.relaxation.ase_utils.OCPCalculator attribute)</a>
 </li>
       <li><a href="autoapi/core/_cli/index.html#core._cli.Runner.checkpoint">checkpoint() (core._cli.Runner method)</a>
 
@@ -2365,12 +2326,6 @@
 </li>
       <li><a href="autoapi/core/models/scn/spherical_harmonics/index.html#core.models.scn.spherical_harmonics.SphericalHarmonicsHelper.CombineYRotations">CombineYRotations() (core.models.scn.spherical_harmonics.SphericalHarmonicsHelper method)</a>
 </li>
-      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.commit_hash">commit_hash (core.trainers.base_trainer.BaseTrainer attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.commit_hash">(core.trainers.BaseTrainer attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.eSCN.compile">compile (core.models.escn.escn_exportable.eSCN attribute)</a>
 </li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.Complete">Complete (class in core.common.utils)</a>
@@ -2429,13 +2384,9 @@
       </ul></li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.conditional_grad">conditional_grad() (in module core.common.utils)</a>
 </li>
-      <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.config">config (cattsunami.core.OCPNEB attribute)</a>
+      <li><a href="autoapi/core/_cli/index.html#core._cli.Runner.config">config (core._cli.Runner attribute)</a>
 
       <ul>
-        <li><a href="autoapi/cattsunami/core/ocpneb/index.html#cattsunami.core.ocpneb.OCPNEB.config">(cattsunami.core.ocpneb.OCPNEB attribute)</a>
-</li>
-        <li><a href="autoapi/core/_cli/index.html#core._cli.Runner.config">(core._cli.Runner attribute)</a>
-</li>
         <li><a href="autoapi/core/common/logger/index.html#core.common.logger.Logger.config">(core.common.logger.Logger attribute)</a>
 </li>
         <li><a href="autoapi/core/common/relaxation/ase_utils/index.html#core.common.relaxation.ase_utils.OCPCalculator.config">(core.common.relaxation.ase_utils.OCPCalculator attribute)</a>
@@ -2888,8 +2839,6 @@
         <li><a href="autoapi/core/models/equiformer_v2/module_list/index.html#module-core.models.equiformer_v2.module_list">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core.models.equiformer_v2.prediction_heads
 
@@ -2911,6 +2860,8 @@
         <li><a href="autoapi/core/models/equiformer_v2/radial_function/index.html#module-core.models.equiformer_v2.radial_function">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core.models.equiformer_v2.so2_ops
 
@@ -4031,6 +3982,8 @@
 </li>
       <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss">DDPLoss (class in core.modules.loss)</a>
 </li>
+      <li><a href="autoapi/core/common/utils/index.html#core.common.utils.debug_log_entry_exit">debug_log_entry_exit() (in module core.common.utils)</a>
+</li>
       <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.decay">decay (core.modules.exponential_moving_average.ExponentialMovingAverage attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/prediction_heads/rank2/index.html#core.models.equiformer_v2.prediction_heads.rank2.Rank2SymmetricTensorHead.decompose">decompose (core.models.equiformer_v2.prediction_heads.rank2.Rank2SymmetricTensorHead attribute)</a>
@@ -4097,6 +4050,8 @@
         <li><a href="autoapi/core/models/gemnet_oc/layers/embedding_block/index.html#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.dense">(core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/gemnet/layers/interaction_block/index.html#core.models.gemnet.layers.interaction_block.TripletInteraction.dense_ba">dense_ba (core.models.gemnet.layers.interaction_block.TripletInteraction attribute)</a>
 
       <ul>
@@ -4105,8 +4060,6 @@
         <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.TripletInteraction.dense_ba">(core.models.gemnet_oc.layers.interaction_block.TripletInteraction attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/gemnet/layers/interaction_block/index.html#core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly.dense_ca">dense_ca (core.models.gemnet.layers.interaction_block.InteractionBlockTripletsOnly attribute)</a>
 
       <ul>
@@ -4172,15 +4125,11 @@
 </li>
         <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.device">(core.models.equiformer_v2.so3.SO3_Embedding attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.device">(core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.device">(core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.device">(core.models.escn.so3.SO3_Embedding attribute)</a>
 </li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Rotation.device">(core.models.escn.so3.SO3_Rotation attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.device">(core.models.escn.so3_exportable.SO3_Grid attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.dict_set_recursively">dict_set_recursively() (in module core.common.utils)</a>
@@ -4517,8 +4466,6 @@
         <li><a href="autoapi/core/models/gemnet_oc/layers/embedding_block/index.html#core.models.gemnet_oc.layers.embedding_block.AtomEmbedding.emb_size">(core.models.gemnet_oc.layers.embedding_block.AtomEmbedding attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOCForceHead.emb_size_edge">emb_size_edge (core.models.gemnet_oc.gemnet_oc.GemNetOCForceHead attribute)</a>
-</li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/efficient/index.html#core.models.gemnet_oc.layers.efficient.EfficientInteractionBilinear.emb_size_in">emb_size_in (core.models.gemnet_oc.layers.efficient.EfficientInteractionBilinear attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet/layers/efficient/index.html#core.models.gemnet.layers.efficient.EfficientInteractionBilinear.emb_size_interm">emb_size_interm (core.models.gemnet.layers.efficient.EfficientInteractionBilinear attribute)</a>
@@ -4535,12 +4482,6 @@
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/efficient/index.html#core.models.gemnet_oc.layers.efficient.EfficientInteractionBilinear.emb_size_out">emb_size_out (core.models.gemnet_oc.layers.efficient.EfficientInteractionBilinear attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.embedding">embedding (core.models.equiformer_v2.so3.SO3_Embedding attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.embedding">(core.models.escn.so3.SO3_Embedding attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/gemnet/layers/embedding_block/index.html#core.models.gemnet.layers.embedding_block.AtomEmbedding.embeddings">embeddings (core.models.gemnet.layers.embedding_block.AtomEmbedding attribute)</a>
 
       <ul>
@@ -4575,6 +4516,8 @@
         <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.eSCN.energy_block">(core.models.escn.escn_exportable.eSCN attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/scn/scn/index.html#core.models.scn.scn.SphericalChannelNetwork.energy_fc1">energy_fc1 (core.models.scn.scn.SphericalChannelNetwork attribute)</a>
 
       <ul>
@@ -4603,8 +4546,6 @@
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.AdsorbateSlabRelaxationResult.energy_trajectory">(ocpapi.client.models.AdsorbateSlabRelaxationResult attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.energy_within_threshold">energy_within_threshold() (in module core.modules.evaluator)</a>
 </li>
       <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.EnergyBlock">EnergyBlock (class in core.models.escn.escn)</a>
@@ -4629,32 +4570,8 @@
 </li>
       <li><a href="autoapi/core/modules/scaling/util/index.html#core.modules.scaling.util.ensure_fitted">ensure_fitted() (in module core.modules.scaling.util)</a>
 </li>
-      <li><a href="autoapi/core/common/logger/index.html#core.common.logger.WandBLogger.entity">entity (core.common.logger.WandBLogger attribute)</a>
-</li>
-      <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.Reaction.entry">entry (cattsunami.core.Reaction attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/cattsunami/core/reaction/index.html#cattsunami.core.reaction.Reaction.entry">(cattsunami.core.reaction.Reaction attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/data/oc/scripts/precompute_sample_structures/index.html#data.oc.scripts.precompute_sample_structures.enumerate_surfaces_for_saving">enumerate_surfaces_for_saving() (in module data.oc.scripts.precompute_sample_structures)</a>
 </li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis.env_hparams">env_hparams (core.models.gemnet.layers.radial_basis.RadialBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.RadialBasis.env_hparams">(core.models.gemnet_gp.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.RadialBasis.env_hparams">(core.models.gemnet_oc.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis.env_name">env_name (core.models.gemnet.layers.radial_basis.RadialBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.RadialBasis.env_name">(core.models.gemnet_gp.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.RadialBasis.env_name">(core.models.gemnet_oc.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis.envelope">envelope (core.models.gemnet.layers.radial_basis.RadialBasis attribute)</a>
 </li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.AdsorbateSlabRelaxationsRequest.ephemeral">ephemeral (ocpapi.AdsorbateSlabRelaxationsRequest attribute)</a>
@@ -4735,36 +4652,10 @@
 </li>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.Evaluator">Evaluator (class in core.modules.evaluator)</a>
 </li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.BernsteinBasis.exp1">exp1 (core.models.gemnet.layers.radial_basis.BernsteinBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.BernsteinBasis.exp1">(core.models.gemnet_gp.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.BernsteinBasis.exp1">(core.models.gemnet_oc.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.BernsteinBasis.exp2">exp2 (core.models.gemnet.layers.radial_basis.BernsteinBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.BernsteinBasis.exp2">(core.models.gemnet_gp.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.BernsteinBasis.exp2">(core.models.gemnet_oc.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.expand_edge">expand_edge() (core.models.equiformer_v2.so3.SO3_Embedding method)</a>
 
       <ul>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.expand_edge">(core.models.escn.so3.SO3_Embedding method)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.expand_index">expand_index (core.models.equiformer_v2.activation.GateActivation attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantDegreeLayerScale.expand_index">(core.models.equiformer_v2.layer_norm.EquivariantDegreeLayerScale attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2.expand_index">(core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2 attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_LinearV2.expand_index">(core.models.equiformer_v2.so3.SO3_LinearV2 attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.ExponentialEnvelope">ExponentialEnvelope (class in core.models.gemnet.layers.radial_basis)</a>
@@ -4802,11 +4693,7 @@
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Convolution.extra_m0_output_channels">extra_m0_output_channels (core.models.equiformer_v2.so2_ops.SO2_Convolution attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.SO2EquivariantGraphAttention.extra_m0_output_channels">(core.models.equiformer_v2.transformer_block.SO2EquivariantGraphAttention attribute)</a>
 </li>
-      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.ScaledSiLU.extra_repr">extra_repr() (core.models.equiformer_v2.activation.ScaledSiLU method)</a>
 
       <ul>
@@ -5496,11 +5383,15 @@
 </li>
         <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.forward">(core.models.utils.basis.SphericalSmearing method)</a>
 </li>
-        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.AtomwiseL2Loss.forward">(core.modules.loss.AtomwiseL2Loss method)</a>
-</li>
         <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.forward">(core.modules.loss.DDPLoss method)</a>
 </li>
-        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2MAELoss.forward">(core.modules.loss.L2MAELoss method)</a>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2NormLoss.forward">(core.modules.loss.L2NormLoss method)</a>
+</li>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MAELoss.forward">(core.modules.loss.MAELoss method)</a>
+</li>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MSELoss.forward">(core.modules.loss.MSELoss method)</a>
+</li>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.PerAtomMAELoss.forward">(core.modules.loss.PerAtomMAELoss method)</a>
 </li>
         <li><a href="autoapi/core/modules/normalization/element_references/index.html#core.modules.normalization.element_references.LinearReferences.forward">(core.modules.normalization.element_references.LinearReferences method)</a>
 </li>
@@ -5517,12 +5408,6 @@
 </li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.FourierSmearing">FourierSmearing (class in core.models.utils.basis)</a>
 </li>
-      <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.FourierSmearing.freq">freq (core.models.utils.basis.FourierSmearing attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SINESmearing.freq">(core.models.utils.basis.SINESmearing attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.FourierSmearing.freq_filter">freq_filter (core.models.utils.basis.FourierSmearing attribute)</a>
 
       <ul>
@@ -5561,18 +5446,12 @@
         <li><a href="autoapi/data/oc/core/slab/index.html#data.oc.core.slab.Slab.from_bulk_get_specific_millers">(data.oc.core.slab.Slab class method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.from_grid">from_grid (core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
+      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.from_grid">from_grid() (core.models.equiformer_v2.so3.SO3_Grid method)</a>
 
       <ul>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.from_grid">(core.models.escn.so3_exportable.SO3_Grid attribute)</a>
+        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Grid.from_grid">(core.models.escn.so3.SO3_Grid method)</a>
 </li>
-      </ul></li>
-      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Grid.from_grid">from_grid() (core.models.escn.so3.SO3_Grid method)</a>
-</li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.from_grid_mat">from_grid_mat (core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.from_grid_mat">(core.models.escn.so3_exportable.SO3_Grid attribute)</a>
+        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.from_grid">(core.models.escn.so3_exportable.SO3_Grid method)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Slab.from_precomputed_slabs_pkl">from_precomputed_slabs_pkl() (data.oc.core.Slab class method)</a>
@@ -5871,7 +5750,7 @@
 </li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.get_logger_class">get_logger_class() (core.common.registry.Registry class method)</a>
 </li>
-      <li><a href="autoapi/core/common/utils/index.html#core.common.utils.get_loss_module">get_loss_module() (in module core.common.utils)</a>
+      <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.get_loss_class">get_loss_class() (core.common.registry.Registry class method)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/trainers/lr_scheduler/index.html#core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler.get_lr">get_lr() (core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler method)</a>
 
@@ -6097,8 +5976,6 @@
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.grid_resolution">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/common/logger/index.html#core.common.logger.WandBLogger.group">group (core.common.logger.WandBLogger attribute)</a>
-</li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/force_scaler/index.html#core.models.gemnet_oc.layers.force_scaler.ForceScaler.growth_factor">growth_factor (core.models.gemnet_oc.layers.force_scaler.ForceScaler attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/force_scaler/index.html#core.models.gemnet_oc.layers.force_scaler.ForceScaler.growth_interval">growth_interval (core.models.gemnet_oc.layers.force_scaler.ForceScaler attribute)</a>
@@ -6232,12 +6109,6 @@
       <ul>
         <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_LinearV2.in_features">(core.models.equiformer_v2.so3.SO3_LinearV2 attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/gemnet/layers/embedding_block/index.html#core.models.gemnet.layers.embedding_block.EdgeEmbedding.in_features">(core.models.gemnet.layers.embedding_block.EdgeEmbedding attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/embedding_block/index.html#core.models.gemnet_gp.layers.embedding_block.EdgeEmbedding.in_features">(core.models.gemnet_gp.layers.embedding_block.EdgeEmbedding attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/embedding_block/index.html#core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding.in_features">(core.models.gemnet_oc.layers.embedding_block.EdgeEmbedding attribute)</a>
-</li>
       </ul></li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.index_drop_ddec_defective">index_drop_ddec_defective (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
 </li>
@@ -6317,8 +6188,6 @@
       </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.ScaledSiLU.inplace">inplace (core.models.equiformer_v2.activation.ScaledSiLU attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/radial_function/index.html#core.models.equiformer_v2.radial_function.RadialFunction.input_channels">input_channels (core.models.equiformer_v2.radial_function.RadialFunction attribute)</a>
-</li>
       <li><a href="autoapi/data/oc/experimental/get_energies/index.html#data.oc.experimental.get_energies.input_folder">input_folder (in module data.oc.experimental.get_energies)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.int_blocks">int_blocks (core.models.gemnet.gemnet.GemNetT attribute)</a>
@@ -6337,16 +6206,6 @@
       </ul></li>
       <li><a href="autoapi/core/common/test_utils/index.html#core.common.test_utils.ForkedPdb.interaction">interaction() (core.common.test_utils.ForkedPdb method)</a>
 </li>
-      <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.interaction_block">interaction_block (core.models.gemnet.gemnet.GemNetT attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet/index.html#core.models.gemnet.GemNetT.interaction_block">(core.models.gemnet.GemNetT attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_gp/gemnet/index.html#core.models.gemnet_gp.gemnet.GraphParallelGemNetT.interaction_block">(core.models.gemnet_gp.gemnet.GraphParallelGemNetT attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_gp/index.html#core.models.gemnet_gp.GraphParallelGemNetT.interaction_block">(core.models.gemnet_gp.GraphParallelGemNetT attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.interaction_blocks">interaction_blocks (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock">InteractionBlock (class in core.models.gemnet_oc.layers.interaction_block)</a>
@@ -6357,8 +6216,6 @@
         <li><a href="autoapi/core/models/gemnet_gp/layers/interaction_block/index.html#core.models.gemnet_gp.layers.interaction_block.InteractionBlockTripletsOnly">(class in core.models.gemnet_gp.layers.interaction_block)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.InteractionPPBlock">InteractionPPBlock (class in core.models.dimenet_plus_plus)</a>
 </li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig">InterfaceConfig (class in data.oc.core)</a>
@@ -6373,6 +6230,8 @@
         <li><a href="autoapi/cattsunami/core/ocpneb/index.html#cattsunami.core.ocpneb.OCPNEB.intermediate_energies">(cattsunami.core.ocpneb.OCPNEB attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.OCPNEB.intermediate_forces">intermediate_forces (cattsunami.core.OCPNEB attribute)</a>
 
       <ul>
@@ -6535,8 +6394,6 @@
 <h2 id="J">J</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.eSCN.Jd_list">Jd_list (core.models.escn.escn_exportable.eSCN attribute)</a>
-</li>
       <li><a href="autoapi/core/models/gemnet/layers/basis_utils/index.html#core.models.gemnet.layers.basis_utils.Jn">Jn() (in module core.models.gemnet.layers.basis_utils)</a>
 
       <ul>
@@ -6601,16 +6458,10 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2MAELoss">L2MAELoss (class in core.modules.loss)</a>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2NormLoss">L2NormLoss (class in core.modules.loss)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.l_harmonic">l_harmonic (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.l_harmonic">(core.models.escn.so3.CoefficientMapping attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.l_harmonic">l_harmonic (core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.l_harmonic">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/common/hpo_utils/index.html#core.common.hpo_utils.label_metric_dict">label_metric_dict() (in module core.common.hpo_utils)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.lat_resolution">lat_resolution (core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
@@ -6999,15 +6850,15 @@
         <li><a href="autoapi/ocpapi/workflows/retry/index.html#ocpapi.workflows.retry.RateLimitLogging.logger">(ocpapi.workflows.retry.RateLimitLogging attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/trainers/base_trainer/index.html#core.trainers.base_trainer.BaseTrainer.logger_name">logger_name (core.trainers.base_trainer.BaseTrainer attribute)</a>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MAELoss.loss">loss (core.modules.loss.MAELoss attribute)</a>
 
       <ul>
-        <li><a href="autoapi/core/trainers/index.html#core.trainers.BaseTrainer.logger_name">(core.trainers.BaseTrainer attribute)</a>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MSELoss.loss">(core.modules.loss.MSELoss attribute)</a>
+</li>
+        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.PerAtomMAELoss.loss">(core.modules.loss.PerAtomMAELoss attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.loss_fn">loss_fn (core.modules.loss.DDPLoss attribute)</a>
-</li>
-      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.loss_name">loss_name (core.modules.loss.DDPLoss attribute)</a>
 </li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.lowest_energy_data_co2">lowest_energy_data_co2 (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
 </li>
@@ -7059,29 +6910,13 @@
         <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.m">(core.models.utils.basis.SphericalSmearing attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Convolution.m0_output_channels">m0_output_channels (core.models.equiformer_v2.so2_ops.SO2_Convolution attribute)</a>
-</li>
       <li><a href="autoapi/core/models/equiformer_v2/input_block/index.html#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_0_num_coefficients">m_0_num_coefficients (core.models.equiformer_v2.input_block.EdgeDegreeEmbedding attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/input_block/index.html#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_all_num_coefficents">m_all_num_coefficents (core.models.equiformer_v2.input_block.EdgeDegreeEmbedding attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.m_complex">m_complex (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_complex">(core.models.escn.so3.CoefficientMapping attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_complex">m_complex (core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.m_complex">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.m_harmonic">m_harmonic (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_harmonic">(core.models.escn.so3.CoefficientMapping attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.m_harmonic">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.m_list">m_list (core.models.utils.basis.SphericalSmearing attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_harmonic">m_harmonic (core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Convolution.m_output_channels">m_output_channels (core.models.equiformer_v2.so2_ops.SO2_Convolution attribute)</a>
 
@@ -7091,15 +6926,15 @@
         <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_m_Convolution.m_output_channels">(core.models.equiformer_v2.so2_ops.SO2_m_Convolution attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.m_size">m_size (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_size">m_size (core.models.escn.so3.CoefficientMapping attribute)</a>
 
       <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.m_size">(core.models.escn.so3.CoefficientMapping attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.m_size">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.mae">mae() (in module core.modules.evaluator)</a>
+</li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MAELoss">MAELoss (class in core.modules.loss)</a>
 </li>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.magnitude_error">magnitude_error() (in module core.modules.evaluator)</a>
 </li>
@@ -7206,11 +7041,7 @@
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.SeverityLevelBetween.max_level">max_level (core.common.utils.SeverityLevelBetween attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.FeedForwardNetwork.max_lmax">max_lmax (core.models.equiformer_v2.transformer_block.FeedForwardNetwork attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.TransBlockV2.max_lmax">(core.models.equiformer_v2.transformer_block.TransBlockV2 attribute)</a>
 </li>
-      </ul></li>
       <li><a href="autoapi/data/oc/scripts/precompute_sample_structures/index.html#data.oc.scripts.precompute_sample_structures.MAX_MILLER">MAX_MILLER (in module data.oc.scripts.precompute_sample_structures)</a>
 </li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.max_n">max_n (core.models.utils.basis.SphericalSmearing attribute)</a>
@@ -7295,6 +7126,8 @@
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean">mean (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
 </li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.mean">mean() (core.modules.loss.DDPLoss method)</a>
+</li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_max">mean_init_max (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/gaussian_rbf/index.html#core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer.mean_init_min">mean_init_min (core.models.equiformer_v2.gaussian_rbf.GaussianRadialBasisLayer attribute)</a>
@@ -7342,6 +7175,8 @@
 </li>
       </ul></li>
       <li><a href="autoapi/core/datasets/base_dataset/index.html#core.datasets.base_dataset.BaseDataset.metadata_hasattr">metadata_hasattr() (core.datasets.base_dataset.BaseDataset method)</a>
+</li>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.metrics_dict">metrics_dict() (in module core.modules.evaluator)</a>
 </li>
       <li><a href="autoapi/data/oc/core/index.html#data.oc.core.Slab.millers">millers (data.oc.core.Slab attribute)</a>
 
@@ -8012,8 +7847,6 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/equiformer_v2/module_list/index.html#core.models.equiformer_v2.module_list.ModuleListInfo">ModuleListInfo (class in core.models.equiformer_v2.module_list)</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/radial_function/index.html#core.models.equiformer_v2.radial_function.RadialFunction.modules">modules (core.models.equiformer_v2.radial_function.RadialFunction attribute)</a>
-</li>
       <li><a href="autoapi/data/odac/setup_vasp/index.html#data.odac.setup_vasp.mof">mof (in module data.odac.setup_vasp)</a>
 </li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.mof_name">mof_name (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
@@ -8031,6 +7864,8 @@
 </li>
       </ul></li>
       <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.mse">mse() (in module core.modules.evaluator)</a>
+</li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.MSELoss">MSELoss (class in core.modules.loss)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/drop/index.html#core.models.equiformer_v2.drop.EquivariantDropout.mul">mul (core.models.equiformer_v2.drop.EquivariantDropout attribute)</a>
 </li>
@@ -8055,8 +7890,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.n">n (core.models.utils.basis.SphericalSmearing attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.SphericalSmearing.n_list">n_list (core.models.utils.basis.SphericalSmearing attribute)</a>
 </li>
       <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.n_mol_per_volume">n_mol_per_volume (data.oc.core.interface_config.InterfaceConfig attribute)</a>
 
@@ -8128,7 +7961,7 @@
         <li><a href="autoapi/ocpapi/workflows/retry/index.html#ocpapi.workflows.retry.NoLimitType">(in module ocpapi.workflows.retry)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.NONE">NONE (in module core.modules.evaluator)</a>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.NONE_SLICE">NONE_SLICE (in module core.modules.evaluator)</a>
 </li>
       <li><a href="autoapi/core/common/typing/index.html#core.common.typing.none_throws">none_throws() (in module core.common.typing)</a>
 </li>
@@ -8192,8 +8025,6 @@
         <li><a href="autoapi/ocpapi/index.html#ocpapi.Status.NOT_AVAILABLE">(ocpapi.Status attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock.num_aint">num_aint (core.models.gemnet_oc.layers.interaction_block.InteractionBlock attribute)</a>
-</li>
       <li><a href="autoapi/core/models/escn/index.html#core.models.escn.eSCN.num_atoms">num_atoms (core.models.escn.eSCN attribute)</a>
 
       <ul>
@@ -8253,57 +8084,25 @@
 </li>
         <li><a href="autoapi/core/models/equiformer_v2/layer_norm/index.html#core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2.num_channels">(core.models.equiformer_v2.layer_norm.EquivariantRMSNormArraySphericalHarmonicsV2 attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_m_Convolution.num_channels">(core.models.equiformer_v2.so2_ops.SO2_m_Convolution attribute)</a>
-</li>
         <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.num_channels">(core.models.equiformer_v2.so3.SO3_Embedding attribute)</a>
 </li>
         <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.EnergyBlock.num_channels">(core.models.escn.escn.EnergyBlock attribute)</a>
 </li>
         <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.ForceBlock.num_channels">(core.models.escn.escn.ForceBlock attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.SO2Conv.num_channels">(core.models.escn.escn.SO2Conv attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.EnergyBlock.num_channels">(core.models.escn.escn_exportable.EnergyBlock attribute)</a>
 </li>
         <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.ForceBlock.num_channels">(core.models.escn.escn_exportable.ForceBlock attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.SO2Conv.num_channels">(core.models.escn.escn_exportable.SO2Conv attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.num_channels">(core.models.escn.so3.SO3_Embedding attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Convolution.num_channels_m0">num_channels_m0 (core.models.equiformer_v2.so2_ops.SO2_Convolution attribute)</a>
+      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.num_coefficients">num_coefficients (core.models.equiformer_v2.so3.SO3_Embedding attribute)</a>
 
       <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Linear.num_channels_m0">(core.models.equiformer_v2.so2_ops.SO2_Linear attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/escn/escn/index.html#core.models.escn.escn.SO2Block.num_channels_m0">(core.models.escn.escn.SO2Block attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.SO2Block.num_channels_m0">(core.models.escn.escn_exportable.SO2Block attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Convolution.num_channels_rad">num_channels_rad (core.models.equiformer_v2.so2_ops.SO2_Convolution attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/so2_ops/index.html#core.models.equiformer_v2.so2_ops.SO2_Linear.num_channels_rad">(core.models.equiformer_v2.so2_ops.SO2_Linear attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.SO2Conv.num_coefficents">num_coefficents (core.models.escn.escn_exportable.SO2Conv attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.num_coefficients">num_coefficients (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.num_coefficients">(core.models.equiformer_v2.so3.SO3_Embedding attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.num_coefficients">(core.models.escn.so3.CoefficientMapping attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.num_coefficients">(core.models.escn.so3.SO3_Embedding attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.num_coefficients">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.num_components">num_components (core.models.equiformer_v2.activation.GateActivation attribute)</a>
-</li>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.num_distance_basis">num_distance_basis (core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
 
       <ul>
@@ -8312,11 +8111,7 @@
         <li><a href="autoapi/core/models/equiformer_v2/index.html#core.models.equiformer_v2.EquiformerV2.num_distance_basis">(core.models.equiformer_v2.EquiformerV2 attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/scn/scn/index.html#core.models.scn.scn.DistanceBlock.num_edge_channels">num_edge_channels (core.models.scn.scn.DistanceBlock attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/gemnet_oc/layers/interaction_block/index.html#core.models.gemnet_oc.layers.interaction_block.InteractionBlock.num_eint">num_eint (core.models.gemnet_oc.layers.interaction_block.InteractionBlock attribute)</a>
 </li>
       <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.Basis.num_freqs">num_freqs (core.models.utils.basis.Basis attribute)</a>
 
@@ -8342,6 +8137,8 @@
         <li><a href="autoapi/core/models/scn/index.html#core.models.scn.SphericalChannelNetwork.num_gaussians">(core.models.scn.SphericalChannelNetwork attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/equiformer_v2/equiformer_v2/index.html#core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone.num_heads">num_heads (core.models.equiformer_v2.equiformer_v2.EquiformerV2Backbone attribute)</a>
 
       <ul>
@@ -8672,24 +8469,8 @@
         <li><a href="autoapi/core/trainers/ocp_trainer/index.html#core.trainers.ocp_trainer.OCPTrainer">(class in core.trainers.ocp_trainer)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.offset">offset (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.offset">(core.models.escn.so3.CoefficientMapping attribute)</a>
+      <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.GaussianSmearing.offset">offset (core.models.utils.basis.GaussianSmearing attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.offset">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.GaussianBasis.offset">(core.models.gemnet_oc.layers.radial_basis.GaussianBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/scn/smearing/index.html#core.models.scn.smearing.GaussianSmearing.offset">(core.models.scn.smearing.GaussianSmearing attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/scn/smearing/index.html#core.models.scn.smearing.LinearSigmoidSmearing.offset">(core.models.scn.smearing.LinearSigmoidSmearing attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/scn/smearing/index.html#core.models.scn.smearing.SigmoidSmearing.offset">(core.models.scn.smearing.SigmoidSmearing attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/utils/basis/index.html#core.models.utils.basis.GaussianSmearing.offset">(core.models.utils.basis.GaussianSmearing attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/base/index.html#core.models.base.GraphData.offset_distances">offset_distances (core.models.base.GraphData attribute)</a>
 </li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.AdsorbateSlabRelaxationsResults.omitted_config_ids">omitted_config_ids (ocpapi.AdsorbateSlabRelaxationsResults attribute)</a>
@@ -8838,14 +8619,6 @@
       </ul></li>
       <li><a href="autoapi/core/models/gemnet_gp/layers/atom_update_block/index.html#core.models.gemnet_gp.layers.atom_update_block.OutputBlock.out_forces">out_forces (core.models.gemnet_gp.layers.atom_update_block.OutputBlock attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOC.out_initializer">out_initializer (core.models.gemnet_oc.gemnet_oc.GemNetOC attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOCEnergyAndGradForceHead.out_initializer">(core.models.gemnet_oc.gemnet_oc.GemNetOCEnergyAndGradForceHead attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/index.html#core.models.gemnet_oc.GemNetOC.out_initializer">(core.models.gemnet_oc.GemNetOC attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/escn/escn_exportable/index.html#core.models.escn.escn_exportable.MessageBlock.out_mask">out_mask (core.models.escn.escn_exportable.MessageBlock attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet_oc/gemnet_oc/index.html#core.models.gemnet_oc.gemnet_oc.GemNetOC.out_mlp_E">out_mlp_E (core.models.gemnet_oc.gemnet_oc.GemNetOC attribute)</a>
@@ -8940,8 +8713,6 @@
 </li>
       <li><a href="autoapi/core/scripts/gif_maker_parallelized/index.html#core.scripts.gif_maker_parallelized.parallelize_generation">parallelize_generation() (in module core.scripts.gif_maker_parallelized)</a>
 </li>
-      <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.parameters">parameters (core.modules.exponential_moving_average.ExponentialMovingAverage attribute)</a>
-</li>
       <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.params">params (data.oc.utils.geometry.BoxGeometry attribute)</a>
 </li>
       <li><a href="autoapi/adsorbml/2023_neurips_challenge/challenge_eval/index.html#adsorbml.2023_neurips_challenge.challenge_eval.parse_args">parse_args() (in module adsorbml.2023_neurips_challenge.challenge_eval)</a>
@@ -9026,14 +8797,20 @@
       </ul></li>
       <li><a href="autoapi/data/oc/databases/update/index.html#data.oc.databases.update.pbc_patch">pbc_patch() (in module data.oc.databases.update)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/data/oc/core/interface_config/index.html#data.oc.core.interface_config.InterfaceConfig.pbc_shift">pbc_shift (data.oc.core.interface_config.InterfaceConfig attribute)</a>
 
       <ul>
         <li><a href="autoapi/data/oc/core/index.html#data.oc.core.InterfaceConfig.pbc_shift">(data.oc.core.InterfaceConfig attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.per_atom_mae">per_atom_mae() (in module core.modules.evaluator)</a>
+</li>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.per_atom_mse">per_atom_mse() (in module core.modules.evaluator)</a>
+</li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.PerAtomMAELoss">PerAtomMAELoss (class in core.modules.loss)</a>
+</li>
       <li><a href="autoapi/core/common/test_utils/index.html#core.common.test_utils.PGConfig">PGConfig (class in core.common.test_utils)</a>
 </li>
       <li><a href="autoapi/data/odac/force_field/FF_analysis/index.html#data.odac.force_field.FF_analysis.phys_err">phys_err() (in module data.odac.force_field.FF_analysis)</a>
@@ -9110,14 +8887,6 @@
         <li><a href="autoapi/core/tasks/task/index.html#core.tasks.task.PredictTask">(class in core.tasks.task)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.BernsteinBasis.prefactor">prefactor (core.models.gemnet.layers.radial_basis.BernsteinBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.BernsteinBasis.prefactor">(core.models.gemnet_gp.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.BernsteinBasis.prefactor">(core.models.gemnet_oc.layers.radial_basis.BernsteinBasis attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.BernsteinBasis.pregamma">pregamma (core.models.gemnet.layers.radial_basis.BernsteinBasis attribute)</a>
 
       <ul>
@@ -9156,8 +8925,6 @@
         <li><a href="autoapi/core/models/equiformer_v2/transformer_block/index.html#core.models.equiformer_v2.transformer_block.TransBlockV2.proj_drop">(core.models.equiformer_v2.transformer_block.TransBlockV2 attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/common/logger/index.html#core.common.logger.WandBLogger.project">project (core.common.logger.WandBLogger attribute)</a>
-</li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.promising_defective">promising_defective (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
 </li>
       <li><a href="autoapi/data/odac/promising_mof/promising_mof_energies/energy/index.html#data.odac.promising_mof.promising_mof_energies.energy.promising_pristine">promising_pristine (in module data.odac.promising_mof.promising_mof_energies.energy)</a>
@@ -9170,8 +8937,6 @@
         <li><a href="autoapi/ocpapi/workflows/filter/index.html#ocpapi.workflows.filter.prompt_for_slabs_to_keep">(class in ocpapi.workflows.filter)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/data/oc/utils/geometry/index.html#data.oc.utils.geometry.BoxGeometry.props">props (data.oc.utils.geometry.BoxGeometry attribute)</a>
-</li>
       <li><a href="autoapi/core/common/utils/index.html#core.common.utils.pyg2_data_transform">pyg2_data_transform() (in module core.common.utils)</a>
 </li>
   </ul></td>
@@ -9296,16 +9061,6 @@
         <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.PaiNN.radial_basis">(core.models.painn.painn.PaiNN attribute)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.radial_basis_cbf3">radial_basis_cbf3 (core.models.gemnet.gemnet.GemNetT attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet/index.html#core.models.gemnet.GemNetT.radial_basis_cbf3">(core.models.gemnet.GemNetT attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_gp/gemnet/index.html#core.models.gemnet_gp.gemnet.GraphParallelGemNetT.radial_basis_cbf3">(core.models.gemnet_gp.gemnet.GraphParallelGemNetT attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_gp/index.html#core.models.gemnet_gp.GraphParallelGemNetT.radial_basis_cbf3">(core.models.gemnet_gp.GraphParallelGemNetT attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis">RadialBasis (class in core.models.gemnet.layers.radial_basis)</a>
 
       <ul>
@@ -9366,22 +9121,6 @@
 </li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.rbf">rbf (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
 </li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis.rbf_hparams">rbf_hparams (core.models.gemnet.layers.radial_basis.RadialBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.RadialBasis.rbf_hparams">(core.models.gemnet_gp.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.RadialBasis.rbf_hparams">(core.models.gemnet_oc.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/core/models/gemnet/layers/radial_basis/index.html#core.models.gemnet.layers.radial_basis.RadialBasis.rbf_name">rbf_name (core.models.gemnet.layers.radial_basis.RadialBasis attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/gemnet_gp/layers/radial_basis/index.html#core.models.gemnet_gp.layers.radial_basis.RadialBasis.rbf_name">(core.models.gemnet_gp.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-        <li><a href="autoapi/core/models/gemnet_oc/layers/radial_basis/index.html#core.models.gemnet_oc.layers.radial_basis.RadialBasis.rbf_name">(core.models.gemnet_oc.layers.radial_basis.RadialBasis attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/painn/painn/index.html#core.models.painn.painn.PaiNNMessage.rbf_proj">rbf_proj (core.models.painn.painn.PaiNNMessage attribute)</a>
 </li>
       <li><a href="autoapi/cattsunami/core/autoframe/index.html#cattsunami.core.autoframe.AutoFrameDissociation.reactant1_systems">reactant1_systems (cattsunami.core.autoframe.AutoFrameDissociation attribute)</a>
@@ -9398,12 +9137,6 @@
 
       <ul>
         <li><a href="autoapi/cattsunami/core/reaction/index.html#cattsunami.core.reaction.Reaction">(class in cattsunami.core.reaction)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.Reaction.reaction_db">reaction_db (cattsunami.core.Reaction attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/cattsunami/core/reaction/index.html#cattsunami.core.reaction.Reaction.reaction_db">(cattsunami.core.reaction.Reaction attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/cattsunami/core/index.html#cattsunami.core.Reaction.reaction_db_path">reaction_db_path (cattsunami.core.Reaction attribute)</a>
@@ -9452,19 +9185,17 @@
 </li>
       <li><a href="autoapi/core/common/gp_utils/index.html#core.common.gp_utils.ReduceFromModelParallelRegion">ReduceFromModelParallelRegion (class in core.common.gp_utils)</a>
 </li>
-      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.AtomwiseL2Loss.reduction">reduction (core.modules.loss.AtomwiseL2Loss attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.reduction">(core.modules.loss.DDPLoss attribute)</a>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.reduction">reduction (core.modules.loss.DDPLoss attribute)</a>
 </li>
-        <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.L2MAELoss.reduction">(core.modules.loss.L2MAELoss attribute)</a>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.reduction_map">reduction_map (core.modules.loss.DDPLoss attribute)</a>
 </li>
-      </ul></li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.register">register() (core.common.registry.Registry class method)</a>
 </li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.register_dataset">register_dataset() (core.common.registry.Registry class method)</a>
 </li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.register_logger">register_logger() (core.common.registry.Registry class method)</a>
+</li>
+      <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.register_loss">register_loss() (core.common.registry.Registry class method)</a>
 </li>
       <li><a href="autoapi/core/common/registry/index.html#core.common.registry.Registry.register_model">register_model() (core.common.registry.Registry class method)</a>
 </li>
@@ -9556,11 +9287,9 @@
       </ul></li>
       <li><a href="autoapi/ocpapi/client/client/index.html#ocpapi.client.client.RequestException">RequestException</a>, <a href="autoapi/ocpapi/client/index.html#ocpapi.client.RequestException">[1]</a>, <a href="autoapi/ocpapi/index.html#ocpapi.RequestException">[2]</a>
 </li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.res_size">res_size (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.res_size">res_size (core.models.escn.so3.CoefficientMapping attribute)</a>
 
       <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.res_size">(core.models.escn.so3.CoefficientMapping attribute)</a>
-</li>
         <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.res_size">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
 </li>
       </ul></li>
@@ -9652,6 +9381,8 @@
         <li><a href="autoapi/ocpapi/workflows/retry/index.html#ocpapi.workflows.retry.retry_api_calls">(in module ocpapi.workflows.retry)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/core/modules/evaluator/index.html#core.modules.evaluator.rmse">rmse() (in module core.modules.evaluator)</a>
+</li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Rotation.rotate">rotate() (core.models.equiformer_v2.so3.SO3_Rotation method)</a>
 
       <ul>
@@ -9770,8 +9501,6 @@
         <li><a href="autoapi/core/datasets/index.html#core.datasets.LmdbDataset.sample_property_metadata">(core.datasets.LmdbDataset method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/common/data_parallel/index.html#core.common.data_parallel.BalancedBatchSampler.sampler">sampler (core.common.data_parallel.BalancedBatchSampler attribute)</a>
-</li>
       <li><a href="autoapi/ocpapi/index.html#ocpapi.Lifetime.SAVE">SAVE (ocpapi.Lifetime attribute)</a>
 
       <ul>
@@ -9805,10 +9534,6 @@
 </li>
       </ul></li>
       <li><a href="autoapi/core/models/dimenet_plus_plus/index.html#core.models.dimenet_plus_plus.DimeNetPlusPlus.sbf">sbf (core.models.dimenet_plus_plus.DimeNetPlusPlus attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/gemnet_oc/layers/spherical_basis/index.html#core.models.gemnet_oc.layers.spherical_basis.SphericalBasisLayer.sbf_hparams">sbf_hparams (core.models.gemnet_oc.layers.spherical_basis.SphericalBasisLayer attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/gemnet_oc/layers/spherical_basis/index.html#core.models.gemnet_oc.layers.spherical_basis.SphericalBasisLayer.sbf_name">sbf_name (core.models.gemnet_oc.layers.spherical_basis.SphericalBasisLayer attribute)</a>
 </li>
       <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.scalar_act">scalar_act (core.models.equiformer_v2.activation.GateActivation attribute)</a>
 
@@ -9943,8 +9668,6 @@
       <li><a href="autoapi/core/models/equiformer_v2/trainers/lr_scheduler/index.html#core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler.scheduler_type">scheduler_type (core.models.equiformer_v2.trainers.lr_scheduler.LRScheduler attribute)</a>
 </li>
       <li><a href="autoapi/core/models/schnet/index.html#core.models.schnet.SchNetWrap">SchNetWrap (class in core.models.schnet)</a>
-</li>
-      <li><a href="autoapi/core/common/relaxation/ase_utils/index.html#core.common.relaxation.ase_utils.OCPCalculator.seed">seed (core.common.relaxation.ase_utils.OCPCalculator attribute)</a>
 </li>
       <li><a href="autoapi/core/models/gemnet/gemnet/index.html#core.models.gemnet.gemnet.GemNetT.select_edges">select_edges() (core.models.gemnet.gemnet.GemNetT method)</a>
 
@@ -10602,11 +10325,7 @@
         <li><a href="autoapi/data/oc/scripts/precompute_sample_structures/index.html#data.oc.scripts.precompute_sample_structures.standardize_bulk">(in module data.oc.scripts.precompute_sample_structures)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/activation/index.html#core.models.equiformer_v2.activation.GateActivation.start_idx">start_idx (core.models.equiformer_v2.activation.GateActivation attribute)</a>
-</li>
       <li><a href="autoapi/core/common/data_parallel/index.html#core.common.data_parallel.StatefulDistributedSampler.start_iter">start_iter (core.common.data_parallel.StatefulDistributedSampler attribute)</a>
-</li>
-      <li><a href="autoapi/core/models/base/index.html#core.models.base.HydraModel.starting_model">starting_model (core.models.base.HydraModel attribute)</a>
 </li>
       <li><a href="autoapi/core/modules/exponential_moving_average/index.html#core.modules.exponential_moving_average.ExponentialMovingAverage.state_dict">state_dict() (core.modules.exponential_moving_average.ExponentialMovingAverage method)</a>
 </li>
@@ -10697,6 +10416,8 @@
 </li>
       </ul></li>
       <li><a href="autoapi/adsorbml/scripts/dense_eval/index.html#adsorbml.scripts.dense_eval.SUCCESS_THRESHOLD">SUCCESS_THRESHOLD (in module adsorbml.scripts.dense_eval)</a>
+</li>
+      <li><a href="autoapi/core/modules/loss/index.html#core.modules.loss.DDPLoss.sum">sum() (core.modules.loss.DDPLoss method)</a>
 </li>
       <li><a href="autoapi/data/oc/utils/index.html#data.oc.utils.DetectTrajAnomaly.surface_change_cutoff_multiplier">surface_change_cutoff_multiplier (data.oc.utils.DetectTrajAnomaly attribute)</a>
 
@@ -10846,34 +10567,20 @@
         <li><a href="autoapi/ocpapi/client/models/index.html#ocpapi.client.models.Atoms.to_ase_atoms">(ocpapi.client.models.Atoms method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.to_grid">to_grid (core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.to_grid">(core.models.escn.so3_exportable.SO3_Grid attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Embedding.to_grid">to_grid() (core.models.equiformer_v2.so3.SO3_Embedding method)</a>
 
       <ul>
+        <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.to_grid">(core.models.equiformer_v2.so3.SO3_Grid method)</a>
+</li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Embedding.to_grid">(core.models.escn.so3.SO3_Embedding method)</a>
 </li>
         <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.SO3_Grid.to_grid">(core.models.escn.so3.SO3_Grid method)</a>
 </li>
-      </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.SO3_Grid.to_grid_mat">to_grid_mat (core.models.equiformer_v2.so3.SO3_Grid attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.to_grid_mat">(core.models.escn.so3_exportable.SO3_Grid attribute)</a>
+        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.SO3_Grid.to_grid">(core.models.escn.so3_exportable.SO3_Grid method)</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/core/models/equiformer_v2/so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule.to_m">to_m (core.models.equiformer_v2.so3.CoefficientMappingModule attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.to_m">(core.models.escn.so3.CoefficientMapping attribute)</a>
+      <li><a href="autoapi/core/models/escn/so3/index.html#core.models.escn.so3.CoefficientMapping.to_m">to_m (core.models.escn.so3.CoefficientMapping attribute)</a>
 </li>
-        <li><a href="autoapi/core/models/escn/so3_exportable/index.html#core.models.escn.so3_exportable.CoefficientMapping.to_m">(core.models.escn.so3_exportable.CoefficientMapping attribute)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/core/models/scn/spherical_harmonics/index.html#core.models.scn.spherical_harmonics.SphericalHarmonicsHelper.ToGrid">ToGrid() (core.models.scn.spherical_harmonics.SphericalHarmonicsHelper method)</a>

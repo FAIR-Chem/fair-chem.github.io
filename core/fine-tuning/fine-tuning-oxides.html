@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -284,8 +285,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/core/index.html">core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/flags/index.html">core.common.flags</a></li>
@@ -294,6 +296,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -303,10 +306,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -314,26 +317,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -343,7 +346,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -351,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -368,16 +371,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -394,6 +395,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -402,7 +404,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -797,7 +798,176 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:amp: true
+cmd:
+  checkpoint_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/checkpoints/2024-11-06-17-38-08
+  commit: 6329e92
+  identifier: &#39;&#39;
+  logs_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/logs/wandb/2024-11-06-17-38-08
+  print_every: 100
+  results_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/results/2024-11-06-17-38-08
+  seed: null
+  timestamp_id: 2024-11-06-17-38-08
+  version: 0.1.dev1+g6329e92
+dataset:
+  format: oc22_lmdb
+  key_mapping:
+    force: forces
+    y: energy
+  normalize_labels: false
+  oc20_ref: /checkpoint/janlan/ocp/other_data/final_ref_energies_02_07_2021.pkl
+  raw_energy_target: true
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gp_gpus: null
+gpus: 0
+logger: wandb
+loss_functions:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  name: gemnet_oc
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+optim:
+  batch_size: 16
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 5000
+  factor: 0.8
+  force_coefficient: 1
+  load_balancing: atoms
+  loss_energy: mae
+  loss_force: atomwisel2
+  lr_initial: 0.0005
+  max_epochs: 80
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+relax_dataset: {}
+slurm:
+  additional_parameters:
+    constraint: volta32gb
+  cpus_per_task: 3
+  folder: /checkpoint/abhshkdz/ocp_oct1_logs/57632342
+  gpus_per_node: 8
+  job_id: &#39;57632342&#39;
+  job_name: gnoc_oc22_oc20_all_s2ef
+  mem: 480GB
+  nodes: 8
+  ntasks_per_node: 8
+  partition: ocp,learnaccel
+  time: 4320
+task:
+  dataset: oc22_lmdb
+  description: Regressing to energies and forces for DFT trajectories from OCP
+  eval_on_free_atoms: true
+  grad_input: atomic forces
+  labels:
+  - potential energy
+  metric: mae
+  primary_metric: forces_mae
+  train_on_free_atoms: true
+  type: regression
+test_dataset: {}
+trainer: ocp
+val_dataset: {}
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading model: gemnet_oc
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loaded GemNetOC with 38864438 parameters.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading checkpoint in inference-only mode, not loading keys associated with trainer state!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Overwriting scaling factors with those loaded from checkpoint. If you&#39;re generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
@@ -843,7 +1013,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:453: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
   with torch.cuda.amp.autocast(enabled=self.scaler is not None):
 </pre></div>
 </div>
@@ -851,7 +1021,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
   with torch.cuda.amp.autocast(False):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 90.2 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 89.8 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/341531b0218eea408d04046d981d55fe218d43494f1ecf51297aeefb6668761e.png" src="../../_images/341531b0218eea408d04046d981d55fe218d43494f1ecf51297aeefb6668761e.png" />
@@ -930,7 +1100,7 @@ WARNING:root:Detected old config, converting to new format. Consider updating to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2203/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2161/1448814737.py:12: DeprecationWarning: Please use atoms.calc = calc
   atoms.set_calculator(calc)
 </pre></div>
 </div>
@@ -1039,7 +1209,176 @@ Rows: 295 (showing first 20)
 WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:amp: true
+cmd:
+  checkpoint_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/checkpoints/2024-11-06-17-40-16
+  commit: 6329e92
+  identifier: &#39;&#39;
+  logs_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/logs/wandb/2024-11-06-17-40-16
+  print_every: 100
+  results_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/results/2024-11-06-17-40-16
+  seed: null
+  timestamp_id: 2024-11-06-17-40-16
+  version: 0.1.dev1+g6329e92
+dataset:
+  format: oc22_lmdb
+  key_mapping:
+    force: forces
+    y: energy
+  normalize_labels: false
+  oc20_ref: /checkpoint/janlan/ocp/other_data/final_ref_energies_02_07_2021.pkl
+  raw_energy_target: true
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gp_gpus: null
+gpus: 0
+logger: wandb
+loss_functions:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  name: gemnet_oc
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+optim:
+  batch_size: 16
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 5000
+  factor: 0.8
+  force_coefficient: 1
+  load_balancing: atoms
+  loss_energy: mae
+  loss_force: atomwisel2
+  lr_initial: 0.0005
+  max_epochs: 80
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+relax_dataset: {}
+slurm:
+  additional_parameters:
+    constraint: volta32gb
+  cpus_per_task: 3
+  folder: /checkpoint/abhshkdz/ocp_oct1_logs/57632342
+  gpus_per_node: 8
+  job_id: &#39;57632342&#39;
+  job_name: gnoc_oc22_oc20_all_s2ef
+  mem: 480GB
+  nodes: 8
+  ntasks_per_node: 8
+  partition: ocp,learnaccel
+  time: 4320
+task:
+  dataset: oc22_lmdb
+  description: Regressing to energies and forces for DFT trajectories from OCP
+  eval_on_free_atoms: true
+  grad_input: atomic forces
+  labels:
+  - potential energy
+  metric: mae
+  primary_metric: forces_mae
+  train_on_free_atoms: true
+  type: regression
+test_dataset: {}
+trainer: ocp
+val_dataset: {}
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading model: gemnet_oc
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loaded GemNetOC with 38864438 parameters.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading checkpoint in inference-only mode, not loading keys associated with trainer state!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Overwriting scaling factors with those loaded from checkpoint. If you&#39;re generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
@@ -1222,7 +1561,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 211.5 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 215.9 seconds
 </pre></div>
 </div>
 </div>
@@ -1238,7 +1577,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-10-23-20-33-04-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-11-06-17-40-16-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1257,7 +1596,146 @@ trainer: ocp
   checkpoint = torch.load(checkpoint_path, map_location=torch.device(&quot;cpu&quot;))
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:amp: false
+cmd:
+  checkpoint_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/checkpoints/2024-11-06-17-44-32
+  commit: 6329e92
+  identifier: &#39;&#39;
+  logs_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/logs/wandb/2024-11-06-17-44-32
+  print_every: 100
+  results_dir: /home/runner/work/fairchem/fairchem/docs/core/fine-tuning/results/2024-11-06-17-44-32
+  seed: null
+  timestamp_id: 2024-11-06-17-44-32
+  version: 0.1.dev1+g6329e92
+dataset:
+  a2g_args:
+    r_energy: true
+    r_forces: true
+  format: ase_db
+evaluation_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+  primary_metric: forces_mae
+gp_gpus: null
+gpus: 0
+logger: wandb
+loss_functions:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  name: gemnet_oc
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+optim:
+  batch_size: 4
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 10
+  factor: 0.8
+  force_coefficient: 1
+  loss_energy: mae
+  lr_initial: 0.0005
+  max_epochs: 1
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: true
+relax_dataset: {}
+slurm: {}
+task: {}
+test_dataset: {}
+trainer: ocp
+val_dataset: {}
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading model: gemnet_oc
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loaded GemNetOC with 38864438 parameters.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Loading checkpoint in inference-only mode, not loading keys associated with trainer state!
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
@@ -1298,7 +1776,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:453: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/fairchem/fairchem/src/fairchem/core/trainers/ocp_trainer.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast(&#39;cuda&#39;, args...)` instead.
   with torch.cuda.amp.autocast(enabled=self.scaler is not None):
 </pre></div>
 </div>
@@ -1306,7 +1784,7 @@ trainer: ocp
   with torch.cuda.amp.autocast(False):
 </pre></div>
 </div>
-<img alt="../../_images/b79f6ecb8d7f97377a1b900a5fb72489f5b80d0b3313ad529d9f7a7afcfb7451.png" src="../../_images/b79f6ecb8d7f97377a1b900a5fb72489f5b80d0b3313ad529d9f7a7afcfb7451.png" />
+<img alt="../../_images/706c9d10f0670c899918f02b9d91821d5a85fbed3bc0fd7d5ab481303c7b7f1e.png" src="../../_images/706c9d10f0670c899918f02b9d91821d5a85fbed3bc0fd7d5ab481303c7b7f1e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1317,7 +1795,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.194 eV/atom
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 1.625 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1336,7 +1814,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b8462766e3305ecff8dcd979a4b724c753aebef048001a12e1f7b1bc6d61da1b.png" src="../../_images/b8462766e3305ecff8dcd979a4b724c753aebef048001a12e1f7b1bc6d61da1b.png" />
+<img alt="../../_images/4518a7b2c1fbd861b974f320f7429fc3a1ad723ad984720e16d6e1f311afb59c.png" src="../../_images/4518a7b2c1fbd861b974f320f7429fc3a1ad723ad984720e16d6e1f311afb59c.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

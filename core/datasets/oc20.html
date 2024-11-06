@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model_checkpoints.html">Pretrained FAIRChem models</a></li>
 
 
@@ -284,8 +285,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/core/index.html">core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/flags/index.html">core.common.flags</a></li>
@@ -294,6 +296,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -303,10 +306,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -314,26 +317,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -343,7 +346,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -351,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -368,16 +371,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -394,6 +395,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -402,7 +404,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -882,7 +883,416 @@ download and preprocess the data, you are good to go and can stop reading here!<
 </div>
 <section id="per-adsorbate-trajectories-optional-download">
 <h4>Per-adsorbate trajectories (optional download)<a class="headerlink" href="#per-adsorbate-trajectories-optional-download" title="Link to this heading">#</a></h4>
-<p>Adsorbate+catalyst trajectories on a per adsorbate basis are provided <a class="reference internal" href="#./DATASET_PER_ADSORBATE.md"><span class="xref myst">here</span></a> to avoid having to download all systems. Note - a few adsorbates are intentionally left out for the test splits.</p>
+<p>Download links are in the table below:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Adsorbate symbol</p></th>
+<th class="head"><p>Downloadable path</p></th>
+<th class="head"><p>size</p></th>
+<th class="head"><p>MD5 checksum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>*O</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/0.tar</p></td>
+<td><p>1006M</p></td>
+<td><p>d4151542856b4b6405f276808f75358a</p></td>
+</tr>
+<tr class="row-odd"><td><p>*H</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/1.tar</p></td>
+<td><p>850M</p></td>
+<td><p>3697f04faf04251a23da8b88a78209f7</p></td>
+</tr>
+<tr class="row-even"><td><p>*OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/2.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>a21081f3f55eb0c98a91021bbe3dac44</p></td>
+</tr>
+<tr class="row-odd"><td><p>*OH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/3.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>b12b706854f5d899e02a9ae6578b5d45</p></td>
+</tr>
+<tr class="row-even"><td><p>*C</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/4.tar</p></td>
+<td><p>1.1G</p></td>
+<td><p>e4fe9890764fcf59e01e3ceab089b978</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/6.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>ec9aa2c4c4bd4419359438ba7fbb881d</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/7.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>d32200f74ad5c3bfd42e8835f36d57ab</p></td>
+</tr>
+<tr class="row-odd"><td><p>*COH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/8.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>5418a1b331f6c7689a5405cca4cc8d15</p></td>
+</tr>
+<tr class="row-even"><td><p>*CH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/9.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>8ee1066149c305d7c17c219b369c5a73</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CH2</em>O</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/10.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>960c2450814024b66f3c79121179ac60</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/11.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>60ac9f965f9589a3389483e3d1e58144</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/12.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>7e123e6f4fb10d6897be3f47721dfd4a</p></td>
+</tr>
+<tr class="row-even"><td><p>*OCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/13.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>0823047bbbe05fa0e63f9d83ec601487</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/14.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>9ac71e198d75b1427182cd34abb73e4d</p></td>
+</tr>
+<tr class="row-even"><td><p>*CH4</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/15.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>a405ce403018bf8afbd4425d5c0b34d5</p></td>
+</tr>
+<tr class="row-odd"><td><p>*OHCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/16.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>d3c829f1952db6e4f428273ee05f59b1</p></td>
+</tr>
+<tr class="row-even"><td><p><em>C</em>C</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/17.tar</p></td>
+<td><p>1.5G</p></td>
+<td><p>d687a151345305897b9245af4b0f9967</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CCO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/18.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>214ca96e620c5ec6e8a6ff8144a22a04</p></td>
+</tr>
+<tr class="row-even"><td><p>*CCH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/19.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>da2268545e80ca1664026449dd2fdd24</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHCO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/20.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>386c99407fe63080d26cda525dfdd8cd</p></td>
+</tr>
+<tr class="row-even"><td><p>*CCHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/21.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>918b20960438494ab160a9dbd9668157</p></td>
+</tr>
+<tr class="row-odd"><td><p>*COCHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/22.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>84424aa2ad30301e23ece1438ea39923</p></td>
+</tr>
+<tr class="row-even"><td><p>*CCHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/23.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>3cc90425ec042a70085ba7eb2916a79a</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CCH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/24.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>9dbcf7566e40965dd7f8a186a75a718e</p></td>
+</tr>
+<tr class="row-even"><td><p><em>CH</em>CH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/25.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>a193b4c72f915ba0b21a41790696b23c</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH2*CO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/26.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>de83cf50247f5556fa4f9f64beff1eeb</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHCHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/27.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>1d140aaa2e7b287124ab38911a711d70</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CH</em>COH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/28.tar</p></td>
+<td><p>1.3G</p></td>
+<td><p>682d8a6b05ca5948b34dc5e5f6bbcd61</p></td>
+</tr>
+<tr class="row-even"><td><p>*COCH2O</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/29.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>c8742faa8ca40e8edb4110069817fa70</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CHO</em>CHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/30.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>8cfbb67beb312b98c40fcb891dfa480a</p></td>
+</tr>
+<tr class="row-even"><td><p>*COHCHO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/31.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>6ffa903a62d8ec3319ecec6a03b06276</p></td>
+</tr>
+<tr class="row-odd"><td><p>*COHCOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/32.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>caca0058b641bfdc9f8de4527e60feb7</p></td>
+</tr>
+<tr class="row-even"><td><p>*CCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/33.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>906543aaefc171edab388ff4f0fe8a20</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHCH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/34.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>4dfab479495f76179749c1956046fbd8</p></td>
+</tr>
+<tr class="row-even"><td><p>*COCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/35.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>29d1b992715054e920e8bb2afe97b393</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHCHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/38.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>9e5912df6f7b11706d1046cdb9e3087e</p></td>
+</tr>
+<tr class="row-even"><td><p>*CCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/39.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>7bcae43cee451306e34ec416588a7f09</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHOCHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/40.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>f98866d08fe3451ae7ebc47bb51599aa</p></td>
+</tr>
+<tr class="row-even"><td><p>*COCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/41.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>bfaf689e5827fcf26c51e567bb8dd1be</p></td>
+</tr>
+<tr class="row-odd"><td><p>*COHCHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/42.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>236fe4e950aa2fbdde94ef2821fb48d2</p></td>
+</tr>
+<tr class="row-even"><td><p>*OCHCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/44.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>66acc5460a999625c3364f0f3bcca871</p></td>
+</tr>
+<tr class="row-odd"><td><p>*COHCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/45.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>bb4a01956736399c8cee5e219f8c1229</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHOHCH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/46.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>e836de4ec146b1b611533f1ef682cace</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/47.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>66df44121806debef6dc038df7115d1d</p></td>
+</tr>
+<tr class="row-even"><td><p>*OCH2CHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/48.tar</p></td>
+<td><p>2.2G</p></td>
+<td><p>ff6981fdbcd2e65d351505c15d218d76</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHOCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/49.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>448f7d352ab6e32f754e24de64ca302a</p></td>
+</tr>
+<tr class="row-even"><td><p>*COHCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/50.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>8bff6bf3e10cc84acc4a283a375fcc23</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CHOHCHOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/51.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>9c9e4d617d306751760a80f1453e71f1</p></td>
+</tr>
+<tr class="row-even"><td><p>*CH2CH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/52.tar</p></td>
+<td><p>2.0G</p></td>
+<td><p>ec1e964d2ee6f468fa5773743e3994a4</p></td>
+</tr>
+<tr class="row-odd"><td><p>*OCH2CH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/53.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>d297b27b02822f9b6af80bdb64aee819</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHOHCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/54.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>368de083dafdc3bbdb560d35e2a102c0</p></td>
+</tr>
+<tr class="row-odd"><td><p>*CH2CH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/55.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>3c1aaf790659f7ff89bf1eed8b396b63</p></td>
+</tr>
+<tr class="row-even"><td><p>*CHOHCH2OH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/56.tar</p></td>
+<td><p>2.2G</p></td>
+<td><p>2d71adb9e305e6f3bca49e5df9b5a86a</p></td>
+</tr>
+<tr class="row-odd"><td><p>*OHCH2CH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/57.tar</p></td>
+<td><p>2.3G</p></td>
+<td><p>cf51128f8522b7b66fc68d79980d6def</p></td>
+</tr>
+<tr class="row-even"><td><p>*NH2N(CH3)2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/58.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>36ba974d80c20ff636431f7c0ad225da</p></td>
+</tr>
+<tr class="row-odd"><td><p>*ONN(CH3)2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/59.tar</p></td>
+<td><p>2.3G</p></td>
+<td><p>fdc4cd19977496909d61be4aee61c4f1</p></td>
+</tr>
+<tr class="row-even"><td><p>*OHNNCH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/60.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>50a6ff098f9ba7adbba9ac115726cc5a</p></td>
+</tr>
+<tr class="row-odd"><td><p>*ONH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/62.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>47573199c545afe46c554ff756c3e38f</p></td>
+</tr>
+<tr class="row-even"><td><p>*NHNH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/63.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>dd456b7e19ef592d9f0308d911b91d7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>N</em>NH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/65.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>c05289fd56d64c74306ebf57f1061318</p></td>
+</tr>
+<tr class="row-even"><td><p>*NO2NO2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/67.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>4822a06f6c5f41bdefd3cbbd8856c11f</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>N</em>NO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/68.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>2a27de122d32917cc5b6ac0a21c63c1c</p></td>
+</tr>
+<tr class="row-even"><td><p>*N2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/69.tar</p></td>
+<td><p>1.5G</p></td>
+<td><p>cc668fecf679b6edaac8fd8fb9cdd404</p></td>
+</tr>
+<tr class="row-odd"><td><p>*ONNH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/70.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>dff880f1a5baa7f67b52fd3ed745443d</p></td>
+</tr>
+<tr class="row-even"><td><p>*NH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/71.tar</p></td>
+<td><p>1.6G</p></td>
+<td><p>c7f383b50faa6244e265c9611466cb8f</p></td>
+</tr>
+<tr class="row-odd"><td><p>*NH3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/72.tar</p></td>
+<td><p>1.9G</p></td>
+<td><p>2b355741f9300445703270e0e4b8c01c</p></td>
+</tr>
+<tr class="row-even"><td><p>*NONH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/73.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>48877a0c6f2994baac82cb722711aaa2</p></td>
+</tr>
+<tr class="row-odd"><td><p>*NH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/74.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>7979b9e7ab557d6979b33e352486f0ef</p></td>
+</tr>
+<tr class="row-even"><td><p>*NO2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/75.tar</p></td>
+<td><p>1.7G</p></td>
+<td><p>9f352fbc32bb2b8caf4788aba28b2eb7</p></td>
+</tr>
+<tr class="row-odd"><td><p>*NO</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/76.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>482ee306a5ae2eee78cac40d10059ebc</p></td>
+</tr>
+<tr class="row-even"><td><p>*N</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/77.tar</p></td>
+<td><p>1.1G</p></td>
+<td><p>bfb6e03d4a687987ff68976f0793cc46</p></td>
+</tr>
+<tr class="row-odd"><td><p>*NO3</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/78.tar</p></td>
+<td><p>1.8G</p></td>
+<td><p>700834326e789a6e38bf3922d9fcb792</p></td>
+</tr>
+<tr class="row-even"><td><p>*OHNH2</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/79.tar</p></td>
+<td><p>2.1G</p></td>
+<td><p>fa24472e0c02c34d91f3ffe6b77bfb11</p></td>
+</tr>
+<tr class="row-odd"><td><p>*ONOH</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/80.tar</p></td>
+<td><p>1.4G</p></td>
+<td><p>4ddcccd62a834a76fe6167461f512529</p></td>
+</tr>
+<tr class="row-even"><td><p>*CN</p></td>
+<td><p>https://dl.fbaipublicfiles.com/opencatalystproject/data/per_adsorbate_is2res/81.tar</p></td>
+<td><p>1.5G</p></td>
+<td><p>bc7c55330ece006d09496a5ff01d5d50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note - A few adsorbates are intentionally left out for the test splits.</p>
+<p>Downloading any of the above and extracting will result in a folder :</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;index&gt;/</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system.txt</span></code> Text file containing information about the different adsorbate+catalyst system names. In total there are N systems. More details described below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;index&gt;/</span></code></p>
+<ul>
+<li><p>This contains N compressed trajectory files of the format <code class="docutils literal notranslate"><span class="pre">.extxyz.xz</span></code>.</p></li>
+<li><p>Files are named as  <code class="docutils literal notranslate"><span class="pre">&lt;system_id&gt;.extxyz.xz</span></code> (where <code class="docutils literal notranslate"><span class="pre">system_id</span></code> is defined below).</p></li>
+</ul>
+</li>
+</ul>
+<p>where, <code class="docutils literal notranslate"><span class="pre">&lt;index&gt;</span></code> can be 0 to 81. N is dependent on which adsorbate index is chosen.</p>
+<p>The file  <code class="docutils literal notranslate"><span class="pre">system.txt</span></code>  has information in the following format:
+<code class="docutils literal notranslate"><span class="pre">system_id,reference_energy</span></code></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system_id</span> </code>- Internal random ID corresponding to an adsorbate+catalyst system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reference_energy</span></code> - Energy used to reference system energies to bare catalyst+gas reference energies. Used for adsorption energy calculations.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">.extxyz.xz</span></code> files are LZMA compressed <code class="docutils literal notranslate"><span class="pre">.extxyz</span></code> trajectory files. Each trajectory corresponds to a relaxation trajectory of a different adsorbate+catalyst system. Information about the <code class="docutils literal notranslate"><span class="pre">.extxyz</span></code> trajectory file format may be found at https://wiki.fysik.dtu.dk/ase/dev/ase/io/formatoptions.html#extxyz .</p>
+<p>In order to uncompress the files, <code class="docutils literal notranslate"><span class="pre">uncompress.py</span></code> provides a multi-core implementation which could be used.</p>
 </section>
 </section>
 <section id="catalyst-system-trajectories-optional-download">

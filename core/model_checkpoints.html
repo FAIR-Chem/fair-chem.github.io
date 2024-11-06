@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Making and using ASE datasets" href="ase_dataset_creation.html" />
-    <link rel="prev" title="Open Catalyst 2020 Nudged Elastic Band (OC20NEB)" href="datasets/oc20neb.html" />
+    <link rel="prev" title="Open Materials 2024 (OMat24)" href="datasets/omat24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets/oc20dense.html">Open Catalyst 2020 Dense (OC20Dense)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets/oc20neb.html">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets/omat24.html">Open Materials 2024 (OMat24)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pretrained FAIRChem models</a></li>
 
 
@@ -286,8 +287,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/core/index.html">core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html">core._cli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/common/index.html">core.common</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/data_parallel/index.html">core.common.data_parallel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/distutils/index.html">core.common.distutils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/flags/index.html">core.common.flags</a></li>
@@ -296,6 +298,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html">core.common.logger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/profiler_utils/index.html">core.common.profiler_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html">core.common.registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html">core.common.relaxation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/slurm/index.html">core.common.slurm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/test_utils/index.html">core.common.test_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html">core.common.transforms</a></li>
@@ -305,10 +308,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/datasets/index.html">core.datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html">core.datasets._utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html">core.datasets.ase_datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/base_dataset/index.html">core.datasets.base_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html">core.datasets.embeddings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html">core.datasets.lmdb_database</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html">core.datasets.lmdb_dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html">core.datasets.oc22_lmdb_dataset</a></li>
@@ -316,26 +319,26 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/models/index.html">core.models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html">core.models.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/equiformer_v2/index.html">core.models.equiformer_v2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/escn/index.html">core.models.escn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet/index.html">core.models.gemnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_gp/index.html">core.models.gemnet_gp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_oc/index.html">core.models.gemnet_oc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/painn/index.html">core.models.painn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/scn/index.html">core.models.scn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html">core.models.utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html">core.models.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html">core.models.dimenet_plus_plus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html">core.models.model_registry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html">core.models.schnet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html">core.modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html">core.modules.evaluator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html">core.modules.exponential_moving_average</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html">core.modules.loss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalization/index.html">core.modules.normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html">core.modules.scaling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html">core.modules.scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html">core.modules.transforms</a></li>
 </ul>
@@ -345,7 +348,6 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html">core.scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/convert_hydra_to_release/index.html">core.scripts.convert_hydra_to_release</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html">core.scripts.download_data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_large_files/index.html">core.scripts.download_large_files</a></li>
@@ -353,6 +355,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/fit_normalizers/index.html">core.scripts.fit_normalizers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/fit_references/index.html">core.scripts.fit_references</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html">core.scripts.gif_maker_parallelized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html">core.scripts.hpo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html">core.scripts.make_challenge_submission_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html">core.scripts.make_lmdb_sizes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_submission_file/index.html">core.scripts.make_submission_file</a></li>
@@ -370,16 +373,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/ocp_trainer/index.html">core.trainers.ocp_trainer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html">core._cli</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli_hydra/index.html">core._cli_hydra</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/data/index.html">data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/data/oc/index.html">data.oc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/core/index.html">data.oc.core</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/databases/index.html">data.oc.databases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/structure_generator/index.html">data.oc.structure_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/data/oc/utils/index.html">data.oc.utils</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/data/odac/index.html">data.odac</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -396,6 +397,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpapi/client/ui/index.html">ocpapi.client.ui</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/ocpapi/workflows/index.html">ocpapi.workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpapi/workflows/adsorbates/index.html">ocpapi.workflows.adsorbates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpapi/workflows/context/index.html">ocpapi.workflows.context</a></li>
@@ -404,7 +406,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpapi/workflows/retry/index.html">ocpapi.workflows.retry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../autoapi/ocpapi/version/index.html">ocpapi.version</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/cattsunami/index.html">cattsunami</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -623,6 +624,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-materials-2024-omat24">Open Materials 2024 (OMat24)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#omat-pretrained-models">OMat pretrained models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mptrj-only-models">MPTrj only models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finetuned-omat-models">Finetuned OMat models</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1248,6 +1255,113 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
 </pre></div>
 </div>
 </section>
+<section id="open-materials-2024-omat24">
+<h2>Open Materials 2024 (OMat24)<a class="headerlink" href="#open-materials-2024-omat24" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>All config files for the OMat24 models are available in the <a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24"><code class="docutils literal notranslate"><span class="pre">configs/odac</span></code></a> directory.</p></li>
+<li><p>All models are equiformerV2 S2EFS models</p></li>
+</ul>
+<p><strong>Note</strong> in order to download any of the model checkpoints from the links below, you will need to first request access
+through the <a class="reference external" href="https://huggingface.co/fairchem/OMAT24">OMMAT24 Hugging Face page</a>.</p>
+<section id="omat-pretrained-models">
+<h3>OMat pretrained models<a class="headerlink" href="#omat-pretrained-models" title="Link to this heading">#</a></h3>
+<p>These checkpoints are trained on OMat24 only. Note that predictions are <em>not</em> Materials Project compatible.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Checkpoint</p></th>
+<th class="head"><p>Config</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EquiformerV2-31M-OMat</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_31M_omat.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/all/eqV2_31M.yml">config</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EquiformerV2-86M-OMat</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_86M_omat.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/all/eqV2_86M.yml">config</a></p></td>
+</tr>
+<tr class="row-even"><td><p>EquiformerV2-153M-OMat</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_153M_omat.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/all/eqV2_153M.yml">config</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mptrj-only-models">
+<h3>MPTrj only models<a class="headerlink" href="#mptrj-only-models" title="Link to this heading">#</a></h3>
+<p>These models are trained only on the <a class="reference internal" href="#"><span class="xref myst">MPTrj</span></a> dataset.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Checkpoint</p></th>
+<th class="head"><p>Config</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EquiformerV2-31M-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_31M_mp.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/mptrj/eqV2_31M_mptrj.yml">config</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EquiformerV2-31M-DeNS-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_dens_31M_mp.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/mptrj/eqV2_31M_dens_mptrj.yml">config</a></p></td>
+</tr>
+<tr class="row-even"><td><p>EquiformerV2-86M-DeNS-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_dens_86M_mp.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/mptrj/eqV2_86M_dens_mptrj.yml">config</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EquiformerV2-153M-DeNS-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_dens_153M_mp.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/mptrj/eqV2_153M_dens_mptrj.yml">config</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="finetuned-omat-models">
+<h3>Finetuned OMat models<a class="headerlink" href="#finetuned-omat-models" title="Link to this heading">#</a></h3>
+<p>These models are finetuned from the OMat pretrained checkpoints using MPTrj or MPTrj and sub-sampled trajectories
+from the 3D PBE Alexandria dataset, which we call Alex.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model Name</p></th>
+<th class="head"><p>Checkpoint</p></th>
+<th class="head"><p>Config</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EquiformerV2-31M-OMat-Alex-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_31M_omat_mp_salex.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/finetune/eqV2_31M_ft_salexmptrj.yml">config</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>EquiformerV2-86M-OMat-Alex-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24/blob/main/eqV2_86M_omat_mp_salex.pt">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/finetune/eqV2_86M_ft_salexmptrj.yml">config</a></p></td>
+</tr>
+<tr class="row-even"><td><p>EquiformerV2-153M-OMat-Alex-MP</p></td>
+<td><p><a class="reference external" href="https://huggingface.co/fairchem/OMAT24">checkpoint</a></p></td>
+<td><p><a class="reference external" href="https://github.com/FAIR-Chem/fairchem/tree/main/configs/omat24/finetune/eqV2_153M_ft_salexmptrj.yml">config</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Please consider citing the following work if you use OMat24 models in your work,</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">barroso-luqueOpenMaterials20242024</span><span class="p">,</span>
+<span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Barroso-Luque, Luis and Shuaibi, Muhammed and Fu, Xiang and Wood, Brandon M. and Dzamba, Misko and Gao, Meng and Rizvi, Ammar and Zitnick, C. Lawrence and Ulissi, Zachary W.}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">date</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2024-10-16}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">eprint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2410.12771}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">eprinttype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{arXiv}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.48550/arXiv.2410.12771}</span><span class="p">,</span>
+<span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{http://arxiv.org/abs/2410.12771}</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1281,12 +1395,12 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="datasets/oc20neb.html"
+       href="datasets/omat24.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Open Catalyst 2020 Nudged Elastic Band (OC20NEB)</p>
+        <p class="prev-next-title">Open Materials 2024 (OMat24)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1328,6 +1442,12 @@ OC22 dataset or pretrained models, as well as the original paper for each model:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s2ef-models">S2EF models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2re-direct-models">IS2RE Direct models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is2rs">IS2RS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-materials-2024-omat24">Open Materials 2024 (OMat24)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#omat-pretrained-models">OMat pretrained models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mptrj-only-models">MPTrj only models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finetuned-omat-models">Finetuned OMat models</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
