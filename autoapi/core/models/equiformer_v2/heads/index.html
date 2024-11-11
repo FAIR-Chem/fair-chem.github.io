@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>core.models.equiformer_v2.prediction_heads</title>
+    <title>core.models.equiformer_v2.heads</title>
   
   
   
@@ -61,11 +61,11 @@
     <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/models/equiformer_v2/prediction_heads/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/models/equiformer_v2/heads/index';</script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="core.models.equiformer_v2.prediction_heads.rank2" href="rank2/index.html" />
-    <link rel="prev" title="core.models.equiformer_v2.module_list" href="../module_list/index.html" />
+    <link rel="next" title="core.models.equiformer_v2.heads.rank2" href="rank2/index.html" />
+    <link rel="prev" title="core.models.equiformer_v2.gaussian_rbf" href="../gaussian_rbf/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -493,7 +493,7 @@
       
       
       
-      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Fautoapi/core/models/equiformer_v2/prediction_heads/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Fautoapi/core/models/equiformer_v2/heads/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -523,7 +523,7 @@
       
       
       
-      <li><a href="../../../../../_sources/autoapi/core/models/equiformer_v2/prediction_heads/index.rst" target="_blank"
+      <li><a href="../../../../../_sources/autoapi/core/models/equiformer_v2/heads/index.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -599,7 +599,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>core.models.equiformer_v2.prediction_heads</h1>
+    <h1>core.models.equiformer_v2.heads</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -612,18 +612,33 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.ouput_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.ouput_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.sphharm_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.xedge_layer_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.block"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.block</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.output_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.output_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.decompose"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.decompose</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.use_source_target_embedding"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.use_source_target_embedding</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.avg_num_nodes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.ouput_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.ouput_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.sphharm_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.xedge_layer_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.block"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.output_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.decompose"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.decompose</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.use_source_target_embedding"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.use_source_target_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.avg_num_nodes</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.forward"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.forward"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.output_name"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.reduce"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.reduce</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.avg_num_nodes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.energy_block"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.energy_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.forward"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.output_name"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.activation_checkpoint"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.activation_checkpoint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.force_block"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.force_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.forward"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -639,13 +654,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-core.models.equiformer_v2.prediction_heads">
-<span id="core-models-equiformer-v2-prediction-heads"></span><h1>core.models.equiformer_v2.prediction_heads<a class="headerlink" href="#module-core.models.equiformer_v2.prediction_heads" title="Link to this heading">#</a></h1>
+  <section id="module-core.models.equiformer_v2.heads">
+<span id="core-models-equiformer-v2-heads"></span><h1>core.models.equiformer_v2.heads<a class="headerlink" href="#module-core.models.equiformer_v2.heads" title="Link to this heading">#</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="rank2/index.html">core.models.equiformer_v2.prediction_heads.rank2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rank2/index.html">core.models.equiformer_v2.heads.rank2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scalar/index.html">core.models.equiformer_v2.heads.scalar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vector/index.html">core.models.equiformer_v2.heads.vector</a></li>
 </ul>
 </div>
 </section>
@@ -653,8 +670,14 @@
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead" title="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead" title="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a></p></td>
 <td><p>A rank 2 symmetric tensor prediction head.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.equiformer_v2.heads.EqV2ScalarHead" title="core.models.equiformer_v2.heads.EqV2ScalarHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EqV2ScalarHead</span></code></a></p></td>
+<td><p>Base class for all neural network modules.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.equiformer_v2.heads.EqV2VectorHead" title="core.models.equiformer_v2.heads.EqV2VectorHead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EqV2VectorHead</span></code></a></p></td>
+<td><p>Base class for all neural network modules.</p></td>
 </tr>
 </tbody>
 </table>
@@ -663,52 +686,52 @@
 <section id="package-contents">
 <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.prediction_heads.</span></span><span class="sig-name descname"><span class="pre">Rank2SymmetricTensorHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">fairchem.core.models.base.BackboneInterface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_level_mlp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_mlp_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_source_target_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_norm_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'layer_norm_sh'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.heads.</span></span><span class="sig-name descname"><span class="pre">Rank2SymmetricTensorHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">fairchem.core.models.base.BackboneInterface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'stress'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_level_mlp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_mlp_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_source_target_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_num_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_norm_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'layer_norm_sh'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
 <p>A rank 2 symmetric tensor prediction head.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.ouput_name">
-<span class="sig-name descname"><span class="pre">ouput_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.ouput_name" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.ouput_name">
+<span class="sig-name descname"><span class="pre">ouput_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.ouput_name" title="Link to this definition">#</a></dt>
 <dd><p>name of output prediction property (ie, stress)</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.sphharm_norm">
-<span class="sig-name descname"><span class="pre">sphharm_norm</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.sphharm_norm" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.sphharm_norm">
+<span class="sig-name descname"><span class="pre">sphharm_norm</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.sphharm_norm" title="Link to this definition">#</a></dt>
 <dd><p>layer normalization for spherical harmonic edge weights</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.xedge_layer_norm">
-<span class="sig-name descname"><span class="pre">xedge_layer_norm</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.xedge_layer_norm" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.xedge_layer_norm">
+<span class="sig-name descname"><span class="pre">xedge_layer_norm</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.xedge_layer_norm" title="Link to this definition">#</a></dt>
 <dd><p>embedding layer norm</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.block">
-<span class="sig-name descname"><span class="pre">block</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.block" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.block">
+<span class="sig-name descname"><span class="pre">block</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.block" title="Link to this definition">#</a></dt>
 <dd><p>rank 2 equivariant symmetric tensor block</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.output_name">
-<span class="sig-name descname"><span class="pre">output_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.output_name" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.output_name">
+<span class="sig-name descname"><span class="pre">output_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.output_name" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.decompose">
-<span class="sig-name descname"><span class="pre">decompose</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.decompose" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.decompose">
+<span class="sig-name descname"><span class="pre">decompose</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.decompose" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.use_source_target_embedding">
-<span class="sig-name descname"><span class="pre">use_source_target_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.use_source_target_embedding" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.use_source_target_embedding">
+<span class="sig-name descname"><span class="pre">use_source_target_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.use_source_target_embedding" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.avg_num_nodes">
-<span class="sig-name descname"><span class="pre">avg_num_nodes</span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.avg_num_nodes" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.avg_num_nodes">
+<span class="sig-name descname"><span class="pre">avg_num_nodes</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.avg_num_nodes" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -722,8 +745,8 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.forward" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.forward" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -733,6 +756,155 @@
 </dd>
 </dl>
 <p>Returns: dict of {output property name: predicted value}</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.heads.</span></span><span class="sig-name descname"><span class="pre">EqV2ScalarHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'energy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sum'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">to()</span></code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training</strong> (<em>bool</em>) – Boolean represents whether this module is in training or
+evaluation mode.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead.output_name">
+<span class="sig-name descname"><span class="pre">output_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.output_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead.reduce">
+<span class="sig-name descname"><span class="pre">reduce</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.reduce" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead.avg_num_nodes">
+<span class="sig-name descname"><span class="pre">avg_num_nodes</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.avg_num_nodes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead.energy_block">
+<span class="sig-name descname"><span class="pre">energy_block</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.energy_block" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2ScalarHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">fairchem.core.models.base.GraphData</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2VectorHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.heads.</span></span><span class="sig-name descname"><span class="pre">EqV2VectorHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">fairchem.core.models.base.BackboneInterface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'forces'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2VectorHead" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">fairchem.core.models.base.HeadInterface</span></code></p>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">to()</span></code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>training</strong> (<em>bool</em>) – Boolean represents whether this module is in training or
+evaluation mode.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2VectorHead.output_name">
+<span class="sig-name descname"><span class="pre">output_name</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2VectorHead.output_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2VectorHead.activation_checkpoint">
+<span class="sig-name descname"><span class="pre">activation_checkpoint</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2VectorHead.activation_checkpoint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2VectorHead.force_block">
+<span class="sig-name descname"><span class="pre">force_block</span></span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2VectorHead.force_block" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.heads.EqV2VectorHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.heads.EqV2VectorHead.forward" title="Link to this definition">#</a></dt>
+<dd><p>Head forward.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>DataBatch</em>) – Atomic systems as input</p></li>
+<li><p><strong>emb</strong> (<em>dict</em><em>[</em><em>str-&gt;torch.Tensor</em><em>]</em>) – Embeddings of the input as generated by the backbone</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outputs</strong> – Return one or more targets generated by this head</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str-&gt;torch.Tensor]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -753,7 +925,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./autoapi/core/models/equiformer_v2/prediction_heads"
+            path: "./autoapi/core/models/equiformer_v2/heads"
         },
         predefinedOutput: true
     }
@@ -771,12 +943,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../module_list/index.html"
+       href="../gaussian_rbf/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">core.models.equiformer_v2.module_list</p>
+        <p class="prev-next-title">core.models.equiformer_v2.gaussian_rbf</p>
       </div>
     </a>
     <a class="right-next"
@@ -784,7 +956,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">core.models.equiformer_v2.prediction_heads.rank2</p>
+        <p class="prev-next-title">core.models.equiformer_v2.heads.rank2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -808,18 +980,33 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.ouput_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.ouput_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.sphharm_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.xedge_layer_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.block"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.block</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.output_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.output_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.decompose"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.decompose</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.use_source_target_embedding"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.use_source_target_embedding</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.avg_num_nodes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.ouput_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.ouput_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.sphharm_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.xedge_layer_norm"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.block"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.output_name"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.decompose"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.decompose</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.use_source_target_embedding"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.use_source_target_embedding</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.avg_num_nodes</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.sphharm_norm</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.xedge_layer_norm</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.prediction_heads.Rank2SymmetricTensorHead.forward"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.Rank2SymmetricTensorHead.forward"><code class="docutils literal notranslate"><span class="pre">Rank2SymmetricTensorHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.output_name"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.reduce"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.reduce</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.avg_num_nodes"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.avg_num_nodes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.energy_block"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.energy_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2ScalarHead.forward"><code class="docutils literal notranslate"><span class="pre">EqV2ScalarHead.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.output_name"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.output_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.activation_checkpoint"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.activation_checkpoint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.force_block"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.force_block</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.heads.EqV2VectorHead.forward"><code class="docutils literal notranslate"><span class="pre">EqV2VectorHead.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>

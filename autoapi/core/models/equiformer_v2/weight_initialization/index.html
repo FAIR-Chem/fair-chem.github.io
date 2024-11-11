@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>core.models.equiformer_v2.input_block</title>
+    <title>core.models.equiformer_v2.weight_initialization</title>
   
   
   
@@ -61,11 +61,11 @@
     <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/models/equiformer_v2/input_block/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/core/models/equiformer_v2/weight_initialization/index';</script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="core.models.equiformer_v2.layer_norm" href="../layer_norm/index.html" />
-    <link rel="prev" title="core.models.equiformer_v2.heads.vector" href="../heads/vector/index.html" />
+    <link rel="next" title="core.models.equiformer_v2.wigner" href="../wigner/index.html" />
+    <link rel="prev" title="core.models.equiformer_v2.transformer_block" href="../transformer_block/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -493,7 +493,7 @@
       
       
       
-      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Fautoapi/core/models/equiformer_v2/input_block/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/FAIR-Chem/fairchem/issues/new?title=Issue%20on%20page%20%2Fautoapi/core/models/equiformer_v2/weight_initialization/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -523,7 +523,7 @@
       
       
       
-      <li><a href="../../../../../_sources/autoapi/core/models/equiformer_v2/input_block/index.rst" target="_blank"
+      <li><a href="../../../../../_sources/autoapi/core/models/equiformer_v2/weight_initialization/index.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -599,7 +599,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>core.models.equiformer_v2.input_block</h1>
+    <h1>core.models.equiformer_v2.weight_initialization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -609,25 +609,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.sphere_channels"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.sphere_channels</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.lmax_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.lmax_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mmax_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.mmax_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.num_resolutions"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.num_resolutions</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.SO3_rotation"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.SO3_rotation</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mappingReduced"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.mappingReduced</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_0_num_coefficients"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.m_0_num_coefficients</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_all_num_coefficents"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.m_all_num_coefficents</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.max_num_elements"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.max_num_elements</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.edge_channels_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.edge_channels_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.use_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.use_atom_edge_embedding</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rad_func"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.rad_func</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rescale_factor"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.rescale_factor</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.forward()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.weight_initialization.eqv2_init_weights"><code class="docutils literal notranslate"><span class="pre">eqv2_init_weights()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights"><code class="docutils literal notranslate"><span class="pre">eqv2_uniform_init_linear_weights()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -641,13 +626,19 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-core.models.equiformer_v2.input_block">
-<span id="core-models-equiformer-v2-input-block"></span><h1>core.models.equiformer_v2.input_block<a class="headerlink" href="#module-core.models.equiformer_v2.input_block" title="Link to this heading">#</a></h1>
-<section id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+  <section id="module-core.models.equiformer_v2.weight_initialization">
+<span id="core-models-equiformer-v2-weight-initialization"></span><h1>core.models.equiformer_v2.weight_initialization<a class="headerlink" href="#module-core.models.equiformer_v2.weight_initialization" title="Link to this heading">#</a></h1>
+<p>Copyright (c) Meta, Inc. and its affiliates.</p>
+<p>This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding" title="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.models.equiformer_v2.weight_initialization.eqv2_init_weights" title="core.models.equiformer_v2.weight_initialization.eqv2_init_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eqv2_init_weights</span></code></a>(m, weight_init)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights" title="core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eqv2_uniform_init_linear_weights</span></code></a>(m)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -656,97 +647,15 @@
 </section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.input_block.</span></span><span class="sig-name descname"><span class="pre">EdgeDegreeEmbedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SO3_rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mappingReduced</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sphere_channels</strong> (<em>int</em>) – Number of spherical channels</p></li>
-<li><p><strong>(</strong><strong>list</strong> (<em>edge_channels_list</em>) – int):       List of degrees (l) for each resolution</p></li>
-<li><p><strong>(</strong><strong>list</strong> – int):       List of orders (m) for each resolution</p></li>
-<li><p><strong>(</strong><strong>list</strong> – SO3_Rotation): Class to calculate Wigner-D matrices and rotate embeddings</p></li>
-<li><p><strong>mappingReduced</strong> (<a class="reference internal" href="../so3/index.html#core.models.equiformer_v2.so3.CoefficientMappingModule" title="core.models.equiformer_v2.so3.CoefficientMappingModule"><em>CoefficientMappingModule</em></a>) – Class to convert l and m indices once node embedding is rotated</p></li>
-<li><p><strong>max_num_elements</strong> (<em>int</em>) – Maximum number of atomic numbers</p></li>
-<li><p><strong>(</strong><strong>list</strong> – int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
-The last one will be used as hidden size when <cite>use_atom_edge_embedding</cite> is <cite>True</cite>.</p></li>
-<li><p><strong>use_atom_edge_embedding</strong> (<em>bool</em>) – Whether to use atomic embedding along with relative distance for edge scalar features</p></li>
-<li><p><strong>rescale_factor</strong> (<em>float</em>) – Rescale the sum aggregation</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.sphere_channels">
-<span class="sig-name descname"><span class="pre">sphere_channels</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.sphere_channels" title="Link to this definition">#</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.weight_initialization.eqv2_init_weights">
+<span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.weight_initialization.</span></span><span class="sig-name descname"><span class="pre">eqv2_init_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.weight_initialization.eqv2_init_weights" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.lmax_list">
-<span class="sig-name descname"><span class="pre">lmax_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.lmax_list" title="Link to this definition">#</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights">
+<span class="sig-prename descclassname"><span class="pre">core.models.equiformer_v2.weight_initialization.</span></span><span class="sig-name descname"><span class="pre">eqv2_uniform_init_linear_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mmax_list">
-<span class="sig-name descname"><span class="pre">mmax_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mmax_list" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.num_resolutions">
-<span class="sig-name descname"><span class="pre">num_resolutions</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.num_resolutions" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.SO3_rotation">
-<span class="sig-name descname"><span class="pre">SO3_rotation</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.SO3_rotation" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mappingReduced">
-<span class="sig-name descname"><span class="pre">mappingReduced</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mappingReduced" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_0_num_coefficients">
-<span class="sig-name descname"><span class="pre">m_0_num_coefficients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_0_num_coefficients" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_all_num_coefficents">
-<span class="sig-name descname"><span class="pre">m_all_num_coefficents</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_all_num_coefficents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.max_num_elements">
-<span class="sig-name descname"><span class="pre">max_num_elements</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.max_num_elements" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.edge_channels_list">
-<span class="sig-name descname"><span class="pre">edge_channels_list</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.edge_channels_list" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.use_atom_edge_embedding">
-<span class="sig-name descname"><span class="pre">use_atom_edge_embedding</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.use_atom_edge_embedding" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rad_func">
-<span class="sig-name descname"><span class="pre">rad_func</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rad_func" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rescale_factor">
-<span class="sig-name descname"><span class="pre">rescale_factor</span></span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rescale_factor" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.forward" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
 
 </section>
 </section>
@@ -764,7 +673,7 @@ The last one will be used as hidden size when <cite>use_atom_edge_embedding</cit
         },
         kernelOptions: {
             name: "python3",
-            path: "./autoapi/core/models/equiformer_v2/input_block"
+            path: "./autoapi/core/models/equiformer_v2/weight_initialization"
         },
         predefinedOutput: true
     }
@@ -782,20 +691,20 @@ The last one will be used as hidden size when <cite>use_atom_edge_embedding</cit
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../heads/vector/index.html"
+       href="../transformer_block/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">core.models.equiformer_v2.heads.vector</p>
+        <p class="prev-next-title">core.models.equiformer_v2.transformer_block</p>
       </div>
     </a>
     <a class="right-next"
-       href="../layer_norm/index.html"
+       href="../wigner/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">core.models.equiformer_v2.layer_norm</p>
+        <p class="prev-next-title">core.models.equiformer_v2.wigner</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -816,25 +725,10 @@ The last one will be used as hidden size when <cite>use_atom_edge_embedding</cit
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.sphere_channels"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.sphere_channels</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.lmax_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.lmax_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mmax_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.mmax_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.num_resolutions"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.num_resolutions</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.SO3_rotation"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.SO3_rotation</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.mappingReduced"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.mappingReduced</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_0_num_coefficients"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.m_0_num_coefficients</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.m_all_num_coefficents"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.m_all_num_coefficents</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.max_num_elements"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.max_num_elements</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.edge_channels_list"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.edge_channels_list</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.use_atom_edge_embedding"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.use_atom_edge_embedding</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rad_func"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.rad_func</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.rescale_factor"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.rescale_factor</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.input_block.EdgeDegreeEmbedding.forward"><code class="docutils literal notranslate"><span class="pre">EdgeDegreeEmbedding.forward()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.weight_initialization.eqv2_init_weights"><code class="docutils literal notranslate"><span class="pre">eqv2_init_weights()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.models.equiformer_v2.weight_initialization.eqv2_uniform_init_linear_weights"><code class="docutils literal notranslate"><span class="pre">eqv2_uniform_init_linear_weights()</span></code></a></li>
 </ul>
 </li>
 </ul>
