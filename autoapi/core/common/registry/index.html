@@ -30,7 +30,7 @@
   <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -766,11 +766,11 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
-<span class="kn">from</span> <span class="nn">fairchem.core.datasets</span> <span class="kn">import</span> <span class="n">BaseDataset</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseDataset</span>
 
 <span class="nd">@registry</span><span class="o">.</span><span class="n">register_dataset</span><span class="p">(</span><span class="s2">&quot;qm9&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">QM9</span><span class="p">(</span><span class="n">BaseDataset</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">QM9</span><span class="p">(</span><span class="n">BaseDataset</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -786,11 +786,11 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
-<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
 
 <span class="nd">@registry</span><span class="o">.</span><span class="n">register_loss</span><span class="p">(</span><span class="s2">&quot;mae&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">MAELoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MAELoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -806,11 +806,11 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
-<span class="kn">from</span> <span class="nn">fairchem.core.modules.layers</span> <span class="kn">import</span> <span class="n">CGCNNConv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.modules.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CGCNNConv</span>
 
 <span class="nd">@registry</span><span class="o">.</span><span class="n">register_model</span><span class="p">(</span><span class="s2">&quot;cgcnn&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">CGCNN</span><span class="p">():</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CGCNN</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -826,10 +826,10 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="nd">@registry</span><span class="o">.</span><span class="n">register_logger</span><span class="p">(</span><span class="s2">&quot;wandb&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">WandBLogger</span><span class="p">():</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WandBLogger</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -845,10 +845,10 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="nd">@registry</span><span class="o">.</span><span class="n">register_trainer</span><span class="p">(</span><span class="s2">&quot;active_discovery&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">ActiveDiscoveryTrainer</span><span class="p">():</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ActiveDiscoveryTrainer</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -864,7 +864,7 @@ class TrainTask(BaseTask):</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="n">registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="p">{})</span>
 </pre></div>
@@ -928,7 +928,7 @@ internal operations. Default: False</p></li>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">)</span>
 </pre></div>
@@ -945,7 +945,7 @@ internal operations. Default: False</p></li>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.registry</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">)</span>
 </pre></div>

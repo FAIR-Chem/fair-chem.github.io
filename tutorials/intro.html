@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -673,7 +673,7 @@
 <p>We will focus on the ASE compatible calculator here. To facilitate using the checkpoints, there is a set of <a class="reference internal" href="#./ocp-tutorial"><span class="xref myst">utilities</span></a> for this tutorial. You can list the checkpoints that are readily available here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.models.model_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -687,7 +687,7 @@
 <p>You can get a checkpoint file with one of the keys listed above like this. The resulting string is the name of the file downloaded, and you use that when creating an OCP calculator later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.models.model_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC-S2EFS-OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/fairchem_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
@@ -711,30 +711,30 @@
 <p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_fairchem</span></code> to output information that might be helpful in debugging.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fairchem.core.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_fairchem</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fairchem.core.common.tutorial_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">describe_fairchem</span>
 <span class="n">describe_fairchem</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.8/x64/bin/python 3.12.8 (main, Dec  4 2024, 06:19:59) [GCC 11.4.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.8/x64/bin/python 3.12.8 (main, Dec  4 2024, 06:20:31) [GCC 13.2.0]
 fairchem is installed at /home/runner/work/fairchem/fairchem/src/fairchem
-fairchem repo is at git commit: 83e1a53
-numba: 0.60.0
+fairchem repo is at git commit: c162617
+numba: 0.61.0
 numpy: 1.26.4
-ase: 3.23.0
+ase: 3.24.0
 e3nn: 0.5.4
-pymatgen: 2024.11.13
+pymatgen: 2025.1.9
 torch: 2.4.0+cu121
 torch.version.cuda: 12.1
 torch.cuda: is_available: False
 torch geometric: 2.6.1
 
-Platform: Linux-6.5.0-1025-azure-x86_64-with-glibc2.35
+Platform: Linux-6.8.0-1017-azure-x86_64-with-glibc2.39
   Processor: x86_64
-  Virtual memory: svmem(total=16757342208, available=14664261632, percent=12.5, used=1686581248, free=12681281536, active=1969823744, inactive=1581338624, buffers=34996224, cached=2354483200, shared=43302912, slab=312561664)
-  Swap memory: sswap(total=4294963200, used=568262656, free=3726700544, percent=13.2, sin=273870848, sout=2011492352)
-  Disk usage: sdiskusage(total=77851254784, used=69085151232, free=8749326336, percent=88.8)
+  Virtual memory: svmem(total=16766779392, available=14358142976, percent=14.4, used=1968771072, free=6817513472, active=2631761920, inactive=6525394944, buffers=223027200, cached=7757467648, shared=76677120, slab=511889408)
+  Swap memory: sswap(total=4294963200, used=798720, free=4294164480, percent=0.0, sin=0, sout=57344)
+  Disk usage: sdiskusage(total=76887154688, used=61554577408, free=15315800064, percent=80.1)
 </pre></div>
 </div>
 </div>

@@ -30,7 +30,7 @@
   <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -621,10 +621,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.T_co"><code class="docutils literal notranslate"><span class="pre">T_co</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.DatasetMetadata"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.DatasetMetadata.natoms"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.natoms</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.UnsupportedDatasetError"><code class="docutils literal notranslate"><span class="pre">UnsupportedDatasetError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.BaseDataset"><code class="docutils literal notranslate"><span class="pre">BaseDataset</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.BaseDataset.config"><code class="docutils literal notranslate"><span class="pre">BaseDataset.config</span></code></a></li>
@@ -691,13 +687,10 @@ LICENSE file in the root directory of this source tree.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.base_dataset.DatasetMetadata" title="core.datasets.base_dataset.DatasetMetadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#core.datasets.base_dataset.BaseDataset" title="core.datasets.base_dataset.BaseDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.base_dataset.BaseDataset" title="core.datasets.base_dataset.BaseDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p></td>
 <td><p>Base Dataset class for all OCP datasets.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#core.datasets.base_dataset.Subset" title="core.datasets.base_dataset.Subset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Subset</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#core.datasets.base_dataset.Subset" title="core.datasets.base_dataset.Subset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Subset</span></code></a></p></td>
 <td><p>A pytorch subset that also takes metadata if given.</p></td>
 </tr>
 </tbody>
@@ -721,17 +714,6 @@ LICENSE file in the root directory of this source tree.</p>
 <dt class="sig sig-object py" id="core.datasets.base_dataset.T_co">
 <span class="sig-prename descclassname"><span class="pre">core.datasets.base_dataset.</span></span><span class="sig-name descname"><span class="pre">T_co</span></span><a class="headerlink" href="#core.datasets.base_dataset.T_co" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="core.datasets.base_dataset.DatasetMetadata">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.base_dataset.</span></span><span class="sig-name descname"><span class="pre">DatasetMetadata</span></span><a class="headerlink" href="#core.datasets.base_dataset.DatasetMetadata" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="core.datasets.base_dataset.DatasetMetadata.natoms">
-<span class="sig-name descname"><span class="pre">natoms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">numpy.typing.ArrayLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#core.datasets.base_dataset.DatasetMetadata.natoms" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="core.datasets.base_dataset.UnsupportedDatasetError">
@@ -777,7 +759,7 @@ LICENSE file in the root directory of this source tree.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="core.datasets.base_dataset.BaseDataset._metadata">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#core.datasets.base_dataset.DatasetMetadata" title="core.datasets.base_dataset.DatasetMetadata"><span class="pre">DatasetMetadata</span></a></em><a class="headerlink" href="#core.datasets.base_dataset.BaseDataset._metadata" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.typing.ArrayLike</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.datasets.base_dataset.BaseDataset._metadata" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -789,7 +771,7 @@ LICENSE file in the root directory of this source tree.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="core.datasets.base_dataset.Subset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.base_dataset.</span></span><span class="sig-name descname"><span class="pre">Subset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.datasets.base_dataset.BaseDataset" title="core.datasets.base_dataset.BaseDataset"><span class="pre">BaseDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.datasets.base_dataset.DatasetMetadata" title="core.datasets.base_dataset.DatasetMetadata"><span class="pre">DatasetMetadata</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.base_dataset.Subset" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.datasets.base_dataset.</span></span><span class="sig-name descname"><span class="pre">Subset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.datasets.base_dataset.BaseDataset" title="core.datasets.base_dataset.BaseDataset"><span class="pre">BaseDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.typing.ArrayLike</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.datasets.base_dataset.Subset" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.Subset</span></code>, <a class="reference internal" href="#core.datasets.base_dataset.BaseDataset" title="core.datasets.base_dataset.BaseDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseDataset</span></code></a></p>
 <p>A pytorch subset that also takes metadata if given.</p>
 <dl class="py attribute">
@@ -814,7 +796,7 @@ LICENSE file in the root directory of this source tree.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="core.datasets.base_dataset.Subset._metadata">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#core.datasets.base_dataset.DatasetMetadata" title="core.datasets.base_dataset.DatasetMetadata"><span class="pre">DatasetMetadata</span></a></em><a class="headerlink" href="#core.datasets.base_dataset.Subset._metadata" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.typing.ArrayLike</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#core.datasets.base_dataset.Subset._metadata" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -918,10 +900,6 @@ LICENSE file in the root directory of this source tree.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.T_co"><code class="docutils literal notranslate"><span class="pre">T_co</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.DatasetMetadata"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.DatasetMetadata.natoms"><code class="docutils literal notranslate"><span class="pre">DatasetMetadata.natoms</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.UnsupportedDatasetError"><code class="docutils literal notranslate"><span class="pre">UnsupportedDatasetError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.BaseDataset"><code class="docutils literal notranslate"><span class="pre">BaseDataset</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core.datasets.base_dataset.BaseDataset.config"><code class="docutils literal notranslate"><span class="pre">BaseDataset.config</span></code></a></li>
