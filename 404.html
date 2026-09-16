@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        const newDomain = "https://facebookresearch.github.io/fairchem";
+        const originalUrl = document.referrer ? new URL(document.referrer) : null;
+        if (originalUrl) {
+            window.location.href = newDomain + originalUrl.pathname + originalUrl.search + originalUrl.hash;
+        } else {
+            window.location.href = newDomain + window.location.pathname;
+        }
+    </script>
+</head>
+<body>
+    <p>This page has moved. If you are not redirected automatically, follow this link to the new site <a href="https://facebookresearch.github.io/fairchem">https://facebookresearch.github.io/fairchem</a>.</p>
+</body>
+</html>
