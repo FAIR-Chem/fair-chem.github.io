@@ -1,0 +1,1 @@
+The gh-pages branch of this repo used to receive automated pushes from https://github.com/facebookresearch/fairchem/, exposing documentation at fair-chem.github.io. Documentation has since moved to http://facebookresearch.github.io/fairchem. The gh-pages branch now contains a manually-applied redirect to the new location.
